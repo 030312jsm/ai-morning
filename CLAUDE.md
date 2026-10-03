@@ -8,7 +8,12 @@
 
 1. 오늘 날짜를 한국 시간으로 구한다: `TZ=Asia/Seoul date +%F`
 2. 최근 24~48시간의 소식을 웹에서 수집한다. 분야(category 값):
-   - `claude` — Claude / Claude Code 생태계: 새 스킬, 플러그인, MCP 서버, Claude Code 업데이트, Anthropic 발표
+   - `skills` — **Claude Code·Codex에 바로 적용할 수 있는 것**: 새 스킬(SKILL.md), 플러그인, MCP 서버, 서브에이전트, 훅,
+     슬래시 커맨드, CLAUDE.md/AGENTS.md 작성법, Codex 스킬·확장. 주로 GitHub 저장소로 나온다. github.com은 WebFetch로 열리므로
+     README를 직접 열어 설치 명령과 스타 수를 확인한다. `howto`에는 실제 설치 명령을 그대로 적는다. **매일 최소 4건.**
+     검색어 예: "Claude Code skill", "claude skills github", "Claude Code plugin", "MCP server release", "Codex skills", "AGENTS.md", "awesome-claude-skills".
+     오래된 저장소라도 최근 7일 안에 눈에 띄는 업데이트·급상승이 있었으면 그 날짜를 `published`로 쓴다.
+   - `claude` — Claude / Claude Code 자체 소식: Claude Code 업데이트, 새 모델, Anthropic 발표
    - `tools` — AI 모델·툴 신규 출시 (OpenAI, Google, 오픈소스 모델, 코딩 툴 등)
    - `creative` — 영상/디자인 제작용 AI (영상 생성·편집, 이미지 생성, After Effects, Live2D, 모션그래픽)
    - `research` — 주요 논문·연구 동향 (arXiv, 연구소 블로그)
@@ -35,7 +40,7 @@
   "items": [
     {
       "title": "한국어 제목",
-      "category": "claude | tools | creative | research",
+      "category": "skills | claude | tools | creative | research",
       "score": 87,
       "published": "2026-10-02",
       "buzz": "HN 512점",

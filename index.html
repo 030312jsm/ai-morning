@@ -12,14 +12,14 @@
   :root {
     --bg: #f3efe6; --card: #fffdf8; --ink: #17171a; --sub: #6d6a63; --faint: #a8a398;
     --line: #e0dacb; --well: #f3efe6; --accent: #c8410b;
-    --claude: #c8410b; --tools: #1f4fd1; --creative: #7a28c4; --research: #0a7a55;
+    --claude: #c8410b; --tools: #1f4fd1; --creative: #7a28c4; --research: #0a7a55; --skills: #b8860b;
     --shadow: 0 1px 0 rgba(23,23,26,.04), 0 12px 32px -18px rgba(23,23,26,.25);
   }
   @media (prefers-color-scheme: dark) {
     :root {
       --bg: #0e0e11; --card: #17171c; --ink: #f0eee8; --sub: #9c9a94; --faint: #5f5e5b;
       --line: #27272e; --well: #101014; --accent: #ff8a4c;
-      --claude: #ff8a4c; --tools: #6ea0ff; --creative: #c58bff; --research: #3fd6a0;
+      --claude: #ff8a4c; --tools: #6ea0ff; --creative: #c58bff; --research: #3fd6a0; --skills: #f2c94c;
       --shadow: 0 1px 0 rgba(255,255,255,.03), 0 16px 40px -20px rgba(0,0,0,.8);
     }
   }
@@ -178,7 +178,7 @@
   </main>
 </div>
 <script>
-const CATS = { all: '전체', claude: 'Claude 생태계', tools: '모델·툴', creative: '영상·디자인', research: '논문·연구' };
+const CATS = { all: '전체', skills: '스킬·플러그인', claude: 'Claude 생태계', tools: '모델·툴', creative: '영상·디자인', research: '논문·연구' };
 const SORTS = { score: '유용성순', date: '최신순' };
 const WEEK = ['일', '월', '화', '수', '목', '금', '토'];
 const $ = id => document.getElementById(id);
