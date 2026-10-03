@@ -1,7 +1,23 @@
 {
   "date": "2026-10-03",
-  "note": "Claude Code Mods(보안 주의: 샌드박스 밖에서 실행)와 Sonnet 5.5가 가장 실용적이고, AE AI Assistant가 영상 작업에 가장 직접적이다.",
+  "note": "Claude Code Mods(샌드박스 밖 실행 주의), godot-ai, HyperFrames가 오늘 가장 바로 써볼 만하다.",
   "items": [
+    {
+      "title": "Claude Code 'Mods' — TypeScript 플러그인으로 에이전트 동작을 직접 바꾼다",
+      "category": "skills",
+      "score": 92,
+      "published": "2026-10-01",
+      "buzz": "Anthropic 발표 · 서드파티 mod 즉시 등장 · 검색 확인",
+      "summary": [
+        "Claude Code 2.1.287부터 플러그인 안에 TypeScript 함수(mod)를 넣어 프롬프트 재작성, 도구 호출 차단, 권한 자동 승인, 비밀 redaction, UI 수정이 가능해졌다.",
+        "공개 직후 토큰 사용량 차트, rm -rf 같은 위험 명령 재확인, 세션 파일 변경 로그 mod가 나왔다.",
+        "mod는 샌드박스 밖에서 Claude Code와 같은 권한으로 실행되므로 신뢰하는 출처만 설치해야 한다."
+      ],
+      "why": "위험한 명령 차단이나 로그 같은 안전장치를 코드로 직접 만들 수 있어 Windows 툴·게임 프로젝트를 Claude Code로 돌릴 때 바로 쓸모가 있다.",
+      "howto": "Claude Code를 2.1.287 이상으로 올리고 `/plugin`으로 mod가 들어 있는 플러그인을 설치한다. 내장 mod는 `/plugin enable cc-plugin-you-should-know@builtin`.",
+      "url": "https://aiweekly.co/alerts/anthropic-launches-claude-code-mods-typescript-agent-hooks",
+      "source": "AI Weekly"
+    },
     {
       "title": "Claude Sonnet 5.5 출시 — 30% 빨라지고 토큰 덜 쓴다",
       "category": "claude",
@@ -35,20 +51,20 @@
       "published": "2026-10-02"
     },
     {
-      "title": "Anthropic, 'Claude Frontier Academy'에 1억 달러 투자 — 엔지니어 1만 명 양성",
-      "category": "claude",
-      "score": 40,
-      "buzz": "Anthropic 공식 발표 (10/2)",
+      "title": "godot-ai — Claude Code가 열린 Godot 에디터를 직접 조작하는 MCP 서버",
+      "category": "skills",
+      "score": 88,
+      "published": "2026-10-02",
+      "buzz": "GitHub 2.8k 스타 · 10/2 커밋 활발",
       "summary": [
-        "Anthropic이 2027년 말까지 Frontier Deployed Engineer 1만 명을 훈련하는 프로그램에 1억 달러를 투자한다고 10월 2일 발표했다.",
-        "대면 교육, 모의 기업 도입 실습, 12주 레지던시를 거쳐 자격을 받는다. 첫 코호트에는 Accenture, Deloitte, McKinsey 등의 엔지니어가 참여한다.",
-        "조직이 Anthropic 계정 담당자를 통해 지명해야 하므로 개인이 직접 지원할 수는 없다."
+        "Godot 에디터와 연결되는 MCP 서버로, 도구 46개·작업 120개 이상으로 씬·노드·스크립트·시그널·UI·애니메이션·파티클을 만든다.",
+        "Claude Code, Claude Desktop, Codex 등 MCP 클라이언트에서 쓸 수 있고 MIT 라이선스다.",
+        "Godot 4.7 이상과 uv가 필요하다."
       ],
-      "why": "당장 쓸 도구는 아니지만 Anthropic이 기업용 Claude 도입 인력 시장을 어떻게 키우는지 보여주는 동향이다.",
-      "howto": "개인 신청은 불가하며 소속 조직이 Anthropic 계정 담당자 또는 파트너 매니저를 통해 지명한다. 자세한 내용은 원문을 참고한다.",
-      "url": "https://www.anthropic.com/news/claude-frontier-academy",
-      "source": "Anthropic",
-      "published": "2026-10-02"
+      "why": "Godot로 게임을 만드는 독자가 에디터 작업을 말로 시키고 바로 결과를 확인할 수 있다.",
+      "howto": "GitHub Releases에서 플러그인을 받아 `addons/godot_ai/`에 넣고, Project Settings → Plugins에서 Godot AI를 켠 뒤 독 패널의 Claude Code 옆 Configure를 누르고 Claude Code를 재시작한다.",
+      "url": "https://github.com/hi-godot/godot-ai",
+      "source": "GitHub"
     },
     {
       "title": "GPT-6.1 Sol 출시 — 입력 $2·출력 $10/M 토큰, 코딩·컴퓨터 사용 강화",
@@ -63,7 +79,40 @@
       "why": "Codex로 PyQt 툴이나 웹앱을 만들 때 Claude Code와 비용·성능을 비교해볼 만한 저가 코딩 모델이다.",
       "howto": "원문 참고 (Codex 또는 API에서 모델 선택).",
       "url": "https://developers.openai.com/api/docs/pricing",
-      "source": "OpenAI"
+      "source": "OpenAI",
+      "published": "2026-09-29"
+    },
+    {
+      "title": "HyperFrames — HTML로 영상을 만드는 에이전트용 렌더러, 하루 두 번 릴리스",
+      "category": "skills",
+      "score": 84,
+      "published": "2026-10-03",
+      "buzz": "GitHub 56.1k 스타",
+      "summary": [
+        "HTML/CSS/JS로 컴포지션을 쓰면 헤드리스 브라우저가 결정적으로 MP4를 렌더링한다. Apache 2.0이다.",
+        "GSAP, CSS, Lottie, Three.js, Anime.js 어댑터를 지원하고 v0.8.113(10/2), v0.8.114(10/3)에서 깜빡임과 편집 버그가 수정됐다.",
+        "Remotion 프로젝트를 옮겨 주는 스킬도 있다."
+      ],
+      "why": "모션그래픽을 코드로 뽑아 After Effects 작업 전 시안이나 과제 영상 제작에 쓸 수 있다.",
+      "howto": "Claude Code: `claude plugin install hyperframes@hyperframes`. 스킬만 쓰려면 `npx skills add heygen-com/hyperframes`.",
+      "url": "https://github.com/heygen-com/hyperframes",
+      "source": "GitHub"
+    },
+    {
+      "title": "MengTo/skills — 웹디자인·게임·3D 스킬 157개, 10/1에도 전투 애니메이션 스킬 추가",
+      "category": "skills",
+      "score": 82,
+      "published": "2026-10-01",
+      "buzz": "GitHub 6.6k 스타",
+      "summary": [
+        "Claude, Codex, Cursor에서 함께 쓰는 SKILL.md 모음으로 웹디자인 81개, 게임 개발 20개, Codex 워크플로 19개 등을 담았다.",
+        "10/1에 game-dev-combat-animation, combat-skill-polish 스킬이 추가됐고 9/30에는 3D 재질·전환 효과 스킬이 추가됐다.",
+        "스킬마다 단독 실행되는 HTML 데모가 있는 경우가 많다."
+      ],
+      "why": "웹앱 UI와 Three.js 게임, 전투 연출을 만들 때 스킬만 복사해도 품질 기준이 생긴다.",
+      "howto": "저장소를 clone해 필요한 스킬 폴더를 `.claude/skills/`(Claude Code) 또는 `.agents/skills/`(Codex)에 복사한다.",
+      "url": "https://github.com/MengTo/skills",
+      "source": "GitHub"
     },
     {
       "title": "Codex 클라우드 환경 — 노트북을 닫아도 계속 일하는 원격 작업",
@@ -82,10 +131,26 @@
       "published": "2026-09-29"
     },
     {
+      "title": "awesome-claude-video-skills — 영상 제작용 에이전트 스킬 230개 큐레이션",
+      "category": "creative",
+      "score": 78,
+      "published": "2026-10-03",
+      "buzz": "매일 갱신, 10/3 15개 추가",
+      "summary": [
+        "Claude Code와 Codex로 영상을 만드는 오픈소스 230여 개를 유형별로 분류하고 보안 등급을 매겼다.",
+        "모션그래픽 14개, 편집 37개, 애니메이션 15개, 프레임워크 41개(HyperFrames, Remotion 등)가 있다.",
+        "목록 모음이라 개별 도구는 직접 확인해야 한다."
+      ],
+      "why": "모션그래픽·영상 작업용 도구를 한 곳에서 보안 등급까지 보고 고를 수 있다.",
+      "howto": "README에서 유형별 목록을 보고 원하는 저장소의 설치 안내를 따른다.",
+      "url": "https://github.com/zhuyansen/awesome-claude-video-skills",
+      "source": "GitHub"
+    },
+    {
       "title": "Gemini 4 Argon 공개 — 사이버 방어팀 한정 우선 제공",
       "category": "tools",
       "score": 72,
-      "buzz": "HN 1641점 · 검색 확인 · 검색 확인",
+      "buzz": "HN 1641점 · 검색 확인",
       "summary": [
         "Google이 9월 30일 2월 이후 첫 플래그십 Gemini 4 Argon을 발표했다.",
         "장기 코딩·금융·법률·영상 이해 벤치마크에서 선두라고 하며, 소프트웨어 취약점을 자율적으로 찾아 검증·패치하도록 훈련됐다.",
@@ -114,128 +179,68 @@
       "published": "2026-09-29"
     },
     {
-      "title": "Qwen3.8-27B — Apache 2.0, 로컬에서 돌리는 27B 멀티모달",
-      "category": "tools",
-      "score": 66,
-      "buzz": "HF 주간 트렌딩 1위 · 검색 확인 · 검색 확인",
+      "title": "goose-skills — 광고·영상 제작 워크플로 200개 이상, 10/3 영상 페이싱 개선",
+      "category": "skills",
+      "score": 60,
+      "published": "2026-10-03",
+      "buzz": "GitHub 1.2k 스타",
       "summary": [
-        "Alibaba Qwen팀의 27B 오픈웨이트 멀티모달 모델이다(8월 14일 공개). 이번 주 Hugging Face 트렌딩 최상위에 올랐다.",
-        "이미지·영상 입력, 설정 가능한 추론, 262K 컨텍스트(최대 1M)를 지원한다.",
-        "과하게 오래 생각하는 경향이 있다는 평가가 있다."
+        "Claude Code, Cursor, Codex에서 쓰는 마케팅·GTM 워크플로 라이브러리다.",
+        "최근 커밋은 영상 광고 길이 계산과 무음 데모 구간 문서화 등 영상 쪽에 집중돼 있다.",
+        "스크립트는 로컬에서 실행되고, 데이터가 많은 작업은 클라우드 API를 쓴다."
       ],
-      "why": "게임이나 툴에 로컬 LLM을 붙이거나 API 비용 없이 실험하고 싶을 때 쓸 만한 후보다.",
-      "howto": "원문 참고 (Hugging Face에서 가중치 또는 GGUF 양자화본 다운로드).",
-      "url": "https://simonwillison.net/2026/Aug/16/qwen-38-27b/",
-      "source": "Simon Willison",
-      "published": "2026-08-16"
-    },
-    {
-      "title": "After Effects AI Assistant 퍼블릭 베타 — 자연어로 프로젝트 정리·익스프레션 작성",
-      "category": "creative",
-      "score": 86,
-      "buzz": "IBC 2026 발표 · Adobe 블로그 · 검색 확인",
-      "summary": [
-        "Adobe가 After Effects의 AI Assistant를 퍼블릭 베타로 공개했다.",
-        "열려 있는 컴프만이 아니라 프로젝트 전체를 읽어 파일 정리, 익스프레션 작성, 깨진 리그 수리를 자연어로 수행한다.",
-        "베타 빌드를 쓰는 사람만 사용할 수 있다."
-      ],
-      "why": "모션그래픽 작업에서 익스프레션을 코드 없이 만들고 남이 만든 지저분한 프로젝트를 정리하는 데 바로 쓸 수 있다.",
-      "howto": "After Effects 베타 빌드(7 이상)로 업데이트하고 재시작한 뒤 Window > Assistant 로 패널을 연다.",
-      "url": "https://blog.adobe.com/en/publish/2026/09/08/generate-create-directly-in-your-timeline-with-new-ai-powered-innovations-in-premiere-after-effects",
-      "source": "Adobe",
-      "published": "2026-09-08"
-    },
-    {
-      "title": "LTX-2.5 — 22B 오픈웨이트 영상·오디오 생성, 네이티브 4K",
-      "category": "creative",
-      "score": 72,
-      "buzz": "HF 영상 생성 트렌딩 · 검색 확인 · 검색 확인",
-      "summary": [
-        "LTX의 22B 오픈웨이트 월드 모델로 텍스트·이미지·영상에서 소리가 동기화된 영상을 만든다.",
-        "720p에서 네이티브 4K, 6~20초 길이를 지원하고 ComfyUI·Diffusers와 연동된다.",
-        "LTX-2.x Community License라 OSI 기준 오픈소스는 아니고, 로컬 실행은 VRAM 16GB부터다."
-      ],
-      "why": "영상 과제용 소스 클립이나 이미지-투-비디오를 로컬에서 비용 없이 만들 수 있다.",
-      "howto": "Hugging Face의 Lightricks/LTX-2.5 가중치를 받아 ComfyUI에서 사용한다.",
-      "url": "https://huggingface.co/Lightricks/LTX-2.5",
-      "source": "Hugging Face"
-    },
-    {
-      "title": "VoiceStudio — 646개 언어를 지원하는 로컬 ElevenLabs 대안",
-      "category": "creative",
-      "score": 68,
-      "buzz": "GitHub 트렌딩 +3,483 스타 · 검색 확인",
-      "summary": [
-        "보이스 클로닝, 영상 더빙, 받아쓰기, 오디오북 제작을 전부 로컬에서 하는 오픈소스 앱이다.",
-        "3초 샘플로 목소리를 복제하고 TTS 엔진 16종, ASR 엔진 11종을 담았으며 Windows·macOS·Linux·Docker를 지원한다.",
-        "AGPL-3.0 라이선스이고 언어별 품질 차이가 크다."
-      ],
-      "why": "영상 작업의 내레이션·더빙과 게임 음성 제작을 구독료 없이 처리할 수 있다.",
-      "howto": "GitHub 저장소 Dawcraft/VoiceStudio의 README 설치 안내를 따른다.",
-      "url": "https://github.com/Dawcraft/VoiceStudio",
+      "why": "게임이나 앱 홍보 영상을 만들 때 광고 크리에이티브 워크플로를 가져다 쓸 수 있다.",
+      "howto": "`npx gooseworks install --all` 후 에이전트에 `/gooseworks Generate static ad creatives`처럼 요청한다.",
+      "url": "https://github.com/gooseworks-ai/goose-skills",
       "source": "GitHub"
     },
     {
-      "title": "Claude Opus 5.5 출시 — Opus 5 대비 40% 저렴, 1M 컨텍스트",
-      "category": "claude",
-      "score": 70,
-      "buzz": "SiliconANGLE 외 다수 · 검색 확인",
-      "summary": [
-        "Anthropic이 9월 22일 Claude 5.5 계열 첫 모델 Opus 5.5를 냈다.",
-        "대부분의 작업에서 Fable 5.1급 성능이며 가격은 입력 $4·출력 $20/M이다. 컨텍스트 1M, 최대 출력 128K, 사고 항상 켜짐.",
-        "API 모델 ID는 claude-opus-5-5이고 AWS·Google Cloud·Azure에서도 쓸 수 있다."
-      ],
-      "why": "Claude Code에서 어려운 설계나 큰 리팩터링을 맡길 때 쓰는 모델이 더 저렴해졌다.",
-      "howto": "API에서 claude-opus-5-5를 지정하거나 Claude Code의 /model 로 선택한다.",
-      "url": "https://siliconangle.com/2026/09/22/anthropic-releases-claude-opus-5-5-and-openai-counters-with-two-cheaper-gpt-6-models/",
-      "source": "SiliconANGLE",
-      "published": "2026-09-22"
-    },
-    {
-      "title": "openrig — Claude Code와 Codex를 한 팀으로 돌리는 멀티에이전트 하네스",
-      "category": "claude",
-      "score": 62,
-      "buzz": "GitHub 트렌딩 +624 스타 · 검색 확인",
-      "summary": [
-        "Claude Code와 Codex 에이전트 팀을 YAML(RigSpec)로 정의하고 명령 한 번으로 띄우는 도구다.",
-        "로컬 데몬, CLI, 터미널 UI, MCP 서버로 구성되며 tmux 위에서 돌고 에이전트끼리 메시지·방송·채팅방으로 소통한다.",
-        "Node.js 20·22·24와 tmux가 필요하고 macOS·Linux만 지원한다."
-      ],
-      "why": "큰 게임·웹앱 프로젝트에서 역할별 에이전트를 병렬로 돌려 보고 싶을 때 참고가 된다. 단 Windows 네이티브는 불가(WSL 필요).",
-      "howto": "GitHub 저장소 README의 설치·rig 명령 안내를 따른다.",
-      "url": "https://github.com/zichen0116/openrig",
-      "source": "GitHub"
-    },
-    {
-      "title": "Claude가 CRISPR 유사 효소 시스템 발견 — 에이전트 950개가 21시간 탐색",
+      "title": "HC-DLM — 이산 토큰과 연속 잠재 변수를 함께 쓰는 확산 언어 모델 (UIUC)",
       "category": "research",
-      "score": 55,
-      "buzz": "Anthropic · 다수 매체 · 검색 확인",
+      "score": 50,
+      "published": "2026-10-01",
+      "buzz": "HF 트렌딩 논문 · 검색 확인",
       "summary": [
-        "Anthropic이 Claude가 박테리오파지 DNA에서 CRISPR와 비슷한 반복 서열을 가진 미지의 효소 시스템(ART)을 찾았다고 발표했다.",
-        "에이전트 약 950개가 21시간 동안 약 2.1억 토큰을 써서 20만 개 이상의 역전사효소를 훑고 후보 20개로 좁혔다.",
-        "프리프린트 단계이며 기능은 아직 밝혀지지 않았다."
+        "잠재 변수를 유일한 생성 상태로 두고 매 단계 토큰을 읽어내 다음 갱신의 발판으로 쓴다.",
+        "Sudoku, Countdown, LM1B에서 이산·연속 확산 기준선보다 좋았다.",
+        "실험 규모는 작은 모델 중심이다."
       ],
-      "why": "대규모 에이전트 병렬 탐색이 실제로 어떻게 설계되는지 보여주는 사례다.",
-      "howto": "원문 참고.",
-      "url": "https://thenextweb.com/news/anthropic-claude-enzyme-system-crispr-like-repeats",
-      "source": "The Next Web"
+      "why": "확산 언어 모델 동향을 파악하는 용도의 소식이다.",
+      "howto": "원문 참고",
+      "url": "https://arxiv.org/abs/2610.02193",
+      "source": "arXiv"
     },
     {
-      "title": "Anthropic, '클로드가 차세대 클로드 개발을 돕고 있다' 발표",
+      "title": "Anthropic 'Claude-shaped science' — Claude로 전문 과학 계산을 하는 BootLoops 툴킷",
       "category": "research",
-      "score": 45,
-      "buzz": "Washington Times · US News · 검색 확인",
+      "score": 48,
+      "published": "2026-10-01",
+      "buzz": "Anthropic 연구 블로그 · 검색 확인",
       "summary": [
-        "Anthropic이 Claude가 자기 다음 버전 개발에 쓰이고 있다고 9월 17일 밝혔다.",
-        "보도에 따르면 AI 연구 개발 자동화가 실제 개발 파이프라인에 들어왔다는 의미다.",
-        "세부 수치는 원문에서 확인해야 한다."
+        "Matthew Schwartz 교수가 Claude로 특수 과학 문제를 푸는 사례를 소개했다.",
+        "BootLoops 툴킷은 생태학, 집단유전학 등에서 고정밀 계산을 수행하게 한다.",
+        "검색 결과에 나온 요약 수준이라 세부는 원문 확인이 필요하다."
       ],
-      "why": "에이전트형 코딩이 어디까지 가는지 가늠하는 동향 자료로 읽을 만하다.",
-      "howto": "원문 참고.",
-      "url": "https://www.washingtontimes.com/news/2026/sep/17/anthropic-says-claude-helping-build-next-version/",
-      "source": "Washington Times",
-      "published": "2026-09-17"
+      "why": "에이전트에 검증 루프를 붙여 정확도를 높이는 방식을 참고할 수 있다.",
+      "howto": "원문 참고",
+      "url": "https://www.anthropic.com/research/claude-shaped-science",
+      "source": "Anthropic"
+    },
+    {
+      "title": "Anthropic, 'Claude Frontier Academy'에 1억 달러 투자 — 엔지니어 1만 명 양성",
+      "category": "claude",
+      "score": 40,
+      "buzz": "Anthropic 공식 발표 (10/2)",
+      "summary": [
+        "Anthropic이 2027년 말까지 Frontier Deployed Engineer 1만 명을 훈련하는 프로그램에 1억 달러를 투자한다고 10월 2일 발표했다.",
+        "대면 교육, 모의 기업 도입 실습, 12주 레지던시를 거쳐 자격을 받는다. 첫 코호트에는 Accenture, Deloitte, McKinsey 등의 엔지니어가 참여한다.",
+        "조직이 Anthropic 계정 담당자를 통해 지명해야 하므로 개인이 직접 지원할 수는 없다."
+      ],
+      "why": "당장 쓸 도구는 아니지만 Anthropic이 기업용 Claude 도입 인력 시장을 어떻게 키우는지 보여주는 동향이다.",
+      "howto": "개인 신청은 불가하며 소속 조직이 Anthropic 계정 담당자 또는 파트너 매니저를 통해 지명한다. 자세한 내용은 원문을 참고한다.",
+      "url": "https://www.anthropic.com/news/claude-frontier-academy",
+      "source": "Anthropic",
+      "published": "2026-10-02"
     }
   ]
 }
