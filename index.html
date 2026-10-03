@@ -3,79 +3,184 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f3efe6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e0e11" media="(prefers-color-scheme: dark)">
 <title>AI 모닝</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
   :root {
-    --bg: #f6f5f1; --card: #ffffff; --text: #1b1b1f; --sub: #6b6b76; --line: #e4e2da;
-    --accent: #c2410c; --chip: #efede6;
-    --claude: #c2410c; --tools: #1d4ed8; --creative: #7e22ce; --research: #047857;
+    --bg: #f3efe6; --card: #fffdf8; --ink: #17171a; --sub: #6d6a63; --faint: #a8a398;
+    --line: #e0dacb; --well: #f3efe6; --accent: #c8410b;
+    --claude: #c8410b; --tools: #1f4fd1; --creative: #7a28c4; --research: #0a7a55;
+    --shadow: 0 1px 0 rgba(23,23,26,.04), 0 12px 32px -18px rgba(23,23,26,.25);
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #131316; --card: #1c1c21; --text: #ececf1; --sub: #9a9aa6; --line: #2c2c34;
-      --accent: #fb923c; --chip: #26262d;
-      --claude: #fb923c; --tools: #60a5fa; --creative: #c084fc; --research: #34d399;
+      --bg: #0e0e11; --card: #17171c; --ink: #f0eee8; --sub: #9c9a94; --faint: #5f5e5b;
+      --line: #27272e; --well: #101014; --accent: #ff8a4c;
+      --claude: #ff8a4c; --tools: #6ea0ff; --creative: #c58bff; --research: #3fd6a0;
+      --shadow: 0 1px 0 rgba(255,255,255,.03), 0 16px 40px -20px rgba(0,0,0,.8);
     }
   }
   * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
   body {
-    margin: 0; background: var(--bg); color: var(--text);
-    font: 16px/1.6 Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
-    word-break: keep-all; overflow-wrap: anywhere;
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.65 "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+    word-break: keep-all; overflow-wrap: anywhere; -webkit-font-smoothing: antialiased;
   }
-  main { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
-  header { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-  h1 { font-size: 26px; margin: 0; letter-spacing: -0.02em; }
+  a { color: inherit; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px 80px; }
+
+  /* 머리 */
+  .mast { padding: 28px 0 0; }
+  .brand { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 15px; letter-spacing: .08em; }
+  .sun {
+    width: 22px; height: 22px; border-radius: 50%; flex: none;
+    background: radial-gradient(circle at 50% 50%, var(--accent) 0 42%, transparent 44%),
+                conic-gradient(var(--accent) 0 6%, transparent 0 12.5%, var(--accent) 0 18.5%, transparent 0 25%,
+                               var(--accent) 0 31%, transparent 0 37.5%, var(--accent) 0 43.5%, transparent 0 50%,
+                               var(--accent) 0 56%, transparent 0 62.5%, var(--accent) 0 68.5%, transparent 0 75%,
+                               var(--accent) 0 81%, transparent 0 87.5%, var(--accent) 0 93.5%, transparent 0);
+  }
   select {
-    font: inherit; color: inherit; background: var(--card);
-    border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px;
+    font: inherit; font-size: 14px; font-weight: 600; color: var(--ink); background: var(--card);
+    border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px; cursor: pointer;
   }
-  #meta { color: var(--sub); font-size: 14px; margin: 4px 0 16px; }
-  #tabs {
-    display: flex; gap: 8px; overflow-x: auto; padding: 8px 0 12px;
-    position: sticky; top: 0; background: var(--bg); z-index: 1;
+  .day {
+    font-size: clamp(40px, 11vw, 72px); font-weight: 800; line-height: 1.02;
+    letter-spacing: -.045em; margin: 26px 0 0;
   }
-  #tabs button {
-    font: inherit; font-size: 14px; white-space: nowrap; cursor: pointer;
-    color: var(--sub); background: var(--chip); border: 1px solid transparent;
-    border-radius: 999px; padding: 6px 14px;
+  .day small { display: block; font-size: 15px; font-weight: 600; letter-spacing: 0; color: var(--sub); margin-bottom: 10px; }
+  .lead {
+    margin: 18px 0 0; padding-left: 14px; border-left: 3px solid var(--accent);
+    font-size: 16px; color: var(--ink); max-width: 46em;
   }
-  #tabs button[aria-pressed="true"] { color: var(--bg); background: var(--text); }
-  article {
-    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
-    padding: 18px; margin-bottom: 12px;
+  .stats { display: flex; gap: 18px; margin: 18px 0 0; font-size: 13px; color: var(--sub); flex-wrap: wrap; }
+  .stats b { color: var(--ink); font-size: 15px; font-variant-numeric: tabular-nums; margin-right: 3px; }
+
+  /* 조작부 */
+  .bar {
+    position: sticky; top: 0; z-index: 5; margin: 22px -16px 0; padding: 10px 16px;
+    background: color-mix(in srgb, var(--bg) 86%, transparent);
+    -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
   }
-  .top { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--sub); flex-wrap: wrap; }
-  .rank { font-weight: 700; color: var(--text); font-variant-numeric: tabular-nums; }
-  .cat { font-weight: 600; }
-  .score {
-    margin-left: auto; font-weight: 700; font-variant-numeric: tabular-nums;
-    color: var(--accent); border: 1px solid currentColor; border-radius: 6px; padding: 0 7px;
+  #tabs { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+  #tabs::-webkit-scrollbar { display: none; }
+  #tabs button, .sort button {
+    font: inherit; font-size: 14px; font-weight: 600; white-space: nowrap; cursor: pointer;
+    color: var(--sub); background: transparent; border: 1px solid var(--line);
+    border-radius: 999px; padding: 6px 13px; display: flex; align-items: center; gap: 7px;
   }
-  h2 { font-size: 19px; line-height: 1.4; margin: 8px 0; letter-spacing: -0.01em; }
-  h2 a { color: inherit; text-decoration: none; }
-  h2 a:hover { text-decoration: underline; }
-  ul { margin: 0 0 12px; padding-left: 20px; }
-  dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; font-size: 15px; }
-  dt { color: var(--sub); white-space: nowrap; }
-  dd { margin: 0; }
-  .src { display: inline-block; margin-top: 12px; font-size: 14px; color: var(--accent); }
-  #empty { color: var(--sub); text-align: center; padding: 48px 0; }
+  #tabs button i { width: 7px; height: 7px; border-radius: 50%; background: var(--c, var(--ink)); }
+  #tabs button em { font-style: normal; font-size: 12px; color: var(--faint); font-variant-numeric: tabular-nums; }
+  #tabs button[aria-pressed="true"] { color: var(--bg); background: var(--ink); border-color: var(--ink); }
+  #tabs button[aria-pressed="true"] em { color: inherit; opacity: .6; }
+  .sort { display: flex; gap: 6px; margin-top: 8px; }
+  .sort button { font-size: 13px; padding: 4px 11px; border-color: transparent; }
+  .sort button[aria-pressed="true"] { color: var(--ink); border-color: var(--line); background: var(--card); }
+  button:focus-visible, select:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  /* 카드 */
+  #list { display: grid; gap: 14px; margin-top: 18px; }
+  .card {
+    --c: var(--ink);
+    position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 18px;
+    padding: 20px 18px 18px; box-shadow: var(--shadow); overflow: hidden;
+    animation: rise .45s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i) * 35ms);
+  }
+  .card::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 4px; background: var(--c); }
+  @keyframes rise { from { opacity: 0; transform: translateY(10px); } }
+  @media (prefers-reduced-motion: reduce) { .card { animation: none; } }
+  .head { display: flex; align-items: center; gap: 12px; }
+  .gauge {
+    --p: 0; flex: none; width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center;
+    background: radial-gradient(closest-side, var(--card) 80%, transparent 82%),
+                conic-gradient(var(--c) calc(var(--p) * 1%), var(--line) 0);
+    font-weight: 800; font-size: 18px; font-variant-numeric: tabular-nums; letter-spacing: -.02em;
+  }
+  .meta { min-width: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; font-size: 13px; color: var(--sub); }
+  .rank { font-weight: 800; color: var(--faint); font-variant-numeric: tabular-nums; }
+  .cat { font-weight: 700; color: var(--c); }
+  .pub { font-variant-numeric: tabular-nums; }
+  .pub b { color: var(--ink); font-weight: 600; }
+  .new {
+    font-size: 11px; font-weight: 800; letter-spacing: .06em; color: var(--bg); background: var(--accent);
+    border-radius: 5px; padding: 1px 6px;
+  }
+  .buzz { flex-basis: 100%; font-size: 12.5px; color: var(--faint); }
+  h2 { font-size: 20px; line-height: 1.35; font-weight: 750; letter-spacing: -.02em; margin: 14px 0 10px; }
+  h2 a { text-decoration: none; background: linear-gradient(var(--c), var(--c)) 0 100% / 0 2px no-repeat; transition: background-size .25s; }
+  h2 a:hover { background-size: 100% 2px; }
+  ul { margin: 0 0 14px; padding: 0; list-style: none; display: grid; gap: 7px; font-size: 15.5px; }
+  li { position: relative; padding-left: 16px; }
+  li::before { content: ""; position: absolute; left: 2px; top: .72em; width: 5px; height: 5px; border-radius: 50%; background: var(--faint); }
+  .box { background: var(--well); border-radius: 12px; padding: 11px 13px; font-size: 15px; margin-top: 8px; }
+  .box span { display: block; font-size: 11.5px; font-weight: 800; letter-spacing: .08em; color: var(--c); margin-bottom: 2px; }
+  code {
+    font: 600 .88em/1.4 ui-monospace, "Cascadia Code", Consolas, monospace;
+    background: color-mix(in srgb, var(--c) 12%, transparent); border-radius: 5px; padding: 1px 5px;
+  }
+  .src {
+    display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; font-size: 13.5px; font-weight: 700;
+    text-decoration: none; color: var(--ink); border: 1px solid var(--line); border-radius: 999px; padding: 6px 13px;
+  }
+  .src:hover { border-color: var(--c); color: var(--c); }
+  .card.top { padding: 24px 20px 20px; }
+  .card.top h2 { font-size: clamp(23px, 5.6vw, 30px); line-height: 1.28; letter-spacing: -.03em; }
+  .card.top .gauge { width: 64px; height: 64px; font-size: 22px; }
+  #empty { color: var(--sub); text-align: center; padding: 64px 0; }
+  footer { margin-top: 36px; font-size: 12.5px; color: var(--faint); text-align: center; }
+
+  /* 넓은 화면: 왼쪽 고정 패널 + 오른쪽 목록 */
+  @media (min-width: 960px) {
+    .wrap { display: grid; grid-template-columns: 320px minmax(0, 1fr); gap: 0 48px; padding: 0 32px 96px; align-items: start; }
+    .side { position: sticky; top: 0; padding-bottom: 32px; }
+    .mast { padding-top: 44px; }
+    .day { font-size: 68px; }
+    .bar { position: static; margin: 26px 0 0; padding: 0; background: none; backdrop-filter: none; border: 0; }
+    #tabs { flex-direction: column; gap: 4px; overflow: visible; }
+    #tabs button { justify-content: flex-start; border-color: transparent; padding: 9px 13px; border-radius: 11px; font-size: 15px; }
+    #tabs button em { margin-left: auto; }
+    #tabs button:hover { background: var(--card); }
+    .sort { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
+    main { padding-top: 44px; }
+    #list { margin-top: 0; gap: 16px; }
+    .card { padding: 24px 26px 22px; }
+    .card.top { padding: 30px 30px 26px; }
+  }
 </style>
 </head>
 <body>
-<main>
-  <header>
-    <h1>AI 모닝</h1>
-    <select id="date" aria-label="날짜 선택"></select>
-  </header>
-  <p id="meta"></p>
-  <nav id="tabs"></nav>
-  <div id="list"></div>
-  <p id="empty" hidden></p>
-</main>
+<div class="wrap">
+  <div class="side">
+    <header class="mast">
+      <div class="brand">
+        <div class="logo"><span class="sun"></span>AI 모닝</div>
+        <select id="date" aria-label="날짜 선택"></select>
+      </div>
+      <h1 class="day" id="day"></h1>
+      <p class="lead" id="lead" hidden></p>
+      <div class="stats" id="stats"></div>
+    </header>
+    <div class="bar">
+      <nav id="tabs" aria-label="분야"></nav>
+      <div class="sort" id="sort" aria-label="정렬"></div>
+    </div>
+  </div>
+  <main>
+    <div id="list"></div>
+    <p id="empty" hidden></p>
+    <footer>매일 오전 7시 자동 갱신 · 점수 = 화제성 40% + 내 작업 적합도 60%</footer>
+  </main>
+</div>
 <script>
 const CATS = { all: '전체', claude: 'Claude 생태계', tools: '모델·툴', creative: '영상·디자인', research: '논문·연구' };
+const SORTS = { score: '유용성순', date: '최신순' };
+const WEEK = ['일', '월', '화', '수', '목', '금', '토'];
 const $ = id => document.getElementById(id);
 const el = (tag, cls, text) => {
   const e = document.createElement(tag);
@@ -83,60 +188,114 @@ const el = (tag, cls, text) => {
   if (text != null) e.textContent = text;   // 수집한 웹 텍스트는 절대 innerHTML로 넣지 않는다
   return e;
 };
+// `백틱` 구간만 <code>로. 나머지는 텍스트 노드
+const rich = (parent, text) => {
+  String(text).split('`').forEach((part, i) => part && parent.append(i % 2 ? el('code', '', part) : part));
+  return parent;
+};
 const safeUrl = u => /^https?:\/\//i.test(u || '') ? u : '#';
-let day = { items: [] }, cat = 'all';
+const parse = s => { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d); };
+const isDate = s => /^\d{4}-\d{2}-\d{2}$/.test(s || '');
+function pubLabel(pub, today) {
+  const p = parse(pub), n = Math.round((parse(today) - p) / 864e5);
+  const ago = n <= 0 ? '오늘' : n === 1 ? '어제' : `${n}일 전`;
+  return { text: `${p.getMonth() + 1}월 ${p.getDate()}일`, ago, fresh: n <= 2 };
+}
+let day = { date: '', items: [] }, cat = 'all', sort = 'score';
 
 function render() {
   const items = day.items
     .filter(i => cat === 'all' || i.category === cat)
-    .sort((a, b) => b.score - a.score);
+    .sort((a, b) => sort === 'date'
+      ? (b.published || '').localeCompare(a.published || '') || b.score - a.score
+      : b.score - a.score);
   const list = $('list');
   list.replaceChildren();
   $('empty').hidden = items.length > 0;
   $('empty').textContent = '이 분야는 오늘 소식이 없습니다.';
   items.forEach((it, n) => {
-    const a = el('article');
-    const top = el('div', 'top');
-    top.append(el('span', 'rank', String(n + 1).padStart(2, '0')));
-    const c = el('span', 'cat', CATS[it.category] || it.category);
-    c.style.color = `var(--${it.category})`;
-    top.append(c);
-    if (it.buzz) top.append(el('span', '', '· ' + it.buzz));
-    const s = el('span', 'score', it.score);
-    s.title = '유용성 점수 (화제성 + 내 작업 적합도)';
-    top.append(s);
+    const a = el('article', 'card' + (n === 0 ? ' top' : ''));
+    a.style.setProperty('--c', `var(--${it.category}, var(--ink))`);
+    a.style.setProperty('--i', n);
+
+    const head = el('div', 'head');
+    const g = el('div', 'gauge', it.score);
+    g.style.setProperty('--p', it.score);
+    g.title = '유용성 점수';
+    const meta = el('div', 'meta');
+    meta.append(el('span', 'rank', String(n + 1).padStart(2, '0')), el('span', 'cat', CATS[it.category] || it.category));
+    if (isDate(it.published)) {
+      const p = pubLabel(it.published, day.date);
+      const s = el('span', 'pub');
+      s.append(el('b', '', p.text), ` 게시 · ${p.ago}`);
+      meta.append(s);
+      if (p.fresh) meta.append(el('span', 'new', 'NEW'));
+    }
+    // 같은 표시가 두 번 찍힌 buzz 정리
+    const buzz = [...new Set((it.buzz || '').split(' · ').filter(Boolean))].join(' · ');
+    if (buzz) meta.append(el('span', 'buzz', buzz));
+    head.append(g, meta);
+
     const h = el('h2');
     const link = el('a', '', it.title);
     link.href = safeUrl(it.url); link.target = '_blank'; link.rel = 'noopener';
     h.append(link);
     const ul = el('ul');
-    (it.summary || []).forEach(line => ul.append(el('li', '', line)));
-    const dl = el('dl');
-    if (it.why) dl.append(el('dt', '', '왜 유용'), el('dd', '', it.why));
-    if (it.howto) dl.append(el('dt', '', '쓰는 법'), el('dd', '', it.howto));
+    (it.summary || []).forEach(line => ul.append(rich(el('li'), line)));
+    a.append(head, h, ul);
+    [['왜 유용', it.why], ['쓰는 법', it.howto]].forEach(([label, text]) => {
+      if (!text) return;
+      const b = el('div', 'box');
+      b.append(el('span', '', label), rich(el('div'), text));
+      a.append(b);
+    });
     const src = el('a', 'src', (it.source || '원문') + ' ↗');
     src.href = safeUrl(it.url); src.target = '_blank'; src.rel = 'noopener';
-    a.append(top, h, ul, dl, src);
+    a.append(src);
     list.append(a);
   });
 }
 
+function tabs() {
+  const nav = $('tabs');
+  nav.replaceChildren();
+  for (const [k, label] of Object.entries(CATS)) {
+    const count = k === 'all' ? day.items.length : day.items.filter(i => i.category === k).length;
+    const b = el('button');
+    if (k !== 'all') b.style.setProperty('--c', `var(--${k})`);
+    b.append(el('i'), label, el('em', '', count));
+    b.setAttribute('aria-pressed', k === cat);
+    b.onclick = () => { cat = k; tabs(); render(); };
+    nav.append(b);
+  }
+}
+
 async function load(date) {
   day = await (await fetch(`data/${date}.json`, { cache: 'no-cache' })).json();
-  $('meta').textContent = `${date} · ${day.items.length}건` + (day.note ? ` · ${day.note}` : '');
-  render();
+  day.date = day.date || date;
+  const d = parse(date);
+  $('day').replaceChildren(el('small', '', `${d.getFullYear()}년 · ${WEEK[d.getDay()]}요일`), `${d.getMonth() + 1}월 ${d.getDate()}일`);
+  $('lead').hidden = !day.note;
+  $('lead').textContent = day.note || '';
+  const fresh = day.items.filter(i => isDate(i.published) && pubLabel(i.published, day.date).fresh).length;
+  const stats = $('stats');
+  stats.replaceChildren();
+  [[day.items.length, '건'], [fresh, '건 최근 이틀']].forEach(([n, t]) => {
+    const s = el('span'); s.append(el('b', '', n), t); stats.append(s);
+  });
+  tabs(); render();
 }
 
 (async () => {
-  for (const [k, label] of Object.entries(CATS)) {
+  for (const [k, label] of Object.entries(SORTS)) {
     const b = el('button', '', label);
-    b.setAttribute('aria-pressed', k === cat);
+    b.setAttribute('aria-pressed', k === sort);
     b.onclick = () => {
-      cat = k;
-      document.querySelectorAll('#tabs button').forEach(x => x.setAttribute('aria-pressed', x === b));
+      sort = k;
+      document.querySelectorAll('#sort button').forEach(x => x.setAttribute('aria-pressed', x === b));
       render();
     };
-    $('tabs').append(b);
+    $('sort').append(b);
   }
   try {
     const dates = await (await fetch('data/index.json', { cache: 'no-cache' })).json();

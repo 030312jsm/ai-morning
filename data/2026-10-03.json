@@ -15,7 +15,8 @@
       "why": "Claude Code로 매일 코딩하는 1인 개발자에게 더 빠르고 싼 기본 모델이 생겨 같은 요금으로 더 많이 돌릴 수 있다.",
       "howto": "Claude Code에서 `/model`로 Sonnet 5.5를 선택하거나 API에서 모델 ID `claude-sonnet-5-5`를 지정한다. thinking을 끈 설정이 있다면 공식 마이그레이션 문서의 `between_tools` 안내를 먼저 확인한다.",
       "url": "https://www.anthropic.com/claude-sonnet-5-5",
-      "source": "Anthropic"
+      "source": "Anthropic",
+      "published": "2026-09-28"
     },
     {
       "title": "Claude Code 2.1.287/2.1.288 — 'Claude Mods' 도입과 안정성 수정",
@@ -30,7 +31,8 @@
       "why": "긴 세션과 자동 실행에서 끊기던 문제가 줄어들어 Windows 툴이나 게임을 오래 붙잡고 만드는 작업이 한결 안정적이다.",
       "howto": "`claude update`로 최신 버전으로 올린 뒤, 'You should know' 모드는 `/plugin enable cc-plugin-you-should-know@builtin`으로 켠다.",
       "url": "https://code.claude.com/docs/en/changelog",
-      "source": "Claude Code Docs Changelog"
+      "source": "Claude Code Docs Changelog",
+      "published": "2026-10-02"
     },
     {
       "title": "Anthropic, 'Claude Frontier Academy'에 1억 달러 투자 — 엔지니어 1만 명 양성",
@@ -45,7 +47,8 @@
       "why": "당장 쓸 도구는 아니지만 Anthropic이 기업용 Claude 도입 인력 시장을 어떻게 키우는지 보여주는 동향이다.",
       "howto": "개인 신청은 불가하며 소속 조직이 Anthropic 계정 담당자 또는 파트너 매니저를 통해 지명한다. 자세한 내용은 원문을 참고한다.",
       "url": "https://www.anthropic.com/news/claude-frontier-academy",
-      "source": "Anthropic"
+      "source": "Anthropic",
+      "published": "2026-10-02"
     },
     {
       "title": "GPT-6.1 Sol 출시 — 입력 $2·출력 $10/M 토큰, 코딩·컴퓨터 사용 강화",
@@ -75,7 +78,8 @@
       "why": "게임·웹앱 작업을 폰에서 맡겨두는 식의 워크플로를 Claude Code 웹 세션과 비교해볼 수 있다.",
       "howto": "원문 참고.",
       "url": "https://techcrunch.com/2026/09/29/openai-gives-codex-reusable-cloud-environments-that-work-across-devices/",
-      "source": "TechCrunch"
+      "source": "TechCrunch",
+      "published": "2026-09-29"
     },
     {
       "title": "Gemini 4 Argon 공개 — 사이버 방어팀 한정 우선 제공",
@@ -90,7 +94,8 @@
       "why": "당장 쓸 수는 없지만 Claude·GPT와 경쟁하는 코딩 모델의 다음 기준선이라 가격과 공개 시점을 지켜볼 만하다.",
       "howto": "원문 참고 (일반 접근은 아직 불가).",
       "url": "https://techcrunch.com/2026/09/30/google-releases-gemini-4-argon-called-its-most-powerful-model-yet/",
-      "source": "TechCrunch"
+      "source": "TechCrunch",
+      "published": "2026-09-30"
     },
     {
       "title": "OpenAI 'Dots' — 목표를 알아서 수행하는 상시 가동 에이전트",
@@ -105,7 +110,8 @@
       "why": "에이전트가 24시간 돌아가는 구조를 파악해 두면 자체 툴이나 봇을 설계할 때 참고가 된다.",
       "howto": "원문 참고.",
       "url": "https://www.axios.com/2026/09/29/openai-dev-day-2026-dots-space-sol",
-      "source": "Axios"
+      "source": "Axios",
+      "published": "2026-09-29"
     },
     {
       "title": "Qwen3.8-27B — Apache 2.0, 로컬에서 돌리는 27B 멀티모달",
@@ -120,7 +126,8 @@
       "why": "게임이나 툴에 로컬 LLM을 붙이거나 API 비용 없이 실험하고 싶을 때 쓸 만한 후보다.",
       "howto": "원문 참고 (Hugging Face에서 가중치 또는 GGUF 양자화본 다운로드).",
       "url": "https://simonwillison.net/2026/Aug/16/qwen-38-27b/",
-      "source": "Simon Willison"
+      "source": "Simon Willison",
+      "published": "2026-08-16"
     },
     {
       "title": "After Effects AI Assistant 퍼블릭 베타 — 자연어로 프로젝트 정리·익스프레션 작성",
@@ -135,7 +142,8 @@
       "why": "모션그래픽 작업에서 익스프레션을 코드 없이 만들고 남이 만든 지저분한 프로젝트를 정리하는 데 바로 쓸 수 있다.",
       "howto": "After Effects 베타 빌드(7 이상)로 업데이트하고 재시작한 뒤 Window > Assistant 로 패널을 연다.",
       "url": "https://blog.adobe.com/en/publish/2026/09/08/generate-create-directly-in-your-timeline-with-new-ai-powered-innovations-in-premiere-after-effects",
-      "source": "Adobe"
+      "source": "Adobe",
+      "published": "2026-09-08"
     },
     {
       "title": "LTX-2.5 — 22B 오픈웨이트 영상·오디오 생성, 네이티브 4K",
@@ -180,7 +188,8 @@
       "why": "Claude Code에서 어려운 설계나 큰 리팩터링을 맡길 때 쓰는 모델이 더 저렴해졌다.",
       "howto": "API에서 claude-opus-5-5를 지정하거나 Claude Code의 /model 로 선택한다.",
       "url": "https://siliconangle.com/2026/09/22/anthropic-releases-claude-opus-5-5-and-openai-counters-with-two-cheaper-gpt-6-models/",
-      "source": "SiliconANGLE"
+      "source": "SiliconANGLE",
+      "published": "2026-09-22"
     },
     {
       "title": "openrig — Claude Code와 Codex를 한 팀으로 돌리는 멀티에이전트 하네스",
@@ -225,7 +234,8 @@
       "why": "에이전트형 코딩이 어디까지 가는지 가늠하는 동향 자료로 읽을 만하다.",
       "howto": "원문 참고.",
       "url": "https://www.washingtontimes.com/news/2026/sep/17/anthropic-says-claude-helping-build-next-version/",
-      "source": "Washington Times"
+      "source": "Washington Times",
+      "published": "2026-09-17"
     }
   ]
 }
