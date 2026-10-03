@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-03",
+  "note": "화면 확인용 예시 — 첫 실행 때 실제 소식으로 교체됨",
+  "items": [
+    {
+      "title": "[예시] Claude 생태계 소식 자리",
+      "category": "claude",
+      "score": 90,
+      "buzz": "예시",
+      "summary": ["첫 줄: 무슨 일인지", "둘째 줄: 핵심 내용", "셋째 줄: 한계나 조건"],
+      "why": "왜 유용한지 한 문장이 들어갑니다.",
+      "howto": "설치·사용 방법이 들어갑니다.",
+      "url": "https://example.com",
+      "source": "예시"
+    },
+    {
+      "title": "[예시] 영상·디자인 AI 소식 자리",
+      "category": "creative",
+      "score": 72,
+      "summary": ["요약 줄"],
+      "why": "예시",
+      "howto": "예시",
+      "url": "https://example.com",
+      "source": "예시"
+    }
+  ]
+}

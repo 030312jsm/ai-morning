@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 모닝</title>
+<style>
+  :root {
+    --bg: #f6f5f1; --card: #ffffff; --text: #1b1b1f; --sub: #6b6b76; --line: #e4e2da;
+    --accent: #c2410c; --chip: #efede6;
+    --claude: #c2410c; --tools: #1d4ed8; --creative: #7e22ce; --research: #047857;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #131316; --card: #1c1c21; --text: #ececf1; --sub: #9a9aa6; --line: #2c2c34;
+      --accent: #fb923c; --chip: #26262d;
+      --claude: #fb923c; --tools: #60a5fa; --creative: #c084fc; --research: #34d399;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.6 Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+    word-break: keep-all; overflow-wrap: anywhere;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
+  header { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  h1 { font-size: 26px; margin: 0; letter-spacing: -0.02em; }
+  select {
+    font: inherit; color: inherit; background: var(--card);
+    border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px;
+  }
+  #meta { color: var(--sub); font-size: 14px; margin: 4px 0 16px; }
+  #tabs {
+    display: flex; gap: 8px; overflow-x: auto; padding: 8px 0 12px;
+    position: sticky; top: 0; background: var(--bg); z-index: 1;
+  }
+  #tabs button {
+    font: inherit; font-size: 14px; white-space: nowrap; cursor: pointer;
+    color: var(--sub); background: var(--chip); border: 1px solid transparent;
+    border-radius: 999px; padding: 6px 14px;
+  }
+  #tabs button[aria-pressed="true"] { color: var(--bg); background: var(--text); }
+  article {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 18px; margin-bottom: 12px;
+  }
+  .top { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--sub); flex-wrap: wrap; }
+  .rank { font-weight: 700; color: var(--text); font-variant-numeric: tabular-nums; }
+  .cat { font-weight: 600; }
+  .score {
+    margin-left: auto; font-weight: 700; font-variant-numeric: tabular-nums;
+    color: var(--accent); border: 1px solid currentColor; border-radius: 6px; padding: 0 7px;
+  }
+  h2 { font-size: 19px; line-height: 1.4; margin: 8px 0; letter-spacing: -0.01em; }
+  h2 a { color: inherit; text-decoration: none; }
+  h2 a:hover { text-decoration: underline; }
+  ul { margin: 0 0 12px; padding-left: 20px; }
+  dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; font-size: 15px; }
+  dt { color: var(--sub); white-space: nowrap; }
+  dd { margin: 0; }
+  .src { display: inline-block; margin-top: 12px; font-size: 14px; color: var(--accent); }
+  #empty { color: var(--sub); text-align: center; padding: 48px 0; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>AI 모닝</h1>
+    <select id="date" aria-label="날짜 선택"></select>
+  </header>
+  <p id="meta"></p>
+  <nav id="tabs"></nav>
+  <div id="list"></div>
+  <p id="empty" hidden></p>
+</main>
+<script>
+const CATS = { all: '전체', claude: 'Claude 생태계', tools: '모델·툴', creative: '영상·디자인', research: '논문·연구' };
+const $ = id => document.getElementById(id);
+const el = (tag, cls, text) => {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text != null) e.textContent = text;   // 수집한 웹 텍스트는 절대 innerHTML로 넣지 않는다
+  return e;
+};
+const safeUrl = u => /^https?:\/\//i.test(u || '') ? u : '#';
+let day = { items: [] }, cat = 'all';
+
+function render() {
+  const items = day.items
+    .filter(i => cat === 'all' || i.category === cat)
+    .sort((a, b) => b.score - a.score);
+  const list = $('list');
+  list.replaceChildren();
+  $('empty').hidden = items.length > 0;
+  $('empty').textContent = '이 분야는 오늘 소식이 없습니다.';
+  items.forEach((it, n) => {
+    const a = el('article');
+    const top = el('div', 'top');
+    top.append(el('span', 'rank', String(n + 1).padStart(2, '0')));
+    const c = el('span', 'cat', CATS[it.category] || it.category);
+    c.style.color = `var(--${it.category})`;
+    top.append(c);
+    if (it.buzz) top.append(el('span', '', '· ' + it.buzz));
+    const s = el('span', 'score', it.score);
+    s.title = '유용성 점수 (화제성 + 내 작업 적합도)';
+    top.append(s);
+    const h = el('h2');
+    const link = el('a', '', it.title);
+    link.href = safeUrl(it.url); link.target = '_blank'; link.rel = 'noopener';
+    h.append(link);
+    const ul = el('ul');
+    (it.summary || []).forEach(line => ul.append(el('li', '', line)));
+    const dl = el('dl');
+    if (it.why) dl.append(el('dt', '', '왜 유용'), el('dd', '', it.why));
+    if (it.howto) dl.append(el('dt', '', '쓰는 법'), el('dd', '', it.howto));
+    const src = el('a', 'src', (it.source || '원문') + ' ↗');
+    src.href = safeUrl(it.url); src.target = '_blank'; src.rel = 'noopener';
+    a.append(top, h, ul, dl, src);
+    list.append(a);
+  });
+}
+
+async function load(date) {
+  day = await (await fetch(`data/${date}.json`, { cache: 'no-cache' })).json();
+  $('meta').textContent = `${date} · ${day.items.length}건` + (day.note ? ` · ${day.note}` : '');
+  render();
+}
+
+(async () => {
+  for (const [k, label] of Object.entries(CATS)) {
+    const b = el('button', '', label);
+    b.setAttribute('aria-pressed', k === cat);
+    b.onclick = () => {
+      cat = k;
+      document.querySelectorAll('#tabs button').forEach(x => x.setAttribute('aria-pressed', x === b));
+      render();
+    };
+    $('tabs').append(b);
+  }
+  try {
+    const dates = await (await fetch('data/index.json', { cache: 'no-cache' })).json();
+    dates.forEach(d => $('date').append(new Option(d, d)));
+    $('date').onchange = e => load(e.target.value);
+    await load(dates[0]);
+  } catch (e) {
+    $('empty').hidden = false;
+    $('empty').textContent = '아직 수집된 소식이 없습니다.';
+  }
+})();
+</script>
+</body>
+</html>
