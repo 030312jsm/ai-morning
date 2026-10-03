@@ -1,6 +1,6 @@
 {
   "date": "2026-10-03",
-  "note": "수집 제한 안내: 네트워크 프록시가 대부분의 뉴스 사이트를 차단하고 Firecrawl 크레딧이 소진되어, 원문을 직접 열어 확인한 Anthropic·Claude Code 공식 페이지 3건만 실었습니다. tools/creative/research 분야는 검증 가능한 원문을 확보하지 못해 생략했습니다.",
+  "note": "Claude Code Mods(보안 주의: 샌드박스 밖에서 실행)와 Sonnet 5.5가 가장 실용적이고, AE AI Assistant가 영상 작업에 가장 직접적이다.",
   "items": [
     {
       "title": "Claude Sonnet 5.5 출시 — 30% 빨라지고 토큰 덜 쓴다",
@@ -46,6 +46,186 @@
       "howto": "개인 신청은 불가하며 소속 조직이 Anthropic 계정 담당자 또는 파트너 매니저를 통해 지명한다. 자세한 내용은 원문을 참고한다.",
       "url": "https://www.anthropic.com/news/claude-frontier-academy",
       "source": "Anthropic"
+    },
+    {
+      "title": "GPT-6.1 Sol 출시 — 입력 $2·출력 $10/M 토큰, 코딩·컴퓨터 사용 강화",
+      "category": "tools",
+      "score": 85,
+      "buzz": "DevDay 발표 · 검색 확인",
+      "summary": [
+        "OpenAI가 9월 29일 DevDay에서 GPT-6 Sol의 업그레이드인 GPT-6.1 Sol을 공개했다.",
+        "코딩과 컴퓨터 사용 성능이 오르고 표준 토큰 가격은 Astra의 5분의 1 수준이며, 캐시 입력은 $0.20에서 $0.10/M으로 내렸다.",
+        "ChatGPT Work와 Codex(Plus·Pro·Business·Enterprise·Edu)에서 쓸 수 있고, 일반 Chat에서는 아직 제공되지 않는다."
+      ],
+      "why": "Codex로 PyQt 툴이나 웹앱을 만들 때 Claude Code와 비용·성능을 비교해볼 만한 저가 코딩 모델이다.",
+      "howto": "원문 참고 (Codex 또는 API에서 모델 선택).",
+      "url": "https://developers.openai.com/api/docs/pricing",
+      "source": "OpenAI"
+    },
+    {
+      "title": "Codex 클라우드 환경 — 노트북을 닫아도 계속 일하는 원격 작업",
+      "category": "tools",
+      "score": 78,
+      "buzz": "DevDay · TechCrunch · 검색 확인",
+      "summary": [
+        "OpenAI가 Codex용 재사용 가능한 클라우드 개발 환경을 공개했다.",
+        "환경을 설명하면 Codex가 준비·테스트한 뒤 게시하고, 새 작업은 격리된 작업공간에서 시작해 웹·모바일·데스크톱에서 이어갈 수 있다.",
+        "Codex CLI에는 음성 입력과 여러 작업을 위임·감시하는 /agents 화면도 추가됐다."
+      ],
+      "why": "게임·웹앱 작업을 폰에서 맡겨두는 식의 워크플로를 Claude Code 웹 세션과 비교해볼 수 있다.",
+      "howto": "원문 참고.",
+      "url": "https://techcrunch.com/2026/09/29/openai-gives-codex-reusable-cloud-environments-that-work-across-devices/",
+      "source": "TechCrunch"
+    },
+    {
+      "title": "Gemini 4 Argon 공개 — 사이버 방어팀 한정 우선 제공",
+      "category": "tools",
+      "score": 72,
+      "buzz": "HN 1641점 · 검색 확인 · 검색 확인",
+      "summary": [
+        "Google이 9월 30일 2월 이후 첫 플래그십 Gemini 4 Argon을 발표했다.",
+        "장기 코딩·금융·법률·영상 이해 벤치마크에서 선두라고 하며, 소프트웨어 취약점을 자율적으로 찾아 검증·패치하도록 훈련됐다.",
+        "현재는 Fairwind 프로그램의 사이버 방어 담당자와 내부 팀에만 열려 있고 일반 공개일은 미정이다. 도입가는 $2/$10, 이후 $4/$20."
+      ],
+      "why": "당장 쓸 수는 없지만 Claude·GPT와 경쟁하는 코딩 모델의 다음 기준선이라 가격과 공개 시점을 지켜볼 만하다.",
+      "howto": "원문 참고 (일반 접근은 아직 불가).",
+      "url": "https://techcrunch.com/2026/09/30/google-releases-gemini-4-argon-called-its-most-powerful-model-yet/",
+      "source": "TechCrunch"
+    },
+    {
+      "title": "OpenAI 'Dots' — 목표를 알아서 수행하는 상시 가동 에이전트",
+      "category": "tools",
+      "score": 60,
+      "buzz": "DevDay · GitHub 오픈소스 대안 다수 · 검색 확인",
+      "summary": [
+        "OpenAI가 9월 29일 Astra 모델 기반의 상시 가동 개인 에이전트 Dots를 공개했다.",
+        "앱을 쓰고 클라우드 컴퓨터에서 작업하며 민감한 작업은 사용자 승인을 받는다. ChatGPT Pro 또는 Business Premium이 필요하다.",
+        "커뮤니티에서 OpenDots 등 오픈소스 대안이 바로 쏟아졌다."
+      ],
+      "why": "에이전트가 24시간 돌아가는 구조를 파악해 두면 자체 툴이나 봇을 설계할 때 참고가 된다.",
+      "howto": "원문 참고.",
+      "url": "https://www.axios.com/2026/09/29/openai-dev-day-2026-dots-space-sol",
+      "source": "Axios"
+    },
+    {
+      "title": "Qwen3.8-27B — Apache 2.0, 로컬에서 돌리는 27B 멀티모달",
+      "category": "tools",
+      "score": 66,
+      "buzz": "HF 주간 트렌딩 1위 · 검색 확인 · 검색 확인",
+      "summary": [
+        "Alibaba Qwen팀의 27B 오픈웨이트 멀티모달 모델이다(8월 14일 공개). 이번 주 Hugging Face 트렌딩 최상위에 올랐다.",
+        "이미지·영상 입력, 설정 가능한 추론, 262K 컨텍스트(최대 1M)를 지원한다.",
+        "과하게 오래 생각하는 경향이 있다는 평가가 있다."
+      ],
+      "why": "게임이나 툴에 로컬 LLM을 붙이거나 API 비용 없이 실험하고 싶을 때 쓸 만한 후보다.",
+      "howto": "원문 참고 (Hugging Face에서 가중치 또는 GGUF 양자화본 다운로드).",
+      "url": "https://simonwillison.net/2026/Aug/16/qwen-38-27b/",
+      "source": "Simon Willison"
+    },
+    {
+      "title": "After Effects AI Assistant 퍼블릭 베타 — 자연어로 프로젝트 정리·익스프레션 작성",
+      "category": "creative",
+      "score": 86,
+      "buzz": "IBC 2026 발표 · Adobe 블로그 · 검색 확인",
+      "summary": [
+        "Adobe가 After Effects의 AI Assistant를 퍼블릭 베타로 공개했다.",
+        "열려 있는 컴프만이 아니라 프로젝트 전체를 읽어 파일 정리, 익스프레션 작성, 깨진 리그 수리를 자연어로 수행한다.",
+        "베타 빌드를 쓰는 사람만 사용할 수 있다."
+      ],
+      "why": "모션그래픽 작업에서 익스프레션을 코드 없이 만들고 남이 만든 지저분한 프로젝트를 정리하는 데 바로 쓸 수 있다.",
+      "howto": "After Effects 베타 빌드(7 이상)로 업데이트하고 재시작한 뒤 Window > Assistant 로 패널을 연다.",
+      "url": "https://blog.adobe.com/en/publish/2026/09/08/generate-create-directly-in-your-timeline-with-new-ai-powered-innovations-in-premiere-after-effects",
+      "source": "Adobe"
+    },
+    {
+      "title": "LTX-2.5 — 22B 오픈웨이트 영상·오디오 생성, 네이티브 4K",
+      "category": "creative",
+      "score": 72,
+      "buzz": "HF 영상 생성 트렌딩 · 검색 확인 · 검색 확인",
+      "summary": [
+        "LTX의 22B 오픈웨이트 월드 모델로 텍스트·이미지·영상에서 소리가 동기화된 영상을 만든다.",
+        "720p에서 네이티브 4K, 6~20초 길이를 지원하고 ComfyUI·Diffusers와 연동된다.",
+        "LTX-2.x Community License라 OSI 기준 오픈소스는 아니고, 로컬 실행은 VRAM 16GB부터다."
+      ],
+      "why": "영상 과제용 소스 클립이나 이미지-투-비디오를 로컬에서 비용 없이 만들 수 있다.",
+      "howto": "Hugging Face의 Lightricks/LTX-2.5 가중치를 받아 ComfyUI에서 사용한다.",
+      "url": "https://huggingface.co/Lightricks/LTX-2.5",
+      "source": "Hugging Face"
+    },
+    {
+      "title": "VoiceStudio — 646개 언어를 지원하는 로컬 ElevenLabs 대안",
+      "category": "creative",
+      "score": 68,
+      "buzz": "GitHub 트렌딩 +3,483 스타 · 검색 확인",
+      "summary": [
+        "보이스 클로닝, 영상 더빙, 받아쓰기, 오디오북 제작을 전부 로컬에서 하는 오픈소스 앱이다.",
+        "3초 샘플로 목소리를 복제하고 TTS 엔진 16종, ASR 엔진 11종을 담았으며 Windows·macOS·Linux·Docker를 지원한다.",
+        "AGPL-3.0 라이선스이고 언어별 품질 차이가 크다."
+      ],
+      "why": "영상 작업의 내레이션·더빙과 게임 음성 제작을 구독료 없이 처리할 수 있다.",
+      "howto": "GitHub 저장소 Dawcraft/VoiceStudio의 README 설치 안내를 따른다.",
+      "url": "https://github.com/Dawcraft/VoiceStudio",
+      "source": "GitHub"
+    },
+    {
+      "title": "Claude Opus 5.5 출시 — Opus 5 대비 40% 저렴, 1M 컨텍스트",
+      "category": "claude",
+      "score": 70,
+      "buzz": "SiliconANGLE 외 다수 · 검색 확인",
+      "summary": [
+        "Anthropic이 9월 22일 Claude 5.5 계열 첫 모델 Opus 5.5를 냈다.",
+        "대부분의 작업에서 Fable 5.1급 성능이며 가격은 입력 $4·출력 $20/M이다. 컨텍스트 1M, 최대 출력 128K, 사고 항상 켜짐.",
+        "API 모델 ID는 claude-opus-5-5이고 AWS·Google Cloud·Azure에서도 쓸 수 있다."
+      ],
+      "why": "Claude Code에서 어려운 설계나 큰 리팩터링을 맡길 때 쓰는 모델이 더 저렴해졌다.",
+      "howto": "API에서 claude-opus-5-5를 지정하거나 Claude Code의 /model 로 선택한다.",
+      "url": "https://siliconangle.com/2026/09/22/anthropic-releases-claude-opus-5-5-and-openai-counters-with-two-cheaper-gpt-6-models/",
+      "source": "SiliconANGLE"
+    },
+    {
+      "title": "openrig — Claude Code와 Codex를 한 팀으로 돌리는 멀티에이전트 하네스",
+      "category": "claude",
+      "score": 62,
+      "buzz": "GitHub 트렌딩 +624 스타 · 검색 확인",
+      "summary": [
+        "Claude Code와 Codex 에이전트 팀을 YAML(RigSpec)로 정의하고 명령 한 번으로 띄우는 도구다.",
+        "로컬 데몬, CLI, 터미널 UI, MCP 서버로 구성되며 tmux 위에서 돌고 에이전트끼리 메시지·방송·채팅방으로 소통한다.",
+        "Node.js 20·22·24와 tmux가 필요하고 macOS·Linux만 지원한다."
+      ],
+      "why": "큰 게임·웹앱 프로젝트에서 역할별 에이전트를 병렬로 돌려 보고 싶을 때 참고가 된다. 단 Windows 네이티브는 불가(WSL 필요).",
+      "howto": "GitHub 저장소 README의 설치·rig 명령 안내를 따른다.",
+      "url": "https://github.com/zichen0116/openrig",
+      "source": "GitHub"
+    },
+    {
+      "title": "Claude가 CRISPR 유사 효소 시스템 발견 — 에이전트 950개가 21시간 탐색",
+      "category": "research",
+      "score": 55,
+      "buzz": "Anthropic · 다수 매체 · 검색 확인",
+      "summary": [
+        "Anthropic이 Claude가 박테리오파지 DNA에서 CRISPR와 비슷한 반복 서열을 가진 미지의 효소 시스템(ART)을 찾았다고 발표했다.",
+        "에이전트 약 950개가 21시간 동안 약 2.1억 토큰을 써서 20만 개 이상의 역전사효소를 훑고 후보 20개로 좁혔다.",
+        "프리프린트 단계이며 기능은 아직 밝혀지지 않았다."
+      ],
+      "why": "대규모 에이전트 병렬 탐색이 실제로 어떻게 설계되는지 보여주는 사례다.",
+      "howto": "원문 참고.",
+      "url": "https://thenextweb.com/news/anthropic-claude-enzyme-system-crispr-like-repeats",
+      "source": "The Next Web"
+    },
+    {
+      "title": "Anthropic, '클로드가 차세대 클로드 개발을 돕고 있다' 발표",
+      "category": "research",
+      "score": 45,
+      "buzz": "Washington Times · US News · 검색 확인",
+      "summary": [
+        "Anthropic이 Claude가 자기 다음 버전 개발에 쓰이고 있다고 9월 17일 밝혔다.",
+        "보도에 따르면 AI 연구 개발 자동화가 실제 개발 파이프라인에 들어왔다는 의미다.",
+        "세부 수치는 원문에서 확인해야 한다."
+      ],
+      "why": "에이전트형 코딩이 어디까지 가는지 가늠하는 동향 자료로 읽을 만하다.",
+      "howto": "원문 참고.",
+      "url": "https://www.washingtontimes.com/news/2026/sep/17/anthropic-says-claude-helping-build-next-version/",
+      "source": "Washington Times"
     }
   ]
 }
