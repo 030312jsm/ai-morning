@@ -1,0 +1,166 @@
+{
+  "date": "2026-10-05",
+  "note": "오늘은 Claude Code mod 생태계(flightdeck·agentpane·cache-tax)와 에이전트 하네스·결정 모델 소식이 중심. 7일 이내 날짜를 확인한 영상·디자인 소식은 찾지 못해 creative 분야는 비웠다.",
+  "items": [
+    {
+      "title": "Claude Code 2.1.289 — 팀원 에이전트 agent.spawn, 권한 규칙·플러그인 버그 33건 수정",
+      "category": "claude",
+      "score": 84,
+      "published": "2026-10-03",
+      "buzz": "GitHub 릴리스",
+      "summary": [
+        "10월 3일 공개된 2.1.289는 mod 지원이 들어간 2.1.287/288 뒤를 잇는 안정화 릴리스다.",
+        "teammate 에이전트가 agent.spawn으로 에이전트를 만들 수 있고, 플러그인 훅 이벤트 전반에서 에이전트 ID가 하나로 통일됐다.",
+        "symlink로 접근한 파일에 Read deny 규칙이 적용되지 않던 문제, 환경변수 접두사가 붙은 Bash 명령이 deny/ask 규칙을 피하던 문제 등 권한 관련 수정이 포함됐다."
+      ],
+      "why": "mod와 플러그인을 쓰기 시작한 직후라 업데이트 후 로딩·핫리로드 버그가 사라지는 것이 바로 체감된다.",
+      "howto": "`claude update` 로 업데이트하거나 Homebrew는 `brew upgrade claude-code`, WinGet은 `winget upgrade Anthropic.ClaudeCode`.",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.289",
+      "source": "GitHub anthropics/claude-code"
+    },
+    {
+      "title": "claude-flightdeck — 터미널에 에이전트 대시보드를 띄우는 Claude Code mod",
+      "category": "skills",
+      "score": 82,
+      "published": "2026-10-02",
+      "buzz": "GitHub 5★",
+      "summary": [
+        "컨텍스트 사용량·비용·레이트 리밋, advisor 타임라인, 모든 권한 검사를 한 화면에 보여주는 mod다.",
+        "서브에이전트를 카드 또는 스윔레인 타임라인으로 펼쳐 보여주고 턴별 소요 시간·수정 횟수·비용 영수증을 낸다.",
+        "Claude Code 2.1.287 이상이 필요하다. 네트워크 요청이나 파일 쓰기는 하지 않는다고 README에 적혀 있다."
+      ],
+      "why": "서브에이전트를 여럿 돌릴 때 누가 무엇을 하고 얼마나 쓰는지 한눈에 볼 수 있다.",
+      "howto": "`/plugin marketplace add scasella/claude-flightdeck` 후 `/plugin install flightdeck@claude-flightdeck`.",
+      "url": "https://github.com/scasella/claude-flightdeck",
+      "source": "GitHub scasella/claude-flightdeck"
+    },
+    {
+      "title": "Headroom — 도구 출력·로그를 모델에 넘기기 전에 압축해 토큰을 줄이는 MCP/프록시",
+      "category": "skills",
+      "score": 81,
+      "published": "2026-10-03",
+      "buzz": "GitHub 74.4k★ · 검색 확인",
+      "summary": [
+        "툴 출력, 로그, 파일, RAG 청크를 LLM에 도달하기 전에 압축한다. JSON은 60~95%, 코딩 에이전트 프롬프트는 약 20% 줄인다고 한다.",
+        "Python/TypeScript 라이브러리, 로컬 프록시, MCP 서버(headroom_compress·retrieve·stats)로 쓸 수 있고 데이터는 로컬에 남는다.",
+        "10월 3일자 에이전트 도구 요약에서 주요 스킬/MCP로 소개됐다. 최신 태그는 v0.39.1(9월 26일)."
+      ],
+      "why": "긴 세션에서 컨텍스트가 빨리 차는 문제를 설정 변경 없이 완화할 수 있다.",
+      "howto": "`pip install \"headroom-ai[all]\"` (npm은 `npm install headroom-ai`). 에이전트에 붙이는 방법은 README 참고.",
+      "url": "https://github.com/headroomlabs-ai/headroom",
+      "source": "GitHub headroomlabs-ai/headroom"
+    },
+    {
+      "title": "cache-tax — 쉬는 동안 프롬프트 캐시를 유지하고 콜드 전송 비용을 미리 알려주는 mod",
+      "category": "skills",
+      "score": 80,
+      "published": "2026-10-04",
+      "buzz": "GitHub 40★ · 10/4 업데이트",
+      "summary": [
+        "`/keepwarm 90m` 으로 휴식 중 주기적으로 핑을 보내 프롬프트 캐시가 만료되지 않게 한다.",
+        "캐시가 만료된 상태에서 보내면 재작성 비용 추정치를 보여주고 한 번 막아준다.",
+        "README 예시에서 33만 토큰 세션의 추정 $6.61 대 실제 캐시 쓰기 $6.28이었다. 1시간 캐시 TTL과 2.1.287 이상이 필요하다."
+      ],
+      "why": "긴 세션을 자리 비웠다 돌아올 때 의도치 않게 나가는 큰 캐시 재작성 비용을 줄여준다.",
+      "howto": "`claude plugin marketplace add karanb192/claude-code-mods` 후 `claude plugin install cache-tax@claude-code-mods`.",
+      "url": "https://github.com/karanb192/cache-tax",
+      "source": "GitHub karanb192/cache-tax"
+    },
+    {
+      "title": "claude-agentpane — 서브에이전트별 작업·토큰·대화를 옆 패널로 보는 mod",
+      "category": "skills",
+      "score": 78,
+      "published": "2026-10-03",
+      "buzz": "GitHub · 10/3~4 사이 1.0→1.1.4 연속 릴리스",
+      "summary": [
+        "세션이 띄운 서브에이전트가 각각 무엇을 하는지, 토큰을 얼마나 쓰는지 사이드 패널에 보여준다.",
+        "각 에이전트의 대화를 클릭 한 번으로 열 수 있다.",
+        "10월 3일 1.1.0에서 타임라인과 상태줄이 추가됐고 4일 1.1.4에서 데스크톱 앱 소음을 줄였다."
+      ],
+      "why": "서브에이전트에게 작업을 나눠 맡길 때 어디서 막혔는지 바로 확인할 수 있다.",
+      "howto": "설치 방법은 저장소 README 참고(Claude Code mod이므로 `/plugin` 으로 설치).",
+      "url": "https://github.com/xuanji86/claude-agentpane",
+      "source": "GitHub xuanji86/claude-agentpane"
+    },
+    {
+      "title": "Pi 1.0 — Earendil의 최소 코딩 에이전트 정식판과 장기 실행용 Pi Durable",
+      "category": "tools",
+      "score": 72,
+      "published": "2026-10-01",
+      "buzz": "HN 상위 · 검색 확인",
+      "summary": [
+        "작고 확장 가능한 터미널 에이전트 하네스 Pi가 1.0이 됐고 주요 모델 제공사를 모두 지원한다.",
+        "함께 공개된 실험 패키지 Pi Durable은 모든 모델·툴 호출을 체크포인트해 충돌 후 재개할 수 있고 여러 클라이언트가 한 대화를 지켜보고 조종할 수 있다.",
+        "두 가지 모두 MIT 라이선스다."
+      ],
+      "why": "Claude Code 외의 가벼운 에이전트 하네스를 참고하거나 장기 실행 에이전트를 만들 때 구조 참고가 된다.",
+      "howto": "설치 명령은 원문 참고.",
+      "url": "https://earendil.com/posts/pi-durable/",
+      "source": "Earendil"
+    },
+    {
+      "title": "결정 모델 쏟아져 — Cloudflare Clef(27B·9B)와 Amazon Strands Decider 2B 공개",
+      "category": "tools",
+      "score": 71,
+      "published": "2026-10-01",
+      "buzz": "TechCrunch·MarkTechPost 등 · 검색 확인",
+      "summary": [
+        "Cloudflare가 Apache 2.0 오픈웨이트 결정 모델 Clef(27B)와 Clef-flash(9B)를 냈다. 텍스트를 생성하지 않고 고정된 선택지에 보정된 확률을 한 번에 돌려준다.",
+        "Amazon Strands Labs의 Strands Decider 2B(Apache 2.0)도 같은 날 나왔고 RTX 3090에서 중앙값 약 106ms로 답한다.",
+        "TechCrunch는 일주일 사이 세 번째 유사 모델이라고 보도했다."
+      ],
+      "why": "에이전트의 분기·라우팅 판단을 작은 로컬 모델에 맡겨 비용과 지연을 줄이는 구조를 시험해 볼 수 있다.",
+      "howto": "Hugging Face의 가중치를 받아 쓰거나 Cloudflare Workers AI에서 호스팅 버전 사용. 세부 명령은 원문 참고.",
+      "url": "https://developers.cloudflare.com/changelog/post/2026-10-01-clef-workers-ai/",
+      "source": "Cloudflare Changelog"
+    },
+    {
+      "title": "OpenDots — OpenAI Dots의 오픈소스·자체 호스팅 대안",
+      "category": "tools",
+      "score": 70,
+      "published": "2026-09-29",
+      "buzz": "GitHub 3.2k★ · 검색 확인",
+      "summary": [
+        "CopilotKit이 공개한 MIT 템플릿으로, 각 Dot이 역할·권한·자기만의 컴퓨터(브라우저·파일·셸)를 갖는 상시 가동 에이전트다.",
+        "텍스트, 통화, Slack에서 동작하고 저장 전 승인 절차를 둔다. 어떤 AG-UI 에이전트와 OpenAI 호환 모델도 연결된다.",
+        "알파 단계이며 호스팅 제품이 아니라 직접 구축하는 템플릿이다."
+      ],
+      "why": "상시 가동 에이전트를 직접 만들어 볼 출발점으로 쓸 수 있다.",
+      "howto": "`git clone https://github.com/CopilotKit/OpenDots.git && cd OpenDots && npm ci && cp .env.example .env && npm run dev` (Node 24 필요).",
+      "url": "https://github.com/CopilotKit/OpenDots",
+      "source": "GitHub CopilotKit/OpenDots"
+    },
+    {
+      "title": "DeepSeek Harness v0.2 — macOS·Windows 데스크톱 앱 공개",
+      "category": "tools",
+      "score": 68,
+      "published": "2026-09-29",
+      "buzz": "검색 확인",
+      "summary": [
+        "DeepSeek이 오픈소스 로컬 런타임 Harness의 v0.2 프리뷰를 내고 macOS·Windows용 데스크톱 앱을 냈다.",
+        "Node 런타임 내장, 앱 안 플러그인 관리, 예약 작업 자동화, 파일·코드 미리보기, 세션 웹 검색이 추가됐다.",
+        "MIT 라이선스이지만 DeepSeek 계정이나 API 키가 필요하다."
+      ],
+      "why": "Windows용 .exe 설치형이라 Claude Code 외의 코딩 에이전트를 비교해 볼 수 있다.",
+      "howto": "공식 페이지에서 Windows .exe 설치, Linux는 npm 패키지 `@deepseek-ai/dsh`.",
+      "url": "https://www.deepseek.com/en/harness/",
+      "source": "DeepSeek"
+    },
+    {
+      "title": "AutoCompact — 코딩 에이전트가 컨텍스트를 언제 압축할지 학습",
+      "category": "research",
+      "score": 66,
+      "published": "2026-10-01",
+      "buzz": "arXiv 2610.02163 · 검색 확인",
+      "summary": [
+        "장기 코딩 작업에서 에이전트가 언제 압축하고 무엇을 남기며 어떻게 이어갈지를 정책의 일부로 학습시킨다.",
+        "판정기가 압축 결정을 검토해 잘못된 출력을 고친 궤적으로 SFT 후 강화학습으로 최적화한다.",
+        "SWE-bench Verified에서 +9.2%p, SWE-PolyBench Verified에서 +5.0%p 향상됐다."
+      ],
+      "why": "Claude Code의 자동 컴팩트가 왜 중요한지, 수동 `/compact` 시점을 어떻게 잡을지 감을 준다.",
+      "howto": "원문 참고.",
+      "url": "https://arxiv.org/abs/2610.02163",
+      "source": "arXiv"
+    }
+  ]
+}
