@@ -1,0 +1,166 @@
+{
+  "date": "2026-10-06",
+  "note": "오늘은 확인된 신규 소식이 많지 않아 10건만 싣는다. Claude 분야는 새 공식 발표를 찾지 못해 생략했고, 스킬·플러그인은 3건만 확인됐다.",
+  "items": [
+    {
+      "title": "Pi pod — 코딩 에이전트를 내 서버의 샌드박스에서 돌리고 폰에서도 조작",
+      "category": "tools",
+      "score": 80,
+      "published": "2026-10-05",
+      "buzz": "HN 113점 · GitHub 145★",
+      "summary": [
+        "Pi 코딩 에이전트 세션을 직접 운영하는 서버의 격리된 '파드'에서 실행하고, 터미널이나 iOS/Android 앱으로 붙어 조작하는 오픈소스 도구다.",
+        "제어 서버·샌드박스 서비스·CLI·모바일 앱으로 구성되며 컨테이너와 네트워크·시크릿 격리를 쓴다.",
+        "라이선스는 AGPL-3.0이고, 호스팅 서비스(pipod.dev)는 아직 준비 중이라 지금은 셀프호스팅만 된다. 서버는 Linux 8GB RAM, Docker, Node 22.19+ 필요."
+      ],
+      "why": "집 PC나 서버에 에이전트를 맡겨 두고 밖에서 폰으로 이어 작업하는 구성을 직접 만들어 볼 수 있다.",
+      "howto": "git clone https://github.com/pi-pod/pipod.git && cd pipod && selfhost/upgrade 후 selfhost/add-user you@example.com --owner, 다른 기기에서는 npm install -g @pipod/cli && pipod login --server <서버 URL>.",
+      "url": "https://github.com/pi-pod/pipod",
+      "source": "GitHub"
+    },
+    {
+      "title": "“에이전트에겐 메모리가 아니라 문서가 필요하다” — AGENTS.md 작성의 근거",
+      "category": "skills",
+      "score": 78,
+      "published": "2026-10-04",
+      "buzz": "HN 350점 · 검색 확인",
+      "summary": [
+        "메모리 플러그인이 대화 기록을 잘라 RAG에 넣고 비슷한 조각 5개를 프롬프트에 끼우는 방식이 엉뚱한 해법이라고 주장하는 에세이다.",
+        "대안은 지침·스펙·결정 기록·리서치·색인을 폴더에 구조화해 두고 에이전트가 '프롬프트→문서 참조→작업→문서 갱신' 순환으로 쓰게 하는 것이다.",
+        "반론도 있다(Mario Zechner는 코드에서는 문서도 메모리도 비효율적이며 모듈을 작게 쪼개고 간단한 지도만 두라고 주장). 원문은 이 환경에서 열리지 않아 검색 결과 요약 기준이다."
+      ],
+      "why": "Claude Code 프로젝트마다 CLAUDE.md와 docs 폴더를 어떻게 쌓아야 세션이 바뀌어도 맥락이 유지되는지 방향을 잡아 준다.",
+      "howto": "프로젝트에 docs/ 폴더(스펙·결정 기록·색인)를 만들고 CLAUDE.md에서 먼저 읽게 지시한 뒤, 작업 끝에 문서를 갱신하도록 규칙으로 적는다. 자세한 방식은 원문 참고.",
+      "url": "https://liao.gg/blog/agents-dont-need-memory",
+      "source": "liao.gg (Hacker News)"
+    },
+    {
+      "title": "claude-kit — 작업 계획·위임 스킬(savvy-flow)과 진행률 UI 모드(savvy-progress)",
+      "category": "skills",
+      "score": 74,
+      "published": "2026-10-05",
+      "buzz": "GitHub 49★",
+      "summary": [
+        "한 개발자가 자신의 Claude Code 스킬과 Mods를 한 저장소에 모아 공개했다. 각 항목이 독립 플러그인이라 필요한 것만 설치할 수 있다.",
+        "savvy-flow는 작업 계획과 위임용 스킬, savvy-progress는 진행 상황을 보여주는 UI 모드다.",
+        "MIT 라이선스. 커밋이 적은 초기 저장소라 안정성은 직접 써 보며 확인해야 한다."
+      ],
+      "why": "Claude Code 2.1.287에서 생긴 Mods를 실제 플러그인 예제로 보며 내 것을 만들 때 참고할 수 있다.",
+      "howto": "/plugin marketplace add johnnyvizz/claude-kit 후 /plugin install savvy-flow@claude-kit, /plugin install savvy-progress@claude-kit.",
+      "url": "https://github.com/JohnnyVizz/claude-kit",
+      "source": "GitHub"
+    },
+    {
+      "title": "vibestart — AI 코딩 에이전트용 풀스택 TypeScript 프로젝트 생성기",
+      "category": "skills",
+      "score": 66,
+      "published": "2026-10-05",
+      "buzz": "GitHub 40★",
+      "summary": [
+        "React SPA·TanStack Start·Next.js, Hono 백엔드, PostgreSQL/SQLite, shadcn+Tailwind 4, Docker 배포 조합으로 검증된 프로젝트 뼈대를 만들어 준다.",
+        "타입 검사·린트·테스트가 미리 설정되고 에이전트가 읽기 쉬운 AGENTS.md 구조를 포함한다.",
+        "TypeScript 웹앱 전용이라 PyQt나 Godot 프로젝트에는 쓸 수 없다. MIT 라이선스."
+      ],
+      "why": "웹앱을 Claude Code로 만들 때 설정 시간을 줄이고 에이전트가 잘 따라가는 구조로 시작할 수 있다.",
+      "howto": "npx vibestart-cli my-app, 에이전트용 스킬은 npx skills add VinkyDev/vibestart --skill vibestart.",
+      "url": "https://github.com/VinkyDev/vibestart",
+      "source": "GitHub"
+    },
+    {
+      "title": "MatLoom — 텍스트로 PBR 재질을 '편집 가능한 프로그램'으로 생성",
+      "category": "research",
+      "score": 62,
+      "published": "2026-09-30",
+      "buzz": "arXiv · 블라인드 선호 59.2%",
+      "summary": [
+        "알파 마스크 레이어를 쌓는 압축 언어로 재질 프로그램을 만들고, 인터프리터가 basecolor·roughness·height 등 맵으로 변환한다.",
+        "생성된 프로그램은 중앙값 21줄이라 이름 붙은 필드와 파라미터를 사람이 수정할 수 있다. 30명 블라인드 비교에서 59.2%가 선택했고 최고 기준선은 19.3%였다.",
+        "코드는 MIT이며 파인튜닝 없이 사전학습 LLM을 쓴다. 렌더링에 Blender Cycles와 Python 3.13 conda 환경이 필요하다."
+      ],
+      "why": "게임용 재질을 이미지가 아니라 수정 가능한 코드로 뽑아 Godot·Blender 작업에 이어 붙이는 흐름의 연구 사례다.",
+      "howto": "저장소를 받아 conda 환경을 만든 뒤 matloom-text2dsl로 프롬프트에서 프로그램을 만들고 matloom-export로 재질 맵 13종, matloom-render로 Blender 렌더. 자세한 절차는 원문 참고.",
+      "url": "https://arxiv.org/abs/2609.40322",
+      "source": "arXiv"
+    },
+    {
+      "title": "Google Cloud API Gateway, REST API를 설정만으로 MCP 도구로 노출 (공개 프리뷰)",
+      "category": "tools",
+      "score": 60,
+      "published": "2026-10-05",
+      "buzz": "Google Developers Blog · 검색 확인",
+      "summary": [
+        "이미 배포한 OpenAPI 3.x 명세에 x-google-api-management.mcp 어노테이션을 추가하면 REST 엔드포인트가 에이전트용 MCP 도구가 된다.",
+        "게이트웨이가 MCP JSON-RPC 요청을 REST 호출로 변환하고 기존 인증·쿼터·로깅 정책을 그대로 적용한다.",
+        "프로덕션에서는 tools-list에 JWT가 필요하며 API 키로는 보호할 수 없다. 공개 프리뷰 단계."
+      ],
+      "why": "내 웹앱 백엔드를 별도 MCP 서버 없이 Claude Code가 호출하는 도구로 열고 싶을 때 참고할 수 있다.",
+      "howto": "원문 참고(OpenAPI 명세의 x-google-api-management.mcp 어노테이션 추가 후 배포).",
+      "url": "https://developers.googleblog.com/turn-your-rest-apis-into-mcp-tools-with-google-cloud-api-gateway/",
+      "source": "Google Developers Blog"
+    },
+    {
+      "title": "SCM — 사진과 영상의 모든 프레임을 로컬 AI로 검색하는 macOS 앱",
+      "category": "creative",
+      "score": 58,
+      "published": "2026-10-05",
+      "buzz": "HN 139점 · GitHub 366★",
+      "summary": [
+        "폴더 안의 사진과 영상을 장면, OCR 텍스트, Whisper 대사 전사, 로컬 LLM 대화 등 5가지 모드로 검색한다.",
+        "계정·클라우드 업로드 없이 동작하며 첫 실행 때 기본 CLIP 모델(약 435MB)만 내려받는다.",
+        "macOS 12+ 전용(Apple Silicon 권장)이라 Windows에서는 쓸 수 없다. MIT 라이선스."
+      ],
+      "why": "쌓아 둔 촬영 소스와 영상 작업물에서 원하는 장면을 말로 찾는 방식을 맥 환경이 있다면 바로 시험할 수 있다.",
+      "howto": "brew tap allenv0/scm && brew install --cask allenv0/scm/scm.",
+      "url": "https://github.com/allenv0/SCM",
+      "source": "GitHub"
+    },
+    {
+      "title": "Strata — 125B MoE 모델 Qwen3.8-Flash-Next를 12GB GPU 게이밍 PC에서 구동",
+      "category": "tools",
+      "score": 57,
+      "published": "2026-10-05",
+      "buzz": "HN 프론트페이지 · 검색 확인",
+      "summary": [
+        "NVIDIA RTX 20~50 시리즈 12GB 이상 VRAM과 충분한 RAM, 디스크 약 80GB가 있으면 60~95 tok/s로 돈다고 소개된다.",
+        "로컬호스트에 OpenAI·Anthropic 호환 API를 열어 주고 Windows·Linux 원클릭 설치를 지원한다.",
+        "같은 이름·설명의 저장소가 여러 계정에 복제돼 있어 원본 확인이 어렵다. 원클릭 설치 파일을 실행하기 전에 출처를 꼭 검증해야 한다."
+      ],
+      "why": "API 비용 없이 로컬 모델에 Claude Code 같은 도구를 붙여 보려는 게이밍 PC 사용자에게 시험해 볼 만하다.",
+      "howto": "원문 참고(설치 전 저장소 출처와 코드를 먼저 확인).",
+      "url": "https://www.explainx.ai/blog/strata-qwen3-8-flash-next-125b-consumer-gpu-100-tokens-per-second-2026",
+      "source": "explainx.ai"
+    },
+    {
+      "title": "PROWBench — 영상 생성 모델이 프로그램이 지정한 사건을 그대로 그리는지 평가",
+      "category": "research",
+      "score": 55,
+      "published": "2026-10-01",
+      "buzz": "arXiv · GitHub 31★",
+      "summary": [
+        "게임 엔진처럼 프로그램이 규칙을 정하고 영상 모델이 화면을 그리는 '프로그래머블 월드 모델'의 시각적 충실도를 재는 벤치마크다.",
+        "170개 에피소드와 600개 프록시 영상으로 엔티티 제어, 장기 기억, 논리-렌더 일치도(LRA), 상호작용 성공률을 본다.",
+        "데이터와 평가 코드는 저장소에 '공개 예정' 상태다."
+      ],
+      "why": "영상 모델을 게임 엔진 대용으로 쓰려는 흐름에서 어떤 점이 아직 약한지 가늠하는 지표가 된다.",
+      "howto": "원문 참고(평가 코드 공개 예정).",
+      "url": "https://arxiv.org/abs/2610.02205",
+      "source": "arXiv"
+    },
+    {
+      "title": "OpenAI Ultrafast — Codex 최대 8배·API 6배 빠른 프리미엄 속도 티어",
+      "category": "tools",
+      "score": 54,
+      "published": "2026-09-29",
+      "buzz": "OpenAI DevDay · 검색 확인",
+      "summary": [
+        "GPT-6 Astra를 Codex, ChatGPT Work, API에서 최대 300 tok/s로 생성하는 속도 티어로 DevDay에서 발표됐다.",
+        "Codex에서 쓰려면 월 $500의 새 Pro 500 플랜이 필요하고 사용량은 Plus의 25배다.",
+        "API는 입력 약 $60, 출력 약 $300 per 1M 토큰으로 일반 요금의 약 6배다."
+      ],
+      "why": "1인 개발자가 쓰기에는 비싸지만 Codex 속도·요금 경쟁이 Claude Code 선택에 미칠 영향을 파악하는 데 도움이 된다.",
+      "howto": "Pro 500 플랜 가입 후 Codex에서 Ultrafast 선택. 자세한 설정은 원문 참고.",
+      "url": "https://x.com/OpenAI/status/2104993966043320759",
+      "source": "OpenAI (X)"
+    }
+  ]
+}
