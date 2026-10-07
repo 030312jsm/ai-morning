@@ -1,0 +1,134 @@
+{
+  "date": "2026-10-08",
+  "note": "최근 7일 내 확인된 소식만 실어 8건입니다. creative·research 분야는 날짜와 사실을 확인할 수 있는 새 소식이 없어 생략했습니다.",
+  "items": [
+    {
+      "title": "Claude Haiku 5.5 출시 — 가장 싸고 빠른 소형 모델, 서브에이전트용",
+      "category": "claude",
+      "score": 93,
+      "published": "2026-10-07",
+      "buzz": "Anthropic 공식 발표 · Claude Code 기본 Haiku로 교체",
+      "summary": [
+        "Anthropic이 Haiku 5.5(claude-haiku-5-5)를 전 플랫폼(API, AWS, Google Cloud, Azure)에 출시했다.",
+        "입력 $0.10 / 출력 $0.50 (100k 토큰 이하), Haiku 4.5 대비 평균 약 75% 저렴하고 Haiku급 최초로 effort 설정을 지원한다. Terminal-Bench 4.0 39.2%, OSWorld 2.1 72.4%.",
+        "복잡한 에이전트 코딩은 Sonnet 5.5·Opus 5.5가 여전히 낫고, Haiku 5.5는 요약·분류·컴팩션·서브에이전트 같은 좁은 작업용이다."
+      ],
+      "why": "Claude Code에서 탐색·요약 같은 가벼운 서브에이전트를 싼 모델로 돌려 사용량과 비용을 줄일 수 있다.",
+      "howto": "Claude Code를 v2.1.293 이상으로 업데이트하면 Haiku 기본값이 5.5로 바뀐다. 서브에이전트 frontmatter에 model: haiku 를 지정하거나 API에서 claude-haiku-5-5 를 쓴다.",
+      "url": "https://www.anthropic.com/claude-haiku-5-5",
+      "source": "Anthropic"
+    },
+    {
+      "title": "Claude Code v2.1.293 — Haiku 5.5 기본 적용, HTTP MCP 메모리 누수 수정",
+      "category": "claude",
+      "score": 85,
+      "published": "2026-10-07",
+      "buzz": "GitHub 릴리스 최신(Latest)",
+      "summary": [
+        "v2.1.293에서 Haiku 기본 모델이 Haiku 5.5로 바뀌고 subagentStatusLine 페이로드에 agentType이 추가됐다.",
+        "HTTP MCP 연결의 메모리 누수, 컴팩션 전 작업을 끝난 것으로 착각하는 문제, ← 로 세션을 백그라운드로 보낼 때 메시지가 사라지는 문제를 고쳤다.",
+        "직전 v2.1.292에는 claude plugin install --marketplace <source>, Agent 도구 effort 파라미터, UNC 경로 읽기와 rm -rf 8.3 단축 경로 우회 같은 보안 수정이 들어갔다."
+      ],
+      "why": "Windows에서 쓰는 사람에게는 UNC 경로·8.3 단축 경로 관련 보안 수정이 직접 해당되고, MCP를 오래 켜 두는 작업에서는 메모리 누수 수정이 도움이 된다.",
+      "howto": "claude update 로 업데이트한다. 마켓플레이스에서 플러그인을 바로 설치하려면 claude plugin install <이름> --marketplace <소스>.",
+      "url": "https://github.com/anthropics/claude-code/releases",
+      "source": "GitHub anthropics/claude-code"
+    },
+    {
+      "title": "cloudflare/security-audit-skill — 6단계 보안 감사를 돌리는 코딩 에이전트 스킬",
+      "category": "skills",
+      "score": 88,
+      "published": "2026-10-07",
+      "buzz": "GitHub 트렌딩 오늘 +617★ (총 26.0k★)",
+      "summary": [
+        "Cloudflare가 낸 스킬로 정찰, 커버리지 기반 탐색, 후보 검증, 구조화 출력, 독립 검증, 리포트의 6단계 감사를 수행한다.",
+        "결과는 기계가 읽을 수 있는 형식이고 각 발견 항목을 독립적으로 다시 검증한다.",
+        "릴리스 태그는 없고 README 기준으로 npx skills 설치를 쓴다."
+      ],
+      "why": "웹앱·게임 서버를 혼자 만들 때 배포 전에 취약점 점검을 에이전트에 맡길 수 있다.",
+      "howto": "npx skills add https://github.com/cloudflare/security-audit-skill --skill security-audit (사용자 전역 설치는 --global 추가)",
+      "url": "https://github.com/cloudflare/security-audit-skill",
+      "source": "GitHub"
+    },
+    {
+      "title": "addyosmani/agent-skills — 정의·계획·구현·검증·배포 전 과정 25개 스킬과 슬래시 커맨드 9개",
+      "category": "skills",
+      "score": 86,
+      "published": "2026-10-07",
+      "buzz": "GitHub 트렌딩 오늘 +693★ (총 102.7k★)",
+      "summary": [
+        "Addy Osmani가 만든 프로덕션급 엔지니어링 스킬 모음으로 개발 수명주기 전체에 품질 게이트를 둔다.",
+        "스킬 25개, 슬래시 커맨드 9개로 이루어져 있고 Claude Code 마켓플레이스로 바로 설치된다.",
+        "범용 개발 워크플로 중심이라 게임 엔진이나 영상 작업에 특화된 내용은 없다."
+      ],
+      "why": "Python/PyQt 툴이나 웹앱을 만들 때 계획→구현→리뷰 흐름을 에이전트에게 일관되게 시킬 수 있다.",
+      "howto": "/plugin marketplace add addyosmani/agent-skills 후 /plugin install agent-skills@addy-agent-skills",
+      "url": "https://github.com/addyosmani/agent-skills",
+      "source": "GitHub"
+    },
+    {
+      "title": "tester-army/e2e — 자연어 목표로 앱을 직접 조작하는 에이전트 E2E 테스트 프레임워크",
+      "category": "skills",
+      "score": 82,
+      "published": "2026-10-07",
+      "buzz": "GitHub 트렌딩 오늘 +1,391★ (총 7.3k★)",
+      "summary": [
+        "웹·모바일 앱에서 목표를 자연어로 적으면 에이전트가 앱을 조작해 달성하고, locator와 assertion으로 결과도 검증한다.",
+        "agent.act / agent.assert 단계는 기록돼 다음 실행부터 앱이 바뀌기 전까지 모델 호출 없이 재생된다.",
+        "구독, API 키, 로컬 모델을 쓸 수 있고 문서가 node_modules/e2e/docs 에 포함돼 코딩 에이전트가 오프라인으로 읽는다. 저장소에 AGENTS.md와 skills 디렉터리가 있다."
+      ],
+      "why": "웹앱 테스트를 에이전트가 직접 돌려 보게 만들 수 있고, 반복 실행은 모델 비용이 들지 않는다.",
+      "howto": "프로젝트 루트에서 npx e2e init 을 실행하고 엔진(web/mobile)과 모델 제공자를 고른다.",
+      "url": "https://github.com/tester-army/e2e",
+      "source": "GitHub"
+    },
+    {
+      "title": "trycua/cua — 에이전트가 데스크톱을 조작하게 하는 오픈소스 드라이버·VM·벤치마크",
+      "category": "skills",
+      "score": 76,
+      "published": "2026-10-07",
+      "buzz": "GitHub 트렌딩 오늘 +229★ (총 28.7k★)",
+      "summary": [
+        "macOS·Windows·Linux용 Cua Driver, Apple Silicon 로컬 VM인 Lume, SDK/CLI, 벤치마크 Cua Bench를 한 저장소에 묶었다.",
+        "Cua Driver는 curl 한 줄로 설치하는 방식이다.",
+        "이 중 Lume은 Apple Silicon 전용이라 Windows에서는 Driver와 SDK 위주로 쓰게 된다."
+      ],
+      "why": "PyQt 같은 Windows 데스크톱 툴을 에이전트가 실제로 띄워 눌러 보며 검증하게 만들 수 있다.",
+      "howto": "macOS/Linux: curl -fsSL https://cua.ai/install.sh | sh (SDK·CLI), Driver는 /bin/bash -c \"$(curl -fsSL https://cua.ai/driver/install.sh)\". Windows 설치법은 원문 참고.",
+      "url": "https://github.com/trycua/cua",
+      "source": "GitHub"
+    },
+    {
+      "title": "cmux — 에이전트 알림과 세로 탭을 갖춘 Ghostty 기반 macOS 터미널",
+      "category": "skills",
+      "score": 60,
+      "published": "2026-10-07",
+      "buzz": "GitHub 트렌딩 오늘 +96★ (총 27.8k★)",
+      "summary": [
+        "Ghostty 렌더링 엔진 위에 세로 탭, 에이전트 알림, 스크립트 가능한 내장 브라우저, CLI·소켓 API를 얹은 Swift/AppKit 앱이다.",
+        "사이드바에 워크스페이스별 git 브랜치, PR 상태, 작업 디렉터리, 열린 포트, 최신 알림이 표시된다.",
+        "macOS 전용이라 Windows에서는 쓸 수 없다."
+      ],
+      "why": "Claude Code 세션을 여러 개 병렬로 돌릴 때 어느 세션이 입력을 기다리는지 알림으로 알 수 있다. 다만 Windows 사용자에게는 직접 해당하지 않는다.",
+      "howto": "brew tap manaflow-ai/cmux && brew install --cask cmux (또는 DMG 다운로드)",
+      "url": "https://github.com/manaflow-ai/cmux",
+      "source": "GitHub"
+    },
+    {
+      "title": "Mistral, 1조 파라미터 Large 4('Le Chonk') 프리뷰 공개 — 오픈 웨이트는 이달 말 예정",
+      "category": "tools",
+      "score": 74,
+      "published": "2026-10-06",
+      "buzz": "CNBC·TechCrunch·The Register·VentureBeat 보도 · 검색 확인",
+      "summary": [
+        "Mistral이 약 1조 파라미터 규모의 멀티모달 MoE 모델 Large 4 프리뷰를 개발자와 보안 담당자, 정부 기관 대상으로 먼저 공개했다.",
+        "코딩, 사이버 보안, 제조, 금융, 멀티모달에 강하다고 하며, 중국 외 지역에서 개발한 오픈 웨이트 모델 중 가장 강하다고 주장한다.",
+        "가중치는 이달 안에 Hugging Face 등에 올라올 예정이다. 파라미터 수, 가격, 라이선스 표기가 매체마다 달라 Mistral 공식 문서 확인이 필요하다."
+      ],
+      "why": "오픈 웨이트 코딩 모델이 로컬이나 저가 API로 풀리면 Claude Code 외 보조 모델로 선택지가 늘어난다.",
+      "howto": "원문 참고. 프리뷰 API는 Mistral Studio에서 쓰고, 가중치 공개 후 Hugging Face에서 받는다.",
+      "url": "https://www.cnbc.com/2026/10/06/mistral-ai-model-le-chonk.html",
+      "source": "CNBC"
+    }
+  ]
+}
