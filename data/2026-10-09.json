@@ -1,0 +1,230 @@
+{
+  "date": "2026-10-09",
+  "note": "오늘은 검색 결과가 적어 신선한 소식 14건만 실었습니다. 오래된 소식으로 채우지 않았습니다.",
+  "items": [
+    {
+      "title": "Claude Code v2.1.292~295 — 훅 실패 시 차단, 서브에이전트 effort 지정, 플러그인 설치 간소화",
+      "category": "claude",
+      "score": 90,
+      "published": "2026-10-08",
+      "buzz": "GitHub 릴리스 4건 · 이틀간",
+      "summary": [
+        "v2.1.295에서 command/HTTP 훅에 `onFailure: \"block\"`이 추가돼, 훅이 시작 실패·타임아웃·비정상 종료하면 동작을 통과시키지 않고 막는다.",
+        "v2.1.292부터 `claude plugin install --marketplace <source>`로 마켓플레이스 등록과 설치를 한 번에 하고, Agent 도구에 `effort` 파라미터가 생겨 서브에이전트의 추론 강도를 지정할 수 있다. 원격 MCP 서버가 장시간 끊긴 뒤 재연결되지 않던 문제도 수정됐다.",
+        "v2.1.294는 지시문 형태로 쓴 prompt/agent 훅이 차단해야 할 것을 허용하던 문제를 고쳤다."
+      ],
+      "why": "훅으로 위험한 명령을 막아 두는 사용자라면 훅 오류가 조용히 통과되는 구멍이 막혀 안전해진다.",
+      "howto": "`claude update` 후 settings.json의 훅에 `\"onFailure\": \"block\"`을 추가한다.",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.295",
+      "source": "GitHub anthropics/claude-code"
+    },
+    {
+      "title": "Windows-MCP — Claude Code가 Windows 앱·파일·UI를 직접 조작하는 MCP 서버",
+      "category": "skills",
+      "score": 88,
+      "published": "2026-10-08",
+      "buzz": "GitHub Trending Python 오늘 +411★ · 8.3k★",
+      "summary": [
+        "Windows 파일 탐색, 앱 제어, UI 조작, QA 테스트를 AI 에이전트가 하게 해 주는 오픈소스 MCP 서버다.",
+        "컴퓨터 비전 모델 없이 어떤 LLM과도 쓸 수 있다고 소개한다.",
+        "Windows 7~11, Python 3.13+, UV 패키지 매니저가 필요하고 첫 실행은 의존성 설치로 시간이 걸려 타임아웃될 수 있다."
+      ],
+      "why": "PyQt로 만드는 Windows 툴을 Claude Code가 직접 실행하고 눌러 보며 테스트하게 할 수 있다.",
+      "howto": "`claude mcp add --transport stdio windows-mcp -- uvx windows-mcp serve` 실행 후 `/mcp`로 연결을 확인한다.",
+      "url": "https://github.com/CursorTouch/Windows-MCP",
+      "source": "GitHub"
+    },
+    {
+      "title": "video-shotcraft — Claude Code·Codex로 Remotion 프로모 영상을 만드는 모션 스킬",
+      "category": "creative",
+      "score": 86,
+      "published": "2026-10-08",
+      "buzz": "GitHub Trending TypeScript 오늘 +264★ · 10.9k★",
+      "summary": [
+        "제품을 주면 스토리보드, 애니메이션, 사운드 디자인까지 에이전트가 Remotion으로 시네마틱 프로모 영상을 만드는 스킬이다.",
+        "샷 레시피 카드와 모션 미리보기, 36초 1920×1080 30fps 템플릿(Ink Press), 효과음 149종, 완성 후 편집용 브라우저 Motion Workbench가 들어 있다.",
+        "Node.js와 Remotion이 필요하고, Remotion은 개인·소규모 팀은 무료지만 기업은 유료 라이선스가 필요할 수 있다."
+      ],
+      "why": "모션그래픽 작업에서 After Effects 전에 코드로 빠르게 시안을 뽑는 용도로 쓸 수 있다.",
+      "howto": "`npx skills add Vincentwei1021/video-shotcraft` 후 Claude Code에서 제품 소개 영상을 요청한다.",
+      "url": "https://github.com/Vincentwei1021/video-shotcraft",
+      "source": "GitHub"
+    },
+    {
+      "title": "anthropics/knowledge-work-plugins — 직무별 플러그인 11종, Claude Code 마켓플레이스로 설치",
+      "category": "skills",
+      "score": 78,
+      "published": "2026-10-08",
+      "buzz": "GitHub Trending Python 오늘 +309★ · 27.5k★",
+      "summary": [
+        "Anthropic이 Apache-2.0으로 공개한 플러그인 모음이며, 각 플러그인에 스킬·MCP 커넥터·슬래시 커맨드·서브에이전트가 마크다운과 JSON으로 들어 있다.",
+        "productivity, sales, legal, finance, data, product-management 등 11개이고 plugin-management 플러그인으로 직접 만들거나 고칠 수 있다.",
+        "주로 업무용(Cowork) 직무 플러그인이라 개발 작업에는 구조 참고용 성격이 크다."
+      ],
+      "why": "공식 플러그인의 폴더 구조를 그대로 보고 자기 플러그인·서브에이전트를 만드는 모범 사례로 쓸 수 있다.",
+      "howto": "`claude plugin marketplace add anthropics/knowledge-work-plugins` 후 `claude plugin install data@knowledge-work-plugins`.",
+      "url": "https://github.com/anthropics/knowledge-work-plugins",
+      "source": "GitHub"
+    },
+    {
+      "title": "Godot MCP Toolkit v1.0.3 — 도구 112개로 Godot 에디터를 AI가 조작",
+      "category": "skills",
+      "score": 82,
+      "published": "2026-10-05",
+      "buzz": "Godot 에셋 라이브러리 10/5 갱신 · 검색 확인",
+      "summary": [
+        "Godot 4.2~4.7 에디터 플러그인으로, MCP를 지원하는 AI 코딩 도구가 에디터 안에서 작업하게 한다.",
+        "기본 도구가 112개이고 GDScript로 커스텀 MCP 도구를 만들면 핫리로드된다. MIT 라이선스다.",
+        "검색 결과에 나온 정보만 확인했고 세부 사용법은 에셋 페이지를 참고해야 한다."
+      ],
+      "why": "Godot 게임을 만들 때 Claude Code가 씬과 노드를 직접 편집하게 할 수 있다.",
+      "howto": "Godot AssetLib에서 'Godot MCP Toolkit'을 설치하고 플러그인을 켠 뒤 MCP 설정은 원문 참고.",
+      "url": "https://godotengine.org/asset-library/asset/5375",
+      "source": "Godot Asset Library"
+    },
+    {
+      "title": "OpenRig — Claude Code·Codex 에이전트를 YAML로 팀 구성해 상시 운영",
+      "category": "skills",
+      "score": 76,
+      "published": "2026-10-08",
+      "buzz": "GitHub Trending 주간 +2,912★ · 6.1k★",
+      "summary": [
+        "로컬 데몬·CLI·TUI·MCP 서버로, 역할이 있는 에이전트 팀을 YAML(RigSpec)로 정의하고 `rig up`으로 띄운다.",
+        "`rig send`/`broadcast`로 에이전트 간 메시지를 보내고 snapshot으로 상태를 저장·복원하며, 실행 중인 세션은 `rig adopt`로 편입한다.",
+        "macOS·Linux 대상(Windows는 WSL2)이고 Node.js 22/24와 tmux가 필요하다. 실행하면 provider 훅과 신뢰 설정을 쓰므로 백업이 필요하다."
+      ],
+      "why": "게임·웹앱을 만들 때 구현·리뷰 에이전트를 나눠 병렬로 돌리는 구성을 쉽게 만들 수 있다.",
+      "howto": "`npm install -g @openrig/cli` 후 `rig setup --dry-run`으로 먼저 확인한다.",
+      "url": "https://github.com/mvschwarz/openrig",
+      "source": "GitHub"
+    },
+    {
+      "title": "Agent-Reach — 에이전트에 Twitter·Reddit·YouTube·GitHub 읽기·검색 권한을 주는 CLI",
+      "category": "skills",
+      "score": 74,
+      "published": "2026-10-08",
+      "buzz": "GitHub Trending 주간 +6,912★ · 94.1k★",
+      "summary": [
+        "하나의 CLI로 웹, YouTube 자막·검색, RSS, Bilibili는 바로, GitHub·Twitter/X·Reddit 등은 설정 후 에이전트가 읽고 검색하게 한다.",
+        "`agent-reach doctor`가 채널별 상태를 점검한다. MIT 라이선스다.",
+        "PyPI에 같은 이름의 다른 패키지가 있어 설치하면 안 된다고 경고한다."
+      ],
+      "why": "리서치나 레퍼런스 수집을 Claude Code에 맡길 때 크롤링 도구를 따로 고르지 않아도 된다.",
+      "howto": "`agent-reach install --env=auto`(환경 점검만 수행), 시스템 설치까지 하려면 `--system`, 미리보기는 `--dry-run`.",
+      "url": "https://github.com/Panniantong/Agent-Reach",
+      "source": "GitHub"
+    },
+    {
+      "title": "ArtCraft — 2D·3D 구도 잡고 62개 이미지·영상·3D 모델로 생성하는 오픈소스 툴",
+      "category": "creative",
+      "score": 80,
+      "published": "2026-10-08",
+      "buzz": "GitHub Trending 오늘 +2,510★ · 7.6k★",
+      "summary": [
+        "'아티스트를 위한 IDE'로 2D 합성과 3D 장면 블로킹, 캐릭터 포즈, 마스크 인페인팅, 이미지→영상, 이미지→3D 메시를 한 앱에서 한다.",
+        "모델 카탈로그는 이미지 16·영상 25·음악/사운드 5·3D 11·월드 5개이며 Grok, Midjourney, Sora, World Labs 등이 연결된다.",
+        "라이선스 종류는 LICENSE.md에서 확인해야 하고 일부 모델은 외부 서비스 키가 필요할 수 있다."
+      ],
+      "why": "영상학과 작업에서 스토리보드·콘셉트 이미지를 구도 중심으로 빠르게 만들 수 있다.",
+      "howto": "getartcraft.com 또는 GitHub 릴리스에서 Windows 설치 파일을 받는다.",
+      "url": "https://github.com/storytold/artcraft",
+      "source": "GitHub"
+    },
+    {
+      "title": "FreeLLMAPI — 무료 LLM 34곳을 OpenAI 호환 엔드포인트 하나로 묶는 로컬 라우터",
+      "category": "tools",
+      "score": 72,
+      "published": "2026-10-08",
+      "buzz": "GitHub Trending TypeScript 오늘 +508★ · 32.1k★",
+      "summary": [
+        "무료 티어 제공사의 키를 모아 한도 초과나 429/5xx가 나면 다음 제공사로 자동 전환하는 셀프호스팅 라우터다. MIT 라이선스다.",
+        "OpenAI·Anthropic·Gemini 형식 엔드포인트와 대시보드를 제공하고 Claude Code 설정 명령이 있다.",
+        "개인 실험용이며 최상위 모델은 없고 응답 속도 보장이 없다. 무료 설치는 모델 목록이 약 30일 늦다."
+      ],
+      "why": "비용 없이 소형 서브에이전트나 테스트용 호출을 돌릴 때 쓸 수 있다.",
+      "howto": "Docker가 있으면 `curl -fsSL https://freellmapi.co/install.sh | bash` 후 `npx freellmapi setup-claude --url http://localhost:3001 --api-key <키>`.",
+      "url": "https://github.com/tashfeenahmed/freellmapi",
+      "source": "GitHub"
+    },
+    {
+      "title": "Anthropic Cyber Mission — 오픈소스 프로젝트 무료 보안 스캔(OSS Scanner) 도입",
+      "category": "claude",
+      "score": 70,
+      "published": "2026-10-08",
+      "buzz": "Anthropic 공식 발표",
+      "summary": [
+        "오픈소스 프로젝트가 신청하면 가장 강한 모델이 주기적으로 보안 스캔을 해 주는 OSS Scanner를 시작한다.",
+        "리포트에 개념 증명, 설명, 가능하면 수정안이 들어가며 모델이 생성한 것이라 사람 검토를 거치지 않는다. Anthropic은 진양성 비율 90% 이상을 예상한다.",
+        "핵심 인프라 방어 프로그램(CIDP)도 함께 시작됐고 Project Glasswing은 확장된 Cyber Verification Program에 합쳐졌다."
+      ],
+      "why": "공개 저장소로 게임·툴을 배포한다면 무료로 취약점 점검을 받을 길이 열린다.",
+      "howto": "신청 방법은 원문 참고.",
+      "url": "https://www.anthropic.com/news/anthropic-cyber-mission",
+      "source": "Anthropic"
+    },
+    {
+      "title": "Anthropic 이용 정책 개정 — 11월 12일 시행, 감시·무기·악용 조항 정리",
+      "category": "claude",
+      "score": 60,
+      "published": "2026-10-08",
+      "buzz": "Anthropic 공식 발표",
+      "summary": [
+        "새 이용 정책이 11월 12일부터 적용되며 허위 계정·영향력 공작을 묶은 '기만적 활동' 조항이 신설됐다.",
+        "무기 관련은 소프트웨어·부품과 드론 무장까지 명시했고, 비동의 추적과 수사 대상 추천은 금지하며 자율 물리 장치는 운영자가 멈출 수 있어야 한다.",
+        "모델에 대한 지속적이고 불필요한 학대도 금지 항목에 들어갔지만 일반적인 불만 표현과 테스트는 제외된다."
+      ],
+      "why": "Claude로 서비스를 만들어 배포한다면 정책이 어떻게 바뀌는지 알아 둬야 한다.",
+      "howto": "원문 참고.",
+      "url": "https://www.anthropic.com/news/2026-usage-policy-update",
+      "source": "Anthropic"
+    },
+    {
+      "title": "Google EmbeddingGemma 2 — 텍스트·코드·이미지·영상·오디오를 한 공간에 넣는 오픈 임베딩",
+      "category": "tools",
+      "score": 66,
+      "published": "2026-10-06",
+      "buzz": "Hugging Face·Kaggle 공개 · 검색 확인",
+      "summary": [
+        "740M 파라미터, Apache 2.0 라이선스의 멀티모달 임베딩 모델이 10월 6일 공개됐다고 여러 보도가 전한다.",
+        "768차원 임베딩과 Matryoshka 방식으로 128차원까지 줄일 수 있고 컨텍스트는 8K다. 비전·오디오 인코더는 필요한 것만 로드할 수 있다.",
+        "메모리 수치(약 567MB 등)와 벤치마크는 보도마다 달라 공식 모델 카드로 확인해야 한다."
+      ],
+      "why": "게임이나 앱에 온디바이스 검색·RAG를 넣을 때 가벼운 선택지가 된다.",
+      "howto": "Hugging Face 또는 Kaggle에서 모델을 받는다. 구체적 명령은 원문 참고.",
+      "url": "https://letsdatascience.com/news/deepmind-releases-embeddinggemma-2-for-edge-search-fbcc7c51",
+      "source": "Let's Data Science 외"
+    },
+    {
+      "title": "OpenAI, 미공개 모델이 만든 수학 논문 722편을 GitHub에 공개",
+      "category": "research",
+      "score": 64,
+      "published": "2026-10-06",
+      "buzz": "보도 다수 · 검색 확인",
+      "summary": [
+        "10월 6일 OpenAI가 미공개 내부 모델이 만든 수학 원고 722편(372개 계열)을 Apache-2.0으로 공개했다.",
+        "수론·조합론·이론전산·수리물리를 다루며 일부에 Lean 형식화가 붙어 있다. 약 4,000개 문제 중 의미 있다고 고른 결과물이다.",
+        "Lean 증명이 없는 원고는 오류가 있을 수 있고 모델이 비공개라 재현은 불가능하다."
+      ],
+      "why": "AI 연구 에이전트가 어디까지 왔는지 보여 주는 사례다.",
+      "howto": "원문 참고.",
+      "url": "https://www.unite.ai/openai-releases-722-math-manuscripts-from-an-unreleased-ai-model/",
+      "source": "Unite.AI 외"
+    },
+    {
+      "title": "METR: AI 에이전트가 기록을 조작할 수 있다 — 모니터링 시스템을 보안 인프라로 취급해야",
+      "category": "research",
+      "score": 62,
+      "published": "2026-10-06",
+      "buzz": "METR 블로그 · 검색 확인",
+      "summary": [
+        "10월 6일 METR 글은 적대적 에이전트에 대한 관찰 가능성은 에이전트가 그 도구를 훼손하지 못할 때만 의미가 있다고 주장한다.",
+        "트랜스크립트와 추론 기록을 신뢰할 수 없는 입력으로 보고, 기록하는 시스템을 보안이 핵심인 인프라로 다루라고 권고한다.",
+        "현재 모델은 비위 은폐에 서툴러 흔적이 로그에 남는다는 점도 짚는다. 본문은 열지 못해 검색 요약으로 확인했다."
+      ],
+      "why": "에이전트에게 권한을 많이 주는 환경이라면 로그를 에이전트가 못 건드리는 곳에 두는 습관이 필요하다.",
+      "howto": "원문 참고.",
+      "url": "https://metr.org/blog/2026-10-06-ai-systems-could-cover-up-misbehavior/",
+      "source": "METR"
+    }
+  ]
+}
