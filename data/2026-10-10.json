@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-10",
+  "note": "오늘은 수집된 신규 소식이 적어 4건만 싣습니다. 최근 7일 안에 이미 실은 소식과 날짜를 확인할 수 없는 소식은 제외했고, 오래된 소식으로 채우지 않았습니다.",
+  "items": [
+    {
+      "title": "Claude Code v2.1.296 — 서브에이전트 자동 압축·워크플로 모델 지정, Sonnet 5.5 캐시 읽기 가격 인하",
+      "category": "claude",
+      "score": 88,
+      "published": "2026-10-09",
+      "buzz": "공식 릴리스",
+      "summary": [
+        "Claude Code v2.1.296이 10월 9일 나왔다.",
+        "서브에이전트 frontmatter나 --agents 정의에 autoCompactWindow를 넣으면 메인 대화보다 일찍 컨텍스트를 압축한다. CLAUDE_CODE_WORKFLOW_SUBAGENT_MODEL로 워크플로 에이전트 전체를 한 모델로 돌릴 수 있고, 529 재시도 최대 대기 시간을 CLAUDE_CODE_OVERLOADED_RETRY_MAX_DELAY_MS로 조절한다. Read 도구에 allow_large 옵션이 생겼다.",
+        "Sonnet 5.5의 캐시 읽기 가격이 100만 토큰당 $0.20에서 $0.10으로 내려갔다."
+      ],
+      "why": "서브에이전트를 많이 돌리는 장시간 작업에서 컨텍스트 낭비와 비용을 직접 줄일 수 있는 설정들이다.",
+      "howto": "claude update 로 갱신한 뒤, 서브에이전트 .md 파일 frontmatter에 autoCompactWindow를 추가하거나 export CLAUDE_CODE_WORKFLOW_SUBAGENT_MODEL=<모델> 을 설정한다.",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.296",
+      "source": "anthropics/claude-code 릴리스"
+    },
+    {
+      "title": "docker-agent v1.150.0 — YAML로 멀티에이전트를 짜고, GitHub URL의 스킬을 바로 불러온다",
+      "category": "skills",
+      "score": 74,
+      "published": "2026-10-09",
+      "buzz": "GitHub 4.3k 스타",
+      "summary": [
+        "Docker가 만든 AI 에이전트 빌더·런타임으로, Docker CLI 플러그인으로 동작한다.",
+        "에이전트를 YAML로 정의하고 MCP 서버를 도구로 붙이며, 여러 에이전트가 서로 작업을 위임하게 구성할 수 있다. v1.149.0(10월 7일)부터 skills: 항목에 공개 GitHub 저장소 URL을 적어 스킬을 로드하고, v1.150.0(10월 9일)에서 datetime·calculator·random 기본 툴셋과 에이전트 상태(idle/working/waiting) 표시가 추가됐다.",
+        "OpenAI·Anthropic 등 클라우드 모델이나 Docker Model Runner 로컬 모델을 쓰려면 API 키 또는 로컬 설정이 따로 필요하다."
+      ],
+      "why": "Claude Code 밖에서 도구·게임 자동화용 에이전트 팀을 파일 하나로 정의해 돌리고 싶을 때 쓸 수 있는 선택지다.",
+      "howto": "Docker Desktop 4.63 이상에는 기본 포함이며 docker agent run agent.yaml 로 실행한다. Homebrew는 brew install docker-agent.",
+      "url": "https://github.com/docker/docker-agent/releases",
+      "source": "GitHub docker/docker-agent"
+    },
+    {
+      "title": "Google Nano Banana 2.1 정식 출시 — 4K 출력, 참조 이미지 14장, 마스크 편집",
+      "category": "creative",
+      "score": 70,
+      "published": "2026-10-06",
+      "buzz": "Google 릴리스 노트 · 검색 확인",
+      "summary": [
+        "Google이 이미지 생성·편집 모델 Nano Banana 2.1을 10월 6일 정식 출시(GA)했다. 개발자용 모델 ID는 gemini-nano-banana-2.1로 보도됐다.",
+        "1K·2K·4K 출력을 지원하고, 참조 이미지를 최대 14장까지 동시에 쓸 수 있으며, 마스크 기반 편집이 새로 들어갔다. Gemini 앱, 검색 AI 모드, AI Studio, Flow 등으로 순차 적용 중이다.",
+        "품질 주장은 Google 자체 자료이고 독립 검증은 아직 없다. 가격 수치는 출처마다 달라 여기서는 적지 않는다."
+      ],
+      "why": "참조 이미지를 여러 장 넣어 캐릭터·스타일을 맞추는 작업은 모션그래픽 소스나 Live2D 컨셉 시안 제작에 바로 쓸 수 있다.",
+      "howto": "Gemini 앱 또는 AI Studio에서 모델 목록의 Nano Banana 2.1을 선택한다. API는 모델 ID gemini-nano-banana-2.1 (원문 참고).",
+      "url": "https://letsdatascience.com/news/google-rolls-out-nano-banana-21-image-model-c6ac3b89",
+      "source": "Let's Data Science (Google 릴리스 노트 기반)"
+    },
+    {
+      "title": "The Information: Meta·Microsoft, 사내 Claude Code 사용 대폭 축소",
+      "category": "claude",
+      "score": 52,
+      "published": "2026-10-05",
+      "buzz": "The Information 보도 · 검색 확인",
+      "summary": [
+        "The Information이 10월 5일 보도한 내용으로, Meta와 Microsoft가 사내 직원의 Claude 사용을 줄이고 있다고 한다. 양사는 공식 확인하지 않았다.",
+        "Meta의 Claude Code 사용자는 약 6만 명에서 약 3만 명으로 줄었고 자체 도구 MetaCode가 3만 명을 넘었다고 한다. Microsoft는 사내 Anthropic 지출 전망을 3분의 1 이상 줄이고 개발자를 GitHub Copilot 쪽으로 유도한다는 내용이다.",
+        "고객용 Claude 제공은 계속되며, Azure·Bedrock을 통한 고객 지출은 늘고 있다고 한다."
+      ],
+      "why": "사내 도구를 키우는 대형사의 움직임이라 개인 개발자에게 직접 영향은 작지만, 코딩 에이전트 시장 흐름을 가늠하는 참고 자료다.",
+      "howto": "해당 없음 (동향 소식)",
+      "url": "https://techradar.com/pro/meta-and-microsoft-want-to-stop-their-employees-using-claude",
+      "source": "TechRadar (The Information 인용)"
+    }
+  ]
+}
