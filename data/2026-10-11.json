@@ -1,0 +1,166 @@
+{
+  "date": "2026-10-11",
+  "note": "검색 도구에서 3~4일 이내로 확인된 소식이 한정돼 11건만 실었다. 새로 확인되지 않은 소식은 오래된 것으로 메우지 않았다.",
+  "items": [
+    {
+      "title": "Trail of Bits skills — 보안 감사·취약점 탐지용 Claude Code·Codex 플러그인 모음",
+      "category": "skills",
+      "score": 86,
+      "published": "2026-10-09",
+      "buzz": "GitHub 7.5k 스타 · 10/9 커밋",
+      "summary": [
+        "Trail of Bits가 보안 연구·취약점 탐지·감사 워크플로를 스킬 묶음으로 낸 저장소다.",
+        "Claude Code와 Codex 양쪽 플러그인 마켓플레이스 방식으로 설치한다.",
+        "10월 9일에 Codex PR 리뷰 도입, 마켓플레이스 이름 충돌 수정 등 커밋이 이어졌다."
+      ],
+      "why": "직접 만든 Windows 툴·웹앱을 공개 전에 AI로 보안 점검하는 데 바로 쓸 수 있다.",
+      "howto": "Claude Code: `/plugin marketplace add trailofbits/skills` 후 `/plugin`에서 설치. Codex: `codex plugin marketplace add trailofbits/skills` → `codex plugin add <plugin-name>@trailofbits`.",
+      "url": "https://github.com/trailofbits/skills",
+      "source": "GitHub"
+    },
+    {
+      "title": "andrej-karpathy-skills — LLM 코딩 실수를 줄이는 CLAUDE.md 한 장",
+      "category": "skills",
+      "score": 84,
+      "published": "2026-10-10",
+      "buzz": "GitHub 218k 스타 · 오늘 +279",
+      "summary": [
+        "Karpathy가 짚은 LLM 코딩 함정을 CLAUDE.md 하나로 정리한 저장소다.",
+        "원칙은 4가지: 코딩 전에 생각, 단순함 우선, 필요한 부분만 수정, 검증 가능한 목표로 반복.",
+        "프로젝트 고유 지침과 합쳐 쓰도록 만들어졌고 Cursor 규칙도 들어 있다."
+      ],
+      "why": "내 CLAUDE.md에 그대로 덧붙이기만 해도 과잉 구현과 불필요한 수정이 줄어든다.",
+      "howto": "`/plugin marketplace add forrestchang/andrej-karpathy-skills` → `/plugin install andrej-karpathy-skills@karpathy-skills`. 또는 `curl -o CLAUDE.md https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/CLAUDE.md`.",
+      "url": "https://github.com/multica-ai/andrej-karpathy-skills",
+      "source": "GitHub"
+    },
+    {
+      "title": "context-mode — 도구 출력을 컨텍스트 밖에 두는 MCP 서버·플러그인",
+      "category": "skills",
+      "score": 85,
+      "published": "2026-10-10",
+      "buzz": "GitHub 26.3k 스타 · 트렌딩",
+      "summary": [
+        "원시 도구 출력을 컨텍스트 창에 넣지 않아 사용량을 98% 줄인다고 소개하는 MCP 서버다.",
+        "세션 이벤트를 SQLite에 저장해 컴팩션 뒤에도 상태가 이어지고, 훅으로 17개 플랫폼의 도구 호출을 라우팅한다.",
+        "Codex는 config.toml에서 plugin_hooks·hooks를 켜야 한다. 98%는 프로젝트 자체 주장이다."
+      ],
+      "why": "긴 Godot·PyQt 작업 세션에서 컨텍스트가 빨리 차는 문제를 줄여준다.",
+      "howto": "`/plugin marketplace add mksglu/context-mode` → `/plugin install context-mode@context-mode` 후 `/reload-plugins`. Codex: `codex plugin marketplace add mksglu/context-mode`.",
+      "url": "https://github.com/mksglu/context-mode",
+      "source": "GitHub"
+    },
+    {
+      "title": "godot-editor-mcp 2026.10.10 — 실행 중인 Godot 에디터를 에이전트가 조종",
+      "category": "skills",
+      "score": 88,
+      "published": "2026-10-10",
+      "buzz": "PyPI 10/10 업로드 · 도구 193개",
+      "summary": [
+        "라이브 Godot 에디터를 MCP로 구동하는 서버가 29개 카테고리, 193개 도구로 새 버전을 냈다.",
+        "씬 트리·선택 노드·프로젝트 설정 조회 등이 가능하다. 기본 활성은 inspection 하나이고 나머지 28개 툴셋은 켜서 쓴다.",
+        "GitHub 스타는 32개로 아직 작다. Claude Code용 등록 명령은 README에 없다."
+      ],
+      "why": "Godot 게임을 Claude Code로 만드는 독자에게 씬·노드 조작까지 맡길 수 있는 직접적인 도구다.",
+      "howto": "`uvx godot-editor-mcp` 또는 `pip install godot-editor-mcp`. Claude Code 등록은 `claude mcp add godot -- uvx godot-editor-mcp`를 응용하되 README로 확인.",
+      "url": "https://pypi.org/project/godot-editor-mcp/2026.10.10/",
+      "source": "PyPI"
+    },
+    {
+      "title": "ppt-master — 문서에서 편집 가능한 네이티브 PPTX를 만드는 스킬",
+      "category": "skills",
+      "score": 74,
+      "published": "2026-10-10",
+      "buzz": "GitHub 59.4k 스타 · 오늘 +515",
+      "summary": [
+        "문서나 주제를 편집 가능한 도형·차트·표로 된 .pptx로 바꾸는 오픈소스(MIT) 프로젝트다.",
+        "전환·애니메이션·발표자 노트 기반 내레이션과 내 템플릿 사용을 지원한다.",
+        "저자는 Claude Code 사용을 권장한다."
+      ],
+      "why": "수업 발표·과제용 슬라이드를 Claude Code로 빠르게 뽑는 데 쓸 수 있다.",
+      "howto": "`npx skills add hugohe3/ppt-master` 또는 `git clone https://github.com/hugohe3/ppt-master.git` 후 `pip install -r requirements.txt`(Python 3.10+). 폴더를 에이전트로 열고 채팅으로 요청.",
+      "url": "https://github.com/hugohe3/ppt-master",
+      "source": "GitHub"
+    },
+    {
+      "title": "Anthropic, Genesis Mission에 3년간 1.5억 달러 약속",
+      "category": "claude",
+      "score": 55,
+      "published": "2026-10-08",
+      "buzz": "Anthropic 공식 발표",
+      "summary": [
+        "미국 연방 과학 가속 사업 Genesis Mission에 3년간 1억 5천만 달러를 투입한다.",
+        "NASA·NIH·NSF 등 15개 이상 기관에 Claude를 제공하고, 수백 개 연구 프로젝트에 Claude·Claude Code·API 크레딧을 준다.",
+        "핵융합·양자컴퓨팅 협력과 연구자 교육·지원도 포함된다."
+      ],
+      "why": "Claude Code가 과학 연구용 크레딧 대상으로 들어간 점은 제품 방향을 읽는 단서다.",
+      "howto": "일반 사용자가 따로 할 일은 없다. 원문 참고.",
+      "url": "https://www.anthropic.com/news/genesis-mission-commitment",
+      "source": "Anthropic"
+    },
+    {
+      "title": "Anthropic OSS Scanner — 오픈소스 프로젝트 대상 무료 AI 취약점 스캔",
+      "category": "claude",
+      "score": 62,
+      "published": "2026-10-08",
+      "buzz": "SiliconANGLE 등 2곳 보도 · 검색 확인",
+      "summary": [
+        "10월 8일 Anthropic Cyber Mission의 일부로 선택 가입형 무료 스캐너가 발표됐다.",
+        "등록된 코드베이스를 주기적으로 분석해 재현 코드·설명·패치 제안이 담긴 모델 생성 보고서를 메인테이너에게 준다.",
+        "프로젝트는 OSS-Fuzz와 비슷한 기준으로 개별 심사하고, 보고서는 사람 검토 없이 전달된다."
+      ],
+      "why": "공개 저장소를 운영한다면 AI 보안 점검을 무료로 받을 수 있는 경로다.",
+      "howto": "가입 방법은 원문 참고.",
+      "url": "https://siliconangle.com/2026/10/08/anthropic-launches-critical-infrastructure-program-and-free-oss-scanner-for-open-source/",
+      "source": "SiliconANGLE"
+    },
+    {
+      "title": "GPT-6와 Intelligent UI — ChatGPT가 차트·버튼·미니 앱으로 답한다",
+      "category": "tools",
+      "score": 68,
+      "published": "2026-10-07",
+      "buzz": "검색 확인 · 다수 매체 보도",
+      "summary": [
+        "유료 플랜은 10월 7일, 무료·Go는 8일부터 GPT-6와 Intelligent UI를 쓸 수 있다.",
+        "질문에 따라 지도, 차트, 폼, 계산기 같은 인터랙티브 응답을 직접 만든다.",
+        "유료는 GPT-6 Sol, 무료·Go는 GPT-6 Luna이며 Chat 경험에만 적용되고 Work·Codex 모델은 그대로다."
+      ],
+      "why": "Codex 모델은 안 바뀌었다는 점을 알고 있으면 도입 판단이 쉽다.",
+      "howto": "ChatGPT 설정에서 인터랙티브 응답 빈도를 줄일 수 있다.",
+      "url": "https://www.vktr.com/ai-platforms/openai-brings-gpt6-to-all-chatgpt-users-with-interactive-intelligent-ui/",
+      "source": "VKTR"
+    },
+    {
+      "title": "Kandinsky 6.0 Video — 오디오까지 한 번에 만드는 오픈 웨이트 영상 모델",
+      "category": "creative",
+      "score": 78,
+      "published": "2026-10-06",
+      "buzz": "ComfyUI 지원 당일 · 검색 확인",
+      "summary": [
+        "Kandinsky Lab이 29B Pro와 3B Lite 두 가지로 영상+오디오 동시 생성 모델을 공개했다.",
+        "5초 24fps 클립에 44kHz 오디오와 립싱크가 들어가고, 별도 모델로 풀HD 업스케일을 한다.",
+        "MIT 라이선스라는 보도가 있으나 공식 발표는 확인하지 못했다."
+      ],
+      "why": "모션그래픽 레퍼런스나 목업 영상을 로컬에서 소리까지 포함해 뽑아볼 수 있다.",
+      "howto": "Hugging Face의 kandinskylab 가중치와 ComfyUI 확장·워크플로 템플릿 사용. 자세한 설치는 원문 참고.",
+      "url": "https://comfyui-wiki.com/ko/news/2026-10-06-kandinsky-6-0",
+      "source": "ComfyUI Wiki"
+    },
+    {
+      "title": "H-JEPA — 계층형 월드 모델로 장기 계획 성공률 18%→73%",
+      "category": "research",
+      "score": 64,
+      "published": "2026-10-05",
+      "buzz": "주간 뉴스레터 2곳 언급 · 검색 확인",
+      "summary": [
+        "Zhang, Terver, Rabbat, LeCun, Balestriero가 쌓은 계층형 JEPA로 장기 계획 문제를 푼 논문(arXiv 2610.06851)이다.",
+        "각 계층이 더 먼 미래를 예측하고 상위 예측이 하위의 하위 목표가 된다.",
+        "Visual AntMaze에서 3단 계층이 성공률을 18%에서 73%로 올리면서 플래너 연산은 줄였다."
+      ],
+      "why": "게임 AI·로봇 에이전트의 계획 구조를 이해하는 데 참고가 된다.",
+      "howto": "원문 참고.",
+      "url": "https://arxiv.org/abs/2610.06851",
+      "source": "arXiv"
+    }
+  ]
+}
