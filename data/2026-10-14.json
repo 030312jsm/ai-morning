@@ -1,0 +1,117 @@
+{
+  "date": "2026-10-14",
+  "note": "최근 7일 이내이면서 아직 싣지 않은 소식 위주로 9건만 실었다. tools·research 분야는 2곳 이상 확인되는 새 소식이 없어 생략했다.",
+  "items": [
+    {
+      "title": "caveman — 에이전트 응답과 입력을 줄여 토큰을 아끼는 Claude Code 플러그인",
+      "category": "skills",
+      "score": 88,
+      "published": "2026-10-13",
+      "buzz": "GitHub 스타 약 111k, 최근 3시간 내 업데이트",
+      "summary": [
+        "코딩 에이전트의 응답을 짧게 하고, 로그·JSON·테스트 출력은 모델이 읽기 전에 압축하는 Apache-2.0 프로젝트다.",
+        "README는 전체 세션 기준 입력 토큰 33.2% 감소를 측정값으로 제시하고, 요청별로 모델·effort를 고르는 Auto 기능도 있다.",
+        "저장소 소개문의 '65% 절감'은 README에 근거 설명이 없어 실제 절감폭은 환경마다 다를 수 있다."
+      ],
+      "why": "긴 Claude Code 세션에서 사용량과 비용을 줄이고 싶은 1인 개발자에게 바로 시험해 볼 만하다.",
+      "howto": "Claude Code 안에서 `/plugin marketplace add JuliusBrussee/caveman` 후 `/plugin install caveman@caveman`을 실행한다.",
+      "url": "https://github.com/JuliusBrussee/caveman",
+      "source": "GitHub JuliusBrussee/caveman"
+    },
+    {
+      "title": "graphify — 코드베이스·문서·스키마를 질의 가능한 지식 그래프로 바꾸는 스킬",
+      "category": "skills",
+      "score": 86,
+      "published": "2026-10-13",
+      "buzz": "GitHub 스타 약 126k, 최근 11시간 내 업데이트",
+      "summary": [
+        "코드는 tree-sitter로 로컬에서 파싱해 외부로 나가지 않고, 문서·PDF·이미지는 사용 중인 어시스턴트 모델로 처리한다.",
+        "graph.html, GRAPH_REPORT.md, graph.json을 만들고 query·path·explain 명령으로 그래프를 탐색한다. 벡터 DB 없이 동작한다.",
+        "문서·이미지 처리 단계는 모델 호출이 필요해 토큰이나 API 키가 든다."
+      ],
+      "why": "Godot·PyQt 등 낯선 큰 코드베이스를 Claude Code에 파악시킬 때 컨텍스트를 아낄 수 있다.",
+      "howto": "`uv tool install graphifyy` 후 `graphify install`로 스킬을 등록하고, Claude Code에서 `/graphify .`를 실행한다. Windows는 `graphify install --platform windows`.",
+      "url": "https://github.com/Graphify-Labs/graphify",
+      "source": "GitHub Graphify-Labs/graphify"
+    },
+    {
+      "title": "archify — 아이디어·계획·코드를 인터랙티브 다이어그램으로 바꾸는 에이전트 스킬",
+      "category": "skills",
+      "score": 74,
+      "published": "2026-10-13",
+      "buzz": "GitHub 스타 약 83k, 최근 4시간 내 업데이트 · 검색 확인",
+      "summary": [
+        "tt-a1i/archify는 아이디어, 계획, 코드베이스를 인터랙티브 다이어그램으로 만드는 Claude Code·Codex용 에이전트 스킬이다.",
+        "GitHub 검색 목록과 claude-skills 토픽 페이지 모두에서 스타 8만 대의 상위 저장소로 확인된다."
+      ],
+      "why": "게임·툴 설계를 정리하거나 영상학과 과제 발표용 구조도를 빠르게 뽑는 데 쓸 수 있다.",
+      "howto": "원문 참고",
+      "url": "https://github.com/tt-a1i/archify",
+      "source": "GitHub 검색"
+    },
+    {
+      "title": "vercel-labs/skills — npx 한 줄로 에이전트 스킬을 설치·관리하는 CLI",
+      "category": "skills",
+      "score": 76,
+      "published": "2026-10-13",
+      "buzz": "GitHub 스타 약 34k, 트렌딩 등재",
+      "summary": [
+        "SKILL.md 기반 스킬을 Claude Code, Codex, Cursor, OpenCode 등 여러 에이전트에 설치하고 검색·갱신·삭제하는 CLI다.",
+        "저장소 안의 스킬 목록만 미리 보거나, 설치 없이 한 번만 쓰는 모드도 있다.",
+        "릴리스 페이지가 비어 있어 버전 정보는 확인되지 않았다."
+      ],
+      "why": "Claude Code와 Codex를 같이 쓸 때 스킬을 한 도구로 일관되게 관리할 수 있다.",
+      "howto": "`npx skills add vercel-labs/agent-skills --list`로 목록을 보고, `npx skills add vercel-labs/agent-skills --skill frontend-design -g -a claude-code -y`처럼 설치한다.",
+      "url": "https://github.com/vercel-labs/skills",
+      "source": "GitHub vercel-labs/skills"
+    },
+    {
+      "title": "Claude Code v2.1.293~294 — Haiku 5.5 기본 모델화, hook 지시문 판정 버그 수정",
+      "category": "claude",
+      "score": 80,
+      "published": "2026-10-08",
+      "buzz": "GitHub 릴리스 2건",
+      "summary": [
+        "v2.1.293(10/7)은 Anthropic API의 기본 Haiku를 Claude Haiku 5.5(`claude-haiku-5-5`)로 바꿨다. 1M 컨텍스트, 입출력 $0.10/$0.50 per Mtok.",
+        "v2.1.294(10/8)는 '명령을 막아라' 같은 지시문으로 쓴 prompt·agent hook이 막아야 할 동작을 허용하던 문제를 고쳤고, Stop·SubagentStop prompt hook 판정을 개선했다.",
+        "HTTP MCP 연결의 메모리 누수와 `claude purge` 오류 처리도 고쳐졌다."
+      ],
+      "why": "hook으로 위험 명령을 막아 쓰는 사람은 이 버전 이전에 우회되던 설정이 있었는지 점검해야 한다.",
+      "howto": "`claude update`로 최신판을 받고, 기존 prompt/agent hook이 의도대로 막는지 다시 시험한다.",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.294",
+      "source": "GitHub anthropics/claude-code"
+    },
+    {
+      "title": "OpenMontage — 코딩 에이전트가 영상 제작 전 과정을 맡는 오픈소스 시스템",
+      "category": "creative",
+      "score": 82,
+      "published": "2026-10-13",
+      "buzz": "GitHub 스타 약 68k",
+      "summary": [
+        "Claude Code 같은 코딩 어시스턴트 안에서 리서치, 대본, 에셋 생성, 편집, 최종 합성까지 진행한다. 설명영상·애니메이션·화면 시연·다큐 몽타주 등 파이프라인이 있다.",
+        "렌더는 Remotion 또는 HyperFrames와 FFmpeg를 쓰고, 창작 단계마다 사람 승인을 받으며 렌더 후 자체 검토를 한다.",
+        "AGPL-3.0 라이선스이고 API 키 없이도 Piper TTS와 무료 소스로 동작한다."
+      ],
+      "why": "영상학과 과제나 소개 영상의 초안·반복 작업을 Claude Code로 자동화해 볼 수 있다.",
+      "howto": "Python 3.10+, FFmpeg, Node.js 18+를 준비하고 `git clone https://github.com/calesthio/OpenMontage.git` 후 `make setup`을 실행한다.",
+      "url": "https://github.com/calesthio/OpenMontage",
+      "source": "GitHub calesthio/OpenMontage"
+    },
+    {
+      "title": "VoiceStudio — 로컬에서 돌리는 음성 복제·더빙·받아쓰기 오픈소스 앱",
+      "category": "creative",
+      "score": 78,
+      "published": "2026-10-13",
+      "buzz": "GitHub 스타 약 63k, 오늘 +2.3k",
+      "summary": [
+        "음성 복제, 음성 디자인, 영상 더빙, 받아쓰기, 오디오북 제작을 모두 로컬에서 처리한다. 646개 언어를 지원한다고 밝힌다.",
+        "에이전트용 로컬 API와 MCP 연동을 제공하고, Windows·Linux는 NVIDIA GPU가 있으면 CUDA 가속, 없으면 CPU로 느리게 돈다.",
+        "Windows on ARM은 실험 단계다."
+      ],
+      "why": "영상 작업의 내레이션·더빙을 외부 서비스 없이 만들고 MCP로 Claude Code와 엮을 수 있다.",
+      "howto": "Windows는 README의 PowerShell 설치 명령을 쓰거나 Releases에서 `.exe`를 받는다. 정확한 명령은 원문 참고.",
+      "url": "https://github.com/debpalash/VoiceStudio",
+      "source": "GitHub debpalash/VoiceStudio"
+    }
+  ]
+}
