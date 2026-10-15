@@ -1,0 +1,198 @@
+{
+  "date": "2026-10-16",
+  "note": "오늘은 검색 결과가 빈약해 공식 페이지와 GitHub 트렌딩에서 확인된 소식 위주로 12건만 실었다.",
+  "items": [
+    {
+      "title": "Claude Code v2.1.301·v2.1.299: 유휴 세션 자동 압축, Read/Grep 오류 개선",
+      "category": "claude",
+      "score": 90,
+      "published": "2026-10-15",
+      "buzz": "릴리스 2건 (10/14~15)",
+      "summary": [
+        "20만 토큰 이상 세션이 약 54분 유휴 상태면 프롬프트 캐시(1시간) 만료 전에 자동 compaction하며 settings.json의 \"idleCompaction\": false로 끌 수 있다.",
+        "v2.1.301은 Vim 모드 % 모션, tool_decision 텔레메트리 필드 추가, Read 도구가 .xlsm·.parquet·.heic 같은 바이너리를 텍스트로 읽지 않도록 수정, Grep/Glob 실패 시 '일치 없음' 대신 오류를 보고한다.",
+        "종료 시 WorktreeCreate 워크트리가 푸시 안 된 커밋을 가질 수 있으면 묻지 않고 지우지 않도록 고쳐졌다."
+      ],
+      "why": "긴 세션을 자주 쓰는 1인 개발자에게 캐시 만료로 인한 토큰 낭비를 줄여 주고, 워크트리 손실 사고를 막아 준다.",
+      "howto": "`claude update`로 갱신하고, 자동 압축이 싫으면 settings.json에 \"idleCompaction\": false 추가.",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.301",
+      "source": "Claude Code GitHub 릴리스"
+    },
+    {
+      "title": "Codex 0.163.0: 응답 중 끼어들기·/config 검색·읽기 전용 도구 병렬화",
+      "category": "tools",
+      "score": 86,
+      "published": "2026-10-15",
+      "buzz": "릴리스 (10/15)",
+      "summary": [
+        "응답 도중 후속 지시를 보내 방향을 바꿀 수 있고, 인터럽트하면 실행 중인 Code Mode 셀도 멈춘다.",
+        "/config에서 설정을 검색·즉시 변경할 수 있고, /keymap에서 리더 키(기본 Ctrl+X)를 바꿀 수 있다. 독립적인 읽기 전용 도구는 병렬 실행된다.",
+        "Windows/WSL 붙여넣기·클립보드 처리와 codex exec의 중복 diff 출력이 개선됐다."
+      ],
+      "why": "Windows에서 Codex를 쓰는 경우 붙여넣기·WSL 수정이 직접 체감된다.",
+      "howto": "Codex CLI를 최신으로 업데이트한 뒤 `/config`를 열어 설정을 검색한다.",
+      "url": "https://github.com/openai/codex/releases",
+      "source": "Codex GitHub 릴리스"
+    },
+    {
+      "title": "obra/superpowers: 설계→계획→TDD→리뷰를 강제하는 스킬 프레임워크",
+      "category": "skills",
+      "score": 88,
+      "published": "2026-10-15",
+      "buzz": "GitHub 스타 약 29.9만, 오늘 트렌딩 +688",
+      "summary": [
+        "코딩 에이전트가 먼저 질문하고 설계·계획을 쓴 뒤 TDD와 코드 리뷰로 작업하게 하는 조합형 스킬 모음이다.",
+        "Claude Code 공식 마켓플레이스와 Codex 플러그인으로 모두 설치할 수 있다.",
+        "Codex 설치는 한 줄 명령이 아니라 플러그인 메뉴에서 진행한다."
+      ],
+      "why": "Godot·PyQt 프로젝트처럼 규모가 커지면 흔들리는 바이브 코딩에 개발 절차를 입혀 준다.",
+      "howto": "Claude Code: `/plugin install superpowers@claude-plugins-official`. Codex CLI: `/plugins`에서 superpowers 검색 후 Install Plugin.",
+      "url": "https://github.com/obra/superpowers",
+      "source": "GitHub"
+    },
+    {
+      "title": "affaan-m/ECC: Claude Code·Codex용 스킬·훅·메모리·보안 스캔 번들 (v2.2.3)",
+      "category": "skills",
+      "score": 84,
+      "published": "2026-10-15",
+      "buzz": "GitHub 스타 약 28만, 트렌딩 +1,015",
+      "summary": [
+        "스킬, 에이전트, 커맨드, 훅, 규칙, 메모리, 보안 스캔을 한 번에 설치하는 에이전트 하네스 최적화 시스템이다(MIT).",
+        "Claude Code에 가장 잘 맞고 Codex·Qoder는 네이티브 플러그인 경로가 있으며 Cursor 등은 제한적 어댑터다.",
+        "Node.js 18+ 필요, Claude 플러그인 설정에는 Git과 Claude Code 2.1+가 필요하다."
+      ],
+      "why": "스킬·훅을 하나씩 모으는 대신 검증된 묶음으로 시작할 수 있다.",
+      "howto": "`npx ecc-universal@2.2.3 setup`",
+      "url": "https://github.com/affaan-m/ECC",
+      "source": "GitHub"
+    },
+    {
+      "title": "ruvnet/ruflo: Claude Code·Codex를 위한 멀티 에이전트 스웜 메타 하네스",
+      "category": "skills",
+      "score": 78,
+      "published": "2026-10-15",
+      "buzz": "GitHub 스타 약 7.5만, 트렌딩 +224",
+      "summary": [
+        "Claude Code·Codex 위에 전문 에이전트, 스웜 조율, 메모리, 머신 간 연합을 얹는 오픈소스 메타 하네스다(MIT).",
+        "Claude Code 플러그인과 MCP 서버 두 방식으로 쓸 수 있다.",
+        "Claude Code 2.1.287 이상이 필요하다. 릴리스 정보는 확인되지 않았다."
+      ],
+      "why": "작업을 여러 에이전트로 쪼개 병렬로 돌리고 싶을 때 바로 시도할 수 있다.",
+      "howto": "Claude Code에서 `/plugin marketplace add ruvnet/ruflo` → `/plugin install ruflo-core@ruflo` → `/reload-plugins` → `/ruflo`. Codex: `npx ruflo@latest init wizard`.",
+      "url": "https://github.com/ruvnet/ruflo",
+      "source": "GitHub"
+    },
+    {
+      "title": "anthropics/claude-plugins-official: Anthropic이 관리하는 공식 플러그인 디렉터리",
+      "category": "skills",
+      "score": 80,
+      "published": "2026-10-15",
+      "buzz": "GitHub 스타 약 3.9만, 트렌딩 +525",
+      "summary": [
+        "Anthropic이 직접 만든 /plugins와 파트너·커뮤니티의 /external_plugins로 구성된 큐레이션 디렉터리다.",
+        "플러그인은 슬래시 커맨드, 에이전트, 스킬, MCP 서버 설정을 포함할 수 있다.",
+        "각 플러그인은 개별 라이선스이며 설치 전 신뢰 여부를 직접 확인하라고 경고한다."
+      ],
+      "why": "출처가 불분명한 스킬을 찾아다니는 대신 공식 목록에서 골라 설치할 수 있다.",
+      "howto": "Claude Code에서 `/plugin > Discover`로 탐색하거나 `/plugin install <이름>@claude-plugins-official`.",
+      "url": "https://github.com/anthropics/claude-plugins-official",
+      "source": "GitHub"
+    },
+    {
+      "title": "xerj: 폴더를 자동 색인해 에이전트에 필요한 구절만 돌려주는 로컬 검색엔진",
+      "category": "skills",
+      "score": 70,
+      "published": "2026-10-15",
+      "buzz": "GitHub 스타 5.6k, 트렌딩 +725",
+      "summary": [
+        "Elasticsearch 호환 API를 가진 단일 정적 바이너리 로컬 검색엔진(Apache-2.0)으로, 코드·문서 폴더를 색인한다.",
+        "README는 grep 기반 작업 대비 출력 토큰 2.7배 절감 사례를 제시한다(소개문의 '40배'와는 맞지 않아 과장 가능성).",
+        "최신 업데이트 날짜는 페이지에서 확인되지 않았다."
+      ],
+      "why": "큰 저장소에서 에이전트가 파일을 하나씩 읽느라 쓰는 토큰을 줄일 수 있다.",
+      "howto": "`curl -fsSL https://xerj.org/get | sh` (Windows PowerShell: `irm https://xerj.org/get.ps1 | iex`)",
+      "url": "https://github.com/xerj-org/xerj",
+      "source": "GitHub"
+    },
+    {
+      "title": "Orca: Claude Code·Codex를 워크트리별로 병렬 실행하는 데스크톱 앱",
+      "category": "tools",
+      "score": 76,
+      "published": "2026-10-15",
+      "buzz": "GitHub 스타 약 9.3만, 트렌딩 +937",
+      "summary": [
+        "에이전트마다 독립된 git 워크트리를 주고 여러 에이전트를 한 화면에서 관리하는 앱이다.",
+        "Claude Code와 Codex를 비롯해 어떤 CLI 에이전트와도 쓸 수 있고 iOS·Android 동반 앱으로 원격 확인이 가능하다.",
+        "최신 릴리스 날짜는 확인되지 않았다."
+      ],
+      "why": "Windows 툴과 게임 작업을 동시에 병렬로 돌릴 때 충돌 없이 관리할 수 있다.",
+      "howto": "onorca.dev/download 또는 GitHub 릴리스에서 Windows 빌드를 받는다(macOS는 `brew install --cask stablyai/orca/orca`).",
+      "url": "https://github.com/stablyai/orca",
+      "source": "GitHub"
+    },
+    {
+      "title": "MCP for Blender: LLM으로 Blender를 조종하는 MCP 서버·애드온",
+      "category": "creative",
+      "score": 74,
+      "published": "2026-10-15",
+      "buzz": "GitHub 스타 약 3.1만, 트렌딩 +141",
+      "summary": [
+        "Blender 애드온과 MCP 서버를 짝지어 Claude 등 LLM이 Blender 3D를 직접 제어하게 하는 커뮤니티 플러그인이다.",
+        "uvx 한 줄 설치 스크립트가 MCP 클라이언트 설정과 애드온 활성화까지 처리한다.",
+        "Blender 재단과 무관한 서드파티이며 릴리스 날짜는 확인되지 않았다."
+      ],
+      "why": "모션그래픽·영상 작업에 쓸 3D 소스를 자연어로 만들어 볼 수 있다.",
+      "howto": "`claude mcp add blender uvx mcp-for-blender` 후 Blender에서 Edit → Preferences → Add-ons의 'Interface: MCP for Blender'를 켜고 N 패널에서 Start MCP Server.",
+      "url": "https://github.com/ahujasid/mcp-for-blender",
+      "source": "GitHub"
+    },
+    {
+      "title": "OpenCut: 오픈소스 CapCut 대체 영상 편집기, MCP 서버 포함 재작성 진행",
+      "category": "creative",
+      "score": 66,
+      "published": "2026-10-15",
+      "buzz": "GitHub 스타 약 9.5만, 트렌딩 +366",
+      "summary": [
+        "웹·데스크톱·모바일용 MIT 라이선스 무료 영상 편집기다.",
+        "현재 처음부터 다시 쓰는 중이며 에디터 API, 플러그인 구조, 에이전트용 MCP 서버, 헤드리스 렌더 모드가 예정 기능이다.",
+        "당장은 클래식 버전을 쓰라고 안내하며 외부 기여는 받지 않는다."
+      ],
+      "why": "영상학과 작업에서 가벼운 편집기와 에이전트 자동화 가능성을 지켜볼 만하다.",
+      "howto": "개발 실행: proto 설치 → `proto use` → `moon run web:dev` (web 앱은 localhost:5173).",
+      "url": "https://github.com/OpenCut-app/OpenCut",
+      "source": "GitHub"
+    },
+    {
+      "title": "Anthropic, 증류 공격 방어 강화: 추출 데이터 90~99% 감소",
+      "category": "research",
+      "score": 72,
+      "published": "2026-10-12",
+      "buzz": "Anthropic 연구 포스트",
+      "summary": [
+        "새 방어책이 증류 업자가 가져가는 데이터를 약 90~99% 줄였다는 초기 증거를 공개했다.",
+        "2단계 분류기의 오탐률은 0.1% 미만이며, 수만 개의 증류 연계 계정을 막았다.",
+        "추론 요약만으로 학습한 모델은 SWE-bench Verified 71.8%, 전체 추론으로 학습한 모델은 80.4%였다."
+      ],
+      "why": "API 사용 정책(8월 31일 이후 생성 계정의 추론 보존, 9월 24일부터 차단 요청 과금)에 영향을 주는 내용이라 알아둘 만하다.",
+      "howto": "원문 참고",
+      "url": "https://www.anthropic.com/research/distillation-defenses",
+      "source": "Anthropic Research"
+    },
+    {
+      "title": "Anthropic, METR 평가자에게 직원 수준 접근 권한 부여",
+      "category": "claude",
+      "score": 62,
+      "published": "2026-10-15",
+      "buzz": "Anthropic 뉴스",
+      "summary": [
+        "비영리 AI 평가기관 METR 소규모 팀에게 사내 하드웨어·사무실·내부 도구 접근을 주고, METR이 위험 분석을 공개한다.",
+        "Anthropic은 공개를 거부할 수 없고 고객 데이터·모델 구조 등 좁은 범주만 가림 처리할 수 있다.",
+        "SecureBio는 위험 보고서의 화학·생물 부분을 검토 중이고 Hugging Face 등과 협의 중이다."
+      ],
+      "why": "Claude 안전성 평가 체계가 바뀌는 흐름을 파악하는 참고 소식이다.",
+      "howto": "원문 참고",
+      "url": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
+      "source": "Anthropic"
+    }
+  ]
+}
