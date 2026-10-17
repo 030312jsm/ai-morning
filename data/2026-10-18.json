@@ -1,0 +1,134 @@
+{
+  "date": "2026-10-18",
+  "note": "오늘은 새로 확인된 소식이 적어 8건만 싣습니다. 최근 며칠 새 이미 실린 항목은 제외했고, 연구(research) 분야는 확인된 신규 소식이 없어 생략했습니다.",
+  "items": [
+    {
+      "title": "Google 공식 android/skills: 안드로이드 개발용 에이전트 스킬 모음",
+      "category": "skills",
+      "score": 80,
+      "published": "2026-10-17",
+      "buzz": "GitHub 스타 8.4k, 오늘 +368",
+      "summary": [
+        "Google이 안드로이드 모범 사례를 SKILL.md 형식으로 묶은 공식 저장소가 GitHub Trending에 올랐다.",
+        "AGP 9 업그레이드, R8 분석, CameraX, Jetpack Compose, Wear, XR, 보안, 테스트 설정 등 디렉터리별 스킬이 들어 있다.",
+        "LLM이 약한 영역 위주로 구성돼 있고 Apache-2.0이다. 안드로이드 앱 개발이 아니면 쓸 일이 적다."
+      ],
+      "why": "안드로이드 쪽 앱·게임 포팅을 할 때 Claude Code와 Codex에 공식 가이드를 그대로 먹일 수 있다.",
+      "howto": "Claude Code: /plugin install android-skills --marketplace android/skills / Codex: codex plugin marketplace add android/skills 후 codex plugin add android-skills@android-skills / 단일 스킬: android skills add r8-analyzer --project=.",
+      "url": "https://github.com/android/skills",
+      "source": "GitHub"
+    },
+    {
+      "title": "godot-mcp 2026.10.15: 186개 도구로 Godot 에디터를 에이전트가 직접 조작",
+      "category": "skills",
+      "score": 79,
+      "published": "2026-10-15",
+      "buzz": "GitHub 스타 38, 릴리스 2026.10.15",
+      "summary": [
+        "Godot 에디터에 연결해 씬 트리·프로젝트 설정 조회, 씬·스크립트 수정(undo 지원), GDScript 파싱 오류 검사를 하는 MCP 서버다.",
+        "플레이 세션 실행·제어, 입력 시뮬레이션, 스크린샷, 성능 프로파일링, 빌드 내보내기까지 지원한다.",
+        "스타가 적은 신생 프로젝트라 안정성은 직접 확인해야 하고, 에디터 애드온 설치가 별도로 필요하다."
+      ],
+      "why": "Godot로 게임을 만드는 독자가 Claude Code에게 에디터 안에서 직접 수정·실행·검증까지 맡길 수 있다.",
+      "howto": "uvx godot-editor-mcp (또는 pip install godot-editor-mcp)로 서버를 실행하고, 릴리스 zip 또는 Godot Asset Store에서 애드온을 설치한 뒤 MCP 클라이언트에 등록한다.",
+      "url": "https://github.com/hybridindie/godot-mcp",
+      "source": "GitHub"
+    },
+    {
+      "title": "ai-memory: Claude Code·Codex가 공유하는 장기 기억 (git 기반 마크다운 위키)",
+      "category": "skills",
+      "score": 76,
+      "published": "2026-10-17",
+      "buzz": "GitHub 스타 9.9k, 오늘 +208",
+      "summary": [
+        "라이프사이클 훅으로 세션 활동을 수집해 git 기반 마크다운 위키로 정리하고, 다음 세션에서 이어받게 해 주는 도구다.",
+        "Claude Code, Codex, Cursor, Gemini CLI 등 20개 이상 에이전트를 지원하며 단일 바이너리로 돌고 기본 경로에서는 LLM 호출이 없다.",
+        "curl로 받아 실행하는 설치 스크립트를 쓰므로 실행 전에 내용을 확인하는 편이 좋다."
+      ],
+      "why": "Claude Code와 Codex를 번갈아 쓰는 1인 개발에서 맥락을 매번 다시 설명하는 수고를 줄여 준다.",
+      "howto": "Windows PowerShell: irm https://github.com/akitaonrails/ai-memory/releases/latest/download/install.ps1 | iex 실행 후 ai-memory setup (Linux/macOS는 install.sh를 curl로 받아 sh).",
+      "url": "https://github.com/akitaonrails/ai-memory",
+      "source": "GitHub"
+    },
+    {
+      "title": "free-claude-code: Claude Code·Codex를 여러 제공자 모델로 돌려 주는 프록시",
+      "category": "skills",
+      "score": 66,
+      "published": "2026-10-17",
+      "buzz": "GitHub 스타 61.3k, 오늘 +626",
+      "summary": [
+        "Claude Code, Codex, OpenCode, Aider 등을 61개 제공자의 모델에 연결하고 실패하면 다른 모델로 넘기는 오픈소스 프록시다.",
+        "터미널·IDE·브라우저·Discord/Telegram에서 쓸 수 있고 음성 입력을 지원한다.",
+        "Anthropic과 무관한 독립 프로젝트이고 AGPL-3.0이다. 무료 토큰은 각 제공자 정책에 따르며, 일부 플랜은 개인·대화형 용도로 제한된다."
+      ],
+      "why": "토큰 비용이 부담될 때 다른 모델로 Claude Code 워크플로를 시험해 볼 수 있다.",
+      "howto": "Windows PowerShell: & ([scriptblock]::Create((irm \"https://raw.githubusercontent.com/Alishahryar1/free-claude-code/main/scripts/install.ps1\"))) / Linux에서는 fcc-server를 켜 둬야 한다.",
+      "url": "https://github.com/Alishahryar1/free-claude-code",
+      "source": "GitHub"
+    },
+    {
+      "title": "Claude Code v2.1.299: 유휴 자동 압축과 @ 파일 언급 제어",
+      "category": "claude",
+      "score": 74,
+      "published": "2026-10-14",
+      "buzz": "공식 릴리스",
+      "summary": [
+        "터미널에서 20만 토큰이 넘는 대화를 약 54분 방치하면 1시간 프롬프트 캐시가 만료되기 전에 자동 압축한다.",
+        "CLAUDE_CODE_DISABLE_FILE_MENTIONS를 켜면 @ 파일 언급 시 내용 대신 경로만 전달한다. /usage가 max effort·workflow·상시 컨텍스트·큰 도구 결과에 대한 경고를 보여 준다.",
+        "디버그 로깅 시 메모리 증가 문제도 고쳤다."
+      ],
+      "why": "긴 세션을 자주 켜 두는 사용자의 토큰 낭비를 줄이고 비용 관리가 쉬워진다.",
+      "howto": "claude update 후 사용. 끄려면 settings.json에 \"idleCompaction\": false, 기준 조정은 CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS.",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.299",
+      "source": "Anthropic GitHub"
+    },
+    {
+      "title": "Codex CLI 0.163.0: 설정 검색, 응답 중 즉시 조종, 읽기 도구 병렬 실행",
+      "category": "tools",
+      "score": 72,
+      "published": "2026-10-15",
+      "buzz": "공식 릴리스 · 검색 확인",
+      "summary": [
+        "/config에서 설정을 검색하고 바로 적용되며, 재시작이 필요한 항목을 표시해 준다.",
+        "응답 도중 후속 메시지를 보내면 즉시 방향을 바꾸고, /keymap에서 리더 키(기본 Ctrl+X)를 지정할 수 있다. 서로 독립적인 읽기 전용 도구는 병렬로 실행된다.",
+        "Windows·WSL의 붙여넣기·클립보드 처리를 고쳤고, 패치된 zsh 번들을 제거했다."
+      ],
+      "why": "Windows에서 Codex를 쓰는 독자에게 클립보드 수정과 즉시 조종 기능이 바로 체감된다.",
+      "howto": "Codex CLI를 최신 안정판(0.163.0)으로 업데이트한 뒤 /config, /keymap, /daemon 명령을 사용한다.",
+      "url": "https://developers.openai.com/codex/changelog",
+      "source": "OpenAI Codex 체인지로그"
+    },
+    {
+      "title": "Meta, 첫 프런티어급 모델 Muse Wonder·Muse Wonder Full 공개",
+      "category": "tools",
+      "score": 68,
+      "published": "2026-10-12",
+      "buzz": "다수 매체 보도 · 검색 확인",
+      "summary": [
+        "Muse Wonder는 Meta Model API와 터미널 코딩 에이전트 Muse Code에서, Wonder Full은 Muse Code 구독자 전용이다.",
+        "컨텍스트 1M 토큰, 텍스트·이미지·영상·오디오 입력을 받고, API 가격은 입력 $4/출력 $20(100만 토큰당)이다. Artificial Analysis 지수는 Wonder Full 56, Wonder 52로 보도됐다.",
+        "Meta 자체 벤치마크는 독립 검증 전이고, Muse Code 일부 플랜은 기본값이 학습 데이터 제공 모드라는 지적이 있다."
+      ],
+      "why": "Claude Code 외의 코딩 에이전트와 모델 선택지를 비교하는 기준점이 된다.",
+      "howto": "Meta Model API에서 모델 ID muse-wonder-1.0을 호출하며, OpenAI SDK 호환이라는 보도가 있으니 가격·약관은 공식 페이지에서 확인한다.",
+      "url": "https://betanews.com/article/muse-wonder-frontier-model-developers/",
+      "source": "BetaNews"
+    },
+    {
+      "title": "Transformers v5.20: Muse Spark Open·Ling 3.0 Flash·MiniCPM-V 4.7 등 신규 모델 추가",
+      "category": "tools",
+      "score": 62,
+      "published": "2026-10-15",
+      "buzz": "공식 릴리스 (v5.20.1은 10월 16일)",
+      "summary": [
+        "v5.20.0이 Meta Muse Spark Open, InclusionAI Ling 3.0 Flash, Aleph Alpha Kolibri 1, OpenBMB MiniCPM-V 4.7, Baidu 3B OCR 모델 UnlimitedOcr, UltraBERT, MOSS-Transcribe-Diarize를 추가했다.",
+        "다음 날 v5.20.1이 Reflection AI의 Beam(코딩·에이전트용 토큰 효율 모델)을 추가했다.",
+        "라이브러리 지원이 추가된 것이며 각 모델의 성능은 별도로 확인해야 한다."
+      ],
+      "why": "로컬에서 OCR·음성 전사·소형 멀티모달 모델을 시험해 보려는 독자가 최신 모델을 바로 불러올 수 있다.",
+      "howto": "pip install -U transformers 후 AutoModel 계열로 불러온다. 모델별 사용법은 각 모델 카드 참고.",
+      "url": "https://github.com/huggingface/transformers/releases",
+      "source": "Hugging Face GitHub"
+    }
+  ]
+}
