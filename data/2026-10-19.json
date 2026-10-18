@@ -1,0 +1,102 @@
+{
+  "date": "2026-10-19",
+  "note": "오늘은 날짜와 내용을 확인한 새 소식이 6건뿐이라 6건만 싣습니다. 최근 7일 안에 이미 실린 항목은 제외했고, Claude·research 분야는 확인된 신규 소식이 없어 생략했습니다.",
+  "items": [
+    {
+      "title": "context-mode: 도구 출력을 컨텍스트 밖에 두고 세션 기억을 SQLite에 보존하는 MCP 플러그인",
+      "category": "skills",
+      "score": 88,
+      "published": "2026-10-18",
+      "buzz": "GitHub 주간 트렌딩, 한 주 +4,438★ (누적 약 30.7k★)",
+      "summary": [
+        "코딩 에이전트의 컨텍스트 창이 도구 출력으로 가득 차는 문제를 줄이는 오픈소스 MCP 서버(라이선스 ELv2)로, 이번 주 GitHub 트렌딩에 올랐다.",
+        "도구 출력을 샌드박스에 두고 파일 편집·git 작업·결정 사항을 SQLite에 기록하며, 압축 후에도 BM25 검색으로 다시 꺼낸다. README는 한 예시에서 315KB를 5.4KB로 줄여 98% 절감했다고 밝힌다.",
+        "Codex는 PreToolUse에서 호출을 거부만 할 수 있고 입력을 바꿀 수 없다. Claude Code에서 MCP만 설치하면 훅과 슬래시 커맨드가 빠져 자동 라우팅이 되지 않는다."
+      ],
+      "why": "긴 Claude Code 세션에서 컴팩션 때문에 맥락을 잃는 일이 잦은 1인 개발자에게 바로 효과가 보이는 도구다.",
+      "howto": "Claude Code에서 `/plugin marketplace add mksglu/context-mode` 후 `/plugin install context-mode@context-mode`, 재시작 뒤 `/context-mode:ctx-doctor`로 확인. Codex는 `codex plugin marketplace add mksglu/context-mode` 후 설정에 `[features]` 아래 `plugin_hooks = true`, `hooks = true`를 추가한다(Node 22.5 이상).",
+      "url": "https://github.com/mksglu/context-mode",
+      "source": "GitHub"
+    },
+    {
+      "title": "OmniRoute: Claude Code·Codex를 375개 제공자 모델에 연결하는 무료 AI 게이트웨이",
+      "category": "skills",
+      "score": 80,
+      "published": "2026-10-18",
+      "buzz": "GitHub 트렌딩 하루 +411★ (누적 78.1k★)",
+      "summary": [
+        "하나의 엔드포인트로 여러 AI 제공자를 묶고 자동 폴백과 토큰 압축을 제공하는 MIT 라이선스 게이트웨이다. README 기준 제공자 375개, 모델 1,400개 이상을 지원한다.",
+        "`omniroute run claude --model ...`처럼 Claude Code·Codex를 다른 모델로 바로 띄울 수 있고, MCP와 A2A도 지원한다.",
+        "제공자 계정은 직접 가져와야 하며 무료 한도와 약관은 제공자마다 다르다. `tos: avoid`로 표시된 제공자는 자동 라우팅에서 기본 제외된다."
+      ],
+      "why": "한도가 걸릴 때 다른 모델로 갈아타며 Claude Code·Codex 작업을 이어가고 싶은 사람에게 맞는 도구다.",
+      "howto": "npm 패키지 `omniroute`로 설치하고(Docker·Electron도 가능), `omniroute configure claude` 또는 `omniroute configure codex`로 설정을 쓴다. 직접 연결하려면 `http://localhost:20128/v1`에 대시보드의 키와 모델 `auto`를 지정한다.",
+      "url": "https://github.com/diegosouzapw/OmniRoute",
+      "source": "GitHub"
+    },
+    {
+      "title": "Pi v1.3.0: 스킬·확장·테마를 패키지로 묶는 미니멀 코딩 에이전트 CLI",
+      "category": "skills",
+      "score": 77,
+      "published": "2026-10-15",
+      "buzz": "GitHub 116.1k★",
+      "summary": [
+        "earendil-works의 MIT 오픈소스 에이전트 툴킷으로 코딩 에이전트 CLI, 통합 LLM API, 에이전트 런타임, TUI 라이브러리를 포함한다. v1.3.0은 10월 15일에 나왔다.",
+        "확장·스킬·프롬프트 템플릿·테마를 npm이나 git으로 패키지로 공유할 수 있고, 인터랙티브·JSON·RPC 모드와 TypeScript SDK를 지원한다.",
+        "권한 시스템이 없어 격리하려면 컨테이너를 직접 써야 하고, 서브에이전트와 plan 모드는 기본으로 들어 있지 않다. Node 22.19 이상이 필요하다."
+      ],
+      "why": "Claude Code와 다른 접근의 가벼운 하네스로, 스킬 중심으로 나만의 에이전트를 만들어 보고 싶은 사람에게 참고가 된다.",
+      "howto": "Windows는 `powershell -c \"irm https://pi.dev/install.ps1 | iex\"`, 또는 `npm install -g --ignore-scripts @earendil-works/pi-coding-agent`.",
+      "url": "https://github.com/earendil-works/pi",
+      "source": "GitHub"
+    },
+    {
+      "title": "anthropics/claude-quickstarts: Managed Agents와 Computer Use 예제 15종",
+      "category": "skills",
+      "score": 72,
+      "published": "2026-10-18",
+      "buzz": "GitHub 트렌딩 하루 +453★ (누적 18.6k★)",
+      "summary": [
+        "Anthropic이 관리하는 Claude API 앱 예제 저장소로, 이번에 GitHub 트렌딩에 올랐다. 폴더 15개에 고객지원 에이전트, 자율 코딩 에이전트, Computer Use·Browser Use 데모가 들어 있다.",
+        "`managed-agents/` 아래에는 Slack·Linear·Sentry 에이전트와, Claude Code에서 관리형 에이전트를 조작하는 TypeScript MCP 서버(도구 9개) 예제가 있다.",
+        "예제마다 별도 설정이 필요하고 Claude API 키가 있어야 한다. Computer Use 참고 구현은 VM에서 돌리라고 안내한다."
+      ],
+      "why": "웹앱에 Claude 에이전트를 붙이거나 자율 코딩 에이전트 패턴을 배우려는 사람에게 공식 참고 코드다.",
+      "howto": "`git clone https://github.com/anthropics/claude-quickstarts.git` 후 원하는 폴더의 README를 따라 의존성을 설치하고 API 키를 환경 변수로 지정한다.",
+      "url": "https://github.com/anthropics/claude-quickstarts",
+      "source": "GitHub"
+    },
+    {
+      "title": "Google, 플래그십 모델 Gemini 4 Argon 전면 공개",
+      "category": "tools",
+      "score": 70,
+      "published": "2026-10-13",
+      "buzz": "Google DeepMind 공식 발표, Reuters 보도 · 검색 확인",
+      "summary": [
+        "Google이 9월 30일 일부 사이버 방어 담당자에게 먼저 공개했던 Gemini 4 Argon을 10월 13일 개발자와 기업 대상으로 전면 공개했다. 코딩, 금융, 법률, 사이버보안, 과학의 다단계 작업을 내세운다.",
+        "Gemini API와 AI Studio로 쓸 수 있고, AI Pro·Ultra 구독자는 Gemini 앱과 검색 AI 모드에서, Antigravity에서는 단계적으로 쓸 수 있다. 도입 가격은 입력 100만 토큰당 $2, 출력 $10이다.",
+        "도입 가격은 11월 말~12월 초에 두 배로 오른다는 보도가 있으나 날짜는 출처마다 다르다. 코딩 벤치마크 점수는 검색 결과에서 확인하지 못했고, Antigravity 제공 대상도 보도마다 다르다."
+      ],
+      "why": "Claude Code·Codex와 함께 쓸 수 있는 또 하나의 코딩 모델 선택지라 가격과 Antigravity 접근 조건을 알아 둘 만하다.",
+      "howto": "AI Studio나 Gemini API에서 Gemini 4 Argon 모델을 선택한다. 구체적인 모델 ID는 원문 참고.",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+      "source": "Google 블로그"
+    },
+    {
+      "title": "ArtCraft: 2D·3D로 연출하고 여러 모델로 이미지·영상을 만드는 오픈소스 데스크톱 앱",
+      "category": "creative",
+      "score": 74,
+      "published": "2026-10-18",
+      "buzz": "GitHub 주간 트렌딩 +18,479★ (누적 32.7k★)",
+      "summary": [
+        "'AI 이미지·영상 제작용 IDE'를 표방하는 오픈소스 앱으로, 2D 합성과 3D 장면 구성, 캐릭터 포징, 이미지→3D 메시, 이미지→영상을 한 곳에서 한다. 라이선스는 MIT 또는 Apache-2.0이다.",
+        "모델 카탈로그는 62종(이미지 16, 영상 25, 음악·사운드 5, 3D 11, 월드 5)이다. 10월 10~11일에는 Rust(egui) 네이티브 앱이 추가돼 Midjourney나 fal 중에서 제공자를 고를 수 있다.",
+        "Windows·macOS는 안정 빌드가 있고 Linux는 소스 빌드만 된다. 일부 모델은 비활성이거나 데스크톱 앱에서 제한되고, Kling·Google·Runway·Luma 연동은 아직 없다."
+      ],
+      "why": "영상 작업의 콘티·스토리보드용 이미지와 짧은 컷을 3D 블로킹으로 잡을 때 쓸 수 있고, Windows 빌드가 있어 바로 시도해 볼 수 있다.",
+      "howto": "getartcraft.com에서 Windows 빌드를 받거나 GitHub Releases에서 내려받는다. 소스 빌드는 저장소의 `_docs/dev_setup.md` 참고.",
+      "url": "https://github.com/storytold/artcraft",
+      "source": "GitHub"
+    }
+  ]
+}
