@@ -1,0 +1,86 @@
+{
+  "date": "2026-10-20",
+  "note": "오늘은 날짜와 내용을 직접 확인한 새 소식이 5건뿐이라 5건만 싣습니다. creative·research 분야는 확인된 신규 소식이 없어 생략했습니다.",
+  "items": [
+    {
+      "title": "Claude Code v2.1.304: /auto-mode-setup, 워크트리 삭제 전 확인, 서브에이전트 기억 버그 수정",
+      "category": "claude",
+      "score": 90,
+      "published": "2026-10-19",
+      "buzz": "GitHub 릴리스 v2.1.302~304 연속 배포",
+      "summary": [
+        "Claude Code v2.1.304(10/19)가 나왔고, v2.1.303(10/18)은 버그 수정·안정화만 담았다.",
+        "`/auto-mode-setup`이 프로젝트와 최근 세션을 읽어 auto mode가 내 환경을 학습하도록 안내한다. `rm -r`을 마운트 드라이브·최상위 폴더에 실행할 때도 `rm -rf /Applications`처럼 안전 확인을 거치고, `claude --worktree`가 커밋을 잃을 수 있게 워크트리와 브랜치를 묻지 않고 지우던 문제가 고쳐졌다.",
+        "Pro·Max에서 비활성 대화를 재개하면 5시간 사용량의 상당 부분을 쓸 때 경고가 뜬다. 서브에이전트가 방금 끝낸 작업을 잊던 버그도 수정됐다."
+      ],
+      "why": "auto mode와 worktree를 쓰는 1인 개발자에게 안전장치와 설정 편의가 한꺼번에 좋아진 업데이트다.",
+      "howto": "`claude update`로 갱신한 뒤 세션에서 `/auto-mode-setup`을 실행한다. 분류기 모델은 환경변수 `CLAUDE_CODE_AUTO_MODE_MODEL`로 고를 수 있다(v2.1.302).",
+      "url": "https://github.com/anthropics/claude-code/releases",
+      "source": "GitHub anthropics/claude-code"
+    },
+    {
+      "title": "MCP 공식 servers 저장소 v2.0.0: 새 스펙 전환, TS SDK v2, Node 24 필수",
+      "category": "skills",
+      "score": 86,
+      "published": "2026-10-19",
+      "buzz": "v2.0.0 공개(10/19), v1.0.0 레거시 최종판은 10/11",
+      "summary": [
+        "modelcontextprotocol/servers가 v2.0.0으로 올라, 모든 서버를 최신 스펙 기준으로 다시 짜면서 구버전 클라이언트도 계속 지원한다.",
+        "TypeScript 서버는 TS SDK v2로 옮겨 최소 Node 버전이 24가 됐다. Python 서버(fetch, git, time)는 MCP Python SDK의 `MCPServer`로 재작성됐고, 모르는 도구를 부르면 `isError` 결과 대신 JSON-RPC -32602 오류를 돌려준다.",
+        "filesystem 서버의 roots 해제·갱신 순서 버그가 고쳐졌다. Node 24 미만이면 TS 서버가 실행되지 않으니 환경을 확인해야 한다."
+      ],
+      "why": "filesystem·git·fetch MCP 서버를 Claude Code에 붙여 쓰는 사람은 Node 버전과 오류 처리 변화를 미리 알아야 한다.",
+      "howto": "`claude mcp add`로 등록한 서버가 `npx`로 실행된다면 Node 24 이상인지 `node -v`로 확인한다. 기존 설정이 깨지면 릴리스 노트를 참고해 v1.0.0 고정도 가능하다.",
+      "url": "https://github.com/modelcontextprotocol/servers/releases",
+      "source": "GitHub modelcontextprotocol/servers"
+    },
+    {
+      "title": "Codex CLI 0.163.0: 검색형 /config, 응답 중 즉시 조향, 읽기 도구 병렬 실행",
+      "category": "skills",
+      "score": 80,
+      "published": "2026-10-15",
+      "buzz": "GitHub 릴리스 0.163.0 (알파 0.164.0 진행 중)",
+      "summary": [
+        "Codex CLI 0.163.0(10/15)은 `/config`에서 설정을 검색하게 하고 `/keymap`의 리더 키(기본 Ctrl+X)를 바꿀 수 있게 했다.",
+        "응답 중 후속 메시지를 보내면 Codex가 즉시 방향을 바꾸고, 서로 독립적인 읽기 전용 도구는 병렬로 돈다. `/daemon`으로 관리형 백그라운드 서버를 재시작할 수 있다.",
+        "번들된 패치 `zsh`가 빠지고 표준 셸 실행기를 쓴다. Windows/WSL 붙여넣기와 스레드 재개도 개선됐다."
+      ],
+      "why": "Windows에서 Codex를 쓸 때 붙여넣기·WSL 문제가 줄고 작업 도중 방향 수정이 쉬워진다.",
+      "howto": "`npm i -g @openai/codex@latest`(또는 쓰던 설치 방식)로 갱신하고, 세션에서 `/config`와 `/keymap`을 열어 확인한다.",
+      "url": "https://github.com/openai/codex/releases",
+      "source": "GitHub openai/codex"
+    },
+    {
+      "title": "OpenCode v1.19: 1.x 라인 고정, 세션 공유 기능 종료",
+      "category": "tools",
+      "score": 66,
+      "published": "2026-10-16",
+      "buzz": "GitHub 트렌딩 하루 +1,310★",
+      "summary": [
+        "오픈소스 코딩 에이전트 OpenCode가 v1.19.1~1.19.3(10/15~16)을 냈다.",
+        "1.x는 1.x 안에서만 업데이트되고 2.0으로는 `/update`의 2.0 제안이나 `opencode upgrade --major`로 직접 골라야 한다. 설치 스크립트는 2.x 설치를 거부한다.",
+        "세션 공유가 종료돼 기존 공유 링크와 명령이 더는 동작하지 않는다. 추론 옵션으로 reasoning variant를 만들 수 있게 됐다."
+      ],
+      "why": "Claude Code·Codex 외 대안 CLI를 쓰거나 비교하려는 사람이 업그레이드 시 깨지는 부분을 미리 알 수 있다.",
+      "howto": "`opencode upgrade`로 1.x 최신으로 갱신한다. 2.0으로 옮기려면 `opencode upgrade --major`를 쓴다.",
+      "url": "https://github.com/anomalyco/opencode/releases",
+      "source": "GitHub anomalyco/opencode"
+    },
+    {
+      "title": "Hugging Face transformers v5.20.1: Reflection AI의 코딩·에이전트 모델 Beam 추가",
+      "category": "tools",
+      "score": 58,
+      "published": "2026-10-16",
+      "buzz": "GitHub 릴리스 v5.20.1·v5.20.2",
+      "summary": [
+        "transformers v5.20.1(10/16)에 Reflection AI의 코딩·에이전트용 모델 Beam 지원이 들어갔다.",
+        "구버전 torch에서 모델 로딩이 되던 것을 복구하는 패치도 포함됐다. v5.20.2(10/19)는 멀티모달 모델의 `generate` 입력 타입 처리 오류를 고친다.",
+        "릴리스 노트만으로는 Beam의 크기·성능·라이선스를 알 수 없다."
+      ],
+      "why": "오픈 모델로 로컬 코딩 에이전트를 실험하려는 사람이 새 후보를 확인할 수 있다.",
+      "howto": "`pip install -U transformers`로 5.20.2 이상을 설치한다. 모델 사용법은 원문 참고.",
+      "url": "https://github.com/huggingface/transformers/releases",
+      "source": "GitHub huggingface/transformers"
+    }
+  ]
+}
