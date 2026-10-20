@@ -1,0 +1,134 @@
+{
+  "date": "2026-10-21",
+  "note": "오늘은 GitHub 트렌딩·공식 페이지로 확인된 소식 위주로 9건만 실었다. tools·creative·research 분야는 날짜와 내용을 확인할 소식이 없어 비웠다. GitHub 저장소 항목의 published는 오늘 트렌딩 급상승 기준이다.",
+  "items": [
+    {
+      "title": "cloudflare/security-audit-skill — 6단계로 코드베이스를 보안 감사하는 에이전트 스킬",
+      "category": "skills",
+      "score": 88,
+      "published": "2026-10-21",
+      "buzz": "GitHub 스타 34.0k, 오늘 +1,680",
+      "summary": [
+        "Cloudflare가 공개한 코딩 에이전트용 보안 감사 스킬로, GitHub 트렌딩 상위에 올랐다.",
+        "정찰 → 커버리지 기반 탐색 → 후보 검증 → 구조화 출력 → 독립 기록 검증 → 보고의 6단계로 돌아간다.",
+        "결과는 기계가 읽을 수 있는 형식으로 나오고 각 발견이 독립적으로 검증된다. 마지막 커밋 날짜는 페이지에서 확인되지 않는다."
+      ],
+      "why": "웹앱·게임 서버를 Claude Code로 만들 때 배포 전에 취약점을 한 번 훑어보는 용도로 바로 쓸 수 있다.",
+      "howto": "npx skills add https://github.com/cloudflare/security-audit-skill --skill security-audit  (사용자 전체 설치는 --global 추가)",
+      "url": "https://github.com/cloudflare/security-audit-skill",
+      "source": "GitHub"
+    },
+    {
+      "title": "Headroom — 도구 출력·로그를 압축해 컨텍스트를 아끼는 프록시/MCP 서버",
+      "category": "skills",
+      "score": 84,
+      "published": "2026-10-21",
+      "buzz": "GitHub 스타 76.7k, 오늘 +555",
+      "summary": [
+        "도구 출력, 로그, 파일, RAG 조각을 모델에 보내기 전에 압축한다. 원본은 나중에 다시 꺼낼 수 있다.",
+        "`headroom wrap claude`는 로컬 프록시를 띄우고 Serena를 설치한 뒤 Claude Code를 그 프록시 경유로 실행한다.",
+        "MCP 서버로 쓰면 headroom_compress, headroom_retrieve, headroom_stats 세 도구가 노출된다. `headroom unwrap claude`로 되돌린다."
+      ],
+      "why": "긴 빌드 로그와 테스트 출력으로 컨텍스트가 빨리 차는 PyQt·Godot 작업의 사용량 한도를 줄여준다.",
+      "howto": "uv tool install --python 3.13 \"headroom-ai[all]\" 후 headroom wrap claude. MCP로만 쓰려면 headroom mcp install.",
+      "url": "https://github.com/headroomlabs-ai/headroom",
+      "source": "GitHub"
+    },
+    {
+      "title": "agency-agents — 역할별 서브에이전트 모음, 데스크톱 앱까지 추가",
+      "category": "skills",
+      "score": 78,
+      "published": "2026-10-21",
+      "buzz": "GitHub 스타 162.3k, 오늘 +590",
+      "summary": [
+        "프런트엔드 개발자 같은 전문 에이전트 페르소나를 분야별로 모아 둔 저장소다.",
+        "Claude Code용은 변환 없이 ~/.claude/agents/ 로 복사하면 된다. 부서 폴더 단위로도 설치할 수 있다.",
+        "macOS·Linux·Windows용 데스크톱 앱이 생겨 자동 업데이트와 설치를 맡는다. 에이전트가 너무 많으면 일부만 설치하는 편이 낫다."
+      ],
+      "why": "Windows에서 쓸 수 있는 앱으로 서브에이전트를 한 번에 설치할 수 있고, 디자인·프런트엔드 역할을 골라 쓰기 쉽다.",
+      "howto": "./scripts/install.sh --tool claude-code  (일부만: cp engineering/*.md ~/.claude/agents/)",
+      "url": "https://github.com/msitarzewski/agency-agents",
+      "source": "GitHub"
+    },
+    {
+      "title": "anthropics/knowledge-work-plugins — Anthropic 공식 업무용 플러그인 11종",
+      "category": "skills",
+      "score": 70,
+      "published": "2026-10-21",
+      "buzz": "GitHub 스타 30.8k, 오늘 +262",
+      "summary": [
+        "Anthropic이 Claude Cowork와 Claude Code용으로 낸 직군별 플러그인 마켓플레이스다.",
+        "표에는 productivity, sales, marketing, legal, finance, data 등 11개가 있다.",
+        "저장소에는 표에 없는 engineering, design 폴더도 있지만 정식 제공 여부는 페이지에서 확인되지 않는다."
+      ],
+      "why": "공식 플러그인 구조를 그대로 볼 수 있어, 직접 플러그인이나 스킬을 만들 때 좋은 참고 예제가 된다.",
+      "howto": "claude plugin marketplace add anthropics/knowledge-work-plugins 후 claude plugin install productivity@knowledge-work-plugins",
+      "url": "https://github.com/anthropics/knowledge-work-plugins",
+      "source": "GitHub"
+    },
+    {
+      "title": "ai-job-search — Claude Code 슬래시 커맨드로 돌리는 로컬 구직 자동화",
+      "category": "skills",
+      "score": 55,
+      "published": "2026-10-21",
+      "buzz": "GitHub 스타 60.3k, 오늘 +3,890",
+      "summary": [
+        "공고 평가, CV 맞춤, 커버레터, 면접 준비를 Claude Code 안에서 처리하는 MIT 라이선스 프레임워크다.",
+        "/setup, /scrape, /apply <url> 같은 슬래시 커맨드로 구성되고, 두 번째 에이전트가 결과를 검토한다.",
+        "내장 포털 검색은 덴마크 시장 기준이고 Python 3.10+, Bun, LaTeX가 필요하다."
+      ],
+      "why": "구직용이지만 슬래시 커맨드와 에이전트 검토를 엮은 구조라, 직접 만드는 워크플로의 설계 참고가 된다.",
+      "howto": "gh repo fork MadsLorentzen/ai-job-search --clone → python3 tools/install_portal_clis.py → claude → /setup",
+      "url": "https://github.com/MadsLorentzen/ai-job-search",
+      "source": "GitHub"
+    },
+    {
+      "title": "Claude Code v2.1.305 — 워크플로 재개 개선, MCP·worktree 버그 수정",
+      "category": "claude",
+      "score": 82,
+      "published": "2026-10-20",
+      "buzz": "GitHub 릴리스 (최신)",
+      "summary": [
+        "sandbox.allowNestedUserNamespaces가 추가돼 샌드박스 안의 Linux 명령이 user namespace를 만들 수 있다. 샌드박스 파일 보호를 우회할 수 있으니 켜기 전에 검토해야 한다.",
+        "Workflow 재개 시 끝난 pipeline()/parallel() 에이전트를 저널에서 가져와 다시 돌리지 않는다. bare 저장소의 새 worktree는 기본 브랜치에서 시작한다.",
+        "allowedMcpServers가 managed-mcp.json의 ${VAR}-only stdio 서버를 더는 거르지 않아 업그레이드하면 새로 로드될 수 있다. 막으려면 deniedMcpServers를 쓴다."
+      ],
+      "why": "매일 쓰는 Claude Code의 동작이 바뀌는 항목이라 업데이트 전에 훑어볼 만하다.",
+      "howto": "claude update 로 업데이트하고 /usage 에서 f 를 눌러 경고 수정안을 적용한다.",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.305",
+      "source": "GitHub 릴리스"
+    },
+    {
+      "title": "Claude Code v2.1.304 — /auto-mode-setup 추가, worktree 종료 시 커밋 유실 수정",
+      "category": "claude",
+      "score": 72,
+      "published": "2026-10-19",
+      "buzz": "GitHub 릴리스",
+      "summary": [
+        "/auto-mode-setup이 생겨 프로젝트와 최근 세션을 바탕으로 auto mode를 안내식으로 설정한다.",
+        "Pro·Max 플랜에서 오래 쉰 대화를 재개하면 5시간 한도를 꽤 쓸 때 경고를 띄운다.",
+        "detached HEAD 상태에서 claude --worktree를 종료할 때 확인 없이 worktree와 브랜치를 지워 커밋을 잃을 수 있던 버그가 고쳐졌다."
+      ],
+      "why": "auto mode를 쓰는 사람은 설정 시간을 줄이고, worktree로 병렬 작업을 하는 사람은 커밋 유실 위험이 줄어든다.",
+      "howto": "Claude Code에서 /auto-mode-setup 실행. CLAUDE_CODE_AUTO_COMPACT_WINDOW는 200k, 1M처럼 k·M 접미사를 받는다.",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.304",
+      "source": "GitHub 릴리스"
+    },
+    {
+      "title": "Anthropic, 지분 5%로 'Public Benefit Fund' 설립 발표",
+      "category": "claude",
+      "score": 40,
+      "published": "2026-10-18",
+      "buzz": "Anthropic 공식 발표",
+      "summary": [
+        "주주 승인을 전제로 지분 5%를 즉시 출연하고, 기업가치가 기준선 위에서 50% 오를 때마다 이사회 재량으로 2%를 더할 수 있다.",
+        "펀드는 501(c)(3)이 아닌 완전 자회사 LLC이며 로비·정치 기부에는 쓸 수 없다.",
+        "창업자 지분 80% 서약과 직원 기부 매칭을 합쳐 약 20%가 공익에 쓰일 예정이다. 거버넌스 세부는 몇 달 안에 나온다."
+      ],
+      "why": "개발 도구와는 직접 관련이 없지만 Anthropic의 방향을 읽는 참고 소식이다.",
+      "howto": "사용법 없음. 원문 참고.",
+      "url": "https://www.anthropic.com/news/public-benefit-fund",
+      "source": "Anthropic"
+    }
+  ]
+}
