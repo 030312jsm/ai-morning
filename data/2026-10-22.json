@@ -1,0 +1,149 @@
+{
+  "date": "2026-10-22",
+  "note": "오늘은 새로 확인된 소식이 적어 8건만 실었다. 영상·도구 분야는 신선한 소식이 검색되지 않았다.",
+  "items": [
+    {
+      "title": "Superpowers v7.0.1 — 브레인스토밍 스킬 재조정, 긴 스킬 압축 대응",
+      "category": "skills",
+      "score": 88,
+      "published": "2026-10-21",
+      "buzz": "GitHub 스타 약 30만",
+      "summary": [
+        "obra/superpowers가 v7.0.1을 냈다. v7.0.0에서 다시 짠 브레인스토밍이 먼저 프로젝트 맥락을 읽고 더 구체적인 질문을 하도록 손봤다.",
+        "접근법을 2~3개 제시하고 추천안을 붙인 뒤 구현에 들어간다. 긴 스킬 세 개는 줄여서 Claude Code 컴팩션 뒤에도 남게 했다.",
+        "v7.0.0(10/10)에서 Windows 훅 탐색과 Git Bash 경로 문제도 고쳤다."
+      ],
+      "why": "Windows에서 Claude Code로 PyQt 툴을 만드는 독자에게 설계→계획→TDD 흐름과 Windows 훅 수정이 바로 쓸모 있다.",
+      "howto": "저장소 README의 플러그인 설치 명령을 따른다(원문 참고). 이미 설치했다면 플러그인을 업데이트한다.",
+      "url": "https://github.com/obra/superpowers/releases",
+      "source": "GitHub"
+    },
+    {
+      "title": "Graphify — 코드·문서·PDF를 지식 그래프로 바꿔 /graphify로 질의",
+      "category": "skills",
+      "score": 86,
+      "published": "2026-10-21",
+      "buzz": "GitHub Trending 오늘 +1,434 · 스타 131k",
+      "summary": [
+        "코드베이스와 문서, SQL 스키마, 설정, PDF를 지식 그래프로 만들어 질의할 수 있게 하는 도구다.",
+        "`graphify install`이 사용 중인 AI 어시스턴트를 감지해 스킬을 등록하고, 이후 `/graphify .`로 그래프를 만든다. 결과는 `graphify-out/`에 쌓인다.",
+        "PyPI 패키지명은 y가 두 개인 `graphifyy`다. 비슷한 이름의 다른 패키지는 공식이 아니라고 README가 경고한다."
+      ],
+      "why": "Godot·웹앱처럼 파일이 많은 프로젝트에서 Claude Code가 구조를 훨씬 적은 토큰으로 파악하게 해 준다.",
+      "howto": "`uv tool install graphifyy` (또는 `pipx install graphifyy`) 후 `graphify install`, Claude Code에서 `/graphify .` 실행.",
+      "url": "https://github.com/Graphify-Labs/graphify",
+      "source": "GitHub"
+    },
+    {
+      "title": "ripwire — 에이전트용 호출 그래프 CLI·MCP 서버 (Red Hat)",
+      "category": "skills",
+      "score": 78,
+      "published": "2026-10-21",
+      "buzz": "GitHub 스타 2.5k",
+      "summary": [
+        "의존성 없는 C++23 CLI이자 MCP 서버로, 호출 그래프를 만들어 에이전트가 레포를 읽기 전에 손댈 곳을 찾게 한다.",
+        "수정 뒤에는 영향 범위, 돌려야 할 테스트, 품질 변화를 점검해 준다.",
+        "macOS(Apple silicon)와 Linux가 기본이고 Windows x64는 프리뷰다."
+      ],
+      "why": "큰 코드베이스에서 Claude Code의 파일 탐색 토큰을 줄이는 데 쓸 수 있다.",
+      "howto": "`RIPWIRE_REPO=redhat-et/ripwire bash -c \"$(curl -fsSL https://raw.githubusercontent.com/redhat-et/ripwire/main/scripts/install.sh)\"` 실행 후 PATH에 `$HOME/.local/bin` 추가. Windows는 README 참고.",
+      "url": "https://github.com/redhat-et/ripwire",
+      "source": "GitHub"
+    },
+    {
+      "title": "wshobson/agents — 94개 플러그인·185개 스킬 멀티 하네스 마켓플레이스",
+      "category": "skills",
+      "score": 76,
+      "published": "2026-10-21",
+      "buzz": "GitHub Trending 주간 · 스타 41.5k",
+      "summary": [
+        "Claude Code, Codex CLI, Cursor, OpenCode 등에서 쓰는 플러그인·에이전트·스킬·커맨드 모음이다.",
+        "플러그인 94개, 에이전트 202개, 스킬 185개, 커맨드 105개를 담고 있다. Python·JS 개발, 코드 리뷰, 테스트, 인프라, 보안 분야다.",
+        "양이 많아 필요한 플러그인만 골라 설치하는 편이 낫다."
+      ],
+      "why": "Python/PyQt 개발용 플러그인을 마켓플레이스에서 골라 설치할 수 있고 Codex에서도 같은 자산을 쓴다.",
+      "howto": "Claude Code에서 `/plugin marketplace add wshobson/agents` 후 `/plugin install python-development@claude-code-workflows`.",
+      "url": "https://github.com/wshobson/agents",
+      "source": "GitHub"
+    },
+    {
+      "title": "Claude Code v2.1.306 — 클라우드 세션 로그인 오류와 MCP 다수 환경 오류 수정",
+      "category": "claude",
+      "score": 74,
+      "published": "2026-10-21",
+      "buzz": "릴리스 노트 · 검색 확인",
+      "summary": [
+        "v2.1.306(10/21)은 클라우드 세션에서 환경 변수 없이 `claude -p`를 실행하면 'Not logged in'이 뜨던 문제를 고쳤다.",
+        "MCP 도구가 많은 세션에서 API 오류가 'prompt is too long'으로 바뀌고 불필요한 컴팩션이 일어나던 문제도 고쳤다.",
+        "직전 v2.1.305(10/20)에는 `sandbox.allowNestedUserNamespaces`가 추가됐다."
+      ],
+      "why": "MCP를 여러 개 붙여 쓰는 독자의 컨텍스트 오류가 줄어든다.",
+      "howto": "`claude update`로 업데이트(원문 참고).",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.306",
+      "source": "GitHub 릴리스"
+    },
+    {
+      "title": "HyperFrames v0.8.185 — HTML로 영상 렌더, 4K 투명 MOV·모션 블러 추가",
+      "category": "creative",
+      "score": 80,
+      "published": "2026-10-21",
+      "buzz": "GitHub Trending 주간 +5,994 · 스타 69k",
+      "summary": [
+        "heygen-com/hyperframes는 HTML을 쓰면 MP4를 렌더하는 에이전트용 영상 도구다. 10/21 하루에 v0.8.183~185가 나왔다.",
+        "`cloud render --resolution 4k`에서 투명 MOV·WebM이 되고, `data-motion-blur`로 모션 블러를 켤 수 있다. 움직이는 GSAP 요소 뒤에 잔상을 남기는 `echo-smear` 컴포넌트도 생겼다.",
+        "클라우드 렌더는 별도 인프라가 필요하다."
+      ],
+      "why": "모션그래픽을 코드로 만들고 투명 배경 영상을 뽑아 After Effects 소스로 쓸 수 있다.",
+      "howto": "저장소 README의 설치 안내를 따른다(원문 참고).",
+      "url": "https://github.com/heygen-com/hyperframes/releases",
+      "source": "GitHub"
+    },
+    {
+      "title": "VoiceStudio — 로컬 ElevenLabs 대체: 음성 복제·더빙·받아쓰기",
+      "category": "creative",
+      "score": 72,
+      "published": "2026-10-21",
+      "buzz": "GitHub Trending 주간 +17,057 · 스타 80k",
+      "summary": [
+        "오픈소스 로컬 TTS 앱으로 음성 복제, 음성 디자인, 영상 더빙, 받아쓰기, 오디오북 제작을 지원한다.",
+        "README는 646개 언어 지원을 내세운다. 라이선스는 AGPL-3.0이다.",
+        "설치 스크립트를 파이프로 실행하는 방식이라 실행 전에 내용을 확인해야 한다."
+      ],
+      "why": "영상 작업의 내레이션과 더빙을 클라우드 없이 만들 수 있다.",
+      "howto": "Windows PowerShell: `irm https://voicestudio.sh/install | iex` (실행 전 스크립트 확인).",
+      "url": "https://github.com/debpalash/VoiceStudio",
+      "source": "GitHub"
+    },
+    {
+      "title": "Claude가 양자 회로 설계 기록 경신 — 8개 회로를 최대 10배 이상 개선",
+      "category": "research",
+      "score": 70,
+      "published": "2026-10-16",
+      "buzz": "Anthropic 공식 발표 · arXiv 2610.22367",
+      "summary": [
+        "평문 명세와 자동 평가기만 주고 Claude에게 양자 회로 8종을 설계시켰다. 공개된 최고 설계보다 큐비트·게이트가 적은 설계를 찾았고, 일부는 10배 이상 개선됐다.",
+        "타원곡선 점 덧셈은 한 번의 53시간 실행으로 나왔고, 최소 설계보다 큐비트는 12% 많지만 게이트는 17배 적다. 정확성은 시뮬레이션과 Lean 증명으로 확인했다.",
+        "고전 컴퓨터로 효율적으로 검증되는 문제에서만 잘 맞는다. 독립 동료 검토 결과는 아니다."
+      ],
+      "why": "자동 평가기를 붙인 닫힌 루프로 에이전트에게 최적화를 맡기는 방식을 내 프로젝트에 적용해 볼 수 있다.",
+      "howto": "원문 참고.",
+      "url": "https://www.anthropic.com/research/designing-efficient-quantum-circuits",
+      "source": "Anthropic"
+    },
+    {
+      "title": "Claude, 전갈 신경독소에 결합하는 단백질 설계",
+      "category": "research",
+      "score": 55,
+      "published": "2026-10-20",
+      "buzz": "Anthropic 공식 발표",
+      "summary": [
+        "내부 연구용 Claude 모델에게 전갈 신경독소에 단단히 붙는 소형 단백질을 설계하게 한 연구가 공개됐다.",
+        "세부 방법과 결과 수치는 원문을 참고."
+      ],
+      "why": "에이전트가 과학 연구 도구로 쓰이는 사례를 보여 준다.",
+      "howto": "원문 참고.",
+      "url": "https://www.anthropic.com/research/claude-scorpion-toxin-binder-design",
+      "source": "Anthropic"
+    }
+  ]
+}
