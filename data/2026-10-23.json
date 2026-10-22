@@ -1,0 +1,134 @@
+{
+  "date": "2026-10-23",
+  "note": "오늘은 새로 나온 소식이 많지 않아 확인된 9건만 실었습니다. Agent Skills 표준의 재단 이관과 Claude Code·MCP 서버 릴리스가 핵심입니다.",
+  "items": [
+    {
+      "title": "Anthropic, Agent Skills 표준을 Agentic AI Foundation에 기부",
+      "category": "skills",
+      "score": 93,
+      "published": "2026-10-22",
+      "buzz": "Anthropic·Linux Foundation 동시 발표",
+      "summary": [
+        "Anthropic이 SKILL.md 기반 Agent Skills 표준의 이름·로고·GitHub 조직·agentskills.io 도메인을 Linux Foundation 산하 AAIF에 넘긴다고 발표했다.",
+        "2025년 12월 표준 공개 이후 70개 이상 에이전트 플랫폼(ChatGPT, Cursor, GitHub Copilot, VS Code 등)이 채택했고, 스킬 약 100만 개가 게시되어 약 2.8억 회 설치됐다.",
+        "Anthropic·Google·OpenAI 엔지니어가 개인 자격으로 유지보수하며, 버전 릴리스·제안 절차·스킬 작성/설치 보안 가이드를 로드맵으로 제시했다."
+      ],
+      "why": "Claude Code와 Codex에서 같은 SKILL.md를 쓰게 되어, 한 번 만든 스킬을 두 도구에 그대로 재사용할 수 있다는 방향이 굳어졌다.",
+      "howto": "별도 설치는 없다. 스킬 폴더에 SKILL.md(name, description 프런트매터)를 두면 되며, 명세는 agentskills.io에서 확인한다.",
+      "url": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
+      "source": "Anthropic"
+    },
+    {
+      "title": "Claude Code v2.1.307 — API 버전 이전 명령, MCP 중복 호출·인증 오류 수정",
+      "category": "claude",
+      "score": 85,
+      "published": "2026-10-21",
+      "buzz": "GitHub 릴리스 (v2.1.308이 10/22 후속)",
+      "summary": [
+        "`/claude-api api-version`으로 프로젝트의 Claude API 코드를 API 버전 2026-10-21로 옮길 수 있고, 도구 호출이 막히거나 되돌려진 경우를 알리는 `claude_code.safety_event` OpenTelemetry 이벤트가 추가됐다.",
+        "연결이 중간에 끊길 때 HTTP MCP 도구 호출이 두 번 전송되던 문제를 고쳐 읽기 전용·멱등 도구만 재시도하고, macOS 키체인 잠금 중 `claude -p`의 MCP 인증 오류와 절전 중 연결 타임아웃도 수정했다.",
+        "파싱 불가능한 도구 호출은 최대 두 번 재시도한 뒤 오류로 끝난다. 다음 날 나온 v2.1.308은 버그·안정성 수정만 담았다."
+      ],
+      "why": "MCP 서버를 많이 붙여 쓰는 작업에서 중복 실행과 인증 끊김이 줄어든다.",
+      "howto": "`claude update`로 올린 뒤 API 코드가 있는 프로젝트에서 `/claude-api api-version`을 실행한다.",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.307",
+      "source": "GitHub anthropics/claude-code"
+    },
+    {
+      "title": "Claude와 Theorem, 오픈소스 라이브러리 123개를 어셈블리 수준으로 형식 검증",
+      "category": "research",
+      "score": 80,
+      "published": "2026-10-22",
+      "buzz": "Anthropic Research",
+      "summary": [
+        "퍼즈 테스트 진입점 239개를 형식 명세로 바꾸고, Claude가 RISC-V 어셈블리 수준의 증명을 쓰면 Rocq 증명 검사기가 검증하는 방식이다. 대상은 오픈소스 라이브러리 123개다.",
+        "64MB 미만 입력에서 메모리 안전성 오류 없이 정상 종료함을 증명했고, 그 과정에서 수백 개 버그를 찾았다(예: 약 20MB 입력에서 발생하는 압축 해제기의 카운터 언더플로).",
+        "한계: 단일 스레드 정적 바이너리·RISC-V·Linux 가정이며 증명이 수억 토큰 규모다. '검증됨'이 '버그 없음'은 아니다."
+      ],
+      "why": "AI가 짠 코드를 사람이 읽지 않고도 검증하는 흐름이 실용권에 들어온다는 신호라, 직접 만드는 툴의 품질 관리 방향을 가늠하기 좋다.",
+      "howto": "원문 참고. 설명된 방식은 기존 퍼즈 테스트를 명세로 쓰는 것이므로, 프로젝트에 퍼즈 테스트부터 갖춰두면 응용하기 쉽다.",
+      "url": "https://www.anthropic.com/research/formal-verification",
+      "source": "Anthropic Research"
+    },
+    {
+      "title": "MCP 공식 servers v2.0.0 — TS SDK v2 이전, Node 24 필요",
+      "category": "skills",
+      "score": 82,
+      "published": "2026-10-19",
+      "buzz": "modelcontextprotocol/servers 릴리스",
+      "summary": [
+        "filesystem·memory·sequential-thinking·everything(TypeScript)은 SDK v2로 옮겼고, fetch·git·time(Python)은 MCP Python SDK의 MCPServer를 쓰며 `mcp>=2.3,<3`이 필요하다.",
+        "존재하지 않는 도구를 호출하면 `isError` 결과 대신 JSON-RPC -32602 오류를 돌려주고, time 도구는 structuredContent를 반환한다.",
+        "TypeScript 서버는 Node 24 이상이 필수다. mcp-server-git에서 브랜치명이 literally `null`인 경우 필터가 무시되는 알려진 문제(#5176)가 있다."
+      ],
+      "why": "Claude Code에 filesystem·git·fetch MCP를 붙여 쓰는 경우, 업데이트하면 Node 버전 요구와 오류 형식이 달라진다.",
+      "howto": "Node를 24 이상으로 올린 뒤 `npx -y @modelcontextprotocol/server-filesystem` 등을 쓰던 설정을 그대로 두면 최신 버전을 받는다. 버전을 고정해 쓰던 경우 2.0.0 노트를 먼저 확인한다.",
+      "url": "https://github.com/modelcontextprotocol/servers/releases/tag/v2.0.0",
+      "source": "GitHub modelcontextprotocol/servers"
+    },
+    {
+      "title": "claude-plugins-official security-guidance 2.0.16 — 윈도우 인증서 저장소 오류에도 보안 리뷰 동작",
+      "category": "skills",
+      "score": 72,
+      "published": "2026-10-21",
+      "buzz": "GitHub 커밋 기록",
+      "summary": [
+        "Anthropic이 관리하는 공식 플러그인 저장소에서 security-guidance 플러그인이 2.0.16으로 올랐다.",
+        "윈도우 인증서 저장소에 읽을 수 없는 항목이 있어도 리뷰가 실행되도록 고쳤고, 중첩 저장소 테스트와 LibreSSL용 테스트 인증서 설정도 정리했다.",
+        "같은 날 이 저장소의 활동 대부분이 이 플러그인에 집중됐다."
+      ],
+      "why": "윈도우에서 Claude Code를 쓰는 독자가 보안 리뷰 플러그인을 인증서 문제로 못 쓰던 상황이 풀린다.",
+      "howto": "Claude Code에서 `/plugin`을 열어 claude-plugins-official 마켓의 security-guidance를 설치하거나 업데이트한다. 자세한 명령은 원문 참고.",
+      "url": "https://github.com/anthropics/claude-plugins-official/commits/main",
+      "source": "GitHub anthropics/claude-plugins-official"
+    },
+    {
+      "title": "HyperFrames v0.8.186 — 렌더·스튜디오 모션 블러, CJK 받아쓰기 보정",
+      "category": "creative",
+      "score": 78,
+      "published": "2026-10-22",
+      "buzz": "GitHub 주간 트렌딩 +5.7k 스타",
+      "summary": [
+        "HTML로 영상을 쓰고 렌더하는 에이전트용 도구에서, 캡처 모션 블러가 렌더와 Studio 양쪽에서 동작한다. 안전하게 블러할 수 없는 페이지에서는 자동으로 꺼지고 이유를 알려준다.",
+        "`init --video`가 클립 비율에 맞춰 프로젝트를 만들어 잘림이 없고, Whisper의 한중일 토큰이 각각 시간 단어로 처리된다.",
+        "전날 v0.8.185에서는 4K 클라우드 렌더의 투명 MOV·WebM 출력이 추가됐다."
+      ],
+      "why": "모션그래픽을 코드로 뽑아 영상 과제에 쓰는 흐름에서 한국어 자막 타이밍과 모션 블러가 같이 개선된다.",
+      "howto": "컴포지션 루트에 `data-motion-blur` 속성을 주면 블러가 켜진다. 설치는 저장소 README 참고.",
+      "url": "https://github.com/heygen-com/hyperframes/releases/tag/v0.8.186",
+      "source": "GitHub heygen-com/hyperframes"
+    },
+    {
+      "title": "Reflection AI의 오픈웨이트 코딩 모델 Beam, transformers v5.20.1에 추가",
+      "category": "tools",
+      "score": 70,
+      "published": "2026-10-16",
+      "buzz": "transformers 릴리스 · 검색 확인",
+      "summary": [
+        "transformers v5.20.1이 Reflection AI의 Beam 모델을 추가했고, 코딩·에이전트용으로 토큰 효율을 앞세운 프런티어급 모델이라고 소개한다.",
+        "검색 결과에 따르면 총 501B·활성 23B 파라미터의 MoE로, 자체 벤치마크에서 SWE-bench Verified 80.9를 기록했다고 한다(독립 검증 아님).",
+        "가중치 공개는 10월 안에 Apache 2.0으로 약속된 상태로 보도됐으나 공개 여부는 확인하지 못했다."
+      ],
+      "why": "로컬·자체 서버에서 돌릴 수 있는 코딩 에이전트용 오픈 모델 후보지만, 규모상 개인 PC에서는 어렵다.",
+      "howto": "원문 참고. 가중치가 공개되면 transformers 5.20.1 이상의 문서 model_doc/beam 페이지를 따른다.",
+      "url": "https://github.com/huggingface/transformers/releases/tag/v5.20.1",
+      "source": "GitHub huggingface/transformers"
+    },
+    {
+      "title": "OpenCode v1.19.4 — 번들 Bun 1.4.4로 올려 TLS·fetch 등 보안 패치 반영",
+      "category": "tools",
+      "score": 60,
+      "published": "2026-10-22",
+      "buzz": "GitHub 주간 트렌딩 +6.5k 스타",
+      "summary": [
+        "오픈소스 코딩 에이전트 OpenCode가 번들 Bun 런타임을 1.4.4로 올렸다.",
+        "Brotli·TLS·HTTP/1.1~3·WebSocket·fetch 보안 수정과 NSS 3.131.1 루트 인증서 갱신이 포함된다.",
+        "앞선 v1.19.3(10/16)에서는 모델 추론 옵션으로 추론 변형을 설정할 수 있게 됐다."
+      ],
+      "why": "Claude Code 외의 오픈소스 에이전트를 함께 써볼 때, 모델을 바꿔가며 쓰는 대안으로 점검할 만하다.",
+      "howto": "기존 설치를 최신으로 업데이트한다. 방법은 원문 참고.",
+      "url": "https://github.com/anomalyco/opencode/releases/tag/v1.19.4",
+      "source": "GitHub anomalyco/opencode"
+    }
+  ]
+}
