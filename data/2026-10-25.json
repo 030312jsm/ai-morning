@@ -1,0 +1,102 @@
+{
+  "date": "2026-10-25",
+  "note": "신선도 기준(7일 이내)을 만족하고 확인된 소식만 실었습니다. tools·research 분야는 이번에 새로 확인된 소식이 없어 생략했습니다.",
+  "items": [
+    {
+      "title": "Impeccable: AI가 만든 프론트엔드 디자인의 '티'를 잡아주는 디자인 스킬",
+      "category": "skills",
+      "score": 86,
+      "published": "2026-10-24",
+      "buzz": "GitHub Trending 오늘 +733★ (총 86.3k★)",
+      "summary": [
+        "AI 코딩 에이전트용 디자인 가이드로, 스킬 1개와 명령 24개로 구성됩니다.",
+        "브라우저에서 바로 보며 반복 수정하는 라이브 이터레이션과, AI 특유의 프론트엔드 디자인 패턴 62개를 결정론적으로 검출하는 규칙을 제공합니다.",
+        "Node 환경(npx)이 필요하고, 스킬이 잡아주는 건 프론트엔드 디자인 품질에 한정됩니다."
+      ],
+      "why": "웹앱·툴 UI를 Claude Code로 만들 때 흔한 '밋밋한 AI 디자인'을 줄여줍니다.",
+      "howto": "프로젝트 루트에서 `npx impeccable install` 실행 후 Claude Code 안에서 `/impeccable init`.",
+      "url": "https://github.com/pbakaus/impeccable",
+      "source": "GitHub"
+    },
+    {
+      "title": "Hallmark: 'AI 같지 않은' 디자인을 만드는 Claude Code·Codex 디자인 스킬",
+      "category": "skills",
+      "score": 83,
+      "published": "2026-10-24",
+      "buzz": "GitHub Trending 오늘 +570★ (총 32.0k★)",
+      "summary": [
+        "Claude Code, Codex, Cursor, OpenCode에서 쓰는 디자인 스킬로 MIT 라이선스입니다.",
+        "시각 테마 48종 카탈로그를 쓰고, 결과물을 흔한 기계 생성 디자인 패턴과 대조해 점검합니다.",
+        "Node 18 이상이 필요합니다."
+      ],
+      "why": "웹앱·게임 UI 목업을 빠르게 개성 있게 뽑을 때 바로 써볼 수 있습니다.",
+      "howto": "`npx skills add nutlope/hallmark -g` (모든 프로젝트에 설치, -g를 빼면 현재 프로젝트에만).",
+      "url": "https://github.com/Nutlope/hallmark",
+      "source": "GitHub"
+    },
+    {
+      "title": "claude-howto: 복붙해 쓰는 Claude Code 템플릿·가이드 모음",
+      "category": "skills",
+      "score": 80,
+      "published": "2026-10-24",
+      "buzz": "GitHub Trending 오늘 +442★ (총 44.5k★)",
+      "summary": [
+        "슬래시 커맨드, 메모리(CLAUDE.md), 스킬, 서브에이전트, MCP, 훅, 플러그인, 체크포인트를 Mermaid 도식과 예제로 설명하는 MIT 가이드입니다.",
+        "10월 18일 갱신, Claude Code 2.1.302 기준입니다.",
+        "패키지가 아니라 파일 모음이라 직접 복사해 써야 하고, 마켓플레이스가 없어 /plugin install은 안 됩니다."
+      ],
+      "why": "훅·스킬·CLAUDE.md 구성을 처음부터 짜지 않고 템플릿에서 가져다 쓸 수 있습니다.",
+      "howto": "`git clone https://github.com/luongnv89/claude-howto.git` 후 `01-slash-commands/*.md`를 `.claude/commands/`로, `03-skills/code-review-specialist` 폴더를 `~/.claude/skills/`로 복사. 플러그인은 `claude --plugin-dir ./07-plugins/pr-review`.",
+      "url": "https://github.com/luongnv89/claude-howto",
+      "source": "GitHub"
+    },
+    {
+      "title": "Claude Code v2.1.310: Bedrock·Vertex에서도 Monitor 도구, Windows 훅 보안 수정",
+      "category": "claude",
+      "score": 78,
+      "published": "2026-10-23",
+      "buzz": "GitHub 릴리스",
+      "summary": [
+        "Bedrock·Vertex·Foundry와 비필수 트래픽을 끈 환경에서도 Monitor 도구와 플러그인 모니터가 동작합니다.",
+        "Windows에서 Git Bash가 없을 때 PreToolUse·PermissionRequest 훅이 도구 호출을 그냥 통과시키던 문제를 고쳤습니다.",
+        "'Prompt is too long' 뒤 압축이 덜 조밀한 텍스트를 남겨 재실패가 줄고, 매우 큰 cleanupPeriodDays에서 최근 붙여넣은 이미지가 지워지던 버그도 수정됐습니다."
+      ],
+      "why": "Windows에서 훅으로 권한을 제어하는 사람에게 보안상 중요한 수정입니다.",
+      "howto": "`claude update`로 업데이트 후 `claude --version`으로 2.1.310 확인.",
+      "url": "https://github.com/anthropics/claude-code/releases",
+      "source": "GitHub anthropics/claude-code"
+    },
+    {
+      "title": "aws/agent-toolkit-for-aws: AWS 공식 MCP 서버·스킬·플러그인 묶음",
+      "category": "skills",
+      "score": 66,
+      "published": "2026-10-24",
+      "buzz": "GitHub Trending · 3.1k★",
+      "summary": [
+        "AWS가 지원하는 공식 MCP 서버, 스킬, 플러그인 모음으로, AWS API 접근과 문서 검색용 AWS MCP Server를 포함합니다.",
+        "Claude Code와 Codex 모두 aws-core 플러그인으로 설치합니다.",
+        "AWS를 쓰지 않는 프로젝트에는 해당이 없습니다."
+      ],
+      "why": "웹앱을 AWS에 배포하거나 백엔드를 붙일 때 에이전트가 AWS 리소스를 바로 다룰 수 있습니다.",
+      "howto": "Claude Code: `/plugin install aws-core@claude-plugins-official` (Plugin not found가 뜨면 먼저 `/plugin marketplace update claude-plugins-official`). Codex: `codex plugin marketplace add aws/agent-toolkit-for-aws` 후 `/plugins`에서 aws-core 설치.",
+      "url": "https://github.com/aws/agent-toolkit-for-aws",
+      "source": "GitHub"
+    },
+    {
+      "title": "HyperFrames v0.8.191~193: HTML 영상 렌더에 모션 블러 패널, 장편 클라우드 렌더 대폭 가속",
+      "category": "creative",
+      "score": 72,
+      "published": "2026-10-24",
+      "buzz": "GitHub 릴리스 3건(하루)",
+      "summary": [
+        "Studio에 모션 블러 패널(끔·약·강)이 추가됐고, 스크립트가 에러를 내는 컴포지션은 렌더를 막지 않고 경고 후 건너뜁니다.",
+        "v0.8.193은 컷이 많은 긴 편집의 클라우드 렌더가 같거나 낮은 비용으로 몇 배 빨라졌고, v0.8.192는 코어 16개 초과 호스트에서 H265·HDR 렌더를 복구했습니다.",
+        "Windows WebGPU와 파일 이름 변경 관련 수정도 들어갔습니다."
+      ],
+      "why": "모션그래픽을 코드(HTML)로 만들고 Claude Code로 자동화하려는 영상학과 작업에 맞습니다.",
+      "howto": "릴리스 노트 참고: https://github.com/heygen-com/hyperframes/releases",
+      "url": "https://github.com/heygen-com/hyperframes/releases/tag/v0.8.193",
+      "source": "GitHub heygen-com/hyperframes"
+    }
+  ]
+}
