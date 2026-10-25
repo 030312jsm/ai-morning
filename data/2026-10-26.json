@@ -1,0 +1,230 @@
+{
+  "date": "2026-10-26",
+  "note": "오늘은 research·일부 creative 분야에서 7일 이내 소식을 확인하지 못해 14건만 싣는다.",
+  "items": [
+    {
+      "title": "Android 공식 agent skills: Compose·XR·성능 SKILL.md 모음",
+      "category": "skills",
+      "score": 84,
+      "published": "2026-10-25",
+      "buzz": "★9.7k · 주간 트렌딩",
+      "summary": [
+        "android/skills는 developer.android.com 모범 사례를 SKILL.md로 정리한 공개 저장소다.",
+        "Jetpack Compose, 내비게이션, 성능, 보안, 카메라, 미디어, 테스트, Wear/TV/XR 폴더로 나뉜다.",
+        "Android 개발용이라 다른 플랫폼 작업에는 직접 쓸 일이 적다."
+      ],
+      "why": "모바일 앱까지 확장할 때 공식 지침이 에이전트 품질을 바로 끌어올린다.",
+      "howto": "Claude Code: `/plugin marketplace add android/skills` → `/plugin install android-skills@android-skills`. Codex: `codex plugin marketplace add android/skills` → `codex plugin add android-skills@android-skills`.",
+      "url": "https://github.com/android/skills",
+      "source": "GitHub"
+    },
+    {
+      "title": "ai-memory: Claude Code·Codex 사이를 잇는 장기 기억",
+      "category": "skills",
+      "score": 83,
+      "published": "2026-10-25",
+      "buzz": "★13.5k · 주간 트렌딩",
+      "summary": [
+        "코딩 에이전트의 프롬프트·툴 호출·세션 경계를 훅으로 수집해 세션 종료 시 마크다운 위키로 만든다.",
+        "Claude Code와 Codex 사이 작업 인계가 되고, 메모리는 git으로 관리되는 평문 마크다운이다.",
+        "기본 경로는 LLM 호출이 없다. 팀 공유는 직접 서버를 띄워야 한다."
+      ],
+      "why": "여러 프로젝트(툴·게임·웹앱)를 오가며 컨텍스트를 매번 다시 설명하는 수고를 줄여준다.",
+      "howto": "Linux/macOS: `curl -fsSL https://github.com/akitaonrails/ai-memory/releases/latest/download/install.sh | sh` 후 `ai-memory setup`. Windows PowerShell: `irm https://github.com/akitaonrails/ai-memory/releases/latest/download/install.ps1 | iex` 후 `ai-memory setup`.",
+      "url": "https://github.com/akitaonrails/ai-memory",
+      "source": "GitHub"
+    },
+    {
+      "title": "MCP 공식 서버 v2.1.0: 취약점 8건 수정 보안 릴리스",
+      "category": "skills",
+      "score": 82,
+      "published": "2026-10-25",
+      "buzz": "릴리스 v2.1.0",
+      "summary": [
+        "filesystem·everything·fetch 세 서버에서 취약점 8건을 고쳤다.",
+        "filesystem은 심볼릭 링크 교체로 허용 디렉터리를 벗어나는 쓰기를 막고, everything은 다른 웹 출처 요청과 와일드카드 CORS를 거부한다. fetch는 리다이렉트 뒤 robots.txt를 다시 확인한다.",
+        "Windows에서는 filesystem 수정이 일부만 적용됐다."
+      ],
+      "why": "파일시스템·fetch MCP를 Claude Code에 연결해 쓰고 있다면 바로 올려야 한다.",
+      "howto": "`@modelcontextprotocol/server-filesystem`과 `server-everything`을 2.0.1로, `mcp-server-fetch`를 2026.10.24로 업데이트한다.",
+      "url": "https://github.com/modelcontextprotocol/servers/releases/tag/v2.1.0",
+      "source": "GitHub"
+    },
+    {
+      "title": "Claude Code v2.1.310: Bedrock·Vertex에서도 Monitor 툴",
+      "category": "claude",
+      "score": 80,
+      "published": "2026-10-23",
+      "buzz": "릴리스 v2.1.310",
+      "summary": [
+        "Bedrock, Vertex, Foundry에서도 Monitor 툴과 플러그인 모니터를 쓸 수 있다.",
+        "게이트웨이가 beta 값이나 중간 시스템 메시지를 거부해 요청이 실패하던 문제는 자동으로 재시도해 해결했다. 'Prompt is too long' 뒤 압축에서 base64·SVG가 남던 문제와 cleanupPeriodDays 값이 클 때 붙여넣은 이미지가 지워지던 문제도 고쳤다.",
+        "VS Code 플랜 검토 카드에서 Enter가 피드백 대신 플랜을 승인하던 버그도 수정됐다."
+      ],
+      "why": "VS Code로 Claude Code를 쓴다면 플랜 오승인 버그 수정이 특히 실용적이다.",
+      "howto": "`claude update` 또는 `npm i -g @anthropic-ai/claude-code`로 갱신한다.",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.310",
+      "source": "GitHub"
+    },
+    {
+      "title": "claude-seo: 서브스킬 26개·에이전트 19개 SEO 스킬",
+      "category": "skills",
+      "score": 76,
+      "published": "2026-10-22",
+      "buzz": "★20.8k · 일간 트렌딩",
+      "summary": [
+        "Claude Code용 범용 SEO 스킬로, 서브스킬 26개와 전문 에이전트 19개를 담았다.",
+        "기술 SEO, E-E-A-T 콘텐츠, 구조화 데이터, AI 검색(GEO) 대비를 한 번에 점검하고 Markdown 리포트를 만든다.",
+        "MIT 라이선스. 웹앱을 공개할 때만 쓸모가 있다."
+      ],
+      "why": "만든 웹앱·포트폴리오 사이트를 검색에 노출시킬 때 점검을 자동화한다.",
+      "howto": "Claude Code에서 `/plugin marketplace add AgriciDaniel/claude-seo` → `/plugin install claude-seo@agricidaniel-claude-seo` → `/seo setup`.",
+      "url": "https://github.com/AgriciDaniel/claude-seo",
+      "source": "GitHub"
+    },
+    {
+      "title": "ComfyUI v0.42: Krea 3 노드·MOSS-image 지원",
+      "category": "creative",
+      "score": 75,
+      "published": "2026-10-19",
+      "buzz": "릴리스 v0.42.1 · 주간 트렌딩",
+      "summary": [
+        "v0.42.0에서 Krea 3 Image 파트너 노드와 MOSS-image 모델 지원이 들어왔다.",
+        "Qwen 3.x 성능 개선, Qwen think-block 템플릿·웹캠 노드·3D 메시 크래시 수정, 3D 리메싱 리팩터링도 포함된다.",
+        "v0.42.1은 MOSS-image 템플릿 워크플로 크래시를 고친 패치다."
+      ],
+      "why": "이미지·3D 소스를 AE 작업용으로 로컬에서 뽑아낼 때 바로 쓸 수 있다.",
+      "howto": "ComfyUI를 v0.42.1 이상으로 업데이트하고 템플릿에서 MOSS-image 워크플로를 연다.",
+      "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.42.1",
+      "source": "GitHub"
+    },
+    {
+      "title": "andrej-karpathy-skills: CLAUDE.md 한 장으로 행동 교정",
+      "category": "skills",
+      "score": 74,
+      "published": "2026-10-25",
+      "buzz": "★223.8k · 주간 트렌딩",
+      "summary": [
+        "Think Before Coding, Simplicity First, Surgical Changes, Goal-Driven Execution 네 원칙을 담은 CLAUDE.md 하나가 핵심이다.",
+        "잘못된 가정, 과한 설계, 무관한 수정, 모호한 성공 기준을 줄이는 목적이다.",
+        "원칙 모음일 뿐 도구는 아니라서 효과는 프로젝트마다 다를 수 있다."
+      ],
+      "why": "CLAUDE.md 작성법의 기준선으로 복사해 쓰기 좋다.",
+      "howto": "`/plugin marketplace add forrestchang/andrej-karpathy-skills` → `/plugin install andrej-karpathy-skills@karpathy-skills`. 또는 CLAUDE.md만 프로젝트에 curl로 내려받는다.",
+      "url": "https://github.com/multica-ai/andrej-karpathy-skills",
+      "source": "GitHub"
+    },
+    {
+      "title": "Ollama v0.40.11: macOS 음성 출력과 d3 결정 모델",
+      "category": "tools",
+      "score": 73,
+      "published": "2026-10-24",
+      "buzz": "릴리스 v0.40.11",
+      "summary": [
+        "macOS에서 `ollama run`이 응답을 소리로 읽어주고, OpenAI 호환 `/v1/audio/speech` 엔드포인트로 오디오를 스트리밍할 수 있다.",
+        "입력 분류, 예/아니오 판단, 선택지 점수화용 d3 결정 모델(2B·4B·9B·27B)이 추가됐다.",
+        "v0.40.10에서는 NVIDIA Nemotron 3.5 Bolt E4B(Gemma 4 기반 비전-언어, 128K 컨텍스트)가, v0.40.9에서는 Flint의 Linux·Windows 지원이 들어왔다."
+      ],
+      "why": "로컬 LLM을 Windows 툴이나 게임 NPC에 붙일 때 선택지가 늘어난다.",
+      "howto": "`ollama run <모델>` 또는 OpenAI 호환 API로 호출한다. 업데이트는 공식 설치 파일로 한다.",
+      "url": "https://github.com/ollama/ollama/releases/tag/v0.40.11",
+      "source": "GitHub"
+    },
+    {
+      "title": "Claude Code 2.1.307: API 마이그레이션·안전 이벤트 추가",
+      "category": "claude",
+      "score": 72,
+      "published": "2026-10-21",
+      "buzz": "릴리스 v2.1.307",
+      "summary": [
+        "`/claude-api api-version`으로 Claude API 코드를 버전 2026-10-21로 옮길 수 있다.",
+        "툴 호출을 막거나 되돌린 경우마다 `claude_code.safety_event` OpenTelemetry 이벤트가 나온다.",
+        "HTTP MCP 호출이 연결 중 끊겨 두 번 전송되던 문제를 고쳤고, 읽기 전용·멱등 툴만 재시도한다."
+      ],
+      "why": "Claude API로 앱을 만든다면 버전 마이그레이션을 명령 하나로 처리한다.",
+      "howto": "Claude Code 안에서 `/claude-api api-version`을 실행한다.",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.307",
+      "source": "GitHub"
+    },
+    {
+      "title": "Google Cloud, OpenAI GPT-6 모델 3종 비공개 프리뷰",
+      "category": "tools",
+      "score": 71,
+      "published": "2026-10-21",
+      "buzz": "Google Cloud 공식 블로그",
+      "summary": [
+        "GPT-6 Astra, GPT-6.1 Sol, GPT-6 Luna가 일부 기업 고객 대상으로 Google Cloud 모델 가든에서 프리뷰를 시작했다.",
+        "로컬 Codex CLI·데스크톱을 Gemini 플랫폼 추론에 연결할 수 있고, Gemini for business와 Antigravity에도 들어올 예정이다.",
+        "현재는 관심 양식을 낸 기업 고객만 쓸 수 있다."
+      ],
+      "why": "Codex를 쓰는 사람에게 모델 공급 경로가 늘어나는 변화다. 개인은 아직 이용할 수 없다.",
+      "howto": "https://cloud.google.com/resources/interest/openai-models 에서 관심 양식을 제출한다.",
+      "url": "https://cloud.google.com/blog/products/ai-machine-learning/google-cloud-brings-openai-models-to-customers",
+      "source": "Google Cloud Blog"
+    },
+    {
+      "title": "ruflo: Claude Code·Codex용 멀티에이전트 하네스",
+      "category": "skills",
+      "score": 70,
+      "published": "2026-10-25",
+      "buzz": "★79.3k · 주간 트렌딩",
+      "summary": [
+        "Claude Code와 Codex에 에이전트 스웜, 영속 메모리, 과거 작업 학습, 보안 가드레일을 얹는 메타 하네스다.",
+        "`npx`로 초기화하거나 Claude Code 플러그인 마켓플레이스로 설치한다.",
+        "기능이 많아 작은 프로젝트에는 과할 수 있다."
+      ],
+      "why": "큰 게임·툴 프로젝트에서 여러 에이전트를 병렬로 돌릴 때 후보가 된다.",
+      "howto": "`npx ruflo@latest init wizard`, 또는 Claude Code에서 `/plugin marketplace add ruvnet/ruflo` 후 `ruflo-core@ruflo` 설치.",
+      "url": "https://github.com/ruvnet/ruflo",
+      "source": "GitHub"
+    },
+    {
+      "title": "Cindy: Claude Code·Codex를 묶는 로컬 에이전트 앱",
+      "category": "tools",
+      "score": 69,
+      "published": "2026-10-25",
+      "buzz": "★4.8k · 일간 트렌딩",
+      "summary": [
+        "로컬에서 내 파일과 로그인된 앱을 다루는 오픈소스 에이전트 데스크톱(Electron)·모바일(Expo) 클라이언트다.",
+        "Claude Code와 Codex를 하네스로 지원하고, 브라우저·컴퓨터·폰 조작과 IM·스케줄 입력을 받는다.",
+        "소스 빌드는 Node 22, pnpm 10, Git LFS가 필요하고 미리 빌드된 파일은 cindy.app/download에 있다."
+      ],
+      "why": "스케줄·메신저로 코딩 에이전트에 일을 시키고 싶은 1인 개발자에게 맞다.",
+      "howto": "`git clone https://github.com/makecindy/cindy.git` → `cd cindy` → `git lfs pull` → `pnpm install`.",
+      "url": "https://github.com/makecindy/cindy",
+      "source": "GitHub"
+    },
+    {
+      "title": "Orca: 코딩 에이전트 여러 개를 worktree로 동시에 운영",
+      "category": "tools",
+      "score": 66,
+      "published": "2026-10-25",
+      "buzz": "★105.7k · 주간 트렌딩",
+      "summary": [
+        "Codex, Claude Code, OpenCode, Pi를 각자의 git worktree에서 나란히 돌리고 한곳에서 추적한다.",
+        "터미널 분할, SSH worktree, CLI, 모바일 동반 앱을 제공한다.",
+        "릴리스 날짜는 확인되지 않았다."
+      ],
+      "why": "게임과 툴 프로젝트를 병렬로 맡길 때 작업 충돌을 줄여준다.",
+      "howto": "macOS: `brew install --cask stablyai/orca/orca`. Arch: `yay -S stably-orca-bin`.",
+      "url": "https://github.com/stablyai/orca",
+      "source": "GitHub"
+    },
+    {
+      "title": "ThinkRail: JetBrains의 에이전트 IDE 공개",
+      "category": "tools",
+      "score": 64,
+      "published": "2026-10-25",
+      "buzz": "★1.6k · 일간 트렌딩",
+      "summary": [
+        "pi 코딩 에이전트를 중심으로, 작업마다 git worktree를 분리해 에이전트를 돌리는 IDE다.",
+        "프로젝트 지식을 SPEC.md로 쌓고, 에디터·터미널·채팅을 한 작업대에 모았다.",
+        "모델 제공자는 JetBrains AI 또는 직접 키가 필요하다."
+      ],
+      "why": "병렬 에이전트 작업을 IDE 하나에서 관리하는 방식을 시험해 볼 수 있다.",
+      "howto": "macOS/Linux: `curl -fsSL https://raw.githubusercontent.com/JetBrains/thinkrail/main/install.sh | bash` 후 `thinkrail`. Windows는 저장소의 install.ps1 사용.",
+      "url": "https://github.com/JetBrains/thinkrail",
+      "source": "GitHub"
+    }
+  ]
+}
