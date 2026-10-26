@@ -1,0 +1,134 @@
+{
+  "date": "2026-10-27",
+  "note": "오늘은 검증된 소식이 8건뿐이다. creative·research 분야는 7일 이내의 확인 가능한 소식을 찾지 못해 생략했다.",
+  "items": [
+    {
+      "title": "NVIDIA SkillSpector — 설치 전에 스킬·MCP를 검사하는 보안 스캐너",
+      "category": "skills",
+      "score": 90,
+      "published": "2026-10-26",
+      "buzz": "GitHub ★22.1k · 오늘 +203",
+      "summary": [
+        "Claude Code·Codex·MCP 스킬을 설치하기 전에 취약점, 악성 패턴, 프롬프트 인젝션, 데이터 유출, 공급망 위험을 검사하는 도구.",
+        "빠른 정적 분석이 기본이고 LLM 의미 분석은 선택. 0~100 위험 점수와 권고를 내놓으며 스킬을 실행하지 않는다.",
+        "MCP 서버로도 띄워 에이전트가 도구처럼 호출할 수 있다."
+      ],
+      "why": "외부 스킬을 많이 가져다 쓰는 입장에서 설치 전 안전 점검을 자동화할 수 있다.",
+      "howto": "uv tool install git+https://github.com/NVIDIA/skillspector.git 후 README의 스캔 명령으로 스킬 폴더를 검사.",
+      "url": "https://github.com/NVIDIA/SkillSpector",
+      "source": "GitHub"
+    },
+    {
+      "title": "huashu-design — 한 줄 프롬프트로 HTML 기반 디자인·슬라이드·애니메이션 생성",
+      "category": "skills",
+      "score": 88,
+      "published": "2026-10-26",
+      "buzz": "GitHub ★26.7k · 오늘 +409",
+      "summary": [
+        "Claude Code·Codex·Cursor용 디자인 스킬. 웹페이지, 앱 프로토타입, 편집 가능한 PPTX, 애니메이션, 인포그래픽을 만든다.",
+        "6가지 방향 후보를 제시하고 84가지 스타일 레퍼런스 라이브러리를 갖췄으며 과거 디자인 선택을 로컬에 기록한다.",
+        "디자인 검사 단계가 포함돼 있다."
+      ],
+      "why": "웹앱 UI와 영상 작업용 모션 시안을 Claude Code 안에서 바로 뽑아볼 수 있다.",
+      "howto": "npx skills add alchaincyf/huashu-design (하위 폴더가 빠지면 skills CLI를 올리거나 저장소를 스킬 폴더에 직접 clone).",
+      "url": "https://github.com/alchaincyf/huashu-design",
+      "source": "GitHub"
+    },
+    {
+      "title": "ECC — 계획·검증·메모리를 갖춘 에이전트 하네스 키트",
+      "category": "skills",
+      "score": 84,
+      "published": "2026-10-26",
+      "buzz": "GitHub ★약 290k · 오늘 +987",
+      "summary": [
+        "Claude Code에 계획 → 구현 → 테스트 검증 → 자기 리뷰 → 메모리 → 반복 성공의 스킬화 흐름을 얹는 MIT 툴킷.",
+        "에이전트 71개, 스킬 311개, 커맨드 97개를 담고 Codex·Qoder 플러그인 경로도 제공한다.",
+        "하네스당 설치 방법은 하나만 고르라고 안내한다. 최근 릴리스는 2.2.3(10/01)."
+      ],
+      "why": "규모가 커서 필요한 것만 골라 쓰는 편이 낫지만, 검증 워크플로를 통째로 가져올 수 있다.",
+      "howto": "npx ecc-universal@2.2.3 setup (Node 18+). Claude Code에서는 /plugin marketplace add https://github.com/affaan-m/ECC → /plugin install ecc@ecc.",
+      "url": "https://github.com/affaan-m/ECC",
+      "source": "GitHub"
+    },
+    {
+      "title": "Agent-Reach — 에이전트에게 Twitter·Reddit·YouTube 자막 읽기 권한을 주는 CLI",
+      "category": "skills",
+      "score": 76,
+      "published": "2026-10-26",
+      "buzz": "GitHub ★약 103k · 오늘 +723",
+      "summary": [
+        "로그인이 필요한 Twitter·Reddit·샤오홍슈와 Bilibili·YouTube 자막, GitHub·V2EX 데이터를 하나의 CLI로 읽게 해준다.",
+        "읽기 전용이다.",
+        "PyPI의 agent-reach는 이 프로젝트가 아니므로 설치하면 안 된다."
+      ],
+      "why": "프록시로 막힌 환경이 아니라면 Claude Code가 영상 자막이나 커뮤니티 반응을 직접 조사하게 만들 수 있다.",
+      "howto": "에이전트에게 \"帮我安装 Agent Reach：https://raw.githubusercontent.com/Panniantong/Agent-Reach/main/docs/install.md\" 를 전달.",
+      "url": "https://github.com/Panniantong/Agent-Reach",
+      "source": "GitHub"
+    },
+    {
+      "title": "Claude Code v2.1.311 — 1M 컨텍스트 오류 수정, 서브에이전트 MCP 개선",
+      "category": "claude",
+      "score": 86,
+      "published": "2026-10-26",
+      "buzz": "GitHub 릴리스 (10/26)",
+      "summary": [
+        "200K 토큰을 넘는 요청에서 \"Usage credits required for 1M context\"로 멈추던 문제를 고쳐 이제 압축 후 계속 진행한다.",
+        "늦게 연결되는 MCP 서버의 도구를 서브에이전트가 쓰지 못하던 문제와 SubagentStop 훅이 분당 약 2회씩 중복 실행되던 문제를 수정했다.",
+        "터미널의 ultrathink가 여러 모델에서 xhigh effort로 실행되도록 바뀌었다. self-hosted-runner에는 --hold-idle-file, --max-hold-min이 추가됐다."
+      ],
+      "why": "서브에이전트와 훅을 쓰는 작업에서 바로 체감되는 수정이다.",
+      "howto": "claude update 로 업데이트.",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.311",
+      "source": "GitHub"
+    },
+    {
+      "title": "Anthropic, 나스닥 상장(IPO)을 위한 S-1 제출",
+      "category": "claude",
+      "score": 70,
+      "published": "2026-10-26",
+      "buzz": "Anthropic 공식 발표 (10/26)",
+      "summary": [
+        "Anthropic, PBC가 SEC에 기업공개용 Form S-1을 제출했다.",
+        "나스닥 글로벌 셀렉트 마켓에 티커 \"ANT\"로 Class A 보통주를 상장할 계획이다.",
+        "주식 수와 가격대는 미정이고 등록은 아직 효력이 발생하지 않았으며 주관사는 골드만삭스와 모건스탠리다."
+      ],
+      "why": "Claude 서비스의 장기 지속성과 가격 정책을 가늠할 때 참고할 만한 소식.",
+      "howto": "원문 참고",
+      "url": "https://www.anthropic.com/news/s1-sec",
+      "source": "Anthropic"
+    },
+    {
+      "title": "Ollama 0.40.9~0.40.11 — macOS 음성 읽기, Nemotron 3.5 Bolt, d3 결정 모델",
+      "category": "tools",
+      "score": 74,
+      "published": "2026-10-26",
+      "buzz": "GitHub 릴리스 (10/22~24)",
+      "summary": [
+        "v0.40.11: macOS에서 ollama run이 텍스트를 소리 내어 읽고, /v1/audio/speech가 오디오 스트리밍을 지원한다. 2B·4B·9B·27B d3 결정 모델이 추가됐다.",
+        "v0.40.10: 128K 컨텍스트의 Gemma 4 기반 비전-언어 모델 NVIDIA Nemotron 3.5 Bolt E4B가 추가됐다.",
+        "v0.40.9: Flint가 Linux·Windows에서도 동작하고, ollama launch가 클라우드 모델의 컨텍스트 길이를 코딩 툴에 전달한다."
+      ],
+      "why": "로컬 모델로 코딩 툴과 음성 기능을 시험해 보기 좋다.",
+      "howto": "Ollama를 최신으로 업데이트한 뒤 ollama run <모델>. 모델명은 원문 참고.",
+      "url": "https://github.com/ollama/ollama/releases/tag/v0.40.11",
+      "source": "GitHub"
+    },
+    {
+      "title": "OpenBot — Codex·Claude 등 에이전트를 팀원처럼 쓰는 로컬 데스크톱 워크스페이스",
+      "category": "tools",
+      "score": 66,
+      "published": "2026-10-26",
+      "buzz": "GitHub ★1.4k · 오늘 +312",
+      "summary": [
+        "Codex, Claude, Grok 등의 에이전트 CLI를 에이전트별 작업공간·대화로 돌리는 로컬 우선 앱.",
+        "로컬 큐, 파일 전송, 내장 브라우저, 에이전트 간 메시징을 제공한다.",
+        "데스크톱은 DMG·EXE·AppImage로 받을 수 있다."
+      ],
+      "why": "여러 에이전트를 병렬로 돌리며 역할을 나누는 실험에 쓸 수 있다.",
+      "howto": "GitHub Releases에서 EXE를 받아 설치 (Nix: nix run github:nightly-labs/openbot).",
+      "url": "https://github.com/nightly-labs/openbot",
+      "source": "GitHub"
+    }
+  ]
+}
