@@ -1,0 +1,198 @@
+{
+  "date": "2026-10-28",
+  "note": "오늘은 수집 가능한 출처가 제한돼 논문·영상 분야는 확인된 소식만 실었습니다.",
+  "items": [
+    {
+      "title": "Sno Station Skills — Claude Code·Codex가 한 팀처럼 일하게 하는 스킬 모음",
+      "category": "skills",
+      "score": 88,
+      "published": "2026-10-23",
+      "buzz": "GitHub 883★ · 포크 624",
+      "summary": [
+        "Claude Code와 Codex에 교차 벤더 피어 리뷰, 쿼터 임박 시 자동 핸드오프, 한 장짜리 away-brief, 증빙이 붙는 작업지시서를 추가하는 Apache-2.0 스킬 세트.",
+        "피어 리뷰·빌드/롤아웃·핸드오프·리포팅·위임·회고(야간 학습 루프) 6개 그룹으로 구성.",
+        "스킬 개수 표기가 31개/37개로 README 안에서도 엇갈린다. 7개는 Sno Station 없이 standalone 플러그인으로 쓸 수 있다."
+      ],
+      "why": "Claude Code와 Codex를 같이 쓰는 1인 개발자가 한쪽 쿼터가 바닥나도 작업을 이어가고 서로의 결과물을 교차 검토시킬 수 있다.",
+      "howto": "claude plugin marketplace add sno-ai/sno-station-skills 후 claude plugin install sno-station@sno-ai (Codex: codex plugin marketplace add sno-ai/sno-station-skills, codex plugin add sno-station@sno-ai).",
+      "url": "https://github.com/sno-ai/sno-station-skills",
+      "source": "GitHub"
+    },
+    {
+      "title": "ai-design-skills — 랜딩페이지를 처음부터 설계하는 디자인 스킬",
+      "category": "skills",
+      "score": 84,
+      "published": "2026-10-28",
+      "buzz": "GitHub Trending 오늘 +1,395★ · 9.2k★",
+      "summary": [
+        "AI 코딩 툴용 디자인 스킬 모음으로, 현재는 landing-page-design 스킬 하나(타입·간격·라운드·모션 시각 시스템 포함)를 담았다. MIT.",
+        "Claude Code는 .claude/skills/에 복사, Codex는 AGENTS.md, Cursor·Windsurf·Cline도 지원.",
+        "아직 스킬이 1개뿐이고 커밋 8개의 초기 저장소다. 기존 사이트 개선은 별도 redesign-skill 저장소 담당."
+      ],
+      "why": "웹앱·게임 소개 페이지를 Claude Code로 만들 때 AI 티 나는 디자인을 피하는 출발점으로 쓸 수 있다.",
+      "howto": "mkdir -p .claude/skills && git clone https://github.com/elayadesign/ai-design-skills.git /tmp/ai-design-skills && cp -r /tmp/ai-design-skills/skills/landing-page-design .claude/skills/",
+      "url": "https://github.com/elayadesign/ai-design-skills",
+      "source": "GitHub"
+    },
+    {
+      "title": "T3 Code — Claude Code·Codex를 폰과 웹에서 조종하는 에이전트 컨트롤 서피스",
+      "category": "skills",
+      "score": 80,
+      "published": "2026-10-28",
+      "buzz": "GitHub Trending 주간 +1,881★ · 30.8k★",
+      "summary": [
+        "내 컴퓨터에서 도는 코딩 에이전트(Claude Code, Codex, Cursor, OpenCode, Grok Build 등)를 iOS·Android 앱, 웹, Electron 데스크톱에서 제어하는 하네스 컨트롤 서피스.",
+        "설치는 한 줄 스크립트로 끝난다.",
+        "릴리스 정보는 페이지에서 확인되지 않아 버전·변경점은 원문 참고."
+      ],
+      "why": "Windows에서 긴 작업을 맡겨 두고 자리를 비웠을 때 상태를 확인하고 이어서 지시하기 좋다.",
+      "howto": "Windows PowerShell: irm https://t3.codes/install.ps1 | iex (macOS/Linux: curl -fsSL https://t3.codes/install.sh | sh)",
+      "url": "https://github.com/pingdotgg/t3code",
+      "source": "GitHub"
+    },
+    {
+      "title": "trace-mcp — 프레임워크를 이해하는 코드 인텔리전스 MCP 서버",
+      "category": "skills",
+      "score": 70,
+      "published": "2026-10-27",
+      "buzz": "GitHub 198★ · 오늘 업데이트",
+      "summary": [
+        "프레임워크 구조를 인식해 코드베이스를 탐색하게 해 주는 MCP 서버.",
+        "claude-code-plugin 토픽에서 10월 27일 업데이트된 저장소 중 가장 별이 많은 편.",
+        "설치 방법은 확인하지 못했다."
+      ],
+      "why": "큰 프로젝트에서 Claude Code가 파일을 통째로 읽는 대신 구조적으로 찾게 해 토큰을 아낄 후보다.",
+      "howto": "원문 참고",
+      "url": "https://github.com/nikolai-vysotskyi/trace-mcp",
+      "source": "GitHub"
+    },
+    {
+      "title": "claude-setup-audit — Claude Code 설정을 점검하는 플러그인",
+      "category": "skills",
+      "score": 62,
+      "published": "2026-10-27",
+      "buzz": "GitHub 3★ · 오늘 업데이트",
+      "summary": [
+        "settings, 권한, 훅, MCP 서버, 스킬, 메모리를 감사해 보안·비용·컨텍스트 문제를 찾아 주는 플러그인.",
+        "기본은 읽기 전용이다.",
+        "별 3개의 초기 프로젝트라 검증이 더 필요하다."
+      ],
+      "why": "스킬·훅·MCP를 많이 붙인 환경에서 권한과 컨텍스트 낭비를 한 번 정리하기에 좋다.",
+      "howto": "원문 참고",
+      "url": "https://github.com/senzelden/claude-setup-audit",
+      "source": "GitHub"
+    },
+    {
+      "title": "Claude Code v2.1.312 — 큰 CLAUDE.md 덮어쓰기 버그 수정",
+      "category": "claude",
+      "score": 86,
+      "published": "2026-10-27",
+      "buzz": "GitHub 릴리스",
+      "summary": [
+        "큰 CLAUDE.md·rules 파일을 앞부분만 읽고 덮어쓰던 문제를 고쳤다.",
+        "프롬프트·에이전트 훅은 세션당 동시 최대 24개로 제한하고, 사용량 한도 문구를 '5-hour limit'으로 바꿨다.",
+        "Claude 앱 게이트웨이에 oidc.user_id_claim을 추가했고 VS Code 확장의 관리형 설정 미적용도 고쳤다."
+      ],
+      "why": "CLAUDE.md에 규칙을 길게 쌓아 쓰는 사용자라면 파일이 망가질 위험이 사라진다.",
+      "howto": "claude update 또는 npm i -g @anthropic-ai/claude-code@latest 로 업데이트.",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.312",
+      "source": "GitHub"
+    },
+    {
+      "title": "Codex 0.165.0 — Vertex AI 공급자와 GPT-6.1 Terra 모델 카탈로그 추가",
+      "category": "tools",
+      "score": 82,
+      "published": "2026-10-27",
+      "buzz": "GitHub 릴리스",
+      "summary": [
+        "Google Cloud Vertex AI 공급자가 내장됐다(model_provider = \"gcp\"). 모델 카탈로그에 GPT-6.1 Terra가 들어갔다.",
+        "대화 중 추론 강도 변경, 세션 선택기의 저장소 필터, 새 프로필에서 Memory v2 기본 활성화.",
+        "원격 MCP 요청 취소 처리와 마켓플레이스 URL 검증 허점도 수정됐다. GPT-6.1 Terra 성능·가격은 공식 확인 전."
+      ],
+      "why": "Codex를 쓴다면 모델 선택지와 메모리 기본값이 바뀐다.",
+      "howto": "npm i -g @openai/codex@latest 후 ~/.codex/config.toml 에 model_provider = \"gcp\" 설정.",
+      "url": "https://github.com/openai/codex/releases",
+      "source": "GitHub"
+    },
+    {
+      "title": "OpenCode v2.2.0 — 데스크톱 플러그인과 프롬프트 캐시 TTL 설정",
+      "category": "tools",
+      "score": 72,
+      "published": "2026-10-27",
+      "buzz": "GitHub 릴리스 · 222k★",
+      "summary": [
+        "실험적 데스크톱 플러그인과 개편된 데스크톱 앱, 공급자·모델별 프롬프트 캐시 TTL 설정을 추가.",
+        "플러그인용 이미지·결정 생성 API(실험적).",
+        "@opencode/ai 루트가 Promise API를 내보내도록 바뀌고 GitHub Action 배포가 중단되는 breaking 변경이 있다."
+      ],
+      "why": "Claude Code 대안·보조 에이전트로 OpenCode를 쓰는 경우 업데이트 전 breaking 변경을 확인해야 한다.",
+      "howto": "원문 참고",
+      "url": "https://github.com/anomalyco/opencode/releases/tag/v2.2.0",
+      "source": "GitHub"
+    },
+    {
+      "title": "Ollama v0.40.12 — Liquid AI LFM3 계열 모델 추가",
+      "category": "tools",
+      "score": 70,
+      "published": "2026-10-27",
+      "buzz": "GitHub 릴리스",
+      "summary": [
+        "lfm3(1.7B, 256K 컨텍스트), 이미지용 lfm3-vl, 18개 언어 음성 인식·번역·TTS용 lfm3-audio, 멀티모달 lfm3-omni 추가.",
+        "Apple silicon에서 Gemma 4 등의 프롬프트 처리 속도 개선, ollama launch가 OpenCode v2와 호환.",
+        "LFM3는 현재 Apple 하드웨어만 지원하고 Linux·Windows는 예정이다."
+      ],
+      "why": "로컬 모델을 시험할 때 음성·멀티모달 소형 모델 선택지가 늘었지만 Windows에서는 아직 못 쓴다.",
+      "howto": "원문 참고 (Mac에서 ollama run lfm3 형태로 실행, 정확한 태그는 릴리스 노트 확인).",
+      "url": "https://github.com/ollama/ollama/releases/tag/v0.40.12",
+      "source": "GitHub"
+    },
+    {
+      "title": "ComfyUI v0.43.0 — Kling 4.0·FLUX 3 Max 등 파트너 노드 대거 추가",
+      "category": "creative",
+      "score": 85,
+      "published": "2026-10-27",
+      "buzz": "GitHub 릴리스",
+      "summary": [
+        "HeyGen 음성 복제·TTS, Crystal Video Upscaler, FLUX 3 Max, Bria FIBO 2.0, Mirelo SFX, Kling 4.0, PixVerse V6-Max 노드가 들어왔다.",
+        "EXR 저장 시 ACEScg 색공간 변환 지원, Pad Image(미러 패딩)·Branch 노드 신규.",
+        "파트너 노드는 외부 API 호출이라 별도 크레딧이 필요할 수 있다."
+      ],
+      "why": "영상·모션그래픽 작업에서 영상 생성·업스케일·효과음을 한 워크플로로 묶을 수 있고, ACEScg 지원은 AE 파이프라인과 맞물린다.",
+      "howto": "ComfyUI 업데이트(ComfyUI Manager에서 Update 또는 git pull) 후 노드 검색창에서 파트너 노드를 추가.",
+      "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.43.0",
+      "source": "GitHub"
+    },
+    {
+      "title": "HyperFrames — HTML로 영상을 만드는 HeyGen 오픈소스, 하루 3회 릴리스",
+      "category": "creative",
+      "score": 78,
+      "published": "2026-10-27",
+      "buzz": "GitHub 릴리스 하루 3회",
+      "summary": [
+        "HTML 컴포지션을 타임라인으로 편집·미리보기하고 영상으로 렌더링하는 CLI·Studio 툴킷. 10월 27일 v0.8.207~209 릴리스.",
+        "컷·리타임 후 음/영상 싱크 유지, 캡처 중단 시 이어서 재개, 키프레임 간격·최대 비트레이트 설정.",
+        "HDR 클립 미리보기와 Windows 수정 포함. 프로젝트 소개 문구는 원문에서 확인되지 않아 릴리스 노트 기준."
+      ],
+      "why": "Claude Code로 HTML을 짜서 모션그래픽을 렌더하는 워크플로를 시험해 볼 만하다.",
+      "howto": "원문 참고",
+      "url": "https://github.com/heygen-com/hyperframes/releases/tag/v0.8.209",
+      "source": "GitHub"
+    },
+    {
+      "title": "Anthropic, 신약 개발에서 Claude 초기 성과 공개",
+      "category": "research",
+      "score": 66,
+      "published": "2026-10-27",
+      "buzz": "Anthropic 연구 블로그",
+      "summary": [
+        "제약사 6곳과의 파트너십 초기 결과 공개. Generate Biomedicines는 Claude Code로 표준보다 약 70% 짧은 CAR-T 구성요소를 설계했다.",
+        "Divergence Labs는 한 달간 항체 설계 약 35,000개를 생성, Enveda는 1,061쪽 제조 문서 검토 시간을 89% 줄였다.",
+        "대부분 전임상 단계의 초기 결과이며 임상 확장은 계획 단계다."
+      ],
+      "why": "Claude Code가 코딩 밖의 과학 설계에도 쓰이는 사례로 흐름을 파악하기 좋지만 바로 쓸 내용은 아니다.",
+      "howto": "원문 참고",
+      "url": "https://www.anthropic.com/research/early-progress-drug-development",
+      "source": "Anthropic"
+    }
+  ]
+}
