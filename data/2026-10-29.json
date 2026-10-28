@@ -1,0 +1,167 @@
+{
+  "date": "2026-10-29",
+  "note": "오늘은 어제와 겹치는 소식이 많아 새로 확인된 소식 위주로 10건을 실었습니다.",
+  "items": [
+    {
+      "title": "Anthropic, 비공개 모델로 Chrome·Safari·Linux 등 5개 공격 체인 발견",
+      "category": "research",
+      "score": 90,
+      "published": "2026-10-27",
+      "buzz": "HN 13점 · Anthropic Frontier Red Team",
+      "summary": [
+        "Anthropic이 내부 비공개 연구 모델로 브라우저·OS의 치명적 취약점 5개 공격 체인을 찾았다고 공개했다.",
+        "Chrome에서는 62개 CVE(샌드박스 탈출 13개 포함)가 Chrome 156에서 수정됐고, Windows QUIC 커널 버그는 CVE-2026-33096, Linux 커널 네트워크 스택 버그는 zero-click RCE로 보고됐다.",
+        "공개 시점은 90일 패치 기간 후이며, 사용된 모델은 일반 공개되지 않았다."
+      ],
+      "why": "내 코드를 PR 단계에서 스캔하라는 권고와 함께 Claude Code 보안 가이드 플러그인이 공개돼 바로 적용해 볼 수 있다.",
+      "howto": "글에서 안내하는 Claude Code security guidance 플러그인을 확인한다(정확한 설치 명령은 원문 참고).",
+      "url": "https://www.anthropic.com/research/discovering-vulnerabilities-with-claude",
+      "source": "Anthropic"
+    },
+    {
+      "title": "Godot AI — Claude Code·Codex를 실행 중인 Godot 에디터에 연결하는 MCP",
+      "category": "skills",
+      "score": 86,
+      "published": "2026-10-25",
+      "buzz": "GitHub 3.3k★ · 월 설치 2.1만+ · 검색 확인",
+      "summary": [
+        "MIT 라이선스 MCP 서버로 46개 도구, 120개 이상 작업으로 씬·노드·스크립트·UI·머티리얼·애니메이션을 에이전트가 직접 편집한다.",
+        "Godot 4.7 이상이 필요하고, 4.3.1 보안 릴리스에서 침해된 emSign 루트 인증서를 제거하고 Windows의 프로젝트 파일 쓰기 보호 우회를 막았다.",
+        "Godot MCP Toolkit(113개 도구) 등 대안도 있다."
+      ],
+      "why": "Godot 게임 작업을 Claude Code가 에디터 안에서 직접 수정·확인하게 해 준다.",
+      "howto": "uv 설치 → Godot AssetLib에서 Godot AI 설치(또는 `addons/godot_ai/`에 복사) → 프로젝트 설정 > 플러그인에서 활성화 → Godot AI 독의 Configure all 클릭.",
+      "url": "https://github.com/hi-godot/godot-ai",
+      "source": "GitHub · Godot Asset Store"
+    },
+    {
+      "title": "Claude Code v2.1.311 — ultrathink xhigh, 타임아웃 시 부분 출력 표시",
+      "category": "claude",
+      "score": 84,
+      "published": "2026-10-26",
+      "buzz": "GitHub 릴리스",
+      "summary": [
+        "터미널에서 `ultrathink`가 API 경유 여러 모델에서 xhigh effort로 실행된다.",
+        "셸 명령이 타임아웃되면 부분 출력을 보여주고, 요청이 200K 토큰을 넘어도 'Usage credits required for 1M context'로 멈추지 않고 compact 후 계속한다.",
+        "매우 긴 CLAUDE.md 목록 항목에서 생기던 장시간 멈춤과 MCP·서브에이전트 버그도 수정됐다."
+      ],
+      "why": "긴 세션과 큰 CLAUDE.md를 쓰는 1인 개발 흐름에서 멈춤·중단이 줄어든다.",
+      "howto": "`claude update` 또는 재설치 후 `claude --version`으로 2.1.311 이상인지 확인한다.",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.311",
+      "source": "Claude Code GitHub"
+    },
+    {
+      "title": "Kling 4.0, Runway 개발자 API에 추가 — 최대 30초·오디오 포함",
+      "category": "creative",
+      "score": 82,
+      "published": "2026-10-23",
+      "buzz": "Runway API 변경 로그 · ComfyUI v0.43 노드 · 검색 확인",
+      "summary": [
+        "Runway Dev 변경 로그에 `kling_4`가 추가됐고 3~30초, 720p/1080p, 오디오 포함 생성을 지원한다.",
+        "ComfyUI v0.43.0에도 Kling 4.0 파트너 노드가 들어갔다는 보도가 있다.",
+        "Kling 4.0 출시일은 소스마다 다르다(10월 15일 설).",
+        "유료 API·크레딧이 필요하다."
+      ],
+      "why": "30초 길이와 오디오 생성은 모션그래픽 시안·콘티용 영상에 바로 쓸 만하다.",
+      "howto": "Runway API 변경 로그에서 모델 ID `kling_4`를 확인한다(원문 참고).",
+      "url": "https://docs.dev.runwayml.com/api-details/api_changelog/",
+      "source": "Runway Dev Docs"
+    },
+    {
+      "title": "Expo Skills — Expo 공식 에이전트 스킬 모음 (GitHub 트렌딩)",
+      "category": "skills",
+      "score": 80,
+      "published": "2026-10-28",
+      "buzz": "GitHub 3.5k★ · 트렌딩 오늘 +216★",
+      "summary": [
+        "Expo 팀이 만든 MIT 라이선스 공식 스킬 모음으로 앱 구조·라우팅·애니메이션·EAS 배포·업그레이드를 다룬다.",
+        "expo-router, expo-native-ui, eas-update, eas-workflows 등 20여 개 스킬이 있다.",
+        "Expo/React Native 프로젝트가 아니면 쓸 일이 적다."
+      ],
+      "why": "웹앱을 모바일 앱으로 확장할 때 Claude Code가 Expo 관례를 정확히 따르게 해 준다.",
+      "howto": "Claude Code: `claude plugin install expo@claude-plugins-official` / Codex: `codex plugin add expo@openai-curated` / 공용: `npx skills@latest add expo/skills --skill '*'`",
+      "url": "https://github.com/expo/skills",
+      "source": "GitHub"
+    },
+    {
+      "title": "vargHQ/skills — 영상·이미지·음성·음악 생성용 에이전트 스킬",
+      "category": "skills",
+      "score": 74,
+      "published": "2026-10-28",
+      "buzz": "GitHub 21★ · claude-code-skills 토픽 최근 갱신",
+      "summary": [
+        "varg 플랫폼으로 AI 영상·이미지·음성·음악을 만드는 스킬 모음으로 뮤직비디오, 캐릭터 일관성, 프리비즈 스킬이 있다.",
+        "FFmpeg 쇼트폼 편집 요리책, yt-dlp 다운로드 스킬도 들어 있다.",
+        "varg 플랫폼 계정·API를 전제로 하며 스타 수는 아직 적다."
+      ],
+      "why": "영상학과 작업에서 레퍼런스 영상 생성·편집을 에이전트에게 맡길 때 출발점이 된다.",
+      "howto": "`npx skills add vargHQ/skills --yes` 또는 Claude Code에서 `claude plugin marketplace add vargHQ/skills` 후 `claude plugin install varg@varg`.",
+      "url": "https://github.com/vargHQ/skills",
+      "source": "GitHub"
+    },
+    {
+      "title": "awesome-korean-agent-skills — 한국어 에이전트 스킬 400여 개 큐레이션",
+      "category": "skills",
+      "score": 72,
+      "published": "2026-10-28",
+      "buzz": "GitHub 52★ · 오늘 갱신",
+      "summary": [
+        "Claude Code·Gemini CLI·Codex·Cursor용 한국어 스킬·에이전트·훅 400여 개를 기능별로 분류한 목록이다.",
+        "bear2u/my-skills(한국어 스킬 21개), NomaDamas/k-skill(생활 서비스 15개) 같은 설치 가능한 묶음을 안내한다.",
+        "GitHub Actions 에이전트가 관리하므로 각 저장소를 직접 확인해야 한다."
+      ],
+      "why": "한국어 프롬프트·한국 서비스 연동 스킬을 한곳에서 찾을 수 있다.",
+      "howto": "예: `git clone https://github.com/bear2u/my-skills.git /tmp/my-skills && cp -r /tmp/my-skills/.claude/skills/* ~/.claude/skills/` (README 참고).",
+      "url": "https://github.com/J-nowcow/awesome-korean-agent-skills",
+      "source": "GitHub"
+    },
+    {
+      "title": "Liquid AI LFM3 공개 — 모든 모달리티를 다루는 특화 소형 모델",
+      "category": "tools",
+      "score": 71,
+      "published": "2026-10-27",
+      "buzz": "HN 136점 · 검색 확인",
+      "summary": [
+        "Liquid AI가 'Every Modality for Specialized Intelligence'를 내걸고 LFM3 계열을 발표했다.",
+        "Ollama v0.40.12에 LFM3 계열이 추가된 것이 어제 확인됐다.",
+        "세부 크기·라이선스는 확인하지 못했다."
+      ],
+      "why": "로컬에서 가벼운 모델을 돌려 툴에 붙이려는 경우 후보가 된다.",
+      "howto": "원문 참고 (Ollama에서는 LFM3 계열 모델 이름으로 실행)",
+      "url": "https://www.liquid.ai/blog/lfm3",
+      "source": "Liquid AI"
+    },
+    {
+      "title": "OpenAI·Anthropic 수학 증명 경쟁 — 비공개 모델 결과에 학계 반응 갈려",
+      "category": "research",
+      "score": 70,
+      "published": "2026-10-27",
+      "buzz": "Scientific American · HN 5점(formal-math 저장소) · 검색 확인",
+      "summary": [
+        "두 회사의 모델이 수학 난제에서 서로 가까운 시기에 증명을 내놓았다고 Scientific American이 보도했다.",
+        "Anthropic 쪽 결과는 내부 모델에서 나왔고 ETH를 반증했다고 하나, 수학자들은 아직 정확성을 확인할 수 없다는 입장이다.",
+        "프롬프트·추론 과정이 공개되지 않아 검증이 어렵고 보도는 진행 중이다."
+      ],
+      "why": "코딩 에이전트가 형식 증명까지 가는 흐름을 가늠하는 참고 소식이다.",
+      "howto": "원문 참고",
+      "url": "https://www.scientificamerican.com/article/dueling-proofs-from-openai-and-anthropic-astound-scientists/",
+      "source": "Scientific American"
+    },
+    {
+      "title": "Animatica Marionette·Choreographer — Blender용 포징·AI 모션 애드온",
+      "category": "creative",
+      "score": 68,
+      "published": "2026-10-25",
+      "buzz": "CG Channel 주간 정리 · 검색 확인",
+      "summary": [
+        "Marionette는 Blender 5.0 이상에서 캐릭터 포징·모션 편집을 돕는 애드온이다.",
+        "관련 도구 Choreographer는 키 포즈 사이의 모션 궤적을 AI로 생성한다.",
+        "검색 결과로 확인된 내용은 이 정도이며 가격은 확인하지 못했다."
+      ],
+      "why": "AE·Live2D 작업의 모션 레퍼런스를 3D로 빠르게 뽑을 때 참고할 수 있다.",
+      "howto": "원문 참고",
+      "url": "https://www.cgchannel.com/2026/10/new-cg-software-you-may-have-missed-25-october-2026/",
+      "source": "CG Channel"
+    }
+  ]
+}
