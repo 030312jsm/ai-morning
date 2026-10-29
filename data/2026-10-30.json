@@ -1,0 +1,211 @@
+{
+  "date": "2026-10-30",
+  "note": "최근 48시간 안에 확인된 소식 위주로 13건을 실었습니다. 연구 분야는 출처 2곳 이상으로 확인된 소식이 없어 생략했습니다.",
+  "items": [
+    {
+      "title": "OpenAI, GPT-6.1 Terra 공개 — 컴퓨터 사용·코딩에 쓰는 절반 가격 중간급 모델",
+      "category": "tools",
+      "score": 90,
+      "published": "2026-10-26",
+      "buzz": "여러 매체 보도 · 검색 확인",
+      "summary": [
+        "OpenAI가 10월 26일 GPT-6.1 Terra를 공개했다. 입력 $1·출력 $5(백만 토큰당)로 GPT-6.1 Sol의 절반 가격이다.",
+        "OpenAI 발표 기준 GPT-6 Astra·Sol보다 작업 완료가 3배 이상 빠르고, Terminal-Bench 4.0에서 50.3%를 풀었다(GPT-5.6 Terra는 21.5%).",
+        "가장 복잡한 코딩에는 여전히 Sol·Astra를 권하며, 수치는 OpenAI 자체 발표 기준이다."
+      ],
+      "why": "Codex로 게임·웹앱을 만들 때 값싸고 빠른 기본 모델로 바꿔 쓸 수 있다.",
+      "howto": "API 모델 ID는 gpt-6.1-terra. Plus/Pro 등 유료 플랜은 Codex에서 바로 선택해 쓸 수 있다.",
+      "url": "https://bleepingcomputer.com/news/artificial-intelligence/openai-launches-gpt-61-terra-with-3x-faster-ai-agents-50-percent-lower-pricing",
+      "source": "BleepingComputer"
+    },
+    {
+      "title": "mattpocock/skills — /grill-me·/tdd 등 실무 스킬 모음, 30만 스타 돌파",
+      "category": "skills",
+      "score": 88,
+      "published": "2026-10-29",
+      "buzz": "GitHub 306.6k★",
+      "summary": [
+        "Matt Pocock이 자신의 .agents 디렉터리를 그대로 공개한 에이전트 스킬 모음이다(/grill-me, /tdd, /diagnosing-bugs 등).",
+        "10월 29일에도 서브에이전트를 새 컨텍스트로 시작하도록 바꾸고 implement-spec 스킬을 추가하는 등 커밋이 이어지고 있다.",
+        "에이전트마다 한 번만 설치해야 스킬이 중복되지 않는다."
+      ],
+      "why": "TDD·버그 진단 같은 반복 워크플로를 Claude Code·Codex에 바로 얹을 수 있다.",
+      "howto": "claude plugin install mattpocock-skills@claude-plugins-official",
+      "url": "https://github.com/mattpocock/skills",
+      "source": "GitHub"
+    },
+    {
+      "title": "universal-modder — Claude Code로 PC 게임 모딩(마인크래프트·Godot 포함) 스킬+fal MCP",
+      "category": "skills",
+      "score": 86,
+      "published": "2026-10-29",
+      "buzz": "GitHub 9.2k★ · 일 +316★",
+      "summary": [
+        "스킬, um CLI, fal MCP 서버를 묶어 에이전트가 게임을 찾고 엔진을 파악해 모드를 만들고, 아트·3D·오디오를 생성해 실행 중인 게임에서 테스트한다.",
+        "Unity·Unreal·Godot·Source 등 엔진별 플레이북과 Minecraft·Terraria·Elden Ring 등 사례가 들어 있다.",
+        "게임을 직접 소유해야 하며, 지원 목록이 따로 정리돼 있지는 않다."
+      ],
+      "why": "마인크래프트·Godot 작업에 에셋 생성과 테스트까지 이어지는 흐름을 그대로 가져다 쓸 수 있다.",
+      "howto": "/plugin marketplace add rehan-remade/universal-modder 후 /plugin install universal-modder@universal-modder",
+      "url": "https://github.com/rehan-remade/universal-modder",
+      "source": "GitHub"
+    },
+    {
+      "title": "lemo-opuscar — 영상 모델 없이 코드로 영화 스타일 영상을 만드는 Claude Code 툴박스",
+      "category": "creative",
+      "score": 85,
+      "published": "2026-10-29",
+      "buzz": "GitHub 9.4k★",
+      "summary": [
+        "66가지 영화 스타일이 들어 있고, 각 스타일의 데모 영상을 Claude Opus 5.5가 코드만으로 만들었다.",
+        "10월 29일 새 스타일 7개 추가 소식이 올라왔다.",
+        "Node 20+, ffmpeg 7+, Python 3.11+가 필요하고 영상 1편에 30~60분과 상당한 토큰이 든다. Opus 5.5 기준으로 튜닝됐다."
+      ],
+      "why": "모션그래픽 감각을 프롬프트로 빠르게 시안화해 볼 수 있어 영상학과 작업의 아이디어 스케치에 좋다.",
+      "howto": "claude plugin marketplace add lemomo-ai/lemo-opuscar 후 claude plugin install lemo-opuscar@lemolab",
+      "url": "https://github.com/lemomo-ai/lemo-opuscar",
+      "source": "GitHub"
+    },
+    {
+      "title": "OpenAI Codex CLI 0.166.0 — 트랜스크립트 키보드 선택·codex doctor --network-only",
+      "category": "tools",
+      "score": 80,
+      "published": "2026-10-29",
+      "buzz": "GitHub 릴리스",
+      "summary": [
+        "트랜스크립트를 단어·줄·페이지 단위로 키보드 선택하고 검색할 수 있으며, GPT-6.1 Terra가 모델 카탈로그에 들어갔다.",
+        "codex queue --resume으로 언로드된 스레드를 재개하고, codex doctor --network-only로 네트워크 문제만 진단한다.",
+        "resume/fork 시 승인·권한 설정이 유지되도록 고쳐졌다."
+      ],
+      "why": "Codex를 병행해 쓴다면 모델 추가와 재개 안정성이 바로 체감된다.",
+      "howto": "npm i -g @openai/codex@latest 등 기존 설치 방식으로 업데이트(원문 참고).",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.166.0",
+      "source": "GitHub (openai/codex)"
+    },
+    {
+      "title": "anthropics/skills — mcp-builder 스킬이 MCP TypeScript SDK v2 기준으로 갱신",
+      "category": "skills",
+      "score": 76,
+      "published": "2026-10-28",
+      "buzz": "GitHub 공식 저장소 커밋",
+      "summary": [
+        "10월 28일 mcp-builder 스킬을 MCP TypeScript SDK v2 방식으로 가르치도록 갱신하는 커밋이 들어갔다.",
+        "같은 저장소에서 claude-api 스킬도 Haiku 5.5·Managed Agents 내용으로 10월 초 갱신됐다."
+      ],
+      "why": "나만의 MCP 서버(게임 툴 연동 등)를 만들 때 Claude가 최신 SDK 규약대로 짜게 만들 수 있다.",
+      "howto": "저장소의 mcp-builder 폴더를 ~/.claude/skills에 복사(자세한 방법은 원문 참고).",
+      "url": "https://github.com/anthropics/skills/commits/main",
+      "source": "GitHub (anthropics)"
+    },
+    {
+      "title": "last30days-skill — Reddit·X·YouTube·HN을 최근 30일 기준으로 종합하는 조사 스킬",
+      "category": "skills",
+      "score": 78,
+      "published": "2026-10-28",
+      "buzz": "GitHub 65.9k★",
+      "summary": [
+        "주제를 Reddit, X, YouTube, Hacker News, Polymarket, 웹에서 검색해 반응 수 기준으로 순위를 매기고 한 편의 브리프로 합친다.",
+        "10월 21~28일 사이 v3.29~3.31로 Reddit·YouTube·TikTok 수집 보정이 이어졌다.",
+        "수집 대상 플랫폼 정책이나 API 상황에 따라 일부 소스가 비는 경우가 있다."
+      ],
+      "why": "새 툴·라이브러리를 고르기 전 최신 평판을 빠르게 훑어볼 때 쓸 수 있다.",
+      "howto": "/plugin marketplace add mvanhorn/last30days-skill 후 /plugin install last30days",
+      "url": "https://github.com/mvanhorn/last30days-skill",
+      "source": "GitHub"
+    },
+    {
+      "title": "SolidCraft — Rust로 만든 오픈소스 파라메트릭 CAD, MCP로 Claude Code 연동",
+      "category": "skills",
+      "score": 74,
+      "published": "2026-10-29",
+      "buzz": "GitHub 12.0k★ · 일 +533★",
+      "summary": [
+        "스케치·구속·솔리드 피처 타임라인을 갖춘 파라메트릭 3D CAD로, 치수를 바꾸면 모델이 다시 빌드된다.",
+        "solidcraft-cli mcp로 MCP 서버를 띄우고, --connect를 쓰면 실행 중인 앱을 직접 조작하는 모습을 볼 수 있다.",
+        "Windows MSI는 서명되지 않아 SmartScreen 경고가 뜬다."
+      ],
+      "why": "게임용 3D 소품이나 3D 프린트 부품을 말로 모델링시켜 볼 수 있다.",
+      "howto": "claude mcp add solidcraft -- solidcraft-cli mcp (웹판은 solidcraft.io/app)",
+      "url": "https://github.com/tangency-labs/solidcraft",
+      "source": "GitHub"
+    },
+    {
+      "title": "Ollama v0.40.13 — Liquid AI LFM3(텍스트·비전·오디오)가 Linux/Windows에서도 실행",
+      "category": "tools",
+      "score": 70,
+      "published": "2026-10-28",
+      "buzz": "GitHub 릴리스",
+      "summary": [
+        "v0.40.12(10/27)에서 LFM3 계열(1.7B·256K 컨텍스트)과 lfm3-vl, lfm3-audio(18개 언어 음성인식·번역·TTS), lfm3-omni가 추가됐고, v0.40.13에서 Linux/Windows 지원이 들어왔다.",
+        "2B d1 결정 모델도 함께 제공되며 ollama launch가 OpenCode v2와 연동된다."
+      ],
+      "why": "Windows 로컬에서 작은 음성·비전 모델을 앱에 붙여 실험하기 좋다.",
+      "howto": "ollama run lfm3 형태로 실행(정확한 태그는 원문 참고).",
+      "url": "https://github.com/ollama/ollama/releases/tag/v0.40.13",
+      "source": "GitHub (ollama)"
+    },
+    {
+      "title": "slackapi/slack-skills-plugin — Slack MCP 서버와 개발 스킬을 Claude Code·Codex에 제공",
+      "category": "skills",
+      "score": 62,
+      "published": "2026-10-29",
+      "buzz": "GitHub 커밋 활동",
+      "summary": [
+        "Claude Code, Codex, Cursor용 플러그인으로 Slack MCP 서버와 Slack 개발자 스킬을 함께 제공한다.",
+        "10월 29일에도 코딩 에이전트가 이 플러그인을 언제 추천해야 하는지 문서를 보강하는 커밋이 들어갔다."
+      ],
+      "why": "Slack 봇이나 알림 연동을 만들 때 에이전트가 공식 규약대로 작업하게 할 수 있다.",
+      "howto": "설치 명령은 원문 참고.",
+      "url": "https://github.com/slackapi/slack-skills-plugin",
+      "source": "GitHub (slackapi)"
+    },
+    {
+      "title": "Nanbeige4.3-33B 공개 — Apache 2.0, 512K 컨텍스트 코딩 에이전트용 오픈 모델",
+      "category": "tools",
+      "score": 68,
+      "published": "2026-10-24",
+      "buzz": "여러 매체 보도 · 검색 확인",
+      "summary": [
+        "Nanbeige LLM Lab이 33.1B 파라미터, 524,288 토큰 컨텍스트의 Apache 2.0 모델을 Hugging Face에 올렸다.",
+        "자체 보고로 Qwen3.8-27B를 20개 중 18개 테스트에서 앞섰다고 하나 제3자 검증은 없다.",
+        "공식 지원 언어는 영어·중국어이고, 4비트 양자화 시 약 20GB 메모리가 필요하다는 추정이 있다."
+      ],
+      "why": "로컬에서 돌리는 코딩 에이전트용 모델을 비교할 때 후보로 볼 만하다.",
+      "howto": "Hugging Face에서 Nanbeige4.3-33B를 받아 사용(상세는 원문 참고).",
+      "url": "https://aiweekly.co/alerts/nanbeige-opens-33b-model-under-apache-20-with-512k-context",
+      "source": "AI Weekly"
+    },
+    {
+      "title": "Anthropic, AI for Science 확대 — 재단·연구기관에 Claude 크레딧 지원",
+      "category": "claude",
+      "score": 55,
+      "published": "2026-10-28",
+      "buzz": "Anthropic 공식 발표",
+      "summary": [
+        "2025년 5월 시작한 AI for Science를 과학 재단·학회·연구기관·개별 프로젝트로 넓힌다고 밝혔다.",
+        "Sloan·Simons·NSF 등 자금 제공처와 Sanger·Crick·EMBL 같은 기관이 파트너로 이름을 올렸다.",
+        "HHMI Janelia와 연구 프리뷰 단계의 Model Hardware Standard(에이전트가 실험 장비를 안전하게 다루는 규격)도 만들었다."
+      ],
+      "why": "Claude의 연구·과학 활용 방향을 파악하는 참고 소식이다.",
+      "howto": "신청 방법은 원문에 없음. 파트너 기관을 통해 배분(원문 참고).",
+      "url": "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions",
+      "source": "Anthropic"
+    },
+    {
+      "title": "Anthropic, 미 GSA와 협력 확대 — 정부 대상 Claude 40% 할인",
+      "category": "claude",
+      "score": 50,
+      "published": "2026-10-27",
+      "buzz": "Anthropic 공식 발표",
+      "summary": [
+        "GSA와의 새 협약을 주·지방·부족 정부까지 넓히고 기관의 Claude 도입을 돕는 프로그램을 시작했다.",
+        "Enterprise·Claude for Government·API를 40% 할인하며 최소 사용 약정은 없다.",
+        "Anthropic은 정부 절감액을 10억 달러로 추산한다."
+      ],
+      "why": "Claude 사업 방향과 가격 정책을 가늠하는 참고 소식이다.",
+      "howto": "일반 개인 사용자에게 적용되는 내용은 아님.",
+      "url": "https://www.anthropic.com/news/expanding-partnership-gsa",
+      "source": "Anthropic"
+    }
+  ]
+}
