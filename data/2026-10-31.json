@@ -1,0 +1,118 @@
+{
+  "date": "2026-10-31",
+  "note": "신선한 소식을 확인할 수 있었던 7건만 실었습니다. 연구·영상 분야는 날짜와 출처를 확인한 소식이 없어 생략했습니다.",
+  "items": [
+    {
+      "title": "Claude Code v2.1.314 — 작업 폴더 밖 쓰기 차단 옵션, 유휴 세션 자동 요약",
+      "category": "claude",
+      "score": 92,
+      "published": "2026-10-30",
+      "buzz": "GitHub 릴리스",
+      "summary": [
+        "Claude Code v2.1.314가 10월 30일 나왔다. 변경 항목이 약 110개인 대형 릴리스다.",
+        "`permissions.blockWritesOutsideWorkingDirectories`를 켜면 Write·Edit·NotebookEdit가 어떤 권한 모드에서도 작업 폴더 밖 경로를 거부한다. VS Code·Claude Desktop Code 탭은 200K 토큰 이상 방치된 대화를 요약해 두었다가 캐시가 만료되면 그 요약으로 이어간다.",
+        "`claude -p`가 시작 실패 시 에러를 출력하고 종료 코드 1로 끝나도록 고쳐졌다. 대부분은 버그 수정이라 체감 변화는 설정을 켜야 나타난다."
+      ],
+      "why": "Claude Code에 자동 실행을 맡기고 게임·툴 프로젝트를 만드는 사람에게 실수로 다른 폴더를 건드리는 사고를 막아 준다.",
+      "howto": "settings.json에 {\"permissions\": {\"blockWritesOutsideWorkingDirectories\": true}}를 추가한다. 업데이트는 `claude update`.",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.314",
+      "source": "GitHub anthropics/claude-code"
+    },
+    {
+      "title": "MCP 공식 servers v2.2.0 — 인증서 이슈 대응, Node.js 24.22.1 이상 권장",
+      "category": "skills",
+      "score": 80,
+      "published": "2026-10-28",
+      "buzz": "GitHub 릴리스",
+      "summary": [
+        "modelcontextprotocol/servers가 10월 28일 v2.2.0을 냈다. eMudhra CA 키 공개 사태 이후 인증서 신뢰 문제를 다룬다.",
+        "TypeScript 서버는 Node.js로 인증서를 검사하므로 npm 사용자는 Node.js 24.22.1·26.12.1 이상을 쓰라고 안내한다. mcp-server-fetch는 영향받는 루트 인증서를 제거한 certifi로 옮겼다. server-filesystem 2.1.0, server-memory 2.0.1, mcp-server-git/fetch/time 2026.10.28이 함께 배포됐다.",
+        "기존 환경은 `uvx --refresh mcp-server-fetch` 또는 `pip install -U certifi`로 갱신해야 적용된다."
+      ],
+      "why": "Claude Code·Codex에 filesystem·fetch·git MCP를 붙여 쓰고 있다면 Node 버전과 certifi를 점검해야 한다.",
+      "howto": "`node -v`로 24.22.1 이상인지 확인하고, fetch 서버는 `uvx --refresh mcp-server-fetch`로 갱신한다.",
+      "url": "https://github.com/modelcontextprotocol/servers/releases/tag/v2.2.0",
+      "source": "GitHub modelcontextprotocol/servers"
+    },
+    {
+      "title": "addyosmani/agent-skills 0.6.14 — 예제 20여 개 수정, /ship·/build는 사용자만 호출",
+      "category": "skills",
+      "score": 78,
+      "published": "2026-10-29",
+      "buzz": "GitHub 릴리스",
+      "summary": [
+        "엔지니어링 스킬 모음 agent-skills가 10월 29일 0.6.14를 냈다.",
+        "동작하지 않던 코드 예제 20여 개를 고치고, 보안 문제 2건(범위 없는 Lighthouse CI 패키지, 롤백 워크플로의 스크립트 인젝션)을 수정했다. `/ship`·`/build` 같은 수명주기 명령은 모델이 스스로 호출하지 못하게 바뀌었다.",
+        "루트 plugin.json이 Agent Plugins 1.0.0 매니페스트로 바뀌었고 Antigravity·Copilot CLI도 같은 25개 스킬을 읽는다."
+      ],
+      "why": "Claude Code와 Codex에서 같은 스킬 묶음을 쓰고 싶을 때 안전하게 가져다 쓸 수 있는 정비된 세트다.",
+      "howto": "설치 명령은 원문 README 참고.",
+      "url": "https://github.com/addyosmani/agent-skills/releases/tag/0.6.14",
+      "source": "GitHub addyosmani/agent-skills"
+    },
+    {
+      "title": "claude-mem — 에이전트 세션 기억을 압축해 다음 세션에 주입, 하루 +1,145 스타",
+      "category": "skills",
+      "score": 77,
+      "published": "2026-10-30",
+      "buzz": "GitHub 트렌딩 · 스타 106,104 (오늘 +1,145)",
+      "summary": [
+        "thedotmack/claude-mem이 GitHub 트렌딩 1위권에 올랐다.",
+        "에이전트가 한 작업을 캡처해 압축한 뒤 다음 세션에 다시 넣어 컨텍스트를 이어 준다. 설명상 Claude Code·Codex 같은 에이전트용이다.",
+        "자동으로 쌓이는 기억이라 어떤 내용이 주입되는지 직접 확인하는 편이 안전하다."
+      ],
+      "why": "세션마다 프로젝트 설명을 다시 하는 수고를 줄여 긴 게임·웹앱 작업에 도움이 된다.",
+      "howto": "설치 명령은 원문 README 참고.",
+      "url": "https://github.com/thedotmack/claude-mem",
+      "source": "GitHub Trending"
+    },
+    {
+      "title": "impeccable — 코딩 에이전트에 디자인 어휘를 주는 도구, 하루 +2,299 스타",
+      "category": "skills",
+      "score": 75,
+      "published": "2026-10-30",
+      "buzz": "GitHub 트렌딩 · 스타 96,950 (오늘 +2,299)",
+      "summary": [
+        "pbakaus/impeccable이 오늘 트렌딩 상위에 올랐다.",
+        "코딩 에이전트에 polish, critique 같은 명령을 주고 AI가 만든 디자인의 흔한 결함을 잡아내게 한다.",
+        "언어는 Rust로 표시된다. 구체적인 지원 에이전트와 설치법은 확인하지 못했다."
+      ],
+      "why": "PyQt·웹앱 UI를 AI로 만들 때 밋밋하고 어색한 결과물을 다듬는 데 쓸 수 있다.",
+      "howto": "설치 명령은 원문 README 참고.",
+      "url": "https://github.com/pbakaus/impeccable",
+      "source": "GitHub Trending"
+    },
+    {
+      "title": "obra/superpowers 스타 30만 돌파 — 하루 +1,255, 최근 v7.0.1",
+      "category": "skills",
+      "score": 74,
+      "published": "2026-10-30",
+      "buzz": "GitHub 트렌딩 · 스타 309,373 (오늘 +1,255)",
+      "summary": [
+        "에이전트용 스킬 프레임워크 superpowers가 오늘도 트렌딩에 올랐다.",
+        "10월 21일 v7.0.1에서 브레인스토밍 스킬이 질문 전에 프로젝트 맥락을 모으고 구현 전에 설계 문서를 쓰도록 바뀌었다. 긴 스킬 3개는 Claude Code의 컴팩션을 견디도록 줄였다.",
+        "v7.0.0(10월 10일)에서 브레인스토밍을 처음부터 다시 만들었다."
+      ],
+      "why": "기능을 만들기 전에 설계를 정리하게 해 주므로 규모가 커지는 게임·툴 프로젝트에 맞는다.",
+      "howto": "Claude Code 설치 명령은 원문 README 참고. Antigravity는 `agy plugin install https://github.com/obra/superpowers`.",
+      "url": "https://github.com/obra/superpowers/releases",
+      "source": "GitHub obra/superpowers"
+    },
+    {
+      "title": "lightpanda browser — AI·자동화용 헤드리스 브라우저, 스타 3.8만",
+      "category": "tools",
+      "score": 66,
+      "published": "2026-10-30",
+      "buzz": "GitHub 트렌딩 · 스타 38,286 (오늘 +559)",
+      "summary": [
+        "Zig로 만든 AI·자동화 전용 헤드리스 브라우저 lightpanda가 트렌딩에 올랐다.",
+        "에이전트의 웹 수집·자동화용으로 만들어졌다고 소개된다.",
+        "성능 수치와 호환 범위는 확인하지 못했다."
+      ],
+      "why": "웹 자동화나 스크래핑을 에이전트에 시킬 때 가벼운 브라우저 후보가 된다.",
+      "howto": "원문 참고.",
+      "url": "https://github.com/lightpanda-io/browser",
+      "source": "GitHub Trending"
+    }
+  ]
+}
