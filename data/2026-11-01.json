@@ -1,0 +1,118 @@
+{
+  "date": "2026-11-01",
+  "note": "오늘은 확인 가능한 신선한 소식이 적어 7건만 싣습니다. GitHub 저장소는 생성일 대신 트렌딩 급상승일을 게시일로 적었습니다.",
+  "items": [
+    {
+      "title": "Claude Code v2.1.316: ultrathink 끄기·서브에이전트 effort 환경변수",
+      "category": "claude",
+      "score": 88,
+      "published": "2026-10-31",
+      "buzz": "GitHub 릴리스 최신",
+      "summary": [
+        "`CLAUDE_CODE_DISABLE_ULTRATHINK`로 ultrathink 키워드를 끌 수 있고, `CLAUDE_CODE_SUBAGENT_EFFORT`로 서브에이전트 기본 effort를 지정한다.",
+        "Bash 도구에서 bash alias·함수가 깨지던 문제가 수정됐다.",
+        "Opus 4.8의 fast mode는 10월 30일부로 폐지 예고, 11월 30일 제거된다."
+      ],
+      "why": "서브에이전트를 많이 돌리는 작업에서 토큰·속도를 환경변수로 조절할 수 있고, Opus 4.8 fast mode를 쓰고 있다면 이전이 필요하다.",
+      "howto": "환경변수 `CLAUDE_CODE_SUBAGENT_EFFORT`를 설정하거나 Opus 5.5로 모델을 바꾼다. 업데이트는 `claude update`.",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.316",
+      "source": "GitHub 릴리스"
+    },
+    {
+      "title": "cloudflare/security-audit-skill: 6단계 보안 감사 스킬",
+      "category": "skills",
+      "score": 90,
+      "published": "2026-10-31",
+      "buzz": "GitHub 트렌딩 주간 +12.8k ★55.2k",
+      "summary": [
+        "Cloudflare가 공개한 코딩 에이전트용 보안 감사 스킬로, 정찰→탐색→후보 검증→구조화 출력→독립 검증→보고의 6단계로 돌아간다.",
+        "발견 사항을 기계가 읽을 수 있는 형태로 내보내고 별도로 검증한다. MIT 라이선스.",
+        "검증기에 Node.js가 필요하고, 대상 코드를 빌드할 때는 OS 수준 샌드박스를 권장한다."
+      ],
+      "why": "웹앱·게임 서버를 직접 만드는 1인 개발자가 배포 전에 Claude Code·Codex로 보안 점검을 돌릴 수 있다.",
+      "howto": "`npx skills add https://github.com/cloudflare/security-audit-skill --skill security-audit` (전역은 `--global` 추가).",
+      "url": "https://github.com/cloudflare/security-audit-skill",
+      "source": "GitHub"
+    },
+    {
+      "title": "Claude-Code-Game-Studios: Claude Code를 게임 스튜디오로 바꾸는 템플릿",
+      "category": "skills",
+      "score": 92,
+      "published": "2026-10-31",
+      "buzz": "GitHub 트렌딩 일간 +724 ★31.1k",
+      "summary": [
+        "Claude Code를 에이전트 49개와 워크플로 스킬 70여 개를 갖춘 게임 개발 스튜디오로 구성하는 템플릿이다.",
+        "훅과 경로별 규칙을 포함하고 Godot·Unity·Unreal용 에이전트 세트를 지원한다. MIT.",
+        "플러그인이 아니라 저장소를 복제해 쓰는 방식이며, 소개문과 README의 스킬 개수 표기(72/74)가 서로 다르다."
+      ],
+      "why": "Godot로 게임을 만드는 독자가 기획·구현·QA 역할 분담을 바로 가져다 쓸 수 있다.",
+      "howto": "`git clone https://github.com/Donchitos/Claude-Code-Game-Studios.git my-game && cd my-game && claude` 후 `/start` 실행.",
+      "url": "https://github.com/Donchitos/Claude-Code-Game-Studios",
+      "source": "GitHub"
+    },
+    {
+      "title": "jakubkrehel/skills: 인터페이스 품질을 높이는 스킬 14종",
+      "category": "skills",
+      "score": 82,
+      "published": "2026-10-31",
+      "buzz": "GitHub 트렌딩 주간 ★9.6k",
+      "summary": [
+        "접근성·레이아웃·타이포그래피·색·UI 다듬기·글쓰기를 다루는 에이전트 스킬 14개 모음이다.",
+        "better-interface, better-accessibility, interface-review, build-design 등이 들어 있다. MIT.",
+        "Claude Code 플러그인 마켓플레이스로도 설치된다."
+      ],
+      "why": "PyQt 툴이나 웹앱 UI를 만든 뒤 접근성·디자인 리뷰를 에이전트에게 맡길 수 있다.",
+      "howto": "`npx skills add jakubkrehel/skills` 또는 Claude Code에서 `/plugin marketplace add jakubkrehel/skills` 후 `/plugin install interfaces@interfaces`.",
+      "url": "https://github.com/jakubkrehel/skills",
+      "source": "GitHub"
+    },
+    {
+      "title": "taste-skill: 레퍼런스 이미지와 브라우저 확인으로 '취향' 있는 UI를 만드는 스킬",
+      "category": "skills",
+      "score": 80,
+      "published": "2026-10-31",
+      "buzz": "GitHub 트렌딩 주간 ★107k",
+      "summary": [
+        "아트 디렉션, 레퍼런스 이미지, 브라우저 점검 단계를 거쳐 흔한 AI 풍 페이지를 피하게 하는 스킬이다.",
+        "한 번 빌드에 약 30~45분, 토큰 수십만이 든다고 안내한다. Node 22+와 Chrome 계열 브라우저, 이미지 검색용 네트워크가 필요하다.",
+        "Claude Code와 Codex 모두 설치 방법이 있다. MIT."
+      ],
+      "why": "웹앱·랜딩 페이지를 만들 때 디자인 완성도를 끌어올리고 싶은 독자에게 맞다. 토큰 소모는 감안해야 한다.",
+      "howto": "Claude Code: `/plugin marketplace add Leonxlnx/taste-skill` 후 `/plugin install taste-skill@taste-skill`. Codex: `codex plugin marketplace add Leonxlnx/taste-skill`, `codex plugin add taste-skill@taste-skill`.",
+      "url": "https://github.com/Leonxlnx/taste-skill",
+      "source": "GitHub"
+    },
+    {
+      "title": "Orkas: Claude Code·Codex를 전문 에이전트 16개와 묶는 로컬 데스크톱 앱",
+      "category": "tools",
+      "score": 70,
+      "published": "2026-10-31",
+      "buzz": "GitHub 트렌딩 일간 ★6.1k",
+      "summary": [
+        "Commander가 내장 전문 에이전트 16개와 Claude Code·Codex·OpenCode 등을 조율하는 오픈소스 로컬 우선 멀티에이전트 앱이다.",
+        "패키지 앱은 macOS·Windows용이고 Linux는 소스 실행만 된다. MIT.",
+        "설치는 소스 빌드 방식이며 Node 22.12+가 필요하다."
+      ],
+      "why": "Windows에서 여러 코딩 에이전트를 한 화면에서 굴려 보고 싶을 때 시험해 볼 만하다.",
+      "howto": "`git clone https://github.com/Orkas-AI/Orkas.git && cd Orkas && run.cmd` (Windows).",
+      "url": "https://github.com/Orkas-AI/Orkas",
+      "source": "GitHub"
+    },
+    {
+      "title": "Anthropic 연구: AI 에이전트가 전문가의 판단을 어떻게 끌고 가는가",
+      "category": "research",
+      "score": 72,
+      "published": "2026-10-27",
+      "buzz": "Anthropic 리서치",
+      "summary": [
+        "전문 분석가 50명이 Claude Code로 인과추론 분석을 하되, 핵심 결정마다 에이전트의 '기울기'를 무작위로 줬다.",
+        "분석가는 86%를 에이전트 방향대로 따랐고, 77%가 에이전트의 논거를 되풀이했지만 에이전트를 이유로 든 사람은 15%뿐이었다.",
+        "에이전트를 쓰지 않은 집단이 심각한 방법론 오류를 더 자주 냈지만(11명 중 6명 vs 50명 중 3명), 집단이 서로 비교 가능하지 않다고 저자들이 단서를 달았다."
+      ],
+      "why": "에이전트 제안을 무심코 수용하기 쉽다는 실험 근거라서, 코드 리뷰 습관을 점검하는 데 참고가 된다.",
+      "howto": "원문 참고 (논문 PDF 링크가 페이지에 있다).",
+      "url": "https://www.anthropic.com/research/agents-judgment-calls",
+      "source": "Anthropic"
+    }
+  ]
+}
