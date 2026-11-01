@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-02",
+  "note": "오늘은 확인 가능한 신선한 소식이 1건뿐이라 1건만 싣습니다. 나머지 후보는 이미 실린 소식이거나 7일이 지났거나 날짜를 확인할 수 없었습니다. GitHub 저장소는 트렌딩 급상승일을 게시일로 적었습니다.",
+  "items": [
+    {
+      "title": "MotionSites Web Builder: 시네마틱 랜딩 페이지를 만드는 Claude 스킬",
+      "category": "skills",
+      "score": 74,
+      "published": "2026-10-28",
+      "buzz": "GitHub 1.4k 스타 · 주간 +1,146 · 검색 확인",
+      "summary": [
+        "Motionsites-AI/claude-skill이 10월 26일~11월 1일 사이 스타 1,100여 개가 늘며 급상승했고, 최고 증가일은 10월 28일(+398)입니다.",
+        "Claude가 예시 디자인을 먼저 분석하고 히어로 미디어를 고른 뒤 빌드 스펙을 쓰고, 결과물을 스크린샷으로 확인해 스스로 고치게 하는 무료 스킬입니다.",
+        "유료 티어(MotionSites Unlimited)가 따로 있으며, 무료 범위의 구체적 한계는 확인하지 못했습니다."
+      ],
+      "why": "모션그래픽 감각이 필요한 포트폴리오·웹앱 랜딩 페이지를 Claude Code로 바로 만들어 볼 수 있습니다.",
+      "howto": "Claude Code에서 `/plugin marketplace add Motionsites-AI/claude-skill` 실행 후 `/plugin install motionsites-web-builder@motionsites`.",
+      "url": "https://github.com/Motionsites-AI/claude-skill",
+      "source": "GitHub"
+    }
+  ]
+}
