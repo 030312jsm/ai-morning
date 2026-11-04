@@ -1,0 +1,102 @@
+{
+  "date": "2026-11-05",
+  "note": "오늘은 수집된 신선한 소식이 적어 확인된 6건만 실었다.",
+  "items": [
+    {
+      "title": "Claude Code v2.1.318 — 공유 홈에서 로그인·설정 오류 수정, 백그라운드 서브에이전트 3분 후 셸 명령 백그라운드 전환",
+      "category": "claude",
+      "score": 86,
+      "published": "2026-11-04",
+      "buzz": "GitHub 릴리스",
+      "summary": [
+        "Claude Code v2.1.318이 11월 4일 나왔다.",
+        "재로그인 뒤 'Not logged in'으로 작업이 실패하던 문제, 네트워크 공유 홈에서 /logout·claude mcp remove가 설정 파일 쓰기 실패에도 성공으로 표시되던 문제를 고쳤다. remote-control·백그라운드 데몬의 spawn ENOENT, 재시작 후 승인된 셸 명령이 엉뚱한 폴더에서 실행되던 문제도 수정.",
+        "비대화형 실행은 ~/.claude.json이 깨져 있으면 기본값으로 덮어쓰지 않고 복구 안내와 함께 멈춘다. IDE 터미널에서 시작할 때 IDE 확장을 더 이상 자동 설치·갱신하지 않고, 백그라운드 서브에이전트는 3분 뒤 셸 명령을 백그라운드로 넘긴다."
+      ],
+      "why": "장시간 서브에이전트·원격 세션을 돌릴 때 설정 파일이 날아가거나 엉뚱한 폴더에서 명령이 도는 사고를 줄여 준다.",
+      "howto": "`claude update`로 업데이트한 뒤 `claude --version`으로 2.1.318인지 확인한다.",
+      "url": "https://github.com/anthropics/claude-code/releases",
+      "source": "GitHub anthropics/claude-code"
+    },
+    {
+      "title": "GitHub spec-kit 1.3.0 — 스펙 기반 개발 툴킷, 훅 추가·taskstoissues 제거",
+      "category": "skills",
+      "score": 80,
+      "published": "2026-11-03",
+      "buzz": "GitHub Trending 오늘 +810★",
+      "summary": [
+        "GitHub의 스펙 기반 개발(spec-driven development) 스타터 툴킷 spec-kit이 1.3.0을 냈고, 같은 날 GitHub Trending에도 올랐다.",
+        "워크플로 표현식을 Lark LALR 문법으로 파싱하고, 공유 쓰기 전에 도는 preflight_setup() 훅과 process_registered_command 훅을 넣었다. Copilot용 --no-model-invocation 옵션도 추가.",
+        "코어 /speckit.taskstoissues 명령은 제거되어 github 확장을 써야 한다. 업그레이드 시 이 명령을 쓰던 흐름이 깨진다."
+      ],
+      "why": "Claude Code로 게임·웹앱을 만들 때 명세 → 계획 → 작업 순서를 강제해 방향이 흐트러지는 것을 막아 준다.",
+      "howto": "`uv tool install specify-cli --from git+https://github.com/github/spec-kit.git@v1.3.0` 후 `specify init my-project`.",
+      "url": "https://github.com/github/spec-kit/releases",
+      "source": "GitHub github/spec-kit"
+    },
+    {
+      "title": "garrytan/gstack — Claude Code를 CEO·디자이너·QA 역할로 쪼갠 슬래시 커맨드 23종",
+      "category": "skills",
+      "score": 77,
+      "published": "2026-11-05",
+      "buzz": "GitHub 139.3k★, Trending 오늘 +285★",
+      "summary": [
+        "Y Combinator의 Garry Tan이 만든 MIT 라이선스 스킬 모음으로, Claude Code를 '가상 엔지니어링 팀'처럼 쓰게 해 준다.",
+        "CEO, 디자이너, 엔지니어링 매니저, 릴리스 매니저, 문서 담당, QA 등 역할별 23개 도구로 구성.",
+        "Bun(setup은 1.3.3 미만 거부, 1.4.2에서 검증)과 Git이 필요하고 Windows는 Node.js도 필요하다. /cso는 네이티브 툴체인이 없으면 쓸 수 없다."
+      ],
+      "why": "혼자 개발할 때 기획·디자인 검토·QA를 역할별 커맨드로 나눠 돌릴 수 있다.",
+      "howto": "`git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git ~/.claude/skills/gstack && cd ~/.claude/skills/gstack && ./setup`",
+      "url": "https://github.com/garrytan/gstack",
+      "source": "GitHub garrytan/gstack"
+    },
+    {
+      "title": "NVIDIA auto-ontology — LLM·에이전트 질의를 더 결정적으로 만드는 그래프 추론 계층",
+      "category": "tools",
+      "score": 58,
+      "published": "2026-11-05",
+      "buzz": "GitHub Trending 오늘 +2,053★",
+      "summary": [
+        "NVIDIA가 공개한 Python 툴킷으로, 그래프 기반 추론 계층을 얹어 LLM·에이전트 질의를 더 결정적이고 설명 가능하게 만든다.",
+        "GitHub Trending 1위로 하루 2,053★이 붙었다.",
+        "세부 사용법과 요구 사항은 확인하지 못했다."
+      ],
+      "why": "에이전트가 같은 질문에 다른 답을 내는 문제를 줄이는 방법을 살펴볼 만하다.",
+      "howto": "원문 참고",
+      "url": "https://github.com/NVIDIA/auto-ontology",
+      "source": "GitHub Trending"
+    },
+    {
+      "title": "kimi-k3-in-c — 초대형 Kimi 모델을 GPU·BLAS 없이 C99로 CPU에서 구동",
+      "category": "tools",
+      "score": 55,
+      "published": "2026-11-05",
+      "buzz": "GitHub Trending 오늘 +351★",
+      "summary": [
+        "Kimi 대형 모델을 GPU나 BLAS 없이 이식성 있는 C99 코드만으로 CPU에서 돌리는 프로젝트가 Trending에 올랐다.",
+        "의존성이 거의 없어 코드를 읽으며 추론 구조를 배우기 좋다.",
+        "실제 속도와 지원 모델 크기는 확인하지 못했다."
+      ],
+      "why": "로컬 추론의 원리를 학습하거나 GPU 없는 환경에서 실험할 때 참고가 된다.",
+      "howto": "원문 참고",
+      "url": "https://github.com/FareedKhan-dev/kimi-k3-in-c",
+      "source": "GitHub Trending"
+    },
+    {
+      "title": "MoneyPrinterTurbo — 주제·키워드만 넣으면 HD 숏폼 영상을 자동 생성",
+      "category": "creative",
+      "score": 60,
+      "published": "2026-11-05",
+      "buzz": "GitHub Trending 오늘 +615★",
+      "summary": [
+        "주제나 키워드로 AI 모델을 이용해 HD 짧은 영상을 자동으로 만드는 오픈소스 도구가 다시 Trending에 올랐다.",
+        "대본·소재·편집을 자동화하는 흐름의 참고 사례.",
+        "품질과 설치 요건은 확인하지 못했다."
+      ],
+      "why": "숏폼 시안이나 영상 작업 자동화의 구조를 참고할 수 있다.",
+      "howto": "원문 참고",
+      "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+      "source": "GitHub Trending"
+    }
+  ]
+}
