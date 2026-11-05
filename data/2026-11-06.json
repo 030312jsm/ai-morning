@@ -1,0 +1,182 @@
+{
+  "date": "2026-11-06",
+  "note": "연구 논문 분야는 접근 가능한 출처가 없어 이번에는 싣지 못했고, 신선도 기준을 통과한 소식 11건만 실었다.",
+  "items": [
+    {
+      "title": "Scenario Agent Skills: Godot·Roblox Studio까지 다루는 이미지·3D·영상 생성 스킬 팩",
+      "category": "skills",
+      "score": 92,
+      "published": "2026-11-05",
+      "buzz": "GitHub 3.0k★ · 오늘 트렌딩 +674",
+      "summary": [
+        "Scenario MCP 서버를 통해 이미지·영상·오디오·텍스처·3D 에셋을 만드는 Agent Skills 모음이다.",
+        "'expert tools'로 Godot 4.7, Roblox Studio(내장 MCP 서버), Blender, Unity, Unreal 등을 조종하는 리드+전문가 스킬 팀을 포함한다.",
+        "Scenario MCP 서버(OAuth 또는 API 키)가 필요하다."
+      ],
+      "why": "Godot·Roblox 게임 제작과 에셋 생성을 Claude Code 하나로 묶을 수 있다.",
+      "howto": "npx skills add scenario-labs/skills 후 claude mcp add --transport http scenario https://mcp.scenario.com/mcp 실행, OAuth 로그인.",
+      "url": "https://github.com/scenario-labs/skills",
+      "source": "GitHub"
+    },
+    {
+      "title": "google/skills: Google 제품용 Agent Skills와 Claude Code·Codex 플러그인 마켓",
+      "category": "skills",
+      "score": 80,
+      "published": "2026-11-05",
+      "buzz": "GitHub 22.3k★ · 11/5 다수 커밋",
+      "summary": [
+        "Google Cloud, Firebase, Gemini API, Genkit, Cloud Run 등 Google 기술용 스킬 모음이다.",
+        "Claude Code와 Codex용 플러그인 마켓플레이스도 제공하며 오늘도 스킬이 추가됐다.",
+        "대부분 Google Cloud 중심이라 쓰는 서비스에 맞춰 골라 설치해야 한다."
+      ],
+      "why": "Firebase·Cloud Run·Gemini API로 웹앱을 만들 때 에이전트가 공식 방식으로 작업하게 해 준다.",
+      "howto": "npx skills add google/skills, 또는 claude plugin marketplace add google/skills 후 claude plugin install <plugin>@google-plugins.",
+      "url": "https://github.com/google/skills",
+      "source": "GitHub"
+    },
+    {
+      "title": "agent-browser: 쉘 명령으로 브라우저를 조종하는 Rust CLI (Vercel Labs)",
+      "category": "skills",
+      "score": 85,
+      "published": "2026-11-05",
+      "buzz": "GitHub 45.8k★ · 11/5 연속 수정",
+      "summary": [
+        "snapshot으로 페이지를 @e1 같은 ref가 붙은 압축 텍스트로 받아 에이전트가 클릭·입력을 반복하는 방식의 CLI다.",
+        "agent-browser mcp로 stdio MCP 서버로도 쓸 수 있고, 발견용 스킬과 AGENTS.md 안내 방식을 제공한다.",
+        "첫 실행 때 Chrome for Testing을 내려받는다."
+      ],
+      "why": "웹앱 개발 중 Claude Code가 직접 화면을 열어 테스트·검증하게 할 수 있다.",
+      "howto": "npm install -g agent-browser && agent-browser install, 이후 npx skills add vercel-labs/agent-browser.",
+      "url": "https://github.com/vercel-labs/agent-browser",
+      "source": "GitHub"
+    },
+    {
+      "title": "Superpowers v7.0.2: 브레인스토밍 개편과 훅·서브에이전트 안정화",
+      "category": "skills",
+      "score": 78,
+      "published": "2026-11-03",
+      "buzz": "GitHub 릴리스 v7.0.2",
+      "summary": [
+        "브레인스토밍 스킬이 질문을 줄이고 '왜'부터 묻고 추천안과 함께 선택지를 제시한다.",
+        "SessionStart 훅이 자식 프로세스를 띄우지 않게 되었고 Windows용 PowerShell 경로가 추가됐다.",
+        "서브에이전트 개발·플랜 실행 도우미가 -C DIR 옵션을 받는다."
+      ],
+      "why": "Windows에서 Claude Code로 개발하는 독자의 훅 문제를 직접 줄여 준다.",
+      "howto": "Claude Code에서 /plugin marketplace add obra/superpowers 후 설치(자세한 명령은 원문 참고).",
+      "url": "https://github.com/obra/superpowers/releases/tag/v7.0.2",
+      "source": "GitHub"
+    },
+    {
+      "title": "MCP 공식 servers v2.3.0: Filesystem·Git·Fetch 서버 일괄 업데이트",
+      "category": "skills",
+      "score": 76,
+      "published": "2026-11-04",
+      "buzz": "GitHub 릴리스 v2.3.0",
+      "summary": [
+        "Filesystem에 append_file·copy_file·--read-only 모드가 추가됐다.",
+        "Git 서버에 git_merge와 읽기 전용 git_remote가 생겼고, Fetch에는 --allowed-hosts 허용 목록이 들어갔다.",
+        "앞선 10월 릴리스에서 보안 취약점 수정이 이어졌으므로 업그레이드 대상이다."
+      ],
+      "why": "Claude Code에 붙여 쓰는 기본 MCP 서버를 안전하게 최신화할 수 있다.",
+      "howto": "사용 중인 서버를 최신 버전으로 다시 설치(npx/uvx). 상세는 릴리스 노트 참고.",
+      "url": "https://github.com/modelcontextprotocol/servers/releases/tag/v2.3.0",
+      "source": "GitHub"
+    },
+    {
+      "title": "Spec Kit 1.3.x: 스펙 주도 개발 툴킷 업데이트와 주간 급상승",
+      "category": "skills",
+      "score": 74,
+      "published": "2026-11-05",
+      "buzz": "GitHub 147.8k★ · 주간 +3.7k",
+      "summary": [
+        "1.3.1이 11/5에 나와 Quality Gates 확장과 Windows PowerShell 5.1 오류를 고쳤다.",
+        "1.3.0에서 /speckit.taskstoissues가 코어에서 제거되어 github 확장으로 옮겨졌다.",
+        "기존 명령을 쓰던 사람은 확장 설치가 필요하다."
+      ],
+      "why": "게임·툴 프로젝트를 스펙부터 정리해 Claude Code에 시킬 때 쓸 수 있다.",
+      "howto": "저장소 README의 설치 안내 참고.",
+      "url": "https://github.com/github/spec-kit",
+      "source": "GitHub"
+    },
+    {
+      "title": "graphify: 코드·문서·PDF를 질의 가능한 지식 그래프로",
+      "category": "skills",
+      "score": 79,
+      "published": "2026-11-05",
+      "buzz": "GitHub 142.9k★ · 주간 트렌딩 +4.9k",
+      "summary": [
+        "코드베이스와 문서·SQL 스키마·PDF를 tree-sitter로 파싱해 지식 그래프로 만든다.",
+        "연결마다 소스에 명시된 것인지 추론인지 표시하고 벡터 저장소를 쓰지 않는다.",
+        "패키지 이름이 graphifyy(y 두 개)이니 주의."
+      ],
+      "why": "큰 프로젝트를 Claude Code가 구조적으로 파악하게 해 토큰을 아낄 수 있다.",
+      "howto": "uv tool install graphifyy && graphify install 후 Claude Code에서 /graphify . 실행. Codex는 graphify install --platform codex.",
+      "url": "https://github.com/Graphify-Labs/graphify",
+      "source": "GitHub"
+    },
+    {
+      "title": "claude-seo: 26개 서브스킬로 SEO 감사하는 Claude Code 플러그인",
+      "category": "skills",
+      "score": 65,
+      "published": "2026-11-05",
+      "buzz": "GitHub 26.9k★ · 주간 트렌딩 +3.5k",
+      "summary": [
+        "기술 SEO, 스키마, 로컬·이커머스 SEO, PDF·Excel 리포트까지 26개 서브스킬과 19개 서브에이전트를 제공한다.",
+        "전체 감사는 10~15분 걸린다고 한다.",
+        "웹앱을 공개할 때만 쓸모가 있다."
+      ],
+      "why": "만든 웹앱·포트폴리오 사이트 SEO를 점검할 수 있다.",
+      "howto": "/plugin marketplace add AgriciDaniel/claude-seo 후 /plugin install claude-seo@agricidaniel-claude-seo, /seo setup.",
+      "url": "https://github.com/AgriciDaniel/claude-seo",
+      "source": "GitHub"
+    },
+    {
+      "title": "OpenMontage: 코딩 에이전트를 영상 제작 스튜디오로 쓰는 오픈소스",
+      "category": "creative",
+      "score": 83,
+      "published": "2026-11-05",
+      "buzz": "GitHub 77.1k★ · 주간 트렌딩 +3.7k",
+      "summary": [
+        "프롬프트로 리서치·스크립트·에셋 생성·편집·렌더링까지 파이프라인으로 처리한다.",
+        "Claude Code는 CLAUDE.md로 지원하며 Codex·Cursor용 지침도 있다.",
+        "Python 3.10+, FFmpeg, Node 18+가 필요하고 라이선스는 AGPL-3.0이다."
+      ],
+      "why": "영상학과 작업에서 모션그래픽 초안·설명 영상을 빠르게 만들 수 있다.",
+      "howto": "git clone https://github.com/calesthio/OpenMontage.git && cd OpenMontage && make setup, make demo로 시험.",
+      "url": "https://github.com/calesthio/OpenMontage",
+      "source": "GitHub"
+    },
+    {
+      "title": "Claude Code v2.1.318: 서브에이전트 셸 백그라운드화·로그인 만료 경고",
+      "category": "claude",
+      "score": 84,
+      "published": "2026-11-04",
+      "buzz": "GitHub 릴리스",
+      "summary": [
+        "백그라운드 서브에이전트의 셸 명령이 3분 뒤 백그라운드로 이동해 프롬프트 캐시 만료를 막는다.",
+        "claude auth status에 loginExpiresAt이 추가되고 만료 10일 전부터 경고가 뜬다.",
+        "IDE 터미널에서 시작하면 IDE 확장을 더 이상 자동 설치·업데이트하지 않는다."
+      ],
+      "why": "장시간 서브에이전트 작업과 로그인 만료 관리에 바로 영향을 준다.",
+      "howto": "claude update 로 업데이트.",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.318",
+      "source": "GitHub"
+    },
+    {
+      "title": "Claude, Plaid 연동 'Personal Finance' 기능 출시 보도",
+      "category": "claude",
+      "score": 40,
+      "published": "2026-11-05",
+      "buzz": "TechCrunch 보도 · 검색 확인",
+      "summary": [
+        "Plaid로 은행·카드 계좌를 연결해 지출을 묻고 분석하는 소비자용 기능이 베타로 나온다고 보도됐다.",
+        "읽기 전용이며 송금·투자는 못 한다.",
+        "제공 요금제와 지역은 출처마다 달라 원문 확인이 필요하다."
+      ],
+      "why": "개발 작업과는 거리가 멀지만 Claude 앱 방향성을 보여 준다.",
+      "howto": "원문 참고",
+      "url": "https://techcrunch.com/2026/11/05/claude-can-now-analyze-your-spending-with-its-new-personal-finance-tool/",
+      "source": "TechCrunch"
+    }
+  ]
+}
