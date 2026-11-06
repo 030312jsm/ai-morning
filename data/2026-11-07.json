@@ -1,0 +1,150 @@
+{
+  "date": "2026-11-07",
+  "note": "이번 호는 출처 접근이 제한돼 연구 논문 분야를 싣지 못했고, 신선도·사실 확인 기준을 통과한 소식 9건만 실었다.",
+  "items": [
+    {
+      "title": "Claude Code v2.1.319: MCP 장기 작업 백그라운드 처리·denyInsteadOfPrompting 설정",
+      "category": "claude",
+      "score": 90,
+      "published": "2026-11-06",
+      "buzz": "GitHub 릴리스",
+      "summary": [
+        "Claude Code v2.1.319가 11월 6일 릴리스됐다.",
+        "오래 걸리는 MCP 도구 호출이 즉시 백그라운드로 넘어가고 끝나면 Claude에게 결과를 알려준다. 권한 확인 대기 대신 거부하는 permissions.denyInsteadOfPrompting 설정과 /claude-api latency-optimize 명령이 추가됐다.",
+        "claude -p는 auto 모드에서 행동이 거부되면 종료 코드 1을 반환한다. MCP 백그라운드 처리는 CLAUDE_CODE_DISABLE_MCP_TASK_BACKGROUND로 끌 수 있다."
+      ],
+      "why": "Godot·Roblox MCP처럼 오래 걸리는 도구를 쓸 때 세션이 막히지 않아 바로 체감된다.",
+      "howto": "claude update 후 claude --version으로 2.1.319 확인. 설정은 settings.json의 permissions.denyInsteadOfPrompting.",
+      "url": "https://github.com/anthropics/claude-code/releases",
+      "source": "GitHub anthropics/claude-code"
+    },
+    {
+      "title": "Codex CLI 0.167.0: 에이전트 커맨드 센터·백엔드 전환·이미지 미리보기",
+      "category": "tools",
+      "score": 80,
+      "published": "2026-11-06",
+      "buzz": "GitHub 릴리스",
+      "summary": [
+        "OpenAI Codex 0.167.0이 stable로 나왔다.",
+        "codex agents --no-daemon으로 에이전트 커맨드 센터를 열고 읽지 않은 결과를 표시한다. 터미널 세션 선택기에서 연결된 백엔드를 전환하면서 작성 중인 초안을 유지한다.",
+        "로컬 이미지 첨부 미리보기, Vertex AI 설정 마법사(gcp_setup_wizard 플래그), macOS/Windows 시스템 프록시 옵트인이 포함된다."
+      ],
+      "why": "Claude Code와 Codex를 함께 쓰는 워크플로에서 Codex 쪽 세션 관리가 편해진다.",
+      "howto": "Codex를 최신 버전으로 업데이트한 뒤 codex agents --no-daemon 실행.",
+      "url": "https://github.com/openai/codex/releases",
+      "source": "GitHub openai/codex"
+    },
+    {
+      "title": "champion-kit 플러그인: 팀의 Claude Code 도입을 돕는 공식 마켓플레이스 신규 플러그인",
+      "category": "skills",
+      "score": 76,
+      "published": "2026-11-06",
+      "buzz": "claude-plugins-official에 추가",
+      "summary": [
+        "Anthropic 공식 플러그인 저장소에 champion-kit이 추가됐다.",
+        "/champion-kit:hackathon, patterns, faq, maturity, routines 등 커맨드와 읽기 전용 repo-scout 에이전트를 제공한다. patterns는 반복 작업을 규칙·스킬로 바꿀 후보를 찾아준다.",
+        "훅과 MCP 서버는 넣지 않으며 파일 쓰기·캘린더 작업은 승인이 필요하다. 개인 개발보다 팀 도입용이다."
+      ],
+      "why": "/champion-kit:patterns로 내 저장소에서 반복 작업을 찾아 스킬로 만들 수 있다.",
+      "howto": "claude plugin install champion-kit@claude-plugins-official 후 새 세션에서 /champion-kit: 입력.",
+      "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/champion-kit",
+      "source": "GitHub"
+    },
+    {
+      "title": "Chisle 3.11: 토큰 비용을 줄이는 간결 응답·도구 출력 압축 스킬",
+      "category": "skills",
+      "score": 82,
+      "published": "2026-11-06",
+      "buzz": "GitHub 743★",
+      "summary": [
+        "간결한 문장, YAGNI 우선 코드, 도구 출력 압축으로 코딩 에이전트 토큰 비용을 줄이는 MIT 도구다. 11월 6일 3.11.0·3.11.1이 나왔다.",
+        "저자 벤치마크로 Haiku 4.5 25개 과제에서 출력 토큰이 기본 모델의 71%, Sonnet 34개 프롬프트에서 57%였다. 정확도 차이는 통계적으로 유의하지 않다고 밝힌다.",
+        "최신 릴리스에 Antigravity·Codex·VS Code Copilot용 mcp wrap이 추가됐다. 수치는 저자 측정값이다."
+      ],
+      "why": "Claude Code 사용량 한도를 아끼면서 Codex 등 다른 에이전트에도 같은 설정을 쓸 수 있다.",
+      "howto": "npx chisle (미리보기: npx chisle --dry-run, 제거: npx chisle --uninstall)",
+      "url": "https://github.com/JayPokale/Chisle",
+      "source": "GitHub"
+    },
+    {
+      "title": "mattpocock/skills: 엔지니어링용 에이전트 스킬 27종, claude-plugins-official로 설치",
+      "category": "skills",
+      "score": 84,
+      "published": "2026-10-31",
+      "buzz": "GitHub 317k★",
+      "summary": [
+        "Matt Pocock의 .agents 디렉터리에서 나온 스킬 모음으로, 10월 31일에도 커밋이 올라왔다.",
+        "grill-with-docs, tdd, diagnosing-bugs, improve-codebase-architecture, handoff 등 27개 스킬이 있고 Codex·Copilot·Gemini CLI에서도 쓸 수 있다.",
+        "설치 후 저장소마다 /setup-matt-pocock-skills를 한 번 실행해야 한다."
+      ],
+      "why": "TDD·디버깅·아키텍처 점검 스킬을 설치 한 줄로 Claude Code에 붙일 수 있다.",
+      "howto": "claude plugin install mattpocock-skills@claude-plugins-official 후 저장소에서 /setup-matt-pocock-skills 실행.",
+      "url": "https://github.com/mattpocock/skills",
+      "source": "GitHub"
+    },
+    {
+      "title": "OpenAI GPT-6 Cyber 공개: 승인된 보안 고객 한정 제공",
+      "category": "tools",
+      "score": 60,
+      "published": "2026-11-05",
+      "buzz": "Fortune 보도 · 검색 확인",
+      "summary": [
+        "OpenAI가 사이버보안 특화 모델 GPT-6 Cyber를 공개했다.",
+        "대부분의 사이버 과제에서 범용 GPT-6 Astra보다 낫다고 보도됐다.",
+        "오용 우려로 승인된 소수 보안 고객에게만 제공된다."
+      ],
+      "why": "일반 개발자가 쓸 수는 없지만 AI 코딩 도구의 보안 감사 기능 방향을 보여준다.",
+      "howto": "원문 참고",
+      "url": "https://fortune.com/2026/11/05/openai-debuts-new-cybersecurity-focused-ai-model-amid-growing-alarm-about-ai-driven-cyber-attacks",
+      "source": "Fortune"
+    },
+    {
+      "title": "Cognition SWE-2 Flash: Inkling-Small 기반 빠른 코딩 모델, 11월 말까지 무료",
+      "category": "tools",
+      "score": 66,
+      "published": "2026-11-04",
+      "buzz": "모델 트래커 · 검색 확인",
+      "summary": [
+        "Cognition이 코딩 모델 SWE-2 Flash를 내놨다.",
+        "Thinking Machines Lab의 Inkling-Small을 기반으로 하며 SWE-2 플래그십보다 빠르고 저렴하다고 소개된다.",
+        "11월 30일까지 Devin Desktop과 Devin CLI에서 무료다."
+      ],
+      "why": "무료 기간에 코딩 에이전트용 빠른 모델을 직접 비교해 볼 수 있다.",
+      "howto": "Devin Desktop 또는 Devin CLI에서 모델 선택. 자세한 방법은 원문 참고.",
+      "url": "https://benchlm.ai/model-updates",
+      "source": "BenchLM 모델 트래커"
+    },
+    {
+      "title": "Tencent Hy4 발표: 오픈소스 모델 표방, 가중치는 곧 공개 예고",
+      "category": "tools",
+      "score": 58,
+      "published": "2026-11-04",
+      "buzz": "Yahoo Finance 보도 · 검색 확인",
+      "summary": [
+        "Tencent가 Hy4를 세계 선두권 오픈소스 모델이라며 발표했다.",
+        "가중치와 시스템 카드는 며칠 안에 공개한다고 밝혔다.",
+        "일부 보도는 공개 가중치 여부와 라이선스를 다르게 전해 모델 카드 확인이 필요하다."
+      ],
+      "why": "로컬이나 API로 쓸 새 오픈 모델 후보를 미리 알 수 있다.",
+      "howto": "원문 참고",
+      "url": "https://finance.yahoo.com/technology/ai/articles/tencent-launches-hy4-joining-ranks-111300379.html",
+      "source": "Yahoo Finance"
+    },
+    {
+      "title": "OpenAI GPT Image 2.6 출시: Sunburst·Flare 두 버전",
+      "category": "creative",
+      "score": 62,
+      "published": "2026-11-04",
+      "buzz": "외부 서비스 연동 보도 · 검색 확인",
+      "summary": [
+        "OpenAI가 이미지 모델 GPT Image 2.6을 출시했다.",
+        "Sunburst와 Flare 두 버전이 있고 AIVideoFree 같은 서비스가 하루 만에 연동했다.",
+        "두 버전의 성능 차이와 가격은 확인하지 못했다."
+      ],
+      "why": "영상 작업용 컨셉 이미지나 소스 이미지를 만드는 도구 선택지가 늘었다.",
+      "howto": "원문 참고",
+      "url": "https://ohsem.me/2026/11/aivideofree-integrates-openai-s-gpt-image-2-6-a-day-after-release-running-both-new-models-alongside-competing-image-generators",
+      "source": "Ohsem"
+    }
+  ]
+}
