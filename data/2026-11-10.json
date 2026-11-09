@@ -1,0 +1,102 @@
+{
+  "date": "2026-11-10",
+  "note": "오늘은 Fable 5.2 출시와 Claude Code 2.1.321이 중심. 검색에서 신선도 기준을 통과한 소식이 적어 6건만 실었다.",
+  "items": [
+    {
+      "title": "Claude Fable 5.2·Mythos 5.2 출시: 입출력 $8/$40로 20% 인하",
+      "category": "claude",
+      "score": 96,
+      "published": "2026-11-09",
+      "buzz": "Anthropic 공식 발표 · 다수 매체 보도",
+      "summary": [
+        "Anthropic이 코딩·금융·과학용 플래그십 Claude Fable 5.2와 Mythos 5.2를 공개했다.",
+        "가격은 100만 토큰당 입력 $8·출력 $40으로 Fable 5.1($10/$50)보다 20% 낮고, 최대 2.5배 빠른 fast mode는 $16/$80이다.",
+        "Fable 5.2는 일반 공개, Mythos 5.2는 검증된 기관에만 제공된다. 벤치마크 수치는 Anthropic 자체 측정이다."
+      ],
+      "why": "Claude Code의 기본 Fable 모델이 바뀌고 가격도 내려가, 매일 쓰는 코딩 비용과 품질에 바로 영향을 준다.",
+      "howto": "Claude Code를 v2.1.321로 업데이트(claude update)하면 claude-fable-5-2가 Fable 기본 모델이 된다. 컨텍스트는 1M.",
+      "url": "https://www.anthropic.com/claude/mythos",
+      "source": "Anthropic"
+    },
+    {
+      "title": "Claude Code v2.1.321: Fable 5.2 기본 탑재, MCP OAuth 비밀 유출 등 보안 수정",
+      "category": "claude",
+      "score": 91,
+      "published": "2026-11-09",
+      "buzz": "GitHub 릴리스 · 버그 74건 수정",
+      "summary": [
+        "claude-fable-5-2를 새 기본 Fable 모델(1M 컨텍스트)로 추가했고, 저장해 둔 Fable 5.1 선택은 fable로 옮겨진다.",
+        "claude remote-control에 --settings <file> 옵션이 생겼다.",
+        "리다이렉트된 MCP 서버로 OAuth 비밀이 전송되던 문제, 읽기 전용 Bash가 샌드박스 밖에서 프롬프트 없이 실행되던 문제, cp·mv로 쓴 파일에 deny 규칙이 안 걸리던 문제가 고쳐졌다."
+      ],
+      "why": "MCP 서버를 여러 개 붙여 쓰는 사람에게 보안 수정이 중요하고, 새 모델도 이 버전부터 쓸 수 있다.",
+      "howto": "터미널에서 claude update 실행 후 claude --version으로 2.1.321인지 확인한다.",
+      "url": "https://github.com/anthropics/claude-code/releases",
+      "source": "GitHub anthropics/claude-code"
+    },
+    {
+      "title": "anthropics/skills 오늘 하루 별 1,052개 급증, 누적 19만",
+      "category": "skills",
+      "score": 85,
+      "published": "2026-11-10",
+      "buzz": "GitHub Trending 1위 · 오늘 ★1,052 (누적 약 190.8k)",
+      "summary": [
+        "Anthropic 공식 Agent Skills 저장소가 GitHub Trending 최상단에 올랐다.",
+        "docx·pdf·pptx·xlsx 문서 스킬과 창작·개발·업무 예제 스킬이 들어 있고, 각 스킬은 SKILL.md 폴더 구조다.",
+        "저장소 설명상 예제는 시연용이라 실무에 쓰기 전에 직접 테스트해야 한다."
+      ],
+      "why": "스킬을 직접 만들 때 가장 좋은 공식 참고 구현이고, 문서·PPT 스킬은 영상학과 과제 자료 만들 때도 바로 쓸 수 있다.",
+      "howto": "Claude Code에서 /plugin marketplace add anthropics/skills 후 /plugin install document-skills@anthropic-agent-skills 를 실행한다.",
+      "url": "https://github.com/anthropics/skills",
+      "source": "GitHub"
+    },
+    {
+      "title": "Meta Astryx: 에이전트가 같은 API로 쓰는 오픈소스 디자인 시스템 (베타)",
+      "category": "skills",
+      "score": 80,
+      "published": "2026-11-10",
+      "buzz": "GitHub Trending · 오늘 ★3,324 (누적 약 19.8k)",
+      "summary": [
+        "Meta가 공개한 MIT 라이선스 디자인 시스템으로 React 19+와 StyleX 기반, 접근성 갖춘 컴포넌트 150개 이상과 테마·템플릿·CLI를 제공한다.",
+        "사람과 AI 코딩 에이전트가 같은 API·문서·CLI를 쓰도록 설계됐고, 저장소에 AGENTS.md와 CLAUDE.md가 들어 있다.",
+        "현재 베타 단계다."
+      ],
+      "why": "Claude Code로 웹앱 UI를 만들 때 컴포넌트를 에이전트가 직접 조회·적용하게 할 수 있어 디자인 품질이 안정된다.",
+      "howto": "npm install @astryxdesign/core @astryxdesign/theme-neutral @stylexjs/stylex 후 npm install -D @astryxdesign/cli 를 하고, npm run astryx -- component --list 로 컴포넌트를 조회한다.",
+      "url": "https://github.com/meta/astryx",
+      "source": "GitHub meta/astryx"
+    },
+    {
+      "title": "garrytan/gbrain: Claude Code·Codex에 붙이는 에이전트 장기 기억 레이어",
+      "category": "skills",
+      "score": 70,
+      "published": "2026-11-10",
+      "buzz": "GitHub Trending · 오늘 ★215 (누적 약 32.1k)",
+      "summary": [
+        "Y Combinator 대표 Garry Tan의 MIT 라이선스 오픈소스로, 출처가 붙은 사실을 저장하고 정정할 수 있으며 에이전트끼리 기억을 공유한다.",
+        "키워드·시맨틱 검색, 타입이 있는 지식 그래프, 출처를 인용한 답변 합성 계층을 제공한다.",
+        "Bun 1.4.4 이상이 필요하고 npm으로는 배포되지 않는다."
+      ],
+      "why": "세션이 바뀔 때마다 프로젝트 맥락을 잃는 문제를 줄여, 오래 걸리는 게임·툴 개발에 도움이 된다.",
+      "howto": "bun install -g github:garrytan/gbrain#stable 후 gbrain setup claude-code (Codex는 gbrain setup codex).",
+      "url": "https://github.com/garrytan/gbrain",
+      "source": "GitHub garrytan/gbrain"
+    },
+    {
+      "title": "Google Gemini Omni 1.2 Flash: 15초 영상 생성, 720p 가격 인하",
+      "category": "creative",
+      "score": 68,
+      "published": "2026-11-05",
+      "buzz": "Google Cloud·Gemini API 정식 제공 · 검색 확인",
+      "summary": [
+        "Google의 영상 생성 모델 Gemini Omni 1.2 Flash가 클립 길이를 15초로 늘렸다.",
+        "720p 가격이 내려갔고 Google Cloud와 Gemini API로 정식 제공된다.",
+        "Google Vids에서는 15초 AI 영상을 월 3개까지 무료로 만들 수 있다."
+      ],
+      "why": "모션그래픽 작업에서 짧은 배경·소스 영상을 싸게 뽑아 After Effects에서 합성하는 용도로 쓸 만하다.",
+      "howto": "원문 참고. Gemini API 또는 Google Vids에서 사용한다.",
+      "url": "https://www.techrepublic.com/article/news-google-omni-1-2-flash-video/",
+      "source": "TechRepublic"
+    }
+  ]
+}
