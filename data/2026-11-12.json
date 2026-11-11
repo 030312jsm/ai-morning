@@ -1,0 +1,134 @@
+{
+  "date": "2026-11-12",
+  "note": "오늘은 신선도 기준(7일 이내)과 중복 제외, 출처 확인을 통과한 소식이 8건뿐이라 그만큼만 실었다. tools 분야는 확인 가능한 신규 소식이 없어 생략.",
+  "items": [
+    {
+      "title": "MCP 공식 서버 v2.4.0: filesystem·git·fetch 취약점 6건 수정",
+      "category": "skills",
+      "score": 88,
+      "published": "2026-11-11",
+      "buzz": "GitHub 릴리스 · 오늘 공개",
+      "summary": [
+        "modelcontextprotocol/servers가 v2.4.0을 내고 세 서버(filesystem·git·fetch)의 보안 취약점 6건을 고쳤다.",
+        "filesystem은 읽기·이동이 검사한 파일에 묶여 symlink 교체 경쟁 상태를 막고, git은 저장소 자체 설정이 읽기 전용 호출 중 프로그램을 실행하지 못하게 했으며, fetch는 IPv6 site-local 주소를 거부한다.",
+        "Windows는 부분 수정만 되어 있다(filesystem 일부, git은 디렉터리 junction 미대응)."
+      ],
+      "why": "Claude Code에 공식 filesystem·git·fetch MCP를 붙여 쓴다면 바로 올려야 할 보안 업데이트다. Windows에서 쓰면 남은 한계도 알아둬야 한다.",
+      "howto": "server-filesystem 2.3.0, mcp-server-git·mcp-server-fetch 2026.11.11로 올린다. Python 서버는 `uvx --refresh mcp-server-git`처럼 캐시를 갱신해 실행한다.",
+      "url": "https://github.com/modelcontextprotocol/servers/releases",
+      "source": "modelcontextprotocol/servers"
+    },
+    {
+      "title": "image-to-sculpt: 이미지 한 장을 3D 조각으로 만드는 코딩 에이전트 스킬",
+      "category": "creative",
+      "score": 86,
+      "published": "2026-11-08",
+      "buzz": "GitHub ★256 · 3일 전 공개",
+      "summary": [
+        "사진 한 장에서 법선·윤곽·깊이에 맞춰 메시를 맞추고, 생성한 측면 뷰는 서로 일치할 때만 사용하며 한 뷰는 검증용으로 남겨둔다.",
+        "단계별 빌드 기록을 Blender에서 타임랩스로 재생할 수 있고 360° 턴테이블과 GLB/OBJ/STL을 출력한다.",
+        "Blender 5.2+, Python 3.10+, ffmpeg와 fal API 키(`FAL_KEY`)가 필요하고 한 건에 약 $2가 든다. 방·장면, 머리카락 같은 가는 구조, 투명·거울 재질은 범위 밖이다."
+      ],
+      "why": "모션그래픽·AE 작업에 쓸 3D 소스를 Claude Code로 빠르게 뽑아 Blender 타임랩스까지 만들 수 있다.",
+      "howto": "`claude plugin marketplace add gokayfem/image-to-sculpt` 후 `claude plugin install image-to-sculpt@image-to-sculpt`. 다른 에이전트는 `npx skills add gokayfem/image-to-sculpt`.",
+      "url": "https://github.com/gokayfem/image-to-sculpt",
+      "source": "GitHub"
+    },
+    {
+      "title": "cinematic-skill: 코드로 내레이션 영상을 만드는 에이전트 스킬",
+      "category": "creative",
+      "score": 84,
+      "published": "2026-11-09",
+      "buzz": "GitHub ★199 · 3일 전 공개",
+      "summary": [
+        "사진·지도·카드 위를 하나의 연속 카메라가 지나가는 내레이션 영상을 Skia(Python)로 프레임을 그려 만든다. 영상 생성 AI가 아니라 결과가 재현된다.",
+        "에이전트가 대본·음성 타이밍·공개 도메인 이미지(라이선스 확인)·장면·초안 렌더·효과음·자막까지 진행하고, 비트 표·룩·30초 초안 단계마다 승인을 받는다.",
+        "예시로 92초 1080p 영상이 16GB 노트북에서 약 6분에 렌더된다. Node 22.20+, ffmpeg, skia-python이 필요하다."
+      ],
+      "why": "영상학과 과제나 소개 영상을 대본부터 렌더까지 Claude Code로 반복 가능하게 만들 수 있다.",
+      "howto": "`npx skills add Moh4696/cinematic-skill` 후 `pip install -r requirements.txt`, ffmpeg를 PATH에 둔다.",
+      "url": "https://github.com/Moh4696/cinematic-skill",
+      "source": "GitHub"
+    },
+    {
+      "title": "creator-generalist: 2D·3D·게임 제작용 에이전트 스킬 5종 묶음",
+      "category": "skills",
+      "score": 82,
+      "published": "2026-11-06",
+      "buzz": "GitHub ★150 · 6일 전 공개",
+      "summary": [
+        "`/3dg`, `/2dg`, `/gameg` 모드로 Blender·Three.js 3D 쇼츠, 설명용 2D 그래픽, Godot·Unity·Unreal 등 게임 프로토타입을 만든다.",
+        "작업 전 질문과 저비용 프리뷰를 거치고, 승인 전에는 풀 퀄리티로 렌더하지 않는다. watch-video(영상 분석), design-sound(효과음·믹싱) 스킬도 포함한다.",
+        "Blender·FFmpeg·Node.js·Python에 의존하고, 일부 사운드 기능은 로컬 AI 모델이 필요하다. 전체 기능은 플러그인 5개를 모두 설치해야 한다."
+      ],
+      "why": "Godot 게임과 모션그래픽 소스를 한 묶음의 스킬로 만들 수 있다.",
+      "howto": "`/plugin marketplace add codepawl/creator-generalist` 후 `/plugin install 3d-generalist@creator-generalist` 등으로 설치. 다른 에이전트는 `npx skills add codepawl/creator-generalist`.",
+      "url": "https://github.com/codepawl/creator-generalist",
+      "source": "GitHub"
+    },
+    {
+      "title": "Claude에 Sheets·Whiteboards·Data 추가, 앱을 Claude 안에서 여는 Interactive Connectors",
+      "category": "claude",
+      "score": 80,
+      "published": "2026-11-10",
+      "buzz": "Anthropic 공식 발표",
+      "summary": [
+        "Claude Sheets(수식·여러 탭), Whiteboards(공유 화이트보드), Claude Data(기존 Dashboards, 대시보드·데이터 스토리·내레이션 영상)가 오늘부터 제공된다.",
+        "Interactive connectors로 Adobe·Atlassian 같은 파트너 앱을 Claude 안에서 열어 함께 작업하고, Claude Marketplace에는 커넥터·플러그인이 9,000개 넘게 올라 있다.",
+        "Claude Motion(짧은 애니메이션)은 베타, Claude Meetings는 아직 미제공이며, 어떤 요금제에 포함되는지는 글에 나오지 않는다."
+      ],
+      "why": "AI 결과물을 시트·보드·대시보드로 바로 이어 쓰고, MCP 기반 커넥터 생태계가 커지는 흐름을 파악할 수 있다.",
+      "howto": "Claude에서 자연어로 원하는 시트·화이트보드·대시보드를 요청하고, 도구 연결은 커넥터(MCP)로 한다. 요금제별 제공 여부는 원문 참고.",
+      "url": "https://claude.com/resources/articles/more-ways-to-work-with-claude-sheets-whiteboards-and-interactive-connectors",
+      "source": "Claude 블로그"
+    },
+    {
+      "title": "Claude Fable 5.2가 전자 기기 3종을 회로·펌웨어·케이스까지 설계",
+      "category": "research",
+      "score": 78,
+      "published": "2026-11-09",
+      "buzz": "Anthropic 연구 글 · 공식 발표",
+      "summary": [
+        "Anthropic이 Fable 5.2에게 USB 스피커폰, 음성 비서 허브, 휴대용 가상 펫을 설계시켰다. 회로도·PCB 배치와 배선·3D 프린트 케이스·펌웨어·부품 목록을 Claude가 작성했다.",
+        "Diode Computers가 조립해 3종 모두 회로 수정 없이 동작했다. PCB Gym 69%(Fable 5는 25%), BenchCAD 2.1 83.5%를 기록했다.",
+        "초기 프로토타입이라 전기 검증·안테나 튜닝·열 시험·인증은 거치지 않았고, Claude는 시험 장비에 연결되지 않았다. Diode와 Anthropic은 상업적 관계가 있다."
+      ],
+      "why": "에이전트가 소프트웨어를 넘어 하드웨어 설계 전 과정을 맡을 수 있게 된 수준을 보여주는 사례다.",
+      "howto": "원문(Anthropic Science 팀 글)에서 프롬프트 구성과 평가 방식을 확인한다.",
+      "url": "https://www.anthropic.com/research/claude-electronics-design",
+      "source": "Anthropic"
+    },
+    {
+      "title": "tinker-ai-skill: 내 Claude Code 세션으로 모델을 파인튜닝하는 스킬",
+      "category": "skills",
+      "score": 74,
+      "published": "2026-11-07",
+      "buzz": "GitHub ★316 · 5일 전 공개",
+      "summary": [
+        "`~/.claude/projects/`의 Claude Code 대화 기록을 익명화해 SFT 데이터셋을 만들고, Tinker에서 LoRA를 학습해 병합한 뒤 llama.cpp용 GGUF로 만든다.",
+        "Tinker는 토큰 과금이라 README 추정으로 100행 약 $6, 1,000행 약 $55(1 epoch)이고 샘플링·평가는 별도다.",
+        "Python 3.11+, uv, Tinker API 키가 필요하다. Claude Code 세션은 기본 30일 뒤 삭제되므로 `cleanupPeriodDays`를 늘려두라고 안내한다."
+      ],
+      "why": "내 작업 로그로 로컬 모델을 만들어 보고 싶을 때 파이프라인을 스킬 하나로 따라 할 수 있다.",
+      "howto": "`git clone https://github.com/drost-ai/tinker-ai-skill.git ~/.claude/skills/tinker-ai-skill` (Codex는 `~/.agents/skills/tinker-ai-skill/`).",
+      "url": "https://github.com/drost-ai/tinker-ai-skill",
+      "source": "GitHub"
+    },
+    {
+      "title": "headless: SSH로 헤드리스 PC를 단계별로 세팅해 주는 스킬",
+      "category": "skills",
+      "score": 68,
+      "published": "2026-11-07",
+      "buzz": "GitHub ★185 · 5일 전 공개",
+      "summary": [
+        "관리자 계정과 원격 로그인만 켜진 Mac·Linux·Windows 11 머신을 슬립 방지, 재부팅 후 자동 로그인, SSH 키 전용, 선택적 Tailscale까지 한 단계씩 설정한다.",
+        "관리자 비밀번호는 비밀 저장소에 두고 에이전트는 항목 이름만 참조한다.",
+        "비-NixOS Linux에 NixOS를 설치하면 디스크 전체가 지워진다. Windows는 관리자 PowerShell에 몇 줄을 직접 붙여넣는 단계가 있다."
+      ],
+      "why": "남는 PC를 게임 서버나 빌드 머신으로 돌릴 때 설정을 에이전트에게 맡길 수 있다.",
+      "howto": "`npx skills add kunchenguid/headless -g` 후 에이전트에서 `/headless set up my Mac mini at 192.168.1.20 as a headless machine`처럼 요청한다.",
+      "url": "https://github.com/kunchenguid/headless",
+      "source": "GitHub"
+    }
+  ]
+}
