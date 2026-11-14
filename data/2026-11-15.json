@@ -1,0 +1,102 @@
+{
+  "date": "2026-11-15",
+  "note": "오늘은 확인 가능한 출처가 제한적이라 8건만 실었다. 날짜를 확인하지 못한 소식과 7일이 지난 소식은 제외했고, research 분야는 두 곳 이상에서 확인된 소식이 없어 생략했다.",
+  "items": [
+    {
+      "title": "Claude Code 2.1.325: 샌드박스 Bash도 권한 확인, /loop·예약 작업은 스킬 실행 전 확인",
+      "category": "claude",
+      "score": 93,
+      "published": "2026-11-13",
+      "buzz": "공식 체인지로그 · 버그 수정 88건",
+      "summary": ["샌드박스 안에서 도는 Bash 명령도 이제 기본적으로 일반 권한 흐름을 따른다.", "예약 작업과 /loop는 allowed-tools나 훅을 선언한 스킬을 실행하기 전에 확인을 묻는다. 무인 실행하려면 permissions.allow에 Skill(이름)을 추가해야 한다.", "플러그인 MCP 번들(.mcpb, .dxt)은 plugins 디렉터리 아래에 풀리고, marketplace ref에는 브랜치·태그의 임의 커밋 전체 ID를 쓸 수 있다. 단, 구버전 클라이언트는 그런 핀을 로드하지 못한다."],
+      "why": "/loop나 스킬로 작업을 자동화해 두었다면 오늘 업데이트 후 확인창이 새로 뜰 수 있어 설정을 미리 바꿔둬야 한다.",
+      "howto": "claude update 후 claude --version으로 확인. 샌드박스 Bash를 이전처럼 무확인으로 쓰려면 settings.json에 {\"sandbox\": {\"autoAllowBashIfSandboxed\": true}}를 추가한다.",
+      "url": "https://code.claude.com/docs/en/changelog",
+      "source": "Claude Code 체인지로그"
+    },
+    {
+      "title": "Anthropic, Claude Fable 5.2·Mythos 5.2 공개 — 가격 20% 인하, 출력 최대 30% 빨라짐",
+      "category": "claude",
+      "score": 88,
+      "published": "2026-11-09",
+      "buzz": "Anthropic 뉴스룸 공지 · 검색 확인",
+      "summary": ["Anthropic이 11월 9일 Claude Fable 5.2와 Mythos 5.2를 발표했다. 두 모델은 같은 기반 모델에 안전장치와 접근 규칙만 다르다고 보도됐다.", "보도에 따르면 Fable 5.2는 API 가격이 입력 100만 토큰당 $8, 출력 $40로 Fable 5.1($10/$50)보다 20% 낮고, 출력 속도는 5.1보다 최대 30% 빠르다. 코딩·추론·비전 성능이 향상됐다고 한다.", "Fable 5.2는 승인 없이 API로 쓸 수 있지만 Mythos 5.2는 Anthropic 프로그램으로 검증된 조직에만 열려 있다. 가격 수치는 2차 보도 기준이라 매체마다 조금 다르다."],
+      "why": "Claude Code로 큰 작업을 맡길 때 쓸 수 있는 상위 모델이 더 싸지고 빨라져 비용 대비 선택지가 달라진다.",
+      "howto": "API 모델 ID는 claude-fable-5-2. Claude Code에서는 /model 메뉴에서 선택 가능한지 확인한다. 정확한 가격은 공식 가격 페이지 참고.",
+      "url": "https://www.anthropic.com/news",
+      "source": "Anthropic 뉴스룸"
+    },
+    {
+      "title": "After Effects 27.0 출시: 자연어로 프로젝트를 정리하고 익스프레션을 써주는 AI Assistant",
+      "category": "creative",
+      "score": 90,
+      "published": "2026-11-10",
+      "buzz": "Adobe 커뮤니티 공지 · 검색 확인",
+      "summary": ["Adobe가 After Effects 27.0(After Effects 2027)을 내놓았다. 11월 7일부터 순차 배포가 시작됐고 10일에 공식 안내가 올라왔다.", "AI Assistant는 텍스트 지시로 프로젝트 정리 같은 반복 작업을 자동화하고, 설명만으로 익스프레션을 작성하거나 오류 원인을 진단해 고쳐준다. 열려 있는 컴포지션뿐 아니라 프로젝트 전체를 대상으로 할 수 있다.", "Contour Paint 효과와 Advanced 3D 렌더러에서 레이어를 머티리얼로 쓰는 기능도 추가됐다. 대부분의 AI 동작은 크레딧을 소모하고, 포함된 크레딧은 많지 않다는 보도가 있다. Windows 11과 macOS 15 이상, 구독형으로만 제공된다."],
+      "why": "익스프레션 작성이 번거로운 모션그래픽 작업에서 바로 써볼 수 있는 기능이고, 과제 작업 시간을 줄일 수 있다.",
+      "howto": "Creative Cloud 앱에서 After Effects를 27.0으로 업데이트한 뒤 AI Assistant 패널을 열어 사용한다. 정확한 메뉴 위치는 Adobe 도움말 참고.",
+      "url": "https://community.adobe.com/announcements-527/after-effects-27-0-is-here-ai-assistant-3d-materials-and-what-to-try-first-1653289",
+      "source": "Adobe Community"
+    },
+    {
+      "title": "anthropics/skills: docx·pptx·xlsx·pdf 스킬 업데이트 (Office 스킬은 Apache 2.0으로 전환)",
+      "category": "skills",
+      "score": 86,
+      "published": "2026-11-14",
+      "buzz": "GitHub 스타 약 19만 · 검색 확인",
+      "summary": ["Anthropic 공식 스킬 저장소에 11월 14일 docx, pptx, xlsx, pdf 스킬 업데이트(#2217)가 반영됐다.", "11월 6일에는 Office 스킬의 라이선스가 Apache 2.0으로 바뀌었다(#2146). 이전에는 source-available로 소개됐다.", "스타 수는 검색 결과의 스냅샷 값(약 194.5k)이라 현재와 다를 수 있다."],
+      "why": "Claude Code로 보고서·발표자료·엑셀을 다루는 스킬의 공식 구현이라, 라이선스가 풀려 내 도구에 가져다 쓰기 쉬워졌다.",
+      "howto": "Claude Code에서 /plugin marketplace add anthropics/skills 로 마켓플레이스를 추가한 뒤 원하는 스킬 플러그인을 설치한다. 정확한 플러그인 이름은 README 참고.",
+      "url": "https://github.com/anthropics/skills",
+      "source": "GitHub anthropics/skills"
+    },
+    {
+      "title": "addyosmani/agent-skills 0.6.16: 디버깅·TDD·코드리뷰 스킬 트리거 개선",
+      "category": "skills",
+      "score": 82,
+      "published": "2026-11-14",
+      "buzz": "하루 커밋 8건 이상 · 스타 약 11만 7천(검색 확인)",
+      "summary": ["프로덕션 수준 엔지니어링 스킬을 모은 저장소가 11월 14일 플러그인 매니페스트를 0.6.16으로 올렸다.", "붙여넣은 diff·스택 트레이스에서 디버깅 스킬이 발동하도록 고치고(#757), TDD 조항 재조정(#762), 스펙 변경 관리 지침 추가(#383) 등이 병합됐다.", "스타 수는 검색 결과의 스냅샷이다."],
+      "why": "에러 로그를 붙여넣으면 바로 디버깅 절차를 타게 만드는 식의 스킬이라 PyQt·Godot 프로젝트 유지보수에 곧바로 쓸 수 있다.",
+      "howto": "설치 명령은 README 참고(Claude Code 플러그인 마켓플레이스 방식 제공). 이미 설치했다면 /plugin 메뉴에서 업데이트한다.",
+      "url": "https://github.com/addyosmani/agent-skills",
+      "source": "GitHub addyosmani/agent-skills"
+    },
+    {
+      "title": "MCP 공식 servers v2.4.0: filesystem·git·fetch 서버 취약점 6건 수정",
+      "category": "skills",
+      "score": 80,
+      "published": "2026-11-11",
+      "buzz": "GitHub 릴리스",
+      "summary": ["modelcontextprotocol/servers가 v2.4.0에서 서버 3종의 취약점 6건을 고쳤다.", "filesystem의 읽기와 move_file이 허용된 디렉터리 안에서만 동작하고, 저장소의 Git 설정으로 프로그램이 실행되지 않으며, fetch 서버는 IPv6 사이트-로컬 주소를 사설 주소로 취급한다.", "앞선 v2.3.0(11월 4일)에는 git_merge 도구와 filesystem 읽기 전용 모드가 추가됐다. TypeScript 서버는 v2.0.0부터 Node.js 24 이상이 필요하다."],
+      "why": "Claude Code에 filesystem·git MCP 서버를 연결해 쓰고 있다면 보안 수정이라 바로 올리는 게 좋다.",
+      "howto": "npx로 실행 중이면 최신 버전으로 다시 받는다. 설정은 릴리스 노트와 README 참고. Node.js 24 이상 필요.",
+      "url": "https://github.com/modelcontextprotocol/servers/releases",
+      "source": "GitHub modelcontextprotocol/servers"
+    },
+    {
+      "title": "공식 플러그인 마켓에 claude-for-manufacturing 추가 — 스킬 14개짜리 플러그인 구조 예시",
+      "category": "skills",
+      "score": 64,
+      "published": "2026-11-12",
+      "buzz": "공식 저장소 PR #7084",
+      "summary": ["anthropics/claude-plugins-official에 제조업용 플러그인 claude-for-manufacturing 1.0.0이 추가됐다.", "SKILL.md 14개(생산 일보, 불량 원인 분석, 견적 작성 등), 로컬 Autodesk Fusion MCP 서버 설정(.mcp.json), 공유 규칙·데이터 계약 문서로 구성된다.", "제조업 업무용이라 그대로 쓸 일은 적다."],
+      "why": "스킬 여러 개와 MCP 설정, 공유 규칙 문서를 한 플러그인으로 묶는 공식 구조 예시라, 내 도구용 플러그인을 만들 때 참고할 수 있다.",
+      "howto": "저장소의 plugins/claude-for-manufacturing 폴더 구조(.claude-plugin/plugin.json, skills/, .mcp.json)를 열어 참고한다.",
+      "url": "https://github.com/anthropics/claude-plugins-official",
+      "source": "GitHub anthropics/claude-plugins-official"
+    },
+    {
+      "title": "Codex 0.169.0: 터미널 사이드챗 탭, 이전 작업 검색, 신뢰하지 않는 폴더에서 codex exec 차단 강화",
+      "category": "tools",
+      "score": 78,
+      "published": "2026-11-13",
+      "buzz": "GitHub 릴리스 · 0.171 알파 진행 중",
+      "summary": ["Codex 0.169.0이 11월 13일 정식 릴리스로 올라왔다.", "터미널 작업 공간에서 사이드챗 탭을 여러 개 쓰고, 지난 작업을 검색하고, 전체 화면 기록에서 턴 상세를 접을 수 있다. 커스텀 모델 제공자용 터미널 설정도 추가됐다.", "codex exec는 신뢰하지 않는 디렉터리에서 프로젝트 설정과 MCP 서버를 끈 채로 동작하고, Windows 샌드박스와 macOS 이미지 붙여넣기 수정이 포함됐다."],
+      "why": "Windows에서 Codex를 쓰는 경우 샌드박스 수정이 들어 있고, Claude Code와 병행할 때 작업 검색 기능이 유용하다.",
+      "howto": "설치 방식(npm 또는 brew)에 맞춰 Codex를 업데이트한 뒤 codex --version으로 0.169.0 이상인지 확인한다.",
+      "url": "https://github.com/openai/codex/releases",
+      "source": "GitHub openai/codex"
+    }
+  ]
+}
