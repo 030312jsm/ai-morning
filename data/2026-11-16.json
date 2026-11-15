@@ -1,0 +1,118 @@
+{
+  "date": "2026-11-16",
+  "note": "오늘은 GitHub 트렌딩과 공식 릴리스 중심으로 확인되는 소식만 실었다. creative 분야는 7일 이내에 날짜가 확인되는 소식이 없어 생략했다.",
+  "items": [
+    {
+      "title": "google-labs-code/stitch-skills: Stitch MCP용 에이전트 스킬 3종 플러그인",
+      "category": "skills",
+      "score": 84,
+      "published": "2026-11-16",
+      "buzz": "GitHub 트렌딩 일간 +248★ · 총 9.2k★",
+      "summary": [
+        "Google Stitch(UI 디자인 생성) MCP 서버와 함께 쓰는 Agent Skills 모음이다.",
+        "stitch-design, stitch-build, stitch-utilities 세 플러그인으로 나뉘며 Claude Code, Cursor, Codex, Gemini CLI에서 쓸 수 있다.",
+        "Stitch MCP 서버를 먼저 설정해 둬야 한다."
+      ],
+      "why": "웹앱 UI를 Claude Code로 만들 때 디자인 시안 생성부터 코드화까지 스킬로 이어 붙일 수 있다.",
+      "howto": "Claude Code: npx plugins add google-labs-code/stitch-skills --scope project --target claude-code / 일부만: npx skills add google-labs-code/stitch-skills / Codex: codex plugin marketplace add google-labs-code/stitch-skills --ref main",
+      "url": "https://github.com/google-labs-code/stitch-skills",
+      "source": "GitHub"
+    },
+    {
+      "title": "NVIDIA SkillEvaluator: 내 스킬이 실제로 도움이 되는지 측정하는 프레임워크",
+      "category": "skills",
+      "score": 78,
+      "published": "2026-11-16",
+      "buzz": "GitHub 트렌딩 일간 +205★ · 총 1.6k★",
+      "summary": [
+        "AI 에이전트 스킬의 품질을 점검하고, 스킬을 쓴 경우와 안 쓴 경우의 작업 결과를 비교하는 NVIDIA 오픈소스(Apache-2.0)다.",
+        "Tier 1 검사는 API 키 없이 돌릴 수 있다.",
+        "프로젝트 지원 수준은 Experimental이다."
+      ],
+      "why": "직접 만든 SKILL.md가 정말 효과가 있는지 숫자로 확인하고 다듬을 수 있다.",
+      "howto": "pip install skillevaluator 후 skillevaluator validate ./my-skill --tiers 1",
+      "url": "https://github.com/NVIDIA/SkillEvaluator",
+      "source": "GitHub"
+    },
+    {
+      "title": "Codex CLI 0.169.0: 사이드챗 탭, 작업 검색, 커스텀 모델 프로바이더",
+      "category": "tools",
+      "score": 74,
+      "published": "2026-11-13",
+      "buzz": "공식 GitHub 릴리스",
+      "summary": [
+        "터미널에서 여러 사이드챗 탭을 쓰고, 저장된 로컬 사이드챗을 재시작 후 다시 열 수 있다.",
+        "이전 작업을 이름·프롬프트 미리보기·작업 디렉터리로 검색할 수 있고, 커스텀 모델 프로바이더를 터미널에서(로그인 중에도) 추가·수정할 수 있다.",
+        "codex exec는 신뢰하지 않는 디렉터리에서 프로젝트 설정과 MCP 서버를 꺼 둔다. 0.171.0 알파도 올라와 있다."
+      ],
+      "why": "Claude Code와 Codex를 병행한다면 작업 검색과 사이드챗이 긴 세션 관리에 도움이 된다.",
+      "howto": "Codex CLI를 최신으로 업데이트한 뒤 codex --version으로 0.169.0 이상인지 확인",
+      "url": "https://github.com/openai/codex/releases",
+      "source": "OpenAI Codex 릴리스"
+    },
+    {
+      "title": "Tencent LoopForge: Claude Code·Codex를 SOP 워크플로로 묶는 셀프호스트 도구",
+      "category": "skills",
+      "score": 72,
+      "published": "2026-11-16",
+      "buzz": "GitHub 트렌딩 일간 +484★ · 총 1.4k★",
+      "summary": [
+        "CodeBuddy, Codex, Claude Code 같은 CLI를 역할·Docker 샌드박스·반복 가능한 SOP 워크플로·사람 승인 단계로 오케스트레이션한다(MIT).",
+        "가벼운 'LoopForge Local'은 코딩 어시스턴트 안에서 내장 워크플로를 실행한다.",
+        "전체 플랫폼은 start.sh로 띄우는 셀프호스트 방식이다."
+      ],
+      "why": "기능 구현을 계획-구현-검토 단계로 나눠 자동으로 굴리고 싶을 때 바로 실험해볼 수 있다.",
+      "howto": "Claude Code용: npx -y loopforge-cli@latest install claude 후 Claude Code에서 /start-devflow \"요청 내용\"",
+      "url": "https://github.com/Tencent/LoopForge",
+      "source": "GitHub"
+    },
+    {
+      "title": "Anthropic, Claude Meetings·Whiteboards·Sheets 공개",
+      "category": "claude",
+      "score": 70,
+      "published": "2026-11-10",
+      "buzz": "TechCrunch·Axios 보도 · 검색 확인",
+      "summary": [
+        "Claude Meetings는 Claude를 화상회의 참가자로 초대해 질문 답변, 계획 초안, 타임라인 작성을 시키는 베타 기능이다.",
+        "출시 시점에는 Google Meet만 지원하며 Team·Enterprise 플랜 대상이다. 회의 후 노트와 액션 아이템은 claude.ai에서 볼 수 있다.",
+        "Whiteboards와 Sheets도 함께 발표됐고, 일부 보도는 Meetings가 '곧 제공'이라고 해 출시 상태가 매체마다 엇갈린다."
+      ],
+      "why": "개발 도구는 아니지만 팀 협업이나 과제 회의 정리에 쓸 수 있는 Claude 신기능이다.",
+      "howto": "원문 참고",
+      "url": "https://techcrunch.com/2026/11/10/anthropic-launches-claude-meetings-to-turn-workplace-discussions-into-plans-and-tasks/",
+      "source": "TechCrunch"
+    },
+    {
+      "title": "DeepMind AlphaProof Code, Signal 프로토콜 구현을 Lean으로 형식 검증",
+      "category": "research",
+      "score": 68,
+      "published": "2026-11-10",
+      "buzz": "여러 매체 보도 · 검색 확인",
+      "summary": [
+        "멀티 에이전트 시스템이 libsignal 컴파일 구현의 보안 속성을 Lean 증명으로 약 4주 만에 검증했다고 보도됐다.",
+        "증명 규모는 약 650만 줄이며 Lean 커널과 사람이 승인한 명세와의 비교기로 검증하고, 사람은 약 1%만 재검토했다.",
+        "범위는 libsignal 일부이고 새 취약점은 발견하지 못했다. 비용은 공개되지 않았고 사양과 증명은 공개됐다고 한다."
+      ],
+      "why": "AI가 쓴 코드를 형식 검증으로 믿을 수 있게 만드는 흐름의 구체적 사례다.",
+      "howto": "원문 참고",
+      "url": "https://aiweekly.co/alerts/google-deepminds-alphaproof-code-formally-verifies-signal-protocol-guarantees",
+      "source": "AI Weekly"
+    },
+    {
+      "title": "claude-trading-skills: 투자·트레이딩용 Claude 스킬 모음",
+      "category": "skills",
+      "score": 52,
+      "published": "2026-11-16",
+      "buzz": "GitHub 트렌딩 일간 +707★ · 총 5.5k★",
+      "summary": [
+        "시장 국면 분석, 포트폴리오 점검, 스크리너, 매매 일지, 전략 리서치 스킬을 모은 저장소다.",
+        "신호 서비스나 자동매매가 아니라 의사결정 보조 도구다.",
+        "웹 앱용은 릴리스의 .skill 파일을 Customize > Skills에 올린다."
+      ],
+      "why": "주 작업 분야와는 거리가 있지만, 도메인 특화 스킬을 어떻게 구성하는지 참고하기 좋은 사례다.",
+      "howto": "저장소를 클론해 원하는 스킬 폴더(예: backtest-expert)를 ~/.claude/skills/ 또는 프로젝트의 .claude/skills/에 복사",
+      "url": "https://github.com/tradermonty/claude-trading-skills",
+      "source": "GitHub"
+    }
+  ]
+}
