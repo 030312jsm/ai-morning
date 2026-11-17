@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-18",
+  "note": "오늘은 검색으로 날짜와 내용이 교차 확인되는 신규 소식이 1건뿐이라 있는 만큼만 실었다. skills·claude·tools·research 분야는 7일 이내 날짜가 확인되는 새 소식을 찾지 못해 생략했다.",
+  "items": [
+    {
+      "title": "ByteDance, 저비용 영상 생성 모델 Seedance 2.5 Flash 공개",
+      "category": "creative",
+      "score": 72,
+      "published": "2026-11-12",
+      "buzz": "BytePlus 발표 · 검색 확인",
+      "summary": [
+        "BytePlus가 11월 12일 Seedance 2.5의 경량 버전인 Seedance 2.5 Flash를 발표했고, ModelArk API는 11월 15일에 열린다고 밝혔다.",
+        "텍스트→영상, 이미지→영상 모드를 지원하며 최대 30초, 480p·720p 해상도다. 업체 주장으로는 플래그십 대비 약 2배 빠르고 720p 기준 약 34% 저렴하다.",
+        "1080p·4K는 플래그십 Seedance 2.5에서만 지원되고, 가격은 토큰 기준이며 자료마다 수치가 달라 공식 가격표 확인이 필요하다. BytePlus는 계정 잔액 등 이용 조건이 있다는 보도가 있다."
+      ],
+      "why": "영상학과 작업에서 모션그래픽용 배경·시안 영상을 빠르고 싸게 뽑아볼 수 있는 후보다.",
+      "howto": "BytePlus ModelArk에서 모델 ID dreamina-seedance-2-5-flash-261115 로 호출한다. 자세한 요금과 이용 조건은 원문 참고.",
+      "url": "https://docs.byteplus.com/docs/ModelArk/seedance-2-5",
+      "source": "BytePlus ModelArk 문서"
+    }
+  ]
+}
