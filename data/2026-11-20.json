@@ -1,0 +1,118 @@
+{
+  "date": "2026-11-20",
+  "note": "확인된 소식만 7건 실었다. creative·research 분야는 7일 이내 날짜가 확인되는 소식을 찾지 못해 이번에는 생략했다.",
+  "items": [
+    {
+      "title": "Claude Code v2.1.328: 훅 실패 시 차단, Code Mode 개선, /code-review는 버그만 보고",
+      "category": "claude",
+      "score": 90,
+      "published": "2026-11-19",
+      "buzz": "공식 릴리스",
+      "summary": [
+        "Claude Code 2.1.328이 11월 19일 릴리스됐다.",
+        "mcp_tool 훅이 \"onFailure\": \"block\"을 지원하고, Code Mode는 시작이 빨라지고 토큰을 덜 쓴다. /code-review는 대부분의 모델에서 버그와 CLAUDE.md 위반만 보고하며, 재사용·효율 정리는 /simplify가 맡는다.",
+        "권한 모드를 정하지 않은 대화형 세션은 auto 모드로 시작한다. Opus 4.6·Sonnet 4.6의 auto 모드는 Bedrock 등 서드파티 제공자에서도 쓸 수 있다."
+      ],
+      "why": "매일 쓰는 Claude Code의 기본 권한 동작과 리뷰 명령 동작이 바뀌므로 업데이트 전에 확인해 둘 만하다.",
+      "howto": "claude update 후 /code-review, /simplify를 각각 실행해 본다. auto 모드를 끄려면 disableAutoMode 설정을 쓴다.",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.328",
+      "source": "GitHub anthropics/claude-code"
+    },
+    {
+      "title": "NVIDIA SkillSpector: 설치 전에 에이전트 스킬을 검사하는 보안 스캐너",
+      "category": "skills",
+      "score": 86,
+      "published": "2026-11-19",
+      "buzz": "GitHub 26.9k★ · 11/19 커밋",
+      "summary": [
+        "NVIDIA가 공개한 에이전트 스킬용 보안 스캐너다.",
+        "스킬의 취약점, 악성 패턴, 프롬프트 인젝션, 데이터 유출, 공급망 위험을 설치 전에 검사한다. Claude Code, Codex, MCP 스킬을 지원한다.",
+        "CLI 전용이고 Python 3.13과 uv가 필요하다. 릴리스 항목은 비어 있어 GitHub에서 직접 설치한다."
+      ],
+      "why": "GitHub에서 받은 스킬을 그대로 설치하는 일이 많은 사람에게 최소한의 안전장치가 된다.",
+      "howto": "uv tool install --python 3.13 git+https://github.com/NVIDIA/skillspector.git 로 설치한 뒤 받은 스킬 폴더에 돌려 본다. 사용법은 README 참고.",
+      "url": "https://github.com/NVIDIA/SkillSpector",
+      "source": "GitHub NVIDIA/SkillSpector"
+    },
+    {
+      "title": "T3 Code: Claude Code·Codex를 한 화면에서 돌리는 오픈소스 컨트롤 플레인",
+      "category": "skills",
+      "score": 82,
+      "published": "2026-11-19",
+      "buzz": "GitHub 66.3k★ · 11/19 나이틀리",
+      "summary": [
+        "Claude Code, Codex, Cursor 등을 내 컴퓨터에서 실행하면서 하나의 인터페이스로 관리하는 MIT 라이선스 도구다.",
+        "스레드마다 별도 git worktree를 쓰고, 앱 안에서 커밋·푸시·PR 생성까지 할 수 있다. 데스크톱·웹·모바일과 원격 머신 연결을 지원한다.",
+        "11월 19일에 나이틀리 빌드가 세 번 나왔다. 개발이 빠른 만큼 나이틀리는 불안정할 수 있다."
+      ],
+      "why": "여러 프로젝트(툴·게임·웹앱)를 각각 worktree로 병렬 작업시킬 때 관리가 쉬워진다.",
+      "howto": "npx t3@latest 로 설치 없이 먼저 실행해 본다. Windows는 PowerShell에서 irm https://t3.codes/install.ps1 | iex.",
+      "url": "https://github.com/pingdotgg/t3code",
+      "source": "GitHub pingdotgg/t3code"
+    },
+    {
+      "title": "Claude-BugHunter: 보안 점검용 스킬 83개 묶음 (Claude Code 플러그인)",
+      "category": "skills",
+      "score": 66,
+      "published": "2026-11-18",
+      "buzz": "11/18 커밋 · 검색 확인",
+      "summary": [
+        "Claude Code를 승인된 버그 바운티·모의해킹 작업에 쓰도록 만든 스킬 모음이다.",
+        "검색 결과 기준 스킬 83개, 슬래시 커맨드 15개, 취약점 패턴 681개를 담았고 Burp Suite·HackerOne MCP 연동이 들어 있다. 11월 18일에 HackerOne MCP 연결 커밋이 올라왔다.",
+        "공격 도구에 가까우므로 본인 소유이거나 허가받은 대상에만 써야 하고, 설치 전에 코드를 확인해야 한다."
+      ],
+      "why": "직접 만든 웹앱이나 게임 서버를 배포하기 전에 취약점을 점검하는 용도로 쓸 수 있다.",
+      "howto": "/plugin marketplace add elementalsouls/Claude-BugHunter 후 /plugin install claude-bughunter@elementalsouls",
+      "url": "https://github.com/elementalsouls/Claude-BugHunter",
+      "source": "GitHub elementalsouls/Claude-BugHunter"
+    },
+    {
+      "title": "OpenAI GPT-6.2 Astra·Sol 공개, Codex에서 바로 사용",
+      "category": "tools",
+      "score": 80,
+      "published": "2026-11-17",
+      "buzz": "다수 매체 보도 · 검색 확인",
+      "summary": [
+        "OpenAI가 11월 17일 GPT-6.2 Astra(최상위)와 GPT-6.2 Sol(일상용)을 공개했다. ChatGPT, Codex, API(gpt-6.2-astra, gpt-6.2-sol)에서 쓸 수 있다.",
+        "Astra의 API 가격은 입력 $8, 출력 $40(백만 토큰)으로 이전 GPT-6 Astra보다 20% 낮다. Sol은 이전 가격을 유지하고, OpenAI는 Sol이 Astra에 0.5점 차이로 근접하다고 주장한다.",
+        "Decrypt는 독립 테스트에서 Astra가 Claude Fable 5.2 다음 2위이고 코딩 에이전트 성능 향상은 없다고 보도했다."
+      ],
+      "why": "Codex를 병행해 쓴다면 모델 선택과 비용 계산이 바뀐다.",
+      "howto": "Codex CLI에서 codex --model gpt-6.2-sol 처럼 모델을 지정한다(2차 보도 기준, 공식 문서 확인 권장).",
+      "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
+      "source": "OpenAI"
+    },
+    {
+      "title": "Google Gemini 4 Neon 공개: Opus 5.5·GPT-6.2 Sol과 비교되는 중간급 모델",
+      "category": "tools",
+      "score": 78,
+      "published": "2026-11-18",
+      "buzz": "HN 545점 · 검색 확인",
+      "summary": [
+        "Google이 11월 18일 Gemini 4 Neon을 공개했다. Carbon과 Hydrogen 사이에 놓이는 중간급 모델이다.",
+        "코딩, 과학 연구, 에이전트 작업을 내세우며 Google AI Studio의 Gemini API, 기업용 Gemini, Antigravity에서 유료 AI Pro·Ultra 구독자에게 순차 제공된다.",
+        "벤치마크는 Google이 직접 Claude Opus 5.5, GPT-6.2 Sol과 비교한 수치이며 독립 검증은 확인하지 못했다."
+      ],
+      "why": "Antigravity나 Gemini API로 코딩 에이전트를 돌릴 때 새 선택지가 된다.",
+      "howto": "AI Studio에서 모델 목록의 Gemini 4 Neon을 선택한다. 구독 등급별 제공 시점은 원문 참고.",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+      "source": "Google"
+    },
+    {
+      "title": "Anthropic, 기업공개(IPO) 공모가 확정",
+      "category": "claude",
+      "score": 55,
+      "published": "2026-11-18",
+      "buzz": "HN 125점",
+      "summary": [
+        "Anthropic이 11월 18일 IPO 공모가 확정을 공식 발표했다.",
+        "11월 10일 로드쇼를 시작했고 10월 26일 S-1을 제출했다.",
+        "세부 수치는 확인하지 않았다. 원문 참고."
+      ],
+      "why": "Claude Code를 주력 도구로 쓰는 만큼 회사 동향을 알아 두면 좋다.",
+      "howto": "원문 참고",
+      "url": "https://www.anthropic.com/news/anthropic-prices-initial-public-offering",
+      "source": "Anthropic"
+    }
+  ]
+}
