@@ -1,0 +1,118 @@
+{
+  "date": "2026-11-21",
+  "note": "신선도 기준(7일 이내, 날짜 확인 가능)을 충족하는 소식만 7건 실었다. tools·research 분야는 날짜와 내용을 교차 확인할 수 있는 새 소식을 찾지 못해 이번에는 생략했다.",
+  "items": [
+    {
+      "title": "Concept Motion 등 Claude Code 스킬 3종 (11월 스킬 팩)",
+      "category": "skills",
+      "score": 78,
+      "published": "2026-11-20",
+      "buzz": "GitHub 릴리스 11/20",
+      "summary": [
+        "WaziriG/skill-drops가 11월 스킬 팩을 공개했다. Session Audit, Clear the Mac, Concept Motion 3종이다.",
+        "Concept Motion(/concept-motion)은 가르치려는 아이디어를 짧은 애니메이션 다이어그램 시리즈로 만든다. 첫 실행 때 Claude가 스스로 환경을 세팅하며 약 10분이 걸린다고 안내한다.",
+        "Session Audit은 세션 끝에 결정·정정·미결 사항을 저장한다. Clear the Mac은 큰 폴더를 외장 드라이브 두 곳으로 옮기고 검증 후 삭제한다. 스타 수 등 인기 지표는 확인하지 못했다."
+      ],
+      "why": "영상학과 작업에서 개념 설명용 모션 다이어그램을 빠르게 뽑아볼 수 있고, Session Audit은 장시간 개발 세션 마무리에 바로 쓸 수 있다.",
+      "howto": "릴리스의 zip을 풀어 각 스킬 폴더를 ~/.claude/skills/ 에 복사하고 Claude Code를 재시작한 뒤 /session-audit, /clear-the-mac, /concept-motion 을 입력한다.",
+      "url": "https://github.com/WaziriG/skill-drops/releases/tag/newsletter-2026-11",
+      "source": "GitHub (WaziriG/skill-drops)"
+    },
+    {
+      "title": "qiyascc/ai-skills: 모션그래픽·릴스 편집용 스킬 14종",
+      "category": "skills",
+      "score": 74,
+      "published": "2026-11-20",
+      "buzz": "11/20 갱신, 스타 0 (신생 저장소)",
+      "summary": [
+        "영상 편집과 모션그래픽에 특화된 SKILL.md 14종 묶음이다. Motion Story Director, Motion Render Pro(코드로 MP4 렌더), Motion Sound Design(-13 LUFS 마스터링), Match Cut Finder, Beat Snap Re-Editor 등이 들어 있다.",
+        "Motion Reverse Engineer는 레퍼런스 영상을 측정해 재현용 스펙을 써 주고, Autonomous Director는 렌더→검사→수정 루프를 품질 게이트까지 돌린다.",
+        "커밋 11개, 스타 0인 신생 저장소라 검증된 품질은 아니다. 필요 소프트웨어는 원문에 명시되지 않아 각 SKILL.md로 확인해야 한다."
+      ],
+      "why": "After Effects 대신 코드·FFmpeg 기반으로 모션 작업을 자동화하는 아이디어를 Claude Code에서 바로 실험해볼 수 있다.",
+      "howto": "npx skills add qiyascc/ai-skills (특정 스킬만은 --skill <이름>, 모든 프로젝트에 적용은 -g).",
+      "url": "https://github.com/qiyascc/ai-skills",
+      "source": "GitHub"
+    },
+    {
+      "title": "app-store-compliance: 앱스토어·구글 플레이 심사 거절 방지 스킬",
+      "category": "skills",
+      "score": 66,
+      "published": "2026-11-21",
+      "buzz": "GitHub 트렌딩 일간 +874 · 총 2.7k★",
+      "summary": [
+        "Apple·Google Play 심사 거절 사례 117개와 해결책을 정리하고, 제출 전에 프로젝트를 훑어 위험 요소를 찾는 가드 스크립트를 함께 제공한다.",
+        "개인정보 매니페스트·Data safety 점검, 스토어 메타데이터·접근성 감사를 포함하며 Claude Code, Codex, Gemini CLI, Cursor 등용 설치 스크립트가 있다.",
+        "라이선스가 MIT가 아닌 OpenRoots Agent License 2.3이고 일정 매출 이상에서 상업 이용이 제한된다. 최신 갱신일은 확인하지 못했다."
+      ],
+      "why": "웹앱을 모바일 앱으로 내거나 게임을 스토어에 올릴 때 심사 거절을 미리 점검할 수 있다.",
+      "howto": "git clone https://github.com/mjmirza/app-store-compliance ~/repositories/app-store-compliance 후 bash ~/repositories/app-store-compliance/scripts/install.sh --tool all 실행.",
+      "url": "https://github.com/mjmirza/app-store-compliance",
+      "source": "GitHub Trending"
+    },
+    {
+      "title": "AI Maestro: Claude Code·Codex 에이전트를 한 대시보드에서 관리",
+      "category": "skills",
+      "score": 58,
+      "published": "2026-11-20",
+      "buzz": "855★ · 11/20 갱신",
+      "summary": [
+        "MIT 라이선스 오케스트레이터로, Claude Code·Codex·Grok Build 에이전트를 tmux·Docker·AWS 등에서 돌리며 한 화면에서 관리한다.",
+        "에이전트 간 서명 메시지(AMP), 장기 메모리·코드 그래프 검색, Slack/Discord 연동, 칸반 보드를 제공하고 Claude Code 플러그인 스킬 14개가 포함된다.",
+        "Node.js 24, tmux, 빌드에 RAM 4GB가 필요하다. 설치가 curl | bash 방식이라 실행 전 스크립트를 확인하는 편이 안전하다."
+      ],
+      "why": "여러 에이전트를 병렬로 돌려 툴·게임·웹앱을 동시에 만들 때 상태를 한곳에서 볼 수 있다.",
+      "howto": "curl -fsSL aimaestro.sh/install | bash (Node.js 24, tmux 필요).",
+      "url": "https://github.com/23blocks-OS/ai-maestro",
+      "source": "GitHub"
+    },
+    {
+      "title": "Ziva: Godot 에디터 안에서 게임을 만들고 디버깅하는 AI 에이전트",
+      "category": "skills",
+      "score": 60,
+      "published": "2026-11-19",
+      "buzz": "에셋 스토어 11/19 업데이트 · 검색 확인",
+      "summary": [
+        "Godot 에디터에 들어가는 AI 에이전트 플러그인으로, 자연어 요청으로 게임을 만들고 디버깅·플레이테스트까지 한다고 소개된다.",
+        "Godot 공식 에셋 스토어 목록의 최종 업데이트가 2026-11-19로 표시되고, 비교 글에서도 같은 용도로 소개된다.",
+        "이번 업데이트의 구체적 변경점, 가격, 지원 모델은 확인하지 못했다."
+      ],
+      "why": "Godot으로 게임을 만드는 독자가 Claude Code와 별도로 에디터 내부 에이전트를 비교해볼 수 있다.",
+      "howto": "원문 참고 (Godot 에셋 스토어에서 Ziva 검색).",
+      "url": "https://store.godotengine.org/asset/ziva/ziva/",
+      "source": "Godot Asset Store"
+    },
+    {
+      "title": "AutoClip: 긴 영상을 숏폼으로 자르는 오픈소스 AI 데스크톱 툴",
+      "category": "creative",
+      "score": 68,
+      "published": "2026-11-21",
+      "buzz": "GitHub 트렌딩 일간 +983 · 총 12.1k★",
+      "summary": [
+        "MIT 라이선스. 긴 영상(팟캐스트·강의 등) 링크를 넣으면 플랫폼에 맞춰 자막·커버·게시 문구가 붙은 숏클립을 만든다. 편집과 렌더링은 내 컴퓨터에서 처리한다.",
+        "Windows 10/11 x64와 macOS Apple Silicon용 설치 파일이 있고 Docker 웹 UI, CLI, MCP(uvx autoclip-mcp)도 지원한다. Ollama·LM Studio 로컬 모델을 쓸 수 있다.",
+        "클라우드 모델은 사용량만큼 과금되며 Intel Mac·Linux는 데스크톱 빌드가 없다. 최신 커밋 날짜는 확인하지 못했다."
+      ],
+      "why": "영상 작업물을 쇼츠·릴스용으로 빠르게 잘라내고, MCP로 Claude Code와 엮어 자동화할 수도 있다.",
+      "howto": "GitHub Releases에서 Windows용 -setup.exe를 받아 설치하고 Settings에서 모델/API 키를 설정한다. CLI/MCP는 uvx autoclip-mcp (Python 3.10+, FFmpeg 필요).",
+      "url": "https://github.com/zhouxiaoka/autoclip",
+      "source": "GitHub Trending"
+    },
+    {
+      "title": "Anthropic 나스닥 상장 첫날: 공모가 83달러, 개장 직후 약 33% 상승",
+      "category": "claude",
+      "score": 42,
+      "published": "2026-11-20",
+      "buzz": "IPO 첫 거래 · 검색 확인",
+      "summary": [
+        "Anthropic 주식이 나스닥에서 거래를 시작해 공모가 83달러보다 약 33% 높은 111.50달러 선에서 체결됐다는 보도가 나왔다.",
+        "TechCrunch는 이번 공모로 810억 달러 넘게 조달했다고 전했고, Latent Space·The Rundown도 역대 최대 규모 IPO로 다뤘다.",
+        "기업가치 수치는 매체마다 달라 확인하지 못했다. 개발 도구 사용성에 직접 영향은 아직 알려진 바 없다."
+      ],
+      "why": "Claude Code의 장기 투자·지속성에 대한 배경 정보로 참고할 만하다.",
+      "howto": "원문 참고.",
+      "url": "https://www.therundown.ai/articles/anthropic-pulls-off-the-biggest-ipo-ever",
+      "source": "The Rundown AI"
+    }
+  ]
+}
