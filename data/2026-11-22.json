@@ -1,0 +1,54 @@
+{
+  "date": "2026-11-22",
+  "note": "검색·원문 확인이 가능한 소식이 적어 3건만 실었다. 7일 이내 날짜를 확인할 수 있는 소식만 포함했고, 나머지 분야는 새 소식을 확인하지 못해 생략했다.",
+  "items": [
+    {
+      "title": "Claude Code v2.1.329·v2.1.330: /tasks에 예약 작업 표시, easel 차트 모드, 엔터프라이즈 로그인 개선",
+      "category": "claude",
+      "score": 84,
+      "published": "2026-11-20",
+      "buzz": "GitHub 릴리스 11/19~11/20",
+      "summary": [
+        "v2.1.330(11/20)은 claude auth login 뒤 조직 설정과 클라우드 제공자·게이트웨이를 자동 적용하고, 요청 시 차트를 그려 주는 내장 모드 easel을 추가했다(Pro·Max 등, macOS·Linux).",
+        "v2.1.329(11/19)는 /tasks에 예약 작업·/loop 웨이크업·goal·fork를 함께 보여 주고 x로 중지할 수 있게 했다. 신뢰 대화상자가 폴더 훅이 선언된 위치를 알려 주고, /mcp는 원격 서버가 연결을 거부할 때 JSON-RPC 오류 메시지를 보여 준다.",
+        "긴 대화를 compact한 뒤 몇 분씩 멈추던 문제, WebFetch 멈춤, 다른 세션이 쓰는 워크트리를 ExitWorktree가 지우던 문제, ~/.claude.json이 기본값으로 초기화되던 문제가 수정됐다."
+      ],
+      "why": "여러 워크트리·예약 작업을 돌리는 1인 개발 흐름에서 /tasks 통합 뷰와 워크트리 삭제 버그 수정이 바로 체감된다.",
+      "howto": "claude update 로 최신 버전으로 올린 뒤 세션 안에서 /tasks 를 입력해 예약 작업과 fork 목록을 확인한다.",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.330",
+      "source": "GitHub (anthropics/claude-code)"
+    },
+    {
+      "title": "Codex CLI 0.171.0: GPT-6.2 Sol·Astra 기본 탑재, TUI 워크스페이스 기본 활성화",
+      "category": "tools",
+      "score": 76,
+      "published": "2026-11-20",
+      "buzz": "GitHub 릴리스 11/20",
+      "summary": [
+        "모델 목록에 GPT-6.2 Sol과 Astra가 추가됐고 기본 선택은 Sol이다.",
+        "TUI 워크스페이스가 기본으로 켜져 문서 미리보기, 이미지 미리보기, 서브에이전트 대화 기록을 볼 수 있다.",
+        "codex exec --remote <ADDR> 로 이미 떠 있는 앱 서버에서 비대화형 세션을 시작하거나 이어 갈 수 있다. 0.173.0 알파 빌드가 이미 올라와 있어 변동이 빠르다."
+      ],
+      "why": "Codex를 Claude Code와 병행해 쓴다면 새 모델 기본값과 이미지 미리보기가 게임·UI 작업 검증에 도움이 된다.",
+      "howto": "npm i -g @openai/codex@latest 로 업데이트한 뒤 codex 를 실행한다. 모델은 /model 에서 바꾼다. 정확한 설치 방식은 원문 참고.",
+      "url": "https://github.com/openai/codex/releases",
+      "source": "GitHub (openai/codex)"
+    },
+    {
+      "title": "mmgordon82/agent-skills: 검증·위임·훅 가드 등 에이전트 스킬 40여 종 묶음",
+      "category": "skills",
+      "score": 72,
+      "published": "2026-11-20",
+      "buzz": "GitHub 릴리스 11/20, 스타 수 미확인",
+      "summary": [
+        "run-validation, tdd, adversarial-review, interrogate, security-hunt 등 검증·리뷰 스킬과 delegate, swarm, arena 같은 서브에이전트 분업 스킬, handoff·ketchup 같은 세션 인수인계 스킬이 들어 있다.",
+        "git-guardrails-claude-code 는 위험한 Git 명령을 막는 훅을 설치하고, design-taste-frontend 는 프런트엔드 제작·시각 점검용이다(Node 22+와 Chromium 계열 브라우저 필요).",
+        "한 번에 전부 설치하면 같은 이름의 기존 스킬이 교체된다. 인기 지표는 확인하지 못했다."
+      ],
+      "why": "웹앱·툴 개발에서 테스트 먼저 쓰기와 위험 명령 차단 훅을 곧바로 적용할 수 있다.",
+      "howto": "npx skills add mmgordon82/agent-skills#20261120 -g --skill '*' (Node.js 22.20+). 일부만 쓰려면 '*' 대신 스킬 이름을 지정한다.",
+      "url": "https://github.com/mmgordon82/agent-skills/releases/tag/20261120",
+      "source": "GitHub (mmgordon82/agent-skills)"
+    }
+  ]
+}
