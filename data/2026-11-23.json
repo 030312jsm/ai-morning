@@ -1,0 +1,118 @@
+{
+  "date": "2026-11-23",
+  "note": "7일 이내 날짜를 확인할 수 있는 소식이 적어 7건만 실었다. creative·research 분야는 기준을 충족하는 새 소식을 확인하지 못해 생략했다.",
+  "items": [
+    {
+      "title": "Open Code Review: 알리바바가 2년 쓴 AI 코드 리뷰 CLI·스킬 공개",
+      "category": "skills",
+      "score": 88,
+      "published": "2026-11-22",
+      "buzz": "GitHub 주간 트렌딩 +4,032★ (누적 55.4k★)",
+      "summary": [
+        "알리바바가 사내에서 약 2년 쓰던 AI 코드 리뷰 도구를 오픈소스로 공개했고, Git diff를 LLM 에이전트에 넘겨 줄 단위 리뷰 코멘트를 만든다.",
+        "`ocr scan`으로 파일 전체 리뷰도 되고, Claude Code 플러그인(`/open-code-review:review`, `/open-code-review:delegate-review`)과 Agent Skills를 지원한다.",
+        "Git 2.41 이상이 필요하고, 리뷰에 쓸 LLM을 따로 설정해야 한다. 릴리스 버전·날짜는 페이지에 표시되지 않았다."
+      ],
+      "why": "혼자 만드는 PyQt·Godot·웹앱 코드를 커밋 전에 줄 단위로 점검받을 수 있어 1인 개발의 리뷰어 공백을 메운다.",
+      "howto": "`npx skills add alibaba/open-code-review` 로 스킬을 설치하거나 `npm install -g @alibaba-group/open-code-review` 로 CLI를 설치한다.",
+      "url": "https://github.com/alibaba/open-code-review",
+      "source": "GitHub (alibaba/open-code-review)"
+    },
+    {
+      "title": "chrome-devtools-mcp: Claude Code가 브라우저를 직접 디버깅하는 공식 MCP 플러그인",
+      "category": "skills",
+      "score": 86,
+      "published": "2026-11-22",
+      "buzz": "GitHub 주간 트렌딩 +2,795★ (누적 58.8k★)",
+      "summary": [
+        "Chrome DevTools를 코딩 에이전트에 노출하는 MCP 서버로, 플러그인 하나로 MCP 서버와 CLI 스킬이 함께 설치된다.",
+        "웹앱을 만들 때 에이전트가 페이지를 열어 콘솔 오류·네트워크·성능을 직접 확인하는 흐름에 쓴다.",
+        "페이지에 릴리스 버전·날짜는 표시되지 않았고, Chrome이 설치돼 있어야 한다."
+      ],
+      "why": "웹앱·Roblox 웹 도구를 만들 때 '화면이 깨졌다'를 사람이 설명하지 않고 에이전트가 직접 재현하고 고치게 할 수 있다.",
+      "howto": "Claude Code에서 `/plugin marketplace add ChromeDevTools/chrome-devtools-mcp` 후 `/plugin install chrome-devtools-mcp@chrome-devtools-plugins` 를 실행한다.",
+      "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "source": "GitHub (ChromeDevTools)"
+    },
+    {
+      "title": "Plannotator: 에이전트 계획·diff를 브라우저에서 주석 달아 되돌려주는 리뷰 도구",
+      "category": "skills",
+      "score": 83,
+      "published": "2026-11-22",
+      "buzz": "GitHub 주간 트렌딩 +3,396★ (누적 14.4k★)",
+      "summary": [
+        "Claude Code, Codex 등의 계획·스펙·마크다운·HTML·코드 diff를 로컬 브라우저에서 주석으로 검토하고 피드백을 에이전트에 돌려보낸다.",
+        "Claude Code는 플러그인으로, Codex는 설치 스크립트로 붙이며 Codex는 실험적 Stop 훅으로 계획 리뷰가 자동 활성화된다.",
+        "Codex용 설치 스크립트는 macOS/Linux/WSL 기준이고 네이티브 Windows는 수동 설정 안내가 출력된다."
+      ],
+      "why": "긴 작업 계획을 승인하기 전에 항목별로 수정 지시를 줄 수 있어, 게임·툴 구조를 잡는 초반 단계의 삽질을 줄여준다.",
+      "howto": "`/plugin marketplace add backnotprop/plannotator` 후 `/plugin install plannotator@plannotator`, 이후 Claude Code를 재시작한다.",
+      "url": "https://github.com/backnotprop/plannotator",
+      "source": "GitHub (backnotprop/plannotator)"
+    },
+    {
+      "title": "modern-web-guidance: Chrome·Edge·Firefox·MDN 팀이 만든 웹 표준 스킬",
+      "category": "skills",
+      "score": 80,
+      "published": "2026-11-22",
+      "buzz": "GitHub 주간 트렌딩 +4,400★ (누적 10.2k★)",
+      "summary": [
+        "코딩 에이전트에 최신 웹 플랫폼 모범 사례와 브라우저 호환성 데이터를 주는 스킬 모음이며 Chrome·Edge·Firefox·MDN 팀이 관리한다.",
+        "`search`·`retrieve` 명령으로 특정 API 가이드를 조회하고 `legacy-scan`으로 코드의 낡은 패턴을 점검한다.",
+        "Node.js 22 이상이 필요하다."
+      ],
+      "why": "웹앱을 에이전트에게 맡길 때 오래된 API나 호환성 문제를 사전에 걸러줘 결과물 품질이 올라간다.",
+      "howto": "`npx modern-web-guidance@latest install` 로 대화형 설치, 설치 없이 쓰려면 `npx modern-web-guidance@latest legacy-scan .` 를 실행한다.",
+      "url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+      "source": "GitHub (GoogleChrome)"
+    },
+    {
+      "title": "diagram-design: 아키텍처·시퀀스 등 51종 다이어그램을 HTML+SVG로 그리는 스킬",
+      "category": "skills",
+      "score": 76,
+      "published": "2026-11-23",
+      "buzz": "GitHub 오늘의 트렌딩 +513★ (누적 70.3k★)",
+      "summary": [
+        "아키텍처·플로차트·시퀀스·ER·간트·상키 등 다이어그램을 빌드 없이 열리는 단일 HTML+SVG 파일로 만든다(README 51종, About 45종으로 표기가 다르다).",
+        "웹사이트에서 색·폰트를 뽑아 브랜드에 맞추고, draw.io·Mermaid·Excalidraw·PlantUML 파일을 다시 그려준다.",
+        "SVG/PNG 내보내기에서 PNG는 Playwright가 필요하다."
+      ],
+      "why": "게임 구조도나 앱 설계 문서를 보기 좋은 그림으로 바로 뽑아 포트폴리오·README에 쓸 수 있다.",
+      "howto": "`npx skills add cathrynlavery/diagram-design` 또는 Claude Code에서 `/plugin marketplace add cathrynlavery/diagram-design` 후 `/plugin install diagram-design@diagram-design`.",
+      "url": "https://github.com/cathrynlavery/diagram-design",
+      "source": "GitHub (cathrynlavery/diagram-design)"
+    },
+    {
+      "title": "OpenAI GPT-6.2 Astra·Sol 출시: Astra는 20% 인하, Codex에서 선택 가능",
+      "category": "tools",
+      "score": 74,
+      "published": "2026-11-17",
+      "buzz": "다수 매체 보도 · 검색 확인",
+      "summary": [
+        "OpenAI가 11/17 GPT-6.2 Astra와 Sol을 내놨고 Plus·Pro·Enterprise·Edu 사용자는 ChatGPT Work와 Codex에서 고를 수 있으며 API 모델명은 gpt-6.2-astra, gpt-6.2-sol이다.",
+        "가격은 Astra가 입력 $8/출력 $40(백만 토큰, 기존 대비 20% 인하), Sol은 $2/$10 유지다.",
+        "Artificial Analysis 코딩 에이전트 지수에서 Claude Code(Fable 5.2 또는 Opus 5.5)는 58, Codex+Astra는 53, Codex+Sol은 50이다(2차 출처 인용, 원문 미확인)."
+      ],
+      "why": "Codex를 병행한다면 어떤 모델을 쓸지 비용·성능 기준이 바로 생긴다.",
+      "howto": "Codex에서 모델 선택 메뉴로 gpt-6.2-astra 또는 gpt-6.2-sol을 고른다(상세 설정은 원문 참고).",
+      "url": "https://letsdatascience.com/news/openai-launches-gpt-62-astra-frontier-model-and-gpt-62-sol-ccad09ba",
+      "source": "LetsDataScience 외"
+    },
+    {
+      "title": "Anthropic, IPO 종료 발표: 초과배정 옵션 전량 행사 및 사모 배정 완료",
+      "category": "claude",
+      "score": 48,
+      "published": "2026-11-20",
+      "buzz": "Anthropic 뉴스 11/20",
+      "summary": [
+        "Anthropic이 11/20 기업공개(IPO) 종료와 인수단 추가 주식 매입 옵션의 전량 행사, 동시 진행 사모 배정 종료를 발표했다.",
+        "11/18 공모가 확정, 11/10 로드쇼 시작에 이은 마무리 공지다.",
+        "제품·API 변경 내용은 없고 회사 소식이다."
+      ],
+      "why": "Claude 개발 지속성과 투자 규모에 관한 배경 정보로, 직접 쓸 기능은 없다.",
+      "howto": "원문 참고",
+      "url": "https://www.anthropic.com/news/ipo-close",
+      "source": "Anthropic 뉴스"
+    }
+  ]
+}
