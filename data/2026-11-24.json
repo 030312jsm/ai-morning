@@ -1,0 +1,102 @@
+{
+  "date": "2026-11-24",
+  "note": "오늘은 확인 가능한 신규 소식이 적어 6건만 실었습니다. creative 분야는 날짜를 확인할 수 있는 새 소식이 없어 생략했습니다.",
+  "items": [
+    {
+      "title": "Claude Code v2.1.331: Bedrock·Foundry에서 Code Mode, claude doctor API 점검",
+      "category": "claude",
+      "score": 84,
+      "published": "2026-11-23",
+      "buzz": "GitHub 릴리스 최신",
+      "summary": [
+        "Claude Code v2.1.331이 11월 23일 배포됐다.",
+        "Amazon Bedrock·Google Cloud·Microsoft Foundry 터미널 세션에서 Code Mode 지원, `claude doctor`에 API 연결 점검 섹션 추가, 플러그인 매니페스트의 optionalDependencies 지원.",
+        "MCP 도구 호출이 최대 30분 멈추던 문제와 Stop 훅이 마지막 답변을 놓치던 문제가 고쳐졌다. PermissionDenied 훅의 retry:true는 사용자가 요청한 호출에만 재시도하도록 동작이 바뀌었다."
+      ],
+      "why": "MCP 호출 멈춤 수정과 doctor 점검은 매일 Claude Code를 쓰는 개발자에게 바로 체감되는 개선이다.",
+      "howto": "`claude update`로 갱신한 뒤 `claude doctor`를 실행해 API 연결 섹션을 확인한다.",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.331",
+      "source": "GitHub anthropics/claude-code"
+    },
+    {
+      "title": "Google Stitch Skills: Stitch MCP용 디자인·빌드 스킬 모음",
+      "category": "skills",
+      "score": 80,
+      "published": "2026-11-23",
+      "buzz": "GitHub 12.2k★ · Trending 오늘 +425★",
+      "summary": [
+        "Google Labs가 Stitch MCP 서버와 함께 쓰는 Agent Skills 라이브러리를 공개했다.",
+        "stitch-design, stitch-build, stitch-utilities 세 플러그인으로 나뉘며 Claude Code·Codex·Cursor·Gemini CLI와 호환된다.",
+        "사용하려면 Stitch MCP 서버를 먼저 설정해야 한다."
+      ],
+      "why": "웹앱·UI 시안을 Claude Code에서 곧바로 디자인 도구와 연결해 만들 수 있다.",
+      "howto": "Stitch MCP 설정 후 `npx plugins add google-labs-code/stitch-skills --scope project --target claude-code` 실행. 스킬만 고르려면 `npx skills add google-labs-code/stitch-skills`.",
+      "url": "https://github.com/google-labs-code/stitch-skills",
+      "source": "GitHub google-labs-code"
+    },
+    {
+      "title": "Firecrawl: 에이전트용 검색·스크랩 CLI/스킬/MCP, 로컬 단일 바이너리 추가",
+      "category": "skills",
+      "score": 74,
+      "published": "2026-11-23",
+      "buzz": "GitHub 207.8k★ · Trending 오늘 +920★",
+      "summary": [
+        "웹 검색·스크랩·크롤을 에이전트에 붙이는 Firecrawl이 CLI, 스킬, MCP 세 방식 설치를 제공한다.",
+        "로컬에서 도는 단일 바이너리 Firecrawl Local(localhost:3002, MCP 서버 겸용)과 가입 없이 월 1,000크레딧의 Keyless 모드가 새로 소개됐다.",
+        "Local 설치에는 Rust와 C 컴파일러가 필요하다."
+      ],
+      "why": "웹앱·툴 제작 중 최신 문서나 레퍼런스를 에이전트가 직접 긁어오게 할 때 쓸 수 있다.",
+      "howto": "`npx -y firecrawl-cli@latest init --all --browser` 후 에이전트 재시작. 스킬 카탈로그는 `npx skills add firecrawl/skills`, 로컬은 `cargo install firecrawl-local && firecrawl-local init`.",
+      "url": "https://github.com/firecrawl/firecrawl",
+      "source": "GitHub firecrawl"
+    },
+    {
+      "title": "Codex 0.171.0: GPT-6.2 Sol 기본 모델, codex exec --remote",
+      "category": "tools",
+      "score": 72,
+      "published": "2026-11-20",
+      "buzz": "GitHub 릴리스 Latest",
+      "summary": [
+        "Codex 0.171.0이 모델 목록에 GPT-6.2 Sol·Astra를 추가하고 Sol을 기본값으로 바꿨다.",
+        "TUI 워크스페이스(문서·이미지·서브에이전트 기록 보기)가 기본 활성화되고 `codex exec --remote`, `/rc`, `/remote` 명령이 추가됐다.",
+        "`/statusline`으로 커스텀 MCP 상태줄을 고를 수 있고 세션 전환 시 입력이 사라지던 문제가 고쳐졌다."
+      ],
+      "why": "Claude Code와 Codex를 병행한다면 원격 실행과 새 기본 모델을 바로 시험해 볼 수 있다.",
+      "howto": "Codex CLI를 최신 버전으로 업데이트한 뒤 `codex exec --remote` 또는 TUI에서 `/remote`를 사용. 자세한 옵션은 원문 참고.",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.171.0",
+      "source": "GitHub openai/codex"
+    },
+    {
+      "title": "Claude Code v2.1.329: /tasks에 예약작업·/loop 표시, /mcp 오류 메시지",
+      "category": "claude",
+      "score": 70,
+      "published": "2026-11-19",
+      "buzz": "GitHub 릴리스",
+      "summary": [
+        "`/tasks`가 예약 작업, `/loop` 웨이크업, goal, fork를 모두 나열하고 `x`로 중지할 수 있다.",
+        "`/mcp`에 원격 HTTP MCP 서버의 JSON-RPC 오류를 보여주는 Server message 행이 생겼고 `/status`에는 마켓플레이스 자동 업데이트 행이 추가됐다.",
+        "`/teleport`는 이제 `/clear`처럼 새 세션을 시작하며 `/resume`으로 이전 대화를 되살린다. ~/.claude.json이 초기화되던 버그도 수정됐다."
+      ],
+      "why": "/loop·예약 작업을 쓰는 자동화 워크플로를 한곳에서 관리하고 MCP 연결 실패 원인을 바로 볼 수 있다.",
+      "howto": "`claude update` 후 세션에서 `/tasks`, `/mcp`를 실행한다.",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.329",
+      "source": "GitHub anthropics/claude-code"
+    },
+    {
+      "title": "MiniMind: 64M 파라미터 LLM을 처음부터 학습, Tool-Use RL 포함",
+      "category": "research",
+      "score": 58,
+      "published": "2026-11-23",
+      "buzz": "GitHub 69.4k★ · Trending 오늘 +828★",
+      "summary": [
+        "약 64M 파라미터 모델을 RTX 3090 한 장으로 직접 학습해 볼 수 있는 교육용 오픈소스 프로젝트다.",
+        "minimind-3(밀집)와 minimind-3-moe(198M-A64M)는 Qwen3 생태계 구조에 맞췄고, train_agent.py로 GRPO/CISPO 기반 다중턴 Tool-Use RL을 학습한다.",
+        "OpenAI 호환 서버와 웹 데모가 reasoning_content, tool_calls를 지원한다. 소형 교육용 모델이라 실사용 성능은 기대하기 어렵다."
+      ],
+      "why": "LLM 학습·강화학습 흐름을 코드로 직접 보며 이해하고 싶을 때 가장 작은 진입점이다.",
+      "howto": "`git clone --depth 1 https://github.com/jingyaogong/minimind && cd minimind && pip install -r requirements.txt` 후 `python eval_llm.py --load_from ./minimind-3`.",
+      "url": "https://github.com/jingyaogong/minimind",
+      "source": "GitHub jingyaogong"
+    }
+  ]
+}
