@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-25",
+  "note": "오늘은 날짜를 확인할 수 있는 신규 소식이 적어 2건만 실었습니다. 최근 7일 안에 이미 실린 소식과 출처·날짜를 확인하지 못한 소식은 제외했습니다.",
+  "items": [
+    {
+      "title": "Claude Ship 베타: PR 리뷰·수정·승인 판단을 맡는 에이전트, /ship 커맨드",
+      "category": "claude",
+      "score": 88,
+      "published": "2026-11-23",
+      "buzz": "TechCrunch·9to5Mac 등 다수 보도 · 검색 확인",
+      "summary": [
+        "Anthropic이 11월 23일 GitHub PR을 검토하고 수정하며 머지 준비 여부를 판단하는 Claude Ship을 공개했다.",
+        "이미 정식 제공 중인 Code Review에 베타 에이전트 PR Steward와 Claude Approvals가 더해졌고, Claude Code에서 새 /ship 커맨드로 시작한다.",
+        "Team·Enterprise 플랜의 GitHub 저장소 대상이다. 직접 승인·머지하지 않도록 설계됐고, 팀 정책으로 승인 기준을 정하며 @claude로 조작, @claude stop으로 중단한다. 브랜치 보호 규칙에 연결하기 전에 observe-only 모드로 먼저 돌려 보길 권장한다."
+      ],
+      "why": "혼자 만드는 웹앱·툴 저장소에도 PR 리뷰 자동화를 붙일 수 있는지 판단할 기준이 되는 소식이다.",
+      "howto": "Team/Enterprise 플랜에서 Claude Code를 열고 `/ship`을 실행한다. 세부 설정은 원문 참고.",
+      "url": "https://techcrunch.com/2026/11/23/anthropic-launches-claude-ship-letting-ai-agents-review-fix-and-approve-code-changes/",
+      "source": "TechCrunch"
+    },
+    {
+      "title": "skill-finder: Claude가 작업 전에 설치된 스킬을 먼저 검색하게 만드는 실험 스킬",
+      "category": "skills",
+      "score": 62,
+      "published": "2026-11-18",
+      "buzz": "GitHub 1 스타 · 검색 확인",
+      "summary": [
+        "CLAUDE.md 한 단락과 작은 Python 검색 스크립트로, Claude가 작업 시작 전에 사용자·프로젝트·플러그인 스킬을 먼저 찾아보게 한다.",
+        "작성자 테스트에서 필요한 스킬을 여는 비율이 Haiku 2→47/58, Sonnet 7→40/58, Opus 1→9/10으로 늘었다.",
+        "작성자가 'Experimental'로 표시했다. 완성 작업이 나아졌는지는 불확실하고, 단순 grep과 성능이 비슷했으며, 세션마다 약 345토큰이 추가된다. CLAUDE.md 지시를 빼면 효과가 없다."
+      ],
+      "why": "스킬을 많이 깔아 두고도 Claude가 잘 안 쓰는 문제를 줄여 볼 수 있는 가벼운 실험이다.",
+      "howto": "`git clone https://github.com/ydmitry/skill-finder ~/.claude/skills/skill-finder` 후 README의 지시 블록을 `~/.claude/CLAUDE.md`에 추가한다.",
+      "url": "https://github.com/ydmitry/skill-finder",
+      "source": "GitHub ydmitry/skill-finder"
+    }
+  ]
+}
