@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-26",
+  "note": "오늘은 공식 문서로 확인된 소식만 실어 2건뿐입니다. 신뢰할 만한 원문 확인이 어려운 소식은 제외했습니다.",
+  "items": [
+    {
+      "title": "Claude Code 2.1.332: MCP 서버의 스킬(베타)과 PreSkillShellCommand 훅",
+      "category": "skills",
+      "score": 88,
+      "published": "2026-11-25",
+      "buzz": "공식 changelog v2.1.332",
+      "summary": [
+        "Claude Code 2.1.332에서 MCP 서버가 제공하는 스킬을 베타로 쓸 수 있고, `/` 메뉴에 `server:skill` 형태로 표시된다.",
+        "새 `PreSkillShellCommand` 훅이 스킬이 로드될 때 실행하려는 인라인 셸 명령을 거부할 수 있다.",
+        "MCP 스킬은 베타이며, 훅으로 막을 명령의 기준은 직접 정해야 한다."
+      ],
+      "why": "외부 스킬을 설치할 때 셸 명령을 훅으로 검문할 수 있어 안전하게 스킬을 늘릴 수 있다.",
+      "howto": "Claude Code를 2.1.332 이상으로 업데이트한 뒤 MCP 서버를 연결하고 `/` 메뉴에서 `server:skill` 항목을 확인. 훅 설정 방법은 원문 참고.",
+      "url": "https://code.claude.com/docs/en/changelog",
+      "source": "Claude Code Changelog"
+    },
+    {
+      "title": "Claude Code 2.1.330~331: 예약 작업 30일, 플러그인 마켓플레이스 자동 업데이트",
+      "category": "claude",
+      "score": 80,
+      "published": "2026-11-23",
+      "buzz": "공식 changelog v2.1.330·331",
+      "summary": [
+        "2.1.330(11/20)부터 반복 예약 작업과 `/loop`가 7일 대신 최대 30일 동안 실행된다.",
+        "2.1.331(11/23)은 Bedrock·Foundry 등에서 Code Mode를 지원하고 플러그인 매니페스트에 `optionalDependencies`를 추가했다.",
+        "관리형 `extraKnownMarketplaces`의 마켓플레이스는 11월 30일부터 기본 자동 업데이트되며, 끄려면 항목에 `\"autoUpdate\": false`를 넣는다. 홈·루트 대상 일부 `rm`은 승인이 필요해졌다."
+      ],
+      "why": "매일 도는 자동화 루틴을 한 달간 유지할 수 있고, 플러그인 자동 업데이트 변경에 미리 대비할 수 있다.",
+      "howto": "`claude update`로 최신 버전을 받고, 자동 업데이트를 원치 않으면 마켓플레이스 항목에 `\"autoUpdate\": false` 추가.",
+      "url": "https://code.claude.com/docs/en/changelog",
+      "source": "Claude Code Changelog"
+    }
+  ]
+}
