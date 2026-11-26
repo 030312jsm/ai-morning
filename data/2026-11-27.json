@@ -1,0 +1,54 @@
+{
+  "date": "2026-11-27",
+  "note": "오늘은 날짜가 확인된 신선한 소식이 적어 3건만 싣는다.",
+  "items": [
+    {
+      "title": "Claude Code v2.1.332: MCP 서버가 스킬을 제공(베타) + PreSkillShellCommand 훅",
+      "category": "claude",
+      "score": 90,
+      "published": "2026-11-25",
+      "buzz": "공식 릴리스",
+      "summary": [
+        "Claude Code v2.1.332가 11월 25일 나왔다.",
+        "MCP 서버가 제공하는 스킬을 `/` 메뉴에서 `server:skill` 형태로 쓸 수 있다(베타). 스킬·커맨드가 로드될 때 인라인 셸 명령을 거부할 수 있는 `PreSkillShellCommand` 훅이 추가됐다.",
+        "긴 명령·훅 출력·@ 멘션·named pipe 관련 멈춤 현상과 워크트리 진입 시 CLAUDE.md 재전송 문제, Bedrock/Foundry/Google Cloud 모델 별칭 문제가 수정됐다."
+      ],
+      "why": "스킬을 MCP로 배포·공유할 수 있게 되고, 외부 스킬의 셸 실행을 훅으로 막을 수 있어 안전하게 스킬을 가져다 쓰기 좋다.",
+      "howto": "Claude Code를 최신 버전으로 업데이트한 뒤 `/` 메뉴에서 `server:skill` 항목을 확인한다. 훅 설정은 원문 참고.",
+      "url": "https://github.com/anthropics/claude-code/releases",
+      "source": "GitHub 릴리스 (anthropics/claude-code)"
+    },
+    {
+      "title": "Codex 0.172.0: 슬래시 명령 Tab 완성, MCP 서버 지연 시작, 도구별 승인 리뷰어",
+      "category": "tools",
+      "score": 78,
+      "published": "2026-11-24",
+      "buzz": "공식 안정 릴리스",
+      "summary": [
+        "OpenAI Codex CLI 안정 버전 0.172.0이 11월 24일 나왔다.",
+        "터미널에서 검색 결과의 스레드 링크로 저장된 대화를 열 수 있고, 슬래시 명령 인자를 Tab으로 완성한다. 도구 목록이 캐시된 stdio MCP 서버는 첫 도구 호출 때 시작된다. 연결된 앱 도구별로 `config.toml`에서 승인 리뷰어를 지정할 수 있다.",
+        "`codex exec resume`이 저장된 샌드박스 권한과 작업 디렉터리를 복원하도록 고쳐졌고, 내장 `openai-docs` 스킬에 GPT-6.2 Astra/Sol 마이그레이션 문서가 들어갔다."
+      ],
+      "why": "Codex를 병행해 쓴다면 MCP 시작 속도와 `exec resume` 안정성이 바로 체감되는 개선이다.",
+      "howto": "Codex CLI를 0.172.0 이상으로 업데이트한다. 도구별 승인 리뷰어 설정은 릴리스 노트 참고.",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.172.0",
+      "source": "GitHub 릴리스 (openai/codex)"
+    },
+    {
+      "title": "ponytail: 에이전트가 코드를 덜 쓰게 만드는 스킬·플러그인 (스타 약 199k)",
+      "category": "skills",
+      "score": 82,
+      "published": "2026-11-22",
+      "buzz": "스타 약 199k · 검색 확인",
+      "summary": [
+        "'가장 게으른 시니어 개발자처럼 생각하게' 하는 프롬프트형 스킬로, 코드를 쓰기 전에 필요 여부, 기존 코드, 표준 라이브러리, 플랫폼 기능 순으로 먼저 따져 본다.",
+        "README 벤치마크(Ponytail 5 vs 스킬 없음)는 코드량 53%, 시간 41%, 비용 26%, 토큰 45% 절감이라고 주장한다. 검증·에러 처리·보안·접근성은 줄이지 않는다.",
+        "절감 수치는 저장소가 밝힌 자체 결과다. 최근 커밋은 11월 22일이다."
+      ],
+      "why": "Claude Code로 PyQt·Godot·웹앱을 만들 때 불필요하게 불어나는 코드와 토큰 비용을 줄이는 데 바로 쓸 수 있다.",
+      "howto": "Claude Code: `/plugin marketplace add DietrichGebert/ponytail` 후 `/plugin install ponytail@ponytail`. Codex: `codex plugin marketplace add DietrichGebert/ponytail` 후 `codex plugin add ponytail@ponytail`, 이후 `/hooks`에서 훅 2개를 신뢰한다.",
+      "url": "https://github.com/DietrichGebert/ponytail",
+      "source": "GitHub"
+    }
+  ]
+}
